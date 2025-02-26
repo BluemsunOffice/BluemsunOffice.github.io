@@ -58,6 +58,8 @@
 
   header {
     background: light-dark(#fff, #000);
+    height: 12vh;
+    font-weight: 800;
   }
 
   header::before {
@@ -141,13 +143,4 @@ div.tp-dfwv {
     object-fit: cover;
   }
 
-}
-
-.typeit {
-  .code {
-    padding: .375rem;
-    font-size: .875rem;
-    font-weight: bold;
-    word-break: break-all;
-  }
 }
