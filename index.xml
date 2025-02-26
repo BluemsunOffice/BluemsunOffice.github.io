@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hello! Bluemsun</title><link>http://bluemsun.top:9080/</link><description>Recent content on Hello! Bluemsun</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 25 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://bluemsun.top:9080/index.xml" rel="self" type="application/rss+xml"/><item><title>样例博客</title><link>http://bluemsun.top:9080/blog/example/</link><pubDate>Thu, 23 Jun 2022 12:33:45 +1000</pubDate><guid>http://bluemsun.top:9080/blog/example/</guid><description>&lt;p>博客的具体内容&amp;hellip;&lt;/p></description></item><item><title>样例项目1</title><link>http://bluemsun.top:9080/products/example01/</link><pubDate>Tue, 23 Jun 2020 12:33:45 +1000</pubDate><guid>http://bluemsun.top:9080/products/example01/</guid><description>&lt;p>项目的具体内容&lt;/p></description></item><item><title>样例项目2</title><link>http://bluemsun.top:9080/products/example02/</link><pubDate>Tue, 23 Jun 2020 12:33:45 +1000</pubDate><guid>http://bluemsun.top:9080/products/example02/</guid><description>&lt;p>项目的具体内容&lt;/p></description></item><item><title>关于蓝旭👋</title><link>http://bluemsun.top:9080/about/</link><pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate><guid>http://bluemsun.top:9080/about/</guid><description>&lt;p>TODO: 关于蓝旭的简介。&lt;/p></description></item><item><title>加入我们</title><link>http://bluemsun.top:9080/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://bluemsun.top:9080/contact/</guid><description>&lt;p>零基础入门，学长学姐带你飞！蓝旭工作室招新进行中！&lt;/p>
+&lt;form name="contact" action="https://getform.io/f/bllyyoxb" method="POST" enctype="multipart/form-data">
+ &lt;div class="flex input">
+ &lt;div class="p-4 w-full">
+ &lt;label for="file-upload" class="cursor-pointer bg-gray-200 border border-gray-200 focus:outline-none focus:bg-white focus:border-gray-500 text-black px-4 py-2 rounded-lg shadow-md">
+ &lt;i class="fa-solid fa-image">&lt;/i>
+ &lt;span>选择照片&lt;/span>
+ &lt;input id="file-upload" type="file" name="photo" class="hidden" accept="image/png, image/jpeg, image/gif, image/webp, image/svg+xml" />
+ &lt;/label>
+ &lt;span id="file-name" class="ml-3 text-gray-700">请上传一张你的生活照~&lt;/span>
+ &lt;/div>
+
+ &lt;/div>
+ &lt;div class="input flex">
+ &lt;div class="p-4 w-full">
+ &lt;input type="text" placeholder="姓名" name="name" class="p-4 bg-gray-200 border border-gray-200 focus:outline-none focus:bg-white focus:border-gray-500" required>
+ &lt;/div>
+ &lt;div class="p-4 w-full">
+ &lt;input type="text" placeholder="学号" name="student_id" class="p-4 bg-gray-200 border border-gray-200 focus:outline-none focus:bg-white focus:border-gray-500" required>
+ &lt;/div>
+ &lt;div class="p-4 w-full">
+ &lt;input type="text" placeholder="专业" name="major" class="p-4 bg-gray-200 border border-gray-200 focus:outline-none focus:bg-white focus:border-gray-500" required>
+ &lt;/div>
+ &lt;/div>
+ &lt;div class="input flex">
+ &lt;div class="p-4 w-full">
+ &lt;input type="text" placeholder="邮箱" name="mail" class="p-4 bg-gray-200 border border-gray-200 focus:outline-none focus:bg-white focus:border-gray-500" required>
+ &lt;/div>
+ &lt;div class="p-4 w-full">
+ &lt;input type="text" placeholder="电话号码" name="phone" class="p-4 bg-gray-200 border border-gray-200 focus:outline-none focus:bg-white focus:border-gray-500" required>
+ &lt;/div>
+ &lt;/div>
+ &lt;div class="input flex">
+ &lt;div class="p-4 w-full">
+ &lt;select name="subject" class="w-full p-4 bg-gray-200 border border-gray-200 focus:outline-none focus:bg-white focus:border-gray-500" required>
+ &lt;option value="" disabled selected>意向部门&lt;/option>
+ &lt;option value="前端">前端&lt;/option>
+ &lt;option value="后端">后端&lt;/option>
+ &lt;option value="设计">设计部&lt;/option>
+ &lt;/select>
+ &lt;/div>
+ &lt;/div>
+ &lt;div class="input flex">
+ &lt;div class="p-4 w-full">
+ &lt;textarea rows="5" cols="30" placeholder="个人介绍" name="cv" class="w-full p-4 bg-gray-200 border border-gray-200 focus:outline-none focus:bg-white focus:border-gray-500" required>&lt;/textarea>
+ &lt;/div>
+ &lt;/div>
+ &lt;div class="input flex">
+ &lt;div class="p-4 w-full">
+ &lt;input type="submit" value="提交" class="px-8 py-2 duration-200 bg-gray-800 text-white cursor-pointer transition-colors hover:bg-gray-400">
+ &lt;/div>
+ &lt;/div>
+&lt;/form>
+
+&lt;script>
+ document.getElementById('file-upload').addEventListener('change', function(event) {
+ const fileName = event.target.files[0] ? event.target.files[0].name : '未选择文件';
+ document.getElementById('file-name').textContent = fileName;
+ });
+&lt;/script></description></item></channel></rss>
