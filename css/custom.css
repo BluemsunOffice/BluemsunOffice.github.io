@@ -121,3 +121,33 @@ div.tp-dfwv {
   max-height: 100vh;
   overflow: auto;
 }
+
+.featured-image {
+  margin: .5rem 0 1rem 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 100%;
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    object-fit: cover;
+  }
+
+}
+
+.typeit {
+  .code {
+    padding: .375rem;
+    font-size: .875rem;
+    font-weight: bold;
+    word-break: break-all;
+  }
+}
