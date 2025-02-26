@@ -5,7 +5,7 @@
  &lt;label for="file-upload" class="cursor-pointer bg-gray-200 border border-gray-200 focus:outline-none focus:bg-white focus:border-gray-500 text-black px-4 py-2 rounded-lg shadow-md">
  &lt;i class="fa-solid fa-image">&lt;/i>
  &lt;span>选择照片&lt;/span>
- &lt;input id="file-upload" type="file" name="photo" class="hidden" accept="image/png, image/jpeg, image/gif, image/webp, image/svg+xml" />
+ &lt;input id="file-upload" type="file" name="photo" class="hidden" accept="image/png, image/jpeg, image/gif, image/webp, image/svg+xml" required />
  &lt;/label>
  &lt;span id="file-name" class="ml-3 text-gray-700">请上传一张你的生活照~&lt;/span>
  &lt;/div>
