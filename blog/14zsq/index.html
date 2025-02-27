@@ -1,0 +1,240 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><title>Hello! Bluemsun | Sa-token</title>
+<meta name=viewport content="width=device-width,initial-scale=1"><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.jpg><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.jpg><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.jpg><link rel=manifest href=/site.webmanifest><link href=/css/fa6.min.css rel=stylesheet type=text/css><link rel=stylesheet href="/css/style.min.77906017340b15ad69f27f2cd27f0833d0e78a75185c356924d7a17bf623e6fd.css"><link href=/css/style.min.css rel=stylesheet type=text/css><link rel=stylesheet href=/css/custom.css><meta property="og:title" content="Hello! Bluemsun | Sa-token"><meta name=description content="轻量级Java权限认证框架"><meta property="og:title" content=" | "><meta property="og:site_name" content="Hello! Bluemsun"><meta property="og:description" content="轻量级Java权限认证框架"><meta property="og:url" content="https://bluemsunoffice.github.io/blog/14zsq/"><meta property="og:type" content="article"><meta property="og:locale" content><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@tech_chiba"><link rel=canonical href=https://bluemsunoffice.github.io/blog/14zsq/><meta name=twitter:description content="轻量级Java权限认证框架"><meta property="article:published_time" content="2024-10-08T10:02:51+08:00"><meta property="article:updated_time" content="2024-10-08T10:02:51+08:00"><meta property="og:image" content="https://bluemsunoffice.github.io/img/blog_pic/java.jpg"><meta name=twitter:title content="Sa-token"><link rel=preload href=/css/sweetalert2.min.css as=style onload='this.onload=null,this.rel="stylesheet"'></head><body class="flex flex-col min-h-screen"><main class=flex-grow><header><div id=overlay><ul class="text-center list-none text-white text-3xl"><li class=p-2><a href=/products/><span>💻项目介绍</span></a></li><li class=p-2><a href=/blog/><span>📄往期博客</span></a></li><li class=p-2><a href=/about/><span>☀️关于蓝旭</span></a></li><li class=p-2><a href=/contact/><span>😆加入我们</span></a></li></ul></div><nav class="flex items-center justify-between flex-wrap bg-opacity-80 p-4"><div class="flex items-center flex-shrink-0 text-xl text-grey-900 mr-6 flex-row"><a href=https://bluemsunoffice.github.io/ class="flex items-center flex-shrink-0 text-black mr-6"><img alt="Bluemsun Studio" class="lg:h-14 h-10" src=/img/logo/logo.jpg><div><h1 class="px-2 text-4xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-5xl lg:text-6xl xl:text-8xl">蓝旭工作室</h1><h2 class="px-2 text-xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-3xl lg:text-4xl xl:text-6xl">Bluemsun Studio</h2></div></a></div><div class="block lg:hidden"><div id=hamburgerbtn class="flex cursor-pointer items-center w-6 h-6 py-2 rounded mopen"><span class=top></span>
+<span class=middle></span>
+<span class=bottom></span></div></div><div class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto" id=mobileMenu><div class="text-lg lg:flex-grow"></div><div class=text-xl><a href=/products/ class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8 px-2 py-1 rounded">💻项目介绍
+</a><a href=/blog/ class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8 px-2 py-1 rounded">📄往期博客
+</a><a href=/about/ class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8 px-2 py-1 rounded">☀️关于蓝旭
+</a><a href=/contact/ class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8 px-2 py-1 rounded">😆加入我们</a></div></div></nav></header><div class="scroll-top rounded-full"><span class="icon-keyboard_arrow_up text-2xl"></span></div><div class="mx-auto my-10 max-w-6xl"><div class="mx-3 col-span-3 lg:col-span-2 px-2 bg-white my-10"><h1 class="title text-5xl font-bold mt-10 h-fit"><i class="fa-solid fa-heading"></i>
+Sa-token</h1><section class="mb-4 text-lg flex flex-row items-center"><h4 id=date class="flex flex-row items-center p-3"><i class="fa-regular fa-clock mr-2" style=color:#74c0fc></i>
+2024/10/08</h4><h4 class="flex flex-row items-center p-3"><i class="fa-solid fa-pen-nib mr-2" style=color:#ffd43b></i>
+张绍启</h4><div id=categories class="flex flex-row items-center p-3"><i class="fa-regular fa-folder-open mr-2" style=color:#63e6be></i>
+<span class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a href=https://bluemsunoffice.github.io/categories/%E5%90%8E%E7%AB%AF>后端</a></span></div></section><div class="m-2 featured-image"><img class=my-4 sizes=auto height=auto width=auto src=https://bluemsunoffice.github.io/img/blog_pic/java.jpg></div><div class="content prose md:prose-lg lg:prose-xl max-w-none bg-white p-8 border-black" style="border:dashed 1px #ff4365"><h2 id=sa-token简介>Sa-token简介:</h2><p>SA-Token是一个轻量级Java权限认证框架，主要解决：登录认证、权限认证、Session会话、单点登录、OAuth2.0等功能。你可以使用SA-Token来轻松地实现项目的权限控制，并且几乎零学习成本。SA-Token以简单、易用、安全为主要设计目标，提供了丰富的API和灵活的扩展机制，可以满足大多数项目的需求。</p><p><img src=https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271910370.png alt=img><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动>编辑</p><h2 id=基础流程图>基础流程图:</h2><h2></h2><p><img src=https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271910023.png alt=img><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动>编辑</p><h2></h2><h2 id=参考资料>参考资料:</h2><p>官方文档:<a href=https://sa-token.cc/index.html>Sa-Token</a></p><h2 id=依赖>依赖:</h2><pre tabindex=0><code>        基本:
+        &lt;dependency&gt;
+            &lt;groupId&gt;cn.dev33&lt;/groupId&gt;
+            &lt;artifactId&gt;sa-token-spring-boot3-starter&lt;/artifactId&gt;
+            &lt;version&gt;1.39.0&lt;/version&gt;
+        &lt;/dependency&gt;
+ &lt;!-- Sa-Token 整合 Redis （使用 jdk 默认序列化方式） --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;cn.dev33&lt;/groupId&gt;
+            &lt;artifactId&gt;sa-token-redis&lt;/artifactId&gt;
+            &lt;version&gt;1.39.0&lt;/version&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- 提供Redis连接池 --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.commons&lt;/groupId&gt;
+            &lt;artifactId&gt;commons-pool2&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- Sa-Token OAuth2.0 模块 --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;cn.dev33&lt;/groupId&gt;
+            &lt;artifactId&gt;sa-token-oauth2&lt;/artifactId&gt;
+            &lt;version&gt;1.39.0&lt;/version&gt;
+        &lt;/dependency&gt;
+</code></pre><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动></p><h2 id=框架配置>框架配置:</h2><pre tabindex=0><code># Sa-Token配置
+sa-token:
+  # token名称 (同时也是cookie名称)
+  token-name: xc_satoken
+  # token有效期，单位s 默认30天, -1代表永不过期
+  timeout: 2592000
+  # 是否允许同一账号并发登录 (为true时允许一起登录, 为false时新登录挤掉旧登录)
+  is-concurrent: true
+  # 在多人登录同一账号时，是否共用一个token (为true时所有登录共用一个token, 为false时每次登录新建一个token)
+  is-share: false
+  # token风格
+  token-style: uuid
+  # 是否输出操作日志
+  is-log: true
+  # 不从 Cookie 中读取 Token
+  is-read-cookie: false
+  # 不将 Token 写入 Cookie
+  is-write-cookie: false
+
+
+
+
+
+    # redis配置
+    redis:
+      # Redis数据库索引（默认为0）
+      database: 1
+      # Redis服务器地址
+      host: 127.0.0.1
+      # Redis服务器连接端口
+      port: 6379
+      # Redis服务器连接密码（默认为空）
+      # password:
+      # 连接超时时间
+      timeout: 10s
+      lettuce:
+        pool:
+          # 连接池最大连接数
+          max-active: 200
+          # 连接池最大阻塞等待时间（使用负值表示没有限制）
+          max-wait: -1ms
+          # 连接池中的最大空闲连接
+          max-idle: 10
+          # 连接池中的最小空闲连接
+          min-idle: 0
+</code></pre><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动></p><h2 id=全局异常处理>全局异常处理:</h2><p>在使用框架时候出现的异常他都写好了异常类，我们直接处理就可以了</p><pre tabindex=0><code>package com.pj.current;
+
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import cn.dev33.satoken.exception.DisableServiceException;
+import cn.dev33.satoken.exception.NotHttpBasicAuthException;
+import cn.dev33.satoken.exception.NotLoginException;
+import cn.dev33.satoken.exception.NotPermissionException;
+import cn.dev33.satoken.exception.NotRoleException;
+import cn.dev33.satoken.exception.NotSafeException;
+import cn.dev33.satoken.util.SaResult;
+
+/**
+ * 全局异常处理 
+ */
+@RestControllerAdvice
+public class GlobalException {
+
+	// 拦截：未登录异常
+	@ExceptionHandler(NotLoginException.class)
+	public SaResult handlerException(NotLoginException e) {
+
+		// 打印堆栈，以供调试
+		e.printStackTrace(); 
+
+		// 返回给前端
+		return SaResult.error(e.getMessage());
+	}
+
+	// 拦截：缺少权限异常
+	@ExceptionHandler(NotPermissionException.class)
+	public SaResult handlerException(NotPermissionException e) {
+		e.printStackTrace(); 
+		return SaResult.error(&#34;缺少权限：&#34; + e.getPermission());
+	}
+
+	// 拦截：缺少角色异常
+	@ExceptionHandler(NotRoleException.class)
+	public SaResult handlerException(NotRoleException e) {
+		e.printStackTrace(); 
+		return SaResult.error(&#34;缺少角色：&#34; + e.getRole());
+	}
+
+	// 拦截：二级认证校验失败异常
+	@ExceptionHandler(NotSafeException.class)
+	public SaResult handlerException(NotSafeException e) {
+		e.printStackTrace(); 
+		return SaResult.error(&#34;二级认证校验失败：&#34; + e.getService());
+	}
+
+	// 拦截：服务封禁异常 
+	@ExceptionHandler(DisableServiceException.class)
+	public SaResult handlerException(DisableServiceException e) {
+		e.printStackTrace(); 
+		return SaResult.error(&#34;当前账号 &#34; + e.getService() + &#34; 服务已被封禁 (level=&#34; + e.getLevel() + &#34;)：&#34; + e.getDisableTime() + &#34;秒后解封&#34;);
+	}
+
+	// 拦截：Http Basic 校验失败异常 
+	@ExceptionHandler(NotHttpBasicAuthException.class)
+	public SaResult handlerException(NotHttpBasicAuthException e) {
+		e.printStackTrace(); 
+		return SaResult.error(e.getMessage());
+	}
+
+	// 拦截：其它所有异常
+	@ExceptionHandler(Exception.class)
+	public SaResult handlerException(Exception e) {
+		e.printStackTrace(); 
+		return SaResult.error(e.getMessage());
+	}
+	
+}
+</code></pre><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动></p><h2 id=基础方法>基础方法:</h2><p>satoken提供的相关方法:</p><p>登录方法:</p><pre tabindex=0><code>StpUtil.login(userId);
+</code></pre><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动></p><p>调用方法后，服务端会创建session，session用用户id来标记，session存储会话相关的信息，生成token,如果开启缓存会将信息存储到redis中</p><p><img src=https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271910966.png alt=img><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动>编辑</p><p>判断是否登录的方法:</p><pre tabindex=0><code>StpUtil.checkLogin():
+
+StpUtil.isLogin();
+</code></pre><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动></p><p>通过请求头中的tokenName中的tokenValue来获取userId，再去session中找有无对应的会话记录</p><p>这两个方法的区别在于第一个方法会抛出异常.</p><p>//我禁用了缓存，我讲令牌添加到请求头，调用需要登录验证的接口,可以验证登录成功，但是我重启服务器以后登录就失败了，我感觉satoekn在服务端的session中保存了会话信息。</p><p>退出方法:</p><pre tabindex=0><code>StpUtil.logout(userId);
+</code></pre><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动></p><p>会将缓存中的会话信息还有令牌全都删除。</p><p>与用户会话信息相关的方法:</p><pre tabindex=0><code>StpUtil.getLoginId();// 获取当前会话账号id, 如果未登录，则抛出异常：`NotLoginException`
+StpUtil.getLoginIdAsString();    // 获取当前会话账号id, 并转化为`String`类型
+StpUtil.getLoginIdAsInt();       // 获取当前会话账号id, 并转化为`int`类型
+StpUtil.getLoginIdAsLong();      // 获取当前会话账号id, 并转化为`long`类型
+
+
+
+// 获取当前会话的 token 值
+StpUtil.getTokenValue();
+
+// 获取当前`StpLogic`的 token 名称
+StpUtil.getTokenName();
+
+// 获取指定 token 对应的账号id，如果未登录，则返回 null
+StpUtil.getLoginIdByToken(String tokenValue);
+
+// 获取当前会话剩余有效期（单位：s，返回-1代表永久有效）
+StpUtil.getTokenTimeout();
+
+// 获取当前会话的 token 信息参数
+StpUtil.getTokenInfo();
+</code></pre><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动></p><p>通过sasession来获取会话中的详细数据。</p><p>踢人下线:</p><pre tabindex=0><code>StpUtil.kickout(id);
+</code></pre><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动></p><p>将指定用户的session记录删除。</p><h2 id=踢人下线强制注销>踢人下线，强制注销:</h2><ol><li><p><strong>踢人下线</strong>：</p><ul><li><strong>意图</strong>：通常是出于管理需要，可能是管理员主动决定让某个用户下线。</li><li><strong>用户体验</strong>：用户会收到通知，告知他们已被踢下线，通常会有明确的提示，允许他们重新登录.</li></ul></li><li><p><strong>强制注销</strong>：</p><ul><li><strong>意图</strong>：通常是出于安全考虑，例如检测到异常活动或账户被盗用。</li><li><strong>用户体验</strong>：用户可能在尝试访问资源时直接被拒绝，通常没有提前的提示，可能会感到困惑。</li></ul></li></ol><h2 id=img点击并拖拽以移动编辑><img src=https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271910028.gif alt=img><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动>编辑</h2><h2></h2><h2 id=权限认证>权限认证:</h2><p>在讲权限认证以前先了解一下RBAC模型:</p><h3 id=rbac模型>RBAC模型：</h3><p>参考连接:</p><p><a href="https://blog.csdn.net/m0_62006803/article/details/133962328?ops_request_misc=%7B%22request%5Fid%22%3A%2298D9C6AF-D3C3-481A-B421-94E565EEC0E0%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;request_id=98D9C6AF-D3C3-481A-B421-94E565EEC0E0&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-133962328-null-null.142%5Ev100%5Epc_search_result_base3&amp;utm_term=RBAC&amp;spm=1018.2226.3001.4187">RBAC——基于角色权限的模型-CSDN博客</a></p><h3 id=流程>流程:</h3><p>根据RBAC模型创建表单:
+<img src=https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271910863.png alt=img><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动>​编辑</p><p>实现接口:</p><p>1:实现根据userId获取用户角色和用户权限的接口</p><pre tabindex=0><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; ?&gt;
+&lt;!DOCTYPE mapper PUBLIC &#34;-//mybatis.org//DTD Mapper 3.0//EN&#34;
+        &#34;http://mybatis.org/dtd/mybatis-3-mapper.dtd&#34; &gt;
+&lt;mapper namespace=&#34;com.example.demo.mapper.RoleUserMapper&#34;&gt;
+    &lt;!-- 获取用户的角色列表 --&gt;
+    &lt;select id=&#34;getRoleList&#34; resultType=&#34;String&#34;&gt;
+        SELECT r.role_name
+        FROM role_user ru
+                 INNER JOIN role r ON ru.role_id = r.id
+        WHERE ru.user_id = #{userId}
+    &lt;/select&gt;
+&lt;/mapper&gt;
+</code></pre><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动></p><pre tabindex=0><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; ?&gt;
+&lt;!DOCTYPE mapper PUBLIC &#34;-//mybatis.org//DTD Mapper 3.0//EN&#34;
+        &#34;http://mybatis.org/dtd/mybatis-3-mapper.dtd&#34; &gt;
+&lt;mapper namespace=&#34;com.example.demo.mapper.RolePermissionMapper&#34;&gt;
+    &lt;!-- 获取用户的所有权限名称 --&gt;
+    &lt;select id=&#34;getPermissionList&#34; resultType=&#34;String&#34;&gt;
+        SELECT p.permission_name
+        FROM role_user ru
+                 INNER JOIN role r ON ru.role_id = r.id
+                 INNER JOIN role_permission rp ON r.id = rp.role_id
+                 INNER JOIN permission p ON rp.permission_id = p.id
+        WHERE ru.user_id = #{userId}
+    &lt;/select&gt;
+&lt;/mapper&gt;
+</code></pre><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动></p><p>2:实现satoken的鉴权的接口:</p><p>在调用checkRole时候会调用getRoleList,并且检查list里是否有方法需要的角色信息</p><p>在调用checkPermission时候会调用getPermissionList，并且检查list里是否有方法需要的角色权限</p><p><img src=https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271910260.png alt=img><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动>编辑</p><p>方法中的参数:</p><p>o:这个参数通常用来代表当前用户的身份或上下文信息。具体来说，它可能是用户对象的引用，例如用户ID或用户的其他特征。这个参数的类型是 <code>Object</code>，意味着它可以是任何类型的对象，具体含义依赖于实现的上下文和使用的框架。通常是用户id</p><p>s:这个参数经常用于表示额外的上下文信息，例如请求的资源、操作类型或角色名称等。这个字符串的具体含义取决于业务逻辑和应用程序的需求。通常是状态如login</p><p><img src=https://i-blog.csdnimg.cn/direct/5eddedff3bc74bada3b8133409bf1cf6.png alt=img><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动>编辑</p><p>注解鉴权:</p><p>在接口上添加注解即可：</p><p><img src=https://i-blog.csdnimg.cn/direct/bc86de9ff3724af1887325842f6089ac.png alt=img><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动>编辑</p><p>当有多个权限或者角色时候:</p><p><img src=https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271910910.png alt=img><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动>编辑</p><p>当既有角色又有权限要求时候:</p><p><img src=https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271910757.png alt=img><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动>编辑</p><p>批量注解:</p><p><img src=https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271910618.png alt=img><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动>编辑</p><p>添加的注解还可以自定义实现:<a href=https://sa-token.cc/doc.html#/fun/custom-annotations>自定义注解 (sa-token.cc)</a></p><p>在业务层实现权限校验:<a href=https://sa-token.cc/doc.html#/plugin/aop-at>AOP注解鉴权 (sa-token.cc)</a></p><p>拦截器鉴权:</p><pre tabindex=0><code>package com.example.demo.config;
+
+import cn.dev33.satoken.SaManager;
+import cn.dev33.satoken.context.SaHolder;
+import cn.dev33.satoken.filter.SaServletFilter;
+import cn.dev33.satoken.interceptor.SaInterceptor;
+import cn.dev33.satoken.router.SaHttpMethod;
+import cn.dev33.satoken.router.SaRouter;
+import cn.dev33.satoken.stp.StpUtil;
+import cn.dev33.satoken.util.SaResult;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+public class SaTokenConfigure implements WebMvcConfigurer {
+
+
+    //启用注解模式，并且拦截
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        System.out.println(&#34;启用注解模式，并且拦截&#34;);
+        registry.addInterceptor(new SaInterceptor(handle -&gt; StpUtil.checkLogin()))//相当于在每个接口上都写一个checklogin的注解
+                .addPathPatterns(&#34;/**&#34;)//拦截所有请求
+                .excludePathPatterns(&#34;/sa/login&#34;, &#34;/sa/register&#34;,&#34;/callback&#34;,&#34;/gitee/auth&#34;);//排除登录注册请求
+    }
+
+
+    
+}
+</code></pre><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动></p><p>在handle处添加你想要的鉴权方法。</p><h2 id=扩展>扩展：</h2><p>集成redis：只需要添加相应的依赖，还有配置redis的文件。</p><p>集成jwt:添加相应的依赖</p><p>再更改一下配置</p><p><img src=https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271910767.png alt=img><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动>编辑</p><p><img src=https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271911031.png alt=img><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动>编辑</p><p>全局日志输出:</p><p><img src=https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271911328.png alt=img><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt=点击并拖拽以移动>编辑</p></div><div class="share m-2 grid grid-cols-2 lg:grid-cols-3 gap-2"><a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fbluemsunoffice.github.io%2fblog%2f14zsq%2f&text=Sa-token" target=_blank title=Post class="share-button x"><div class="text-white text-center"><span class="icon-x text-lg mr-2"></span>X</div></a><a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbluemsunoffice.github.io%2fblog%2f14zsq%2f&t=Sa-token" target=_blank title=Facebook class="share-button facebook"><div class="text-white text-center"><span class="icon-facebook text-lg mr-2"></span>Facebook</div></a><a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fbluemsunoffice.github.io%2fblog%2f14zsq%2f&title=Sa-token" target=_blank title=hatena class="share-button hatena"><div class="text-white text-center"><span class="icon-hatenabookmark text-lg mr-2"></span>Hatena</div></a><a href="https://getpocket.com/edit?url=https%3a%2f%2fbluemsunoffice.github.io%2fblog%2f14zsq%2f&title=Sa-token" target=_blank title=pocket class="share-button pocket"><div class="text-white text-center"><span class="icon-get-pocket text-lg mr-2"></span>Pocket</div></a><a href="https://timeline.line.me/social-plugin/share?url=https%3a%2f%2fbluemsunoffice.github.io%2fblog%2f14zsq%2f" class="share-button line"><div class="text-white text-center"><span class="icon-line text-lg mr-2"></span>LINE</div></a><a href=javascript:OnClickURL(); class="share-button url" title="Copy to Clipboard" data-clipboard-text="Sa-token https://bluemsunoffice.github.io/blog/14zsq/" id=url><div class="text-white text-center"><span class="icon-link text-lg mr-2"></span>Copy</div></a></div><hr class=py-4><aside id=meta><div class="grid grid-cols-2"><div class=col-span-1><a class="previous lg:text-2xl" href=https://bluemsunoffice.github.io/blog/10zgs2/><div class="transition-colors duration-300 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1"><span class=icon-keyboard_arrow_left></span> 2024春季蓝旭工作…</div></a></div><a class="next lg:text-2xl" href=https://bluemsunoffice.github.io/blog/6gjt/><div class="transition-colors duration-300 col-span-1 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">java异常类 <span class=icon-keyboard_arrow_right></span></div></a></div></aside></div></div></main><footer class=bg-tlgray-100><script src=/js/clipboard.min.js></script><script src=/js/highlight.min.js></script><script src=/js/highlightjs-line-numbers.min.js></script><script src=/js/sweetalert2.min.js></script><script>hljs.initHighlightingOnLoad(),hljs.initLineNumbersOnLoad(),new ClipboardJS(".url");function OnClickURL(){Swal.fire({icon:"success",title:"Copied!",text:"Copied the URL and title."})}</script><script>function toggleNav(){var e=document.getElementById("hamburgerbtn"),t=document.getElementById("overlay"),n=document.body;e.addEventListener("click",function(){t.classList.toggle("open"),e.classList.toggle("is-open"),n.classList.toggle("scroll-lock")})}toggleNav(),document.querySelector(".scroll-top").addEventListener("click",()=>{document.documentElement.scrollTop=0})</script><link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel=stylesheet><div class="flex items-center justify-between flex-wrap bg-gray-800 p-8 text-white"><div class="items-center text-xl text-grey-900 mr-6 flex flex-row"><img alt="Bluemsun Studio" class="lg:h-14 h-10 mr-8" src=/img/logo/logo.jpg><div><h1 class="px-2 text-3xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-5xl lg:text-6xl xl:text-8xl">蓝旭工作室</h1><h2 class="px-2 text-xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-3xl lg:text-4xl xl:text-6xl">Bluemsun Studio</h2></div></div><div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" id=mobileMenu><div class="text-lg lg:flex-grow"></div><div class="flex flex-row items-center text-lg"><a href=/ class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">返回主页
+</a><a href=https://github.com/BluemsunOffice class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8"><i class='icon-github text-2xl'></i></a></div></div></div><div class="copy pl-8 py-5 bg-tlgray-700 text-white text-md w-full text-center">&copy; Hello! Bluemsun 2025 All Rights Reserved.</div></footer></body></html>

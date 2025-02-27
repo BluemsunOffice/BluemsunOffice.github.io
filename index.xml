@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hello! Bluemsun</title><link>https://bluemsunoffice.github.io/</link><description>Recent content on Hello! Bluemsun</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 25 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://bluemsunoffice.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>动画</title><link>https://bluemsunoffice.github.io/blog/13wxy2/</link><pubDate>Mon, 30 Dec 2024 12:33:45 +1000</pubDate><guid>https://bluemsunoffice.github.io/blog/13wxy2/</guid><description>&lt;h3 id="01-平面转换">01-平面转换&lt;/h3>
 &lt;p>作用：为元素添加动态效果，一般与过渡配合使用
-概念：改变盒子在平面内的形态，平面转换又叫2D转换&lt;/p>
+概念：改变盒子在平面内的形态，平面转换又叫 2D 转换&lt;/p>
 &lt;h4 id="平移">平移&lt;/h4>
-&lt;p>**属性：**transform: translate(X轴移动距离, Y轴移动距离);&lt;/p>
+&lt;p>属性：transform: translate(X 轴移动距离, Y 轴移动距离);&lt;/p>
 &lt;h5 id="取值">&lt;strong>取值&lt;/strong>&lt;/h5>
 &lt;p>（1）像素单位数值&lt;/p>
 &lt;p>（2）百分比&lt;/p>
 &lt;p>（3）正负均可&lt;/p>
 &lt;p>&lt;strong>技巧&lt;/strong>&lt;/p>
-&lt;p>translate() ，表示沿着 x轴移动&lt;/p>
+&lt;p>translate() ，表示沿着 x 轴移动&lt;/p>
 &lt;p>单独设置 X 或 Y 轴移动距离：&lt;code>translateX() 或 translateY()&lt;/code>&lt;/p>
 &lt;h4 id="绝对定位实现元素居中效果">绝对定位实现元素居中效果&lt;/h4>
 &lt;p>法一：&lt;/p>
@@ -40,16 +40,12 @@ transform: translate(-50%,-50%);
 &lt;p>属性：transform-origin&lt;/p>
 &lt;p>取值：&lt;/p>
 &lt;p>（1）方位名词&lt;/p>
-&lt;p>（2）像素单位数值&lt;/p>
-&lt;p>（3）百分比&lt;/p>
-&lt;h4 id="多重转换">多重转换&lt;/h4>
-&lt;p>技巧：先平移再旋转&lt;/p>
-&lt;p>属性：transform: translate() rotate();&lt;/p></description></item><item><title>vue3</title><link>https://bluemsunoffice.github.io/blog/1wxy/</link><pubDate>Fri, 30 Aug 2024 12:33:45 +1000</pubDate><guid>https://bluemsunoffice.github.io/blog/1wxy/</guid><description>&lt;h1 id="vue3">VUE3&lt;/h1>
-&lt;h2 id="一创建一个vue实例">一、创建一个vue实例&lt;/h2>
-&lt;h3 id="11传统开发方式">1.1传统开发方式&lt;/h3>
-&lt;p>打开官网，点击快速上手，在html文件中引入vue.global.js文件&lt;/p>
+&lt;p>（2）像素单位数值&lt;/p></description></item><item><title>vue3</title><link>https://bluemsunoffice.github.io/blog/1wxy/</link><pubDate>Fri, 30 Aug 2024 12:33:45 +1000</pubDate><guid>https://bluemsunoffice.github.io/blog/1wxy/</guid><description>&lt;h1 id="vue3">VUE3&lt;/h1>
+&lt;h2 id="一创建一个-vue-实例">一、创建一个 vue 实例&lt;/h2>
+&lt;h3 id="11-传统开发方式">1.1 传统开发方式&lt;/h3>
+&lt;p>打开官网，点击快速上手，在 html 文件中引入 vue.global.js 文件&lt;/p>
 &lt;pre tabindex="0">&lt;code>&amp;lt;script src=&amp;#34;./vue.global.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt;
-&lt;/code>&lt;/pre>&lt;p>在body标签里:首先是容器，在script标签里用 Vue.createApp方法，用setup配置项存放数据和方法，setup里需要返回值。在Vue.createApp后面将内容挂载在容器内用mount(&amp;quot;#id&amp;quot;)&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>在 body 标签里:首先是容器，在 script 标签里用 Vue.createApp 方法，用 setup 配置项存放数据和方法，setup 里需要返回值。在 Vue.createApp 后面将内容挂载在容器内用 mount(&amp;quot;#id&amp;quot;)&lt;/p>
 &lt;pre tabindex="0">&lt;code>&amp;lt;div id=&amp;#34;id&amp;#34;&amp;gt;
  &amp;lt;h2&amp;gt;{{msg}}&amp;lt;/h2&amp;gt;
 &amp;lt;/div&amp;gt;
@@ -62,7 +58,7 @@ transform: translate(-50%,-50%);
  }
  }).mount(&amp;#34;#id&amp;#34;)
 &amp;lt;/script&amp;gt;
-&lt;/code>&lt;/pre>&lt;p>如果想创建一个复杂的数据类型，可以使用reactive,并且将其返回return&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>如果想创建一个复杂的数据类型，可以使用 reactive,并且将其返回 return&lt;/p>
 &lt;pre tabindex="0">&lt;code>setup() {
  const web = Vue.reactive({
  title: &amp;#34;你好&amp;#34;
@@ -72,20 +68,10 @@ transform: translate(-50%,-50%);
  web
  }
 }
-&lt;/code>&lt;/pre>&lt;p>简写：不写Vue，可以使用解构赋值&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>简写：不写 Vue，可以使用解构赋值&lt;/p>
 &lt;pre tabindex="0">&lt;code>const { createApp, reactive } = Vue
-&lt;/code>&lt;/pre>&lt;h3 id="12模块化开发">1.2模块化开发&lt;/h3>
-&lt;p>同样，在官网找到vue.esm-browser.js文件并引入&lt;/p>
-&lt;pre tabindex="0">&lt;code>import { createApp, reactive } from &amp;#39;./vue.esm-browser.js&amp;#39;
-&lt;/code>&lt;/pre>&lt;h2 id="二基础内容">二、基础内容&lt;/h2>
-&lt;h3 id="21ref和reactive">2.1ref和reactive&lt;/h3>
-&lt;p>1.ref用于存储基本数据类型，在修改值时，需要.value，并且记得要返回&lt;/p>
-&lt;p>引入&lt;/p>
-&lt;pre tabindex="0">&lt;code>import { createApp, reactive, ref } from &amp;#39;./vue.esm-browser.js&amp;#39;
-&lt;/code>&lt;/pre>&lt;p>定义和修改（setup里）&lt;/p>
-&lt;pre tabindex="0">&lt;code>const num = ref(11)
-num.value = 122
-&lt;/code>&lt;/pre>&lt;p>返回&lt;/p></description></item><item><title>Vue3的基础学习</title><link>https://bluemsunoffice.github.io/blog/7ljb/</link><pubDate>Fri, 23 Aug 2024 12:33:45 +1000</pubDate><guid>https://bluemsunoffice.github.io/blog/7ljb/</guid><description>&lt;h1 id="一vue的安装">一、Vue的安装&lt;/h1>
+&lt;/code>&lt;/pre>&lt;h3 id="12-模块化开发">1.2 模块化开发&lt;/h3>
+&lt;p>同样，在官网找到 vue.esm-browser.js 文件并引入&lt;/p></description></item><item><title>Vue3的基础学习</title><link>https://bluemsunoffice.github.io/blog/7ljb/</link><pubDate>Fri, 23 Aug 2024 12:33:45 +1000</pubDate><guid>https://bluemsunoffice.github.io/blog/7ljb/</guid><description>&lt;h1 id="一vue的安装">一、Vue的安装&lt;/h1>
 &lt;p>在这里我们推荐用vite来安装vue&lt;/p>
 &lt;p>//在此之前请确认已经安装好npm，node.js&lt;/p>
 &lt;p>下面是检查是否安装好npm的方法&lt;/p>
@@ -138,7 +124,63 @@ num.value = 122
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>√ Add ESLint for code quality? Yes
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>## 是否添加Prettiert代码格式化
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>√ Add Prettier for code formatting? No
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p></description></item><item><title>样例项目1</title><link>https://bluemsunoffice.github.io/products/example01/</link><pubDate>Tue, 23 Jun 2020 12:33:45 +1000</pubDate><guid>https://bluemsunoffice.github.io/products/example01/</guid><description>&lt;p>项目的具体内容&lt;/p></description></item><item><title>样例项目2</title><link>https://bluemsunoffice.github.io/products/example02/</link><pubDate>Tue, 23 Jun 2020 12:33:45 +1000</pubDate><guid>https://bluemsunoffice.github.io/products/example02/</guid><description>&lt;p>项目的具体内容&lt;/p></description></item><item><title>File和Path、流</title><link>https://bluemsunoffice.github.io/blog/9llr/</link><pubDate>Fri, 11 Oct 2024 12:02:51 +0800</pubDate><guid>https://bluemsunoffice.github.io/blog/9llr/</guid><description>&lt;h1 id="file"> File&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p></description></item><item><title>个人成长档案项目</title><link>https://bluemsunoffice.github.io/products/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF%E6%A1%A3%E6%A1%88/</link><pubDate>Tue, 23 Jun 2020 12:33:45 +1000</pubDate><guid>https://bluemsunoffice.github.io/products/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF%E6%A1%A3%E6%A1%88/</guid><description>&lt;p>这是由蓝旭工作室为同学们打造的一款专属成长记录工具，用来记录你在校期间的所有经历和个人信息。无论是学习成绩、社团活动，还是获奖记录、社会实践，这个项目都能帮你一一保存，方便你随时查询和回顾自己的成长历程！&lt;/p>
+&lt;h3 id="个人成长档案的亮点功能">&lt;strong>个人成长档案的亮点功能&lt;/strong>&lt;/h3>
+&lt;ol>
+&lt;li>&lt;strong>全面记录，点滴不漏&lt;/strong>
+从入学到毕业，你的学习成绩、社团活动、获奖记录、社会实践等信息都会被完整记录，打造属于你的专属成长档案。&lt;/li>
+&lt;li>&lt;strong>随时查询，轻松便捷&lt;/strong>
+通过校园账号登录，你可以随时随地查看自己的成长档案，回顾过去的努力与收获，规划未来的目标与方向。&lt;/li>
+&lt;li>&lt;strong>个性化展示，彰显特色&lt;/strong>
+系统支持自定义展示模块，你可以根据自己的需求，选择展示最亮眼的经历，打造独一无二的个人名片。&lt;/li>
+&lt;li>&lt;strong>数据安全，隐私保护&lt;/strong>
+所有信息都经过严格的加密处理，只有你本人和授权人员可以查看，确保你的隐私安全无忧。&lt;/li>
+&lt;li>&lt;strong>成长分析，助力未来&lt;/strong>
+系统会根据你的档案数据，生成成长分析报告，帮助你更清晰地认识自己的优势与不足，为未来的学习和职业规划提供参考。&lt;/li>
+&lt;/ol>
+&lt;p>个人成长档案项目不仅是一个记录工具，更是你校园生活的见证者！&lt;/p></description></item><item><title>工资管理项目</title><link>https://bluemsunoffice.github.io/products/%E5%B7%A5%E8%B5%84%E7%AE%A1%E7%90%86/</link><pubDate>Tue, 23 Jun 2020 12:33:45 +1000</pubDate><guid>https://bluemsunoffice.github.io/products/%E5%B7%A5%E8%B5%84%E7%AE%A1%E7%90%86/</guid><description>&lt;p>这是由蓝旭工作室为学校老师量身打造的一款经费管理工具，专门用来帮助学校各部门高效、便捷地管理经费。无论是预算分配、工资发放，还是经费统计，这个项目都能轻松搞定，让老师们的工作更加省心！&lt;/p>
+&lt;h3 id="工资管理项目的亮点功能">&lt;strong>工资管理项目的亮点功能&lt;/strong>&lt;/h3>
+&lt;ol>
+&lt;li>&lt;strong>一键管理，省时省力&lt;/strong>
+通过系统化的操作界面，老师们可以轻松管理各部门的经费，告别繁琐的手动计算和表格整理，工作效率大大提升！&lt;/li>
+&lt;li>&lt;strong>预算分配，清晰透明&lt;/strong>
+系统支持预算的智能分配和实时监控，确保每一笔经费都用到实处，让经费管理更加透明、规范。&lt;/li>
+&lt;li>&lt;strong>工资发放，精准无误&lt;/strong>
+工资管理项目支持自动生成工资单，确保每一位老师的工资发放准确无误，减少人为错误，让老师们更放心。&lt;/li>
+&lt;li>&lt;strong>数据统计，一目了然&lt;/strong>
+系统会自动生成各类经费使用报表，帮助老师们快速掌握经费使用情况，为后续决策提供数据支持。&lt;/li>
+&lt;li>&lt;strong>权限管理，安全可靠&lt;/strong>
+系统支持多级权限设置，确保不同部门的老师只能查看和操作自己权限范围内的数据，保障信息安全。&lt;/li>
+&lt;/ol>
+&lt;p>工资管理项目不仅是一个工具，更是老师们的好帮手&lt;/p></description></item><item><title>爱心超市</title><link>https://bluemsunoffice.github.io/products/%E7%88%B1%E5%BF%83%E8%B6%85%E5%B8%82/</link><pubDate>Tue, 23 Jun 2020 12:33:45 +1000</pubDate><guid>https://bluemsunoffice.github.io/products/%E7%88%B1%E5%BF%83%E8%B6%85%E5%B8%82/</guid><description>&lt;p>今天首先给大家介绍的项目是爱心超市！蓝旭工作室专门为咱们学校的贫困同学打造的线上公益超市。在这里，同学们可以用超低的价格买到各种生活必需品，比如学习用品、洗漱用品、食品等等，真正解决了大家的生活难题。&lt;/p>
+&lt;h3 id="爱心超市的亮点功能">&lt;strong>爱心超市的亮点功能&lt;/strong>&lt;/h3>
+&lt;ol>
+&lt;li>&lt;strong>低价购物，轻松无忧&lt;/strong>
+爱心超市里的商品价格超级亲民，专门为有需要的同学提供实惠，让大家不再为生活用品的开销发愁&lt;/li>
+&lt;li>&lt;strong>线上选购，方便快捷&lt;/strong>
+不用跑腿，不用排队，只要登录校园账号，动动手指就能下单！&lt;/li>
+&lt;li>&lt;strong>种类齐全，满足日常需求&lt;/strong>
+从文具到洗漱用品，从零食到日常小物件，爱心超市应有尽有，完全能满足大家的生活和学习需求。&lt;/li>
+&lt;li>&lt;strong>定期上新，惊喜不断&lt;/strong>
+爱心超市会定期更新商品种类，时不时还会推出特价活动，给大家带来更多选择和惊喜！&lt;/li>
+&lt;li>&lt;strong>隐私保护，贴心服务&lt;/strong>
+全程匿名操作，保护每一位同学的隐私，让大家安心购物，无后顾之忧。&lt;/li>
+&lt;/ol>
+&lt;p>爱心超市不仅是一个购物平台，更是一个充满温暖的校园小帮手。&lt;/p></description></item><item><title>综测系统项目</title><link>https://bluemsunoffice.github.io/products/%E7%BB%BC%E6%B5%8B%E7%B3%BB%E7%BB%9F/</link><pubDate>Tue, 23 Jun 2020 12:33:45 +1000</pubDate><guid>https://bluemsunoffice.github.io/products/%E7%BB%BC%E6%B5%8B%E7%B3%BB%E7%BB%9F/</guid><description>&lt;p>项目的具体内容这是由蓝旭工作室为学校量身打造的综合素质测评系统，专门用来帮助同学们更高效、更公平地完成综合素质测评。无论是学习成绩、社会实践，还是社团活动、志愿服务，这个系统都能帮你一键搞定，让测评过程更加透明、便捷！&lt;/p>
+&lt;h3 id="综测系统项目的亮点功能">&lt;strong>综测系统项目的亮点功能&lt;/strong>&lt;/h3>
+&lt;ol>
+&lt;li>&lt;strong>多维度测评，全面覆盖&lt;/strong>
+系统支持学习成绩、社会实践、社团活动、志愿服务等多维度测评，确保每一位同学的综合素质都能得到全面、客观的评价。&lt;/li>
+&lt;li>&lt;strong>自动化评分，公平公正&lt;/strong>
+通过智能算法，系统可以自动计算各项得分，减少人为干预，确保测评结果的公平性和准确性。&lt;/li>
+&lt;li>&lt;strong>实时更新，动态跟踪&lt;/strong>
+你的每一次活动参与、每一份成绩更新，都会实时同步到系统中，方便你随时查看自己的测评进度和得分情况。&lt;/li>
+&lt;li>&lt;strong>数据可视化，一目了然&lt;/strong>
+系统会自动生成测评报告，用图表和数据分析直观展示你的综合素质表现，帮助你更清晰地了解自己的优势与不足。&lt;/li>
+&lt;li>&lt;strong>权限管理，安全可靠&lt;/strong>
+系统支持多级权限设置，确保只有授权人员可以操作和查看相关数据，保障信息安全和个人隐私。&lt;/li>
+&lt;/ol>
+&lt;p>综测系统项目不仅是一个测评工具，更是你综合素质成长的见证者！快来体验吧，让每一次努力都被公平记录，让每一份成长都被真实展现！💪&lt;/p></description></item><item><title>File和Path、流</title><link>https://bluemsunoffice.github.io/blog/9llr/</link><pubDate>Fri, 11 Oct 2024 12:02:51 +0800</pubDate><guid>https://bluemsunoffice.github.io/blog/9llr/</guid><description>&lt;h1 id="file"> File&lt;/h1>
 &lt;p>我们无论使用什么编程语言的时候，只要涉及到实际的应用开发，就不可能逃不开文件传输的问题，像是我们若是想对于一个文件提取我们所相应的信息，或是讲我们已经计算完成的东西自动的储存在一个文件中，我们都需要与实际的文件打交道。&lt;/p>
 &lt;p>因此我们之后就要具体讲讲java中是如何与File进行一个交互的。&lt;/p>
 &lt;h2 id="路径">路径&lt;/h2>
@@ -291,7 +333,89 @@ num.value = 122
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p>
 &lt;p>抛出是为了在方法出现异常时结束，并告诉调用者该方法出现了问题&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271112865.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑程序会在异常处停止&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271112188.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p>
 &lt;p>c.自定义异常:为了让控制台的报错信息更加见名知意 自定义异常大概分为四步: 一.定义异常类. （在定义的时候一定要见名只意) 二.写继承关系. 三.空参构造. 四.代参构造. &lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271112200.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑先自定义一个异常,异常如果是运行时异常要继承RunTimeException如果是编译时异常则直接继承Exception,(同理别忘了如果方法类可能出现编译时错误要在方法后用throws声明,之前提到过)&lt;/p>
-&lt;p>因为自定义的异常的构造函数中有一个是有参的,所有可以在之后的抛出时输出想要打印的语句,&lt;/p></description></item><item><title>2024春季蓝旭工作室培训第五周预习</title><link>https://bluemsunoffice.github.io/blog/10zgs2/</link><pubDate>Sun, 06 Oct 2024 13:02:51 +0800</pubDate><guid>https://bluemsunoffice.github.io/blog/10zgs2/</guid><description>&lt;p>&lt;strong>目录&lt;/strong>&lt;/p>
+&lt;p>因为自定义的异常的构造函数中有一个是有参的,所有可以在之后的抛出时输出想要打印的语句,&lt;/p></description></item><item><title>Sa-token</title><link>https://bluemsunoffice.github.io/blog/14zsq/</link><pubDate>Tue, 08 Oct 2024 10:02:51 +0800</pubDate><guid>https://bluemsunoffice.github.io/blog/14zsq/</guid><description>&lt;h2 id="sa-token简介">Sa-token简介:&lt;/h2>
+&lt;p>SA-Token是一个轻量级Java权限认证框架，主要解决：登录认证、权限认证、Session会话、单点登录、OAuth2.0等功能。你可以使用SA-Token来轻松地实现项目的权限控制，并且几乎零学习成本。SA-Token以简单、易用、安全为主要设计目标，提供了丰富的API和灵活的扩展机制，可以满足大多数项目的需求。&lt;/p>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271910370.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p>
+&lt;h2 id="基础流程图">基础流程图:&lt;/h2>
+&lt;h2>&lt;/h2>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271910023.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p>
+&lt;h2>&lt;/h2>
+&lt;h2 id="参考资料">参考资料:&lt;/h2>
+&lt;p>官方文档:&lt;a href="https://sa-token.cc/index.html">Sa-Token&lt;/a>&lt;/p>
+&lt;h2 id="依赖">依赖:&lt;/h2>
+&lt;pre tabindex="0">&lt;code> 基本:
+ &amp;lt;dependency&amp;gt;
+ &amp;lt;groupId&amp;gt;cn.dev33&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;sa-token-spring-boot3-starter&amp;lt;/artifactId&amp;gt;
+ &amp;lt;version&amp;gt;1.39.0&amp;lt;/version&amp;gt;
+ &amp;lt;/dependency&amp;gt;
+ &amp;lt;!-- Sa-Token 整合 Redis （使用 jdk 默认序列化方式） --&amp;gt;
+ &amp;lt;dependency&amp;gt;
+ &amp;lt;groupId&amp;gt;cn.dev33&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;sa-token-redis&amp;lt;/artifactId&amp;gt;
+ &amp;lt;version&amp;gt;1.39.0&amp;lt;/version&amp;gt;
+ &amp;lt;/dependency&amp;gt;
+
+ &amp;lt;!-- 提供Redis连接池 --&amp;gt;
+ &amp;lt;dependency&amp;gt;
+ &amp;lt;groupId&amp;gt;org.apache.commons&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;commons-pool2&amp;lt;/artifactId&amp;gt;
+ &amp;lt;/dependency&amp;gt;
+
+ &amp;lt;!-- Sa-Token OAuth2.0 模块 --&amp;gt;
+ &amp;lt;dependency&amp;gt;
+ &amp;lt;groupId&amp;gt;cn.dev33&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;sa-token-oauth2&amp;lt;/artifactId&amp;gt;
+ &amp;lt;version&amp;gt;1.39.0&amp;lt;/version&amp;gt;
+ &amp;lt;/dependency&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p>
+&lt;h2 id="框架配置">框架配置:&lt;/h2>
+&lt;pre tabindex="0">&lt;code># Sa-Token配置
+sa-token:
+ # token名称 (同时也是cookie名称)
+ token-name: xc_satoken
+ # token有效期，单位s 默认30天, -1代表永不过期
+ timeout: 2592000
+ # 是否允许同一账号并发登录 (为true时允许一起登录, 为false时新登录挤掉旧登录)
+ is-concurrent: true
+ # 在多人登录同一账号时，是否共用一个token (为true时所有登录共用一个token, 为false时每次登录新建一个token)
+ is-share: false
+ # token风格
+ token-style: uuid
+ # 是否输出操作日志
+ is-log: true
+ # 不从 Cookie 中读取 Token
+ is-read-cookie: false
+ # 不将 Token 写入 Cookie
+ is-write-cookie: false
+
+
+
+
+
+ # redis配置
+ redis:
+ # Redis数据库索引（默认为0）
+ database: 1
+ # Redis服务器地址
+ host: 127.0.0.1
+ # Redis服务器连接端口
+ port: 6379
+ # Redis服务器连接密码（默认为空）
+ # password:
+ # 连接超时时间
+ timeout: 10s
+ lettuce:
+ pool:
+ # 连接池最大连接数
+ max-active: 200
+ # 连接池最大阻塞等待时间（使用负值表示没有限制）
+ max-wait: -1ms
+ # 连接池中的最大空闲连接
+ max-idle: 10
+ # 连接池中的最小空闲连接
+ min-idle: 0
+&lt;/code>&lt;/pre>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p></description></item><item><title>2024春季蓝旭工作室培训第五周预习</title><link>https://bluemsunoffice.github.io/blog/10zgs2/</link><pubDate>Sun, 06 Oct 2024 13:02:51 +0800</pubDate><guid>https://bluemsunoffice.github.io/blog/10zgs2/</guid><description>&lt;p>&lt;strong>目录&lt;/strong>&lt;/p>
 &lt;p>&lt;a href="#%E4%B8%80%E3%80%81MySql%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95">一、MySql的基本语法&lt;/a>&lt;/p>
 &lt;p>&lt;a href="#1.1%E5%85%88%E8%B4%B4%E4%B8%89%E4%B8%AA%E8%A7%A3%E5%86%B3%E6%88%91%E4%B8%8B%E8%BD%BD%E9%97%AE%E9%A2%98%E7%9A%84%E5%A5%BD%E6%96%87%E7%AB%A0">1.1先贴三个解决我下载问题的好文章&lt;/a>&lt;/p>
 &lt;p>&lt;a href="#1.2%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E5%BA%93">1.2什么是数据库&lt;/a>&lt;/p>
@@ -361,7 +485,6 @@ num.value = 122
 &lt;p>2.创建数据库 create database database_name;&lt;/p>
 &lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271129535.png" alt="img">&lt;/p>
 &lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p></description></item><item><title>Java基础知识</title><link>https://bluemsunoffice.github.io/blog/4zgs/</link><pubDate>Sun, 06 Oct 2024 13:02:51 +0800</pubDate><guid>https://bluemsunoffice.github.io/blog/4zgs/</guid><description>&lt;p>&lt;strong>目录&lt;/strong>&lt;/p>
-&lt;p>&lt;strong>目录&lt;/strong>&lt;/p>
 &lt;p>&lt;a href="#%E5%89%8D%E8%A8%80">前言&lt;/a>&lt;/p>
 &lt;p>&lt;a href="#%E4%B8%80%E3%80%81Java%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86">一、Java的异常处理&lt;/a>&lt;/p>
 &lt;p>​	&lt;a href="#1.1%E5%BC%82%E5%B8%B8%E7%9A%84%E5%87%BA%E7%8E%B0">1.1异常的出现&lt;/a>&lt;/p>
@@ -425,7 +548,8 @@ num.value = 122
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//不论是否异常都要执行&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p>
-&lt;p>​ 例子：&lt;/p></description></item><item><title>组件复用render props和高阶组件</title><link>https://bluemsunoffice.github.io/blog/2zlz/</link><pubDate>Sun, 06 Oct 2024 13:02:51 +0800</pubDate><guid>https://bluemsunoffice.github.io/blog/2zlz/</guid><description>&lt;h2 id="组件复用render-props和高阶组件">组件复用render props和高阶组件&lt;/h2>
+&lt;p>​ 例子：&lt;/p>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271115210.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p></description></item><item><title>组件复用render props和高阶组件</title><link>https://bluemsunoffice.github.io/blog/2zlz/</link><pubDate>Sun, 06 Oct 2024 13:02:51 +0800</pubDate><guid>https://bluemsunoffice.github.io/blog/2zlz/</guid><description>&lt;h2 id="组件复用render-props和高阶组件">组件复用render props和高阶组件&lt;/h2>
 &lt;h4 id="一react组件复用概述">一、React组件复用概述&lt;/h4>
 &lt;h6 id="11-思考如果两个组件中的部分功能相似或相同该如何处理">1.1 思考：如果两个组件中的部分功能相似或相同，该如何处理？&lt;/h6>
 &lt;h6 id="12-处理方式">1.2 处理方式：&lt;/h6>
@@ -477,8 +601,7 @@ num.value = 122
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// 函数体
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>函数体是一个块（使用大括号 &lt;code>{}&lt;/code>），则必须使用 &lt;code>return&lt;/code> 关键字来明确返回值&lt;/p>
-&lt;p>如果函数体只有一条语句，并且要返回一个值，可以进一步简化为：&lt;/p></description></item><item><title>Web APIs+DOM+BOM</title><link>https://bluemsunoffice.github.io/blog/3dyh/</link><pubDate>Fri, 26 Jul 2024 13:02:51 +0800</pubDate><guid>https://bluemsunoffice.github.io/blog/3dyh/</guid><description>&lt;p>@[toc]&lt;/p>
-&lt;h1 id="web-apis">Web APIs&lt;/h1>
+&lt;p>如果函数体只有一条语句，并且要返回一个值，可以进一步简化为：&lt;/p></description></item><item><title>Web APIs+DOM+BOM</title><link>https://bluemsunoffice.github.io/blog/3dyh/</link><pubDate>Fri, 26 Jul 2024 13:02:51 +0800</pubDate><guid>https://bluemsunoffice.github.io/blog/3dyh/</guid><description>&lt;h1 id="web-apis">Web APIs&lt;/h1>
 &lt;h2 id="js的组成">JS的组成&lt;/h2>
 &lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271059549.png" alt="image-20240418172539479">&lt;/p>
 &lt;h2 id="api">API&lt;/h2>
@@ -722,7 +845,46 @@ JavaScript是一种轻量级、解释型的 Web 开发语言，该语言系统�
 &lt;p>以行内方式添加时，JavaScript会被添加到元素的事件相关属性中&lt;/p>
 &lt;blockquote>
 &lt;!-- raw HTML omitted -->&lt;/blockquote>
-&lt;p>②内嵌方式&lt;/p></description></item><item><title>关于蓝旭👋</title><link>https://bluemsunoffice.github.io/about/</link><pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate><guid>https://bluemsunoffice.github.io/about/</guid><description>&lt;p>TODO: 关于蓝旭的简介。&lt;/p></description></item><item><title>加入我们</title><link>https://bluemsunoffice.github.io/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://bluemsunoffice.github.io/contact/</guid><description>&lt;p>零基础入门，学长学姐带你飞！蓝旭工作室招新进行中！&lt;/p>
+&lt;p>②内嵌方式&lt;/p></description></item><item><title>关于蓝旭👋</title><link>https://bluemsunoffice.github.io/about/</link><pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate><guid>https://bluemsunoffice.github.io/about/</guid><description>&lt;h1 id="蓝旭工作室这里不只有代码还有温暖与成长">蓝旭工作室：这里不只有代码，还有温暖与成长！&lt;/h1>
+&lt;p>嘿，亲爱的同学们！今天想和大家聊聊一个特别的地方——&lt;strong>蓝旭工作室&lt;/strong>。它不仅仅是东北师范大学的一个技术团队，更像是一个充满温暖和梦想的大家庭。成立于 2007 年，蓝旭工作室一直默默地为校园里的每一位同学提供帮助和支持。&lt;/p>
+&lt;h2 id="这里有什么">这里有什么？&lt;/h2>
+&lt;h3 id="一群有趣又靠谱的小伙伴">一群有趣又靠谱的小伙伴&lt;/h3>
+&lt;p>我们有一群热爱技术的伙伴，21 级和 22 级的成员加起来有 22 人，其中有 8 位还参加过 ACM 竞赛！但别担心，这里不只有“大神”，也有像你一样从零开始的小白。我们互相学习，一起成长，氛围轻松又温暖。&lt;/p>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/wxy2023013440/202502272322879.png" alt="46b7f3095ded1e3b023d19313813f11">
+&lt;em>蓝旭工作室的日常：大家一起讨论项目，氛围轻松愉快。&lt;/em>&lt;/p>
+&lt;h3 id="用技术做有意义的事">用技术做有意义的事&lt;/h3>
+&lt;p>我们开发了&lt;strong>学生成长信息平台&lt;/strong>，帮助学校更高效地管理资助工作；运营着&lt;strong>爱心超市&lt;/strong>，让贫困同学能以低价买到生活必需品。每一次敲代码、每一次调试系统，都是为了让校园生活变得更美好。&lt;/p>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/wxy2023013440/202502272322471.png" alt="600fee888379f2f036415c80a4cf908">&lt;/p>
+&lt;h3 id="一个让你成长的地方">一个让你成长的地方&lt;/h3>
+&lt;p>在这里，你不仅能学到技术，还能参与真实的项目，看到自己的努力如何改变他人的生活。你会发现自己不仅是一个“码农”，更是一个能为他人带来温暖的人。&lt;/p>
+&lt;h3 id="一份难忘的回忆">一份难忘的回忆&lt;/h3>
+&lt;p>在蓝旭，你会认识一群志同道合的朋友，一起熬夜写代码，一起讨论项目，一起为某个功能的实现欢呼雀跃。这些点滴，都会成为你大学生活中最珍贵的回忆。&lt;/p>
+&lt;p>&lt;em>蓝旭工作室的成员们在项目完成后一起庆祝。&lt;/em>&lt;/p>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/wxy2023013440/202502272323912.png" alt="7b3407b9cbb33ba2f084786540edea2">&lt;/p>
+&lt;h2 id="为什么选择蓝旭">为什么选择蓝旭？&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>因为这里不只有技术，还有温度&lt;/strong>&lt;br>
+我们不只是写代码，我们更关心如何用技术帮助他人。每一次项目的成功，都会让你感受到满满的成就感。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>因为这里不只有工作，还有生活&lt;/strong>&lt;br>
+我们会一起聚餐、一起庆祝生日、一起分享生活中的小确幸。蓝旭不仅是一个工作室，更是一个温暖的港湾。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>因为这里不只有现在，还有未来&lt;/strong>&lt;br>
+在蓝旭，你会学到实用的技能，积累宝贵的经验，这些都会成为你未来求职或深造时的加分项。更重要的是，你会在这里找到自己的价值和方向。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;strong>如果你也想过一个不一样的大学生活，&lt;/strong>&lt;br>
+&lt;strong>如果你也想用技术为他人带来温暖，&lt;/strong>&lt;br>
+&lt;strong>如果你也想找到一群志同道合的伙伴，&lt;/strong>&lt;br>
+&lt;strong>那就来蓝旭工作室吧！&lt;/strong>&lt;/p>
+&lt;p>🌟 &lt;strong>这里不只有代码，还有梦想、温暖和成长。&lt;/strong>&lt;br>
+🌟 &lt;strong>蓝旭工作室，期待与你一起书写属于我们的故事！&lt;/strong>&lt;/p>
+&lt;hr>
+&lt;p>&lt;strong>蓝旭工作室，等你来加入！&lt;/strong> 💖&lt;/p></description></item><item><title>加入我们</title><link>https://bluemsunoffice.github.io/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://bluemsunoffice.github.io/contact/</guid><description>&lt;p>零基础入门，学长学姐带你飞！蓝旭工作室招新进行中！&lt;/p>
 &lt;form name="contact" action="https://getform.io/f/bllyyoxb" method="POST" enctype="multipart/form-data">
  &lt;div class="flex input">
  &lt;div class="p-4 w-full">

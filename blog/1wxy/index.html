@@ -8,8 +8,8 @@
 vue3</h1><section class="mb-4 text-lg flex flex-row items-center"><h4 id=date class="flex flex-row items-center p-3"><i class="fa-regular fa-clock mr-2" style=color:#74c0fc></i>
 2024/08/30</h4><h4 class="flex flex-row items-center p-3"><i class="fa-solid fa-pen-nib mr-2" style=color:#ffd43b></i>
 万晓煜</h4><div id=categories class="flex flex-row items-center p-3"><i class="fa-regular fa-folder-open mr-2" style=color:#63e6be></i>
-<span class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a href=https://bluemsunoffice.github.io/categories/%E5%89%8D%E7%AB%AF>前端</a></span></div></section><div class="m-2 featured-image"><img class=my-4 sizes=auto height=auto width=auto src=https://bluemsunoffice.github.io/img/blog_pic/vue.jpg></div><div class="content prose md:prose-lg lg:prose-xl max-w-none bg-white p-8 border-black" style="border:dashed 1px #ff4365"><h1 id=vue3>VUE3</h1><h2 id=一创建一个vue实例>一、创建一个vue实例</h2><h3 id=11传统开发方式>1.1传统开发方式</h3><p>打开官网，点击快速上手，在html文件中引入vue.global.js文件</p><pre tabindex=0><code>&lt;script src=&#34;./vue.global.js&#34;&gt;&lt;/script&gt;
-</code></pre><p>在body标签里:首先是容器，在script标签里用 Vue.createApp方法，用setup配置项存放数据和方法，setup里需要返回值。在Vue.createApp后面将内容挂载在容器内用mount("#id")</p><pre tabindex=0><code>&lt;div id=&#34;id&#34;&gt;
+<span class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a href=https://bluemsunoffice.github.io/categories/%E5%89%8D%E7%AB%AF>前端</a></span></div></section><div class="m-2 featured-image"><img class=my-4 sizes=auto height=auto width=auto src=https://bluemsunoffice.github.io/img/blog_pic/vue.jpg></div><div class="content prose md:prose-lg lg:prose-xl max-w-none bg-white p-8 border-black" style="border:dashed 1px #ff4365"><h1 id=vue3>VUE3</h1><h2 id=一创建一个-vue-实例>一、创建一个 vue 实例</h2><h3 id=11-传统开发方式>1.1 传统开发方式</h3><p>打开官网，点击快速上手，在 html 文件中引入 vue.global.js 文件</p><pre tabindex=0><code>&lt;script src=&#34;./vue.global.js&#34;&gt;&lt;/script&gt;
+</code></pre><p>在 body 标签里:首先是容器，在 script 标签里用 Vue.createApp 方法，用 setup 配置项存放数据和方法，setup 里需要返回值。在 Vue.createApp 后面将内容挂载在容器内用 mount("#id")</p><pre tabindex=0><code>&lt;div id=&#34;id&#34;&gt;
     &lt;h2&gt;{{msg}}&lt;/h2&gt;
 &lt;/div&gt;
 &lt;script&gt;
@@ -21,7 +21,7 @@ vue3</h1><section class="mb-4 text-lg flex flex-row items-center"><h4 id=date cl
         }
     }).mount(&#34;#id&#34;)
 &lt;/script&gt;
-</code></pre><p>如果想创建一个复杂的数据类型，可以使用reactive,并且将其返回return</p><pre tabindex=0><code>setup() {
+</code></pre><p>如果想创建一个复杂的数据类型，可以使用 reactive,并且将其返回 return</p><pre tabindex=0><code>setup() {
     const web = Vue.reactive({
         title: &#34;你好&#34;
     })
@@ -30,20 +30,20 @@ vue3</h1><section class="mb-4 text-lg flex flex-row items-center"><h4 id=date cl
         web
     }
 }
-</code></pre><p>简写：不写Vue，可以使用解构赋值</p><pre tabindex=0><code>const { createApp, reactive } = Vue
-</code></pre><h3 id=12模块化开发>1.2模块化开发</h3><p>同样，在官网找到vue.esm-browser.js文件并引入</p><pre tabindex=0><code>import { createApp, reactive } from &#39;./vue.esm-browser.js&#39;
-</code></pre><h2 id=二基础内容>二、基础内容</h2><h3 id=21ref和reactive>2.1ref和reactive</h3><p>1.ref用于存储基本数据类型，在修改值时，需要.value，并且记得要返回</p><p>引入</p><pre tabindex=0><code>import { createApp, reactive, ref } from &#39;./vue.esm-browser.js&#39;
-</code></pre><p>定义和修改（setup里）</p><pre tabindex=0><code>const num = ref(11)
+</code></pre><p>简写：不写 Vue，可以使用解构赋值</p><pre tabindex=0><code>const { createApp, reactive } = Vue
+</code></pre><h3 id=12-模块化开发>1.2 模块化开发</h3><p>同样，在官网找到 vue.esm-browser.js 文件并引入</p><pre tabindex=0><code>import { createApp, reactive } from &#39;./vue.esm-browser.js&#39;
+</code></pre><h2 id=二基础内容>二、基础内容</h2><h3 id=21ref-和-reactive>2.1ref 和 reactive</h3><p>1.ref 用于存储基本数据类型，在修改值时，需要.value，并且记得要返回</p><p>引入</p><pre tabindex=0><code>import { createApp, reactive, ref } from &#39;./vue.esm-browser.js&#39;
+</code></pre><p>定义和修改（setup 里）</p><pre tabindex=0><code>const num = ref(11)
 num.value = 122
 </code></pre><p>返回</p><pre tabindex=0><code>return {
      num
 }
-</code></pre><p>2.reactive用于复杂的数据类型，在修改值时可以直接修改</p><h3 id=22事件绑定>2.2事件绑定</h3><p>在标签中用v-on或者@绑定事件</p><pre tabindex=0><code> &lt;button @click=&#34;edit&#34;&gt;按钮&lt;/button&gt;
-</code></pre><p>在setup里写函数</p><pre tabindex=0><code>const edit = () =&gt; {
+</code></pre><p>2.reactive 用于复杂的数据类型，在修改值时可以直接修改</p><h3 id=22-事件绑定>2.2 事件绑定</h3><p>在标签中用 v-on 或者@绑定事件</p><pre tabindex=0><code> &lt;button @click=&#34;edit&#34;&gt;按钮&lt;/button&gt;
+</code></pre><p>在 setup 里写函数</p><pre tabindex=0><code>const edit = () =&gt; {
                     web.url = &#34;22222&#34;
                 }
-</code></pre><p>返回值</p><h3 id=23v-show>2.3v-show</h3><p>在标签里用v-show</p><pre tabindex=0><code>&lt;h2 v-show=&#34;web.show&#34;&gt;{{web.url}}&lt;/h2&gt;
-</code></pre><h3 id=24v-if>2.4v-if</h3><p>在标签里使用v-if或v-else或v-else-if</p><h3 id=25动态属性绑定v-bind>2.5动态属性绑定v-bind</h3><p>可以对value，src，class进行绑定，简写形式是：value</p><pre tabindex=0><code>&lt;div class=&#34;id&#34;&gt;
+</code></pre><p>返回值</p><h3 id=23v-show>2.3v-show</h3><p>在标签里用 v-show</p><pre tabindex=0><code>&lt;h2 v-show=&#34;web.show&#34;&gt;{{web.url}}&lt;/h2&gt;
+</code></pre><h3 id=24v-if>2.4v-if</h3><p>在标签里使用 v-if 或 v-else 或 v-else-if</p><h3 id=25-动态属性绑定-v-bind>2.5 动态属性绑定 v-bind</h3><p>可以对 value，src，class 进行绑定，简写形式是：value</p><pre tabindex=0><code>&lt;div class=&#34;id&#34;&gt;
     &lt;!-- value --&gt;
     &lt;input type=&#34;text&#34; :value=&#34;web.url1&#34;&gt;
     &lt;!-- src  --&gt;
@@ -66,7 +66,7 @@ num.value = 122
         }
     }).mount(&#34;.id&#34;)
 &lt;/script&gt;
-</code></pre><h3 id=26v-for>2.6v-for</h3><p>对于数组，可以v-for=&ldquo;value in data.number&rdquo;；对于对象，可以v-for="(value,key,index) in data.user"；</p><p>在使用过程中，尽量加上:key=&ldquo;value.id&rdquo;</p><pre tabindex=0><code>&lt;div class=&#34;id&#34;&gt;
+</code></pre><h3 id=26v-for>2.6v-for</h3><p>对于数组，可以 v-for=&ldquo;value in data.number&rdquo;；对于对象，可以 v-for="(value,key,index) in data.user"；</p><p>在使用过程中，尽量加上:key=&ldquo;value.id&rdquo;</p><pre tabindex=0><code>&lt;div class=&#34;id&#34;&gt;
     &lt;ul&gt;
         &lt;li v-for=&#34;value in data.number&#34;&gt;
             {{value}}
@@ -110,7 +110,7 @@ num.value = 122
         }
     }).mount(&#34;.id&#34;)
 &lt;/script&gt;
-</code></pre><h3 id=27双向数据绑定v-model>2.7双向数据绑定v-model</h3><p>可以对input类型的text，radio，checkbox和select进行双向数据绑定，都是通过value进行存储</p><p>在setup里的数据里，写一个复杂数据类型存储</p><pre tabindex=0><code>&lt;div class=&#34;id&#34;&gt;
+</code></pre><h3 id=27-双向数据绑定-v-model>2.7 双向数据绑定 v-model</h3><p>可以对 input 类型的 text，radio，checkbox 和 select 进行双向数据绑定，都是通过 value 进行存储</p><p>在 setup 里的数据里，写一个复杂数据类型存储</p><pre tabindex=0><code>&lt;div class=&#34;id&#34;&gt;
     &lt;input type=&#34;text&#34; v-model=&#34;data.text&#34;&gt;
     &lt;input type=&#34;radio&#34; v-model=&#34;data.radio&#34; value=&#34;1&#34;&gt;选项1
     &lt;input type=&#34;radio&#34; v-model=&#34;data.radio&#34; value=&#34;2&#34;&gt;选项2
@@ -140,16 +140,16 @@ num.value = 122
         }
     }).mount(&#34;.id&#34;)
 &lt;/script&gt;
-</code></pre><p>2.8v-model的修饰符</p><p>.lazy是失去焦点或按下回车后渲染</p><p>.number是将输入框的值转化为数字类型</p><p>.trim是去掉首尾空格</p><pre tabindex=0><code>&lt;input type=&#34;text&#34; v-model.lazy=&#34;data.text&#34;&gt;
+</code></pre><p>2.8v-model 的修饰符</p><p>.lazy 是失去焦点或按下回车后渲染</p><p>.number 是将输入框的值转化为数字类型</p><p>.trim 是去掉首尾空格</p><pre tabindex=0><code>&lt;input type=&#34;text&#34; v-model.lazy=&#34;data.text&#34;&gt;
 &lt;input type=&#34;text&#34; v-model.number=&#34;data.text&#34;&gt;
 &lt;input type=&#34;text&#34; v-model.trim=&#34;data.text&#34;&gt;
-</code></pre><h3 id=29v-text和v-html>2.9v-text和v-html</h3><pre tabindex=0><code>&lt;h2 v-text=&#34;data.title&#34;&gt;&lt;/h2&gt;
+</code></pre><h3 id=29v-text-和-v-html>2.9v-text 和 v-html</h3><pre tabindex=0><code>&lt;h2 v-text=&#34;data.title&#34;&gt;&lt;/h2&gt;
 &lt;h2 v-html=&#34;data.html&#34;&gt;&lt;/h2&gt;
-</code></pre><p>在setup里</p><pre tabindex=0><code>const data = reactive({
+</code></pre><p>在 setup 里</p><pre tabindex=0><code>const data = reactive({
     title: &#34;阿衡&#34;,
     html: &#34;&lt;i style=&#39;color:red;&#39;&gt;www.baidu.com&lt;/i&gt;&#34;
 })
-</code></pre><h3 id=210计算属性>2.10计算属性</h3><p>首先引入computed</p><p>在利用属性将计算属性挂载上去，用computed(()=>{}）箭头函数的形式</p><pre tabindex=0><code>&lt;div class=&#34;id&#34;&gt;
+</code></pre><h3 id=210-计算属性>2.10 计算属性</h3><p>首先引入 computed</p><p>在利用属性将计算属性挂载上去，用 computed(()=>{}）箭头函数的形式</p><pre tabindex=0><code>&lt;div class=&#34;id&#34;&gt;
     &lt;h2&gt;{{add}}&lt;/h2&gt;
 &lt;/div&gt;
 
@@ -171,7 +171,7 @@ num.value = 122
         }
     }).mount(&#34;.id&#34;)
     &lt;/script&gt;
-</code></pre><h3 id=211监听器watch>2.11监听器watch</h3><p>导入watch</p><pre tabindex=0><code>import { createApp, reactive, watch } from &#39;./vue.esm-browser.js&#39;
+</code></pre><h3 id=211-监听器-watch>2.11 监听器 watch</h3><p>导入 watch</p><pre tabindex=0><code>import { createApp, reactive, watch } from &#39;./vue.esm-browser.js&#39;
 </code></pre><p>监听某个数据</p><pre tabindex=0><code>const data = reactive({
     year: &#34;2023&#34;
 })
@@ -202,7 +202,7 @@ createApp({
         })
     }
 }).mount(&#34;.id&#34;)
-</code></pre><h3 id=212自动监听>2.12自动监听</h3><p>同样还是先引入watchEffect，在setup里直接使用watchEffect即可</p><pre tabindex=0><code>import { createApp, reactive, watchEffect } from &#39;./vue.esm-browser.js&#39;
+</code></pre><h3 id=212-自动监听>2.12 自动监听</h3><p>同样还是先引入 watchEffect，在 setup 里直接使用 watchEffect 即可</p><pre tabindex=0><code>import { createApp, reactive, watchEffect } from &#39;./vue.esm-browser.js&#39;
 createApp({
     setup() {
         const data = reactive({
@@ -216,12 +216,12 @@ createApp({
         })
     }
 }).mount(&#34;.id&#34;)
-</code></pre><h2 id=三vite>三、vite</h2><h3 id=31创建一个vite项目>3.1.创建一个vite项目</h3><p>打开命令行，进入到所需要创建的文件夹里</p><p>创建</p><pre tabindex=0><code>npm create vite@latest
+</code></pre><h2 id=三vite>三、vite</h2><h3 id=31创建一个-vite-项目>3.1.创建一个 vite 项目</h3><p>打开命令行，进入到所需要创建的文件夹里</p><p>创建</p><pre tabindex=0><code>npm create vite@latest
 </code></pre><p>命名项目名</p><pre tabindex=0><code>Project name: ... demo
 </code></pre><p>进入项目文件夹</p><pre tabindex=0><code>cd demo
 </code></pre><p>安装</p><pre tabindex=0><code>npm install
 </code></pre><p>运行</p><pre tabindex=0><code> npm run dev
-</code></pre><p>最后常用的是</p><h4 id=npm-run-dev>npm run dev</h4><p>之后删除一些没用的文件</p><p>1.style.css</p><p>2.components下的组件</p><p>3.打开main.js，删除style.css 的引入</p><p>4.打开App.vue，删除所有，只留下模板</p><h4 id=psv3是快捷键>ps：v3是快捷键</h4><h3 id=32将原来的文件变成vue文件>3.2将原来的文件变成vue文件</h3><p>将导入和setup里的内容直接搬过来即可，不要return</p><p>将html结构直接放在template标签里即可</p><pre tabindex=0><code>&lt;template&gt;
+</code></pre><p>最后常用的是</p><h4 id=npm-run-dev>npm run dev</h4><p>之后删除一些没用的文件</p><p>1.style.css</p><p>2.components 下的组件</p><p>3.打开 main.js，删除 style.css 的引入</p><p>4.打开 App.vue，删除所有，只留下模板</p><h4 id=psv3-是快捷键>ps：v3 是快捷键</h4><h3 id=32-将原来的文件变成-vue-文件>3.2 将原来的文件变成 vue 文件</h3><p>将导入和 setup 里的内容直接搬过来即可，不要 return</p><p>将 html 结构直接放在 template 标签里即可</p><pre tabindex=0><code>&lt;template&gt;
  &lt;div class=&#34;id&#34;&gt;
         &lt;h2&gt;{{web.url}}&lt;/h2&gt;
         &lt;h2&gt;{{num}}&lt;/h2&gt;
@@ -248,7 +248,7 @@ createApp({
 &lt;style scoped&gt;
 
 &lt;/style&gt;
-</code></pre><h2 id=四组件间的通信>四、组件间的通信</h2><h3 id=41父传子>4.1父传子</h3><p>在父组件：</p><p>在使用子组件标签时，如果只是普通的字符串，直接传过去就可以</p><p>如果是一个对象，则利用v-bind绑定数据，在script里创建对象，推荐reactive</p><pre tabindex=0><code>&lt;template&gt;
+</code></pre><h2 id=四组件间的通信>四、组件间的通信</h2><h3 id=41-父传子>4.1 父传子</h3><p>在父组件：</p><p>在使用子组件标签时，如果只是普通的字符串，直接传过去就可以</p><p>如果是一个对象，则利用 v-bind 绑定数据，在 script 里创建对象，推荐 reactive</p><pre tabindex=0><code>&lt;template&gt;
  &lt;div class=&#34;id&#34;&gt;
   &lt;Header propsName=&#34;阿衡&#34;/&gt;
   &lt;Footer v-bind=&#34;propsWeb&#34;/&gt;
@@ -268,7 +268,7 @@ const propsWeb=reactive({
 &lt;style scoped&gt;
 
 &lt;/style&gt;
-</code></pre><p>在子组件：</p><p>普通的字符串，用defineProps里的数组接收</p><p>如果是对象，要对对象的那个属性进行限制</p><pre tabindex=0><code>&lt;template&gt;
+</code></pre><p>在子组件：</p><p>普通的字符串，用 defineProps 里的数组接收</p><p>如果是对象，要对对象的那个属性进行限制</p><pre tabindex=0><code>&lt;template&gt;
 &lt;div&gt;header&lt;/div&gt;
 &lt;/template&gt;
 
@@ -300,7 +300,7 @@ console.log(propsWeb)
 &lt;style scoped&gt;
 
 &lt;/style&gt;
-</code></pre><h3 id=42子传父>4.2子传父</h3><p>在子组件中：</p><p>首先声明一下需要传递的数据的名称，用defineEmits</p><p>然后再传递数据，用emits，第一个参数与声明时的相对应，第二个参数写需要传递的参数</p><p>ps：在可以通过自定义事件来决定传递数据的时机</p><pre tabindex=0><code>&lt;template&gt;
+</code></pre><h3 id=42-子传父>4.2 子传父</h3><p>在子组件中：</p><p>首先声明一下需要传递的数据的名称，用 defineEmits</p><p>然后再传递数据，用 emits，第一个参数与声明时的相对应，第二个参数写需要传递的参数</p><p>ps：在可以通过自定义事件来决定传递数据的时机</p><pre tabindex=0><code>&lt;template&gt;
 &lt;div&gt;header
     &lt;button @click=&#34;add&#34;&gt;按钮&lt;/button&gt;
 &lt;/div&gt;
@@ -332,7 +332,7 @@ import Footer from &#39;./components/Footer.vue&#39;;
  }
  const emitsgetUrl =(data)=&gt;{
   console.log(data);
-  
+
  }
 const web=reactive({
   user:&#34;nihao&#34;
@@ -343,7 +343,7 @@ const url=ref(1111)
 &lt;style scoped&gt;
 
 &lt;/style&gt;
-</code></pre><h3 id=43跨组件通信-依赖注入>4.3跨组件通信-依赖注入</h3><p>此方法只能用于父类(或祖先类)组件向子类(孙子类)组件传递参数</p><p>在父类(或祖先类)组件中：</p><p>可以传递响应式数据，ref，函数等</p><p>传递数据的一方需要引入provide，并定义好需要传递的数据，再通过provide(&ldquo;传递名&rdquo;,传递的数据)</p><pre tabindex=0><code>&lt;template&gt;
+</code></pre><h3 id=43-跨组件通信-依赖注入>4.3 跨组件通信-依赖注入</h3><p>此方法只能用于父类(或祖先类)组件向子类(孙子类)组件传递参数</p><p>在父类(或祖先类)组件中：</p><p>可以传递响应式数据，ref，函数等</p><p>传递数据的一方需要引入 provide，并定义好需要传递的数据，再通过 provide(&ldquo;传递名&rdquo;,传递的数据)</p><pre tabindex=0><code>&lt;template&gt;
  &lt;div class=&#34;id&#34;&gt;
   &lt;Header/&gt;
 &lt;/div&gt;
@@ -367,7 +367,7 @@ provide(&#34;provideFucurlAdd&#34;,urlAdd)
 &lt;style scoped&gt;
 
 &lt;/style&gt;
-</code></pre><p>在子类(孙子类)组件中：</p><p>先引入inject，再用inject(&ldquo;传递名&rdquo;)来获取数据</p><pre tabindex=0><code>&lt;template&gt;
+</code></pre><p>在子类(孙子类)组件中：</p><p>先引入 inject，再用 inject(&ldquo;传递名&rdquo;)来获取数据</p><pre tabindex=0><code>&lt;template&gt;
 &lt;div&gt;
     &lt;Nav/&gt;
 &lt;/div&gt;
@@ -387,33 +387,33 @@ console.log(urlAdd);
 &lt;style scoped&gt;
 
 &lt;/style&gt;
-</code></pre><h3 id=44插槽>4.4插槽</h3><p>作用：我们再子组件中可以将父组件所定义的一些模板片段插入到子组件的特定位置</p><p>在父组件中：</p><p>不需要引入其他文件，只需要在使用子组件标签的时候，用子组件标签包裹需要传递的代码片段（html代码）</p><p>1.匿名插槽</p><pre tabindex=0><code>&lt;template&gt;
+</code></pre><h3 id=44-插槽>4.4 插槽</h3><p>作用：我们再子组件中可以将父组件所定义的一些模板片段插入到子组件的特定位置</p><p>在父组件中：</p><p>不需要引入其他文件，只需要在使用子组件标签的时候，用子组件标签包裹需要传递的代码片段（html 代码）</p><p>1.匿名插槽</p><pre tabindex=0><code>&lt;template&gt;
  &lt;div class=&#34;id&#34;&gt;
   &lt;Header&gt;&lt;a href=&#34;www.baidu.com&#34;&gt;百度&lt;/a&gt;&lt;/Header&gt;
 &lt;/div&gt;
 &lt;/template&gt;
-</code></pre><p>2.具名插槽（简写形式：#）</p><p>需要用一个template标签包裹，并且用v-slot:或者#取名</p><pre tabindex=0><code>&lt;template&gt;
+</code></pre><p>2.具名插槽（简写形式：#）</p><p>需要用一个 template 标签包裹，并且用 v-slot:或者#取名</p><pre tabindex=0><code>&lt;template&gt;
  &lt;div class=&#34;id&#34;&gt;
   &lt;Header&gt;&lt;a href=&#34;www.baidu.com&#34;&gt;百度&lt;/a&gt;&lt;/Header&gt;
   &lt;Footer&gt;
     &lt;!-- &lt;template v-slot:baidu&gt;  --&gt;
-      &lt;template #baidu&gt; 
+      &lt;template #baidu&gt;
       &lt;a href=&#34;www.baidu.com&#34;&gt;百度&lt;/a&gt;
     &lt;/template&gt;
   &lt;/Footer&gt;
 &lt;/div&gt;
 &lt;/template&gt;
-</code></pre><p>在子组件中：</p><p>同样不需要引入其他文件，只需要在template标签里，找到需要放的位置，用slot标签引用即可</p><p>1.匿名插槽</p><pre tabindex=0><code>&lt;template&gt;
+</code></pre><p>在子组件中：</p><p>同样不需要引入其他文件，只需要在 template 标签里，找到需要放的位置，用 slot 标签引用即可</p><p>1.匿名插槽</p><pre tabindex=0><code>&lt;template&gt;
 &lt;div&gt;
     header
     &lt;slot/&gt;
 &lt;/div&gt;
-</code></pre><p>2.具名插槽（在slot标签属性指明插槽名即可）</p><pre tabindex=0><code>&lt;template&gt;
+</code></pre><p>2.具名插槽（在 slot 标签属性指明插槽名即可）</p><pre tabindex=0><code>&lt;template&gt;
 &lt;div&gt;footer
     &lt;slot name=&#34;baidu&#34;/&gt;
 &lt;/div&gt;
 &lt;/template&gt;
-</code></pre><h3 id=45作用域插槽>4.5作用域插槽</h3><p>作用：子组件向父组件传递数据，并在父组件定义的模板中渲染</p><p>根据上一个具名插槽的案例</p><p>在子组件中：</p><p>在属性里加入要传递的数据</p><pre tabindex=0><code>&lt;template&gt;
+</code></pre><h3 id=45-作用域插槽>4.5 作用域插槽</h3><p>作用：子组件向父组件传递数据，并在父组件定义的模板中渲染</p><p>根据上一个具名插槽的案例</p><p>在子组件中：</p><p>在属性里加入要传递的数据</p><pre tabindex=0><code>&lt;template&gt;
 &lt;div&gt;footer
     &lt;slot name=&#34;baidu&#34; title=&#34;阿衡&#34; age=&#34;20&#34;/&gt;
 &lt;/div&gt;
@@ -421,7 +421,7 @@ console.log(urlAdd);
 </code></pre><p>在父组件中：</p><p>1.在取名处用=“数据名”的形式，可以通过{{数据名.子组件定义的属性}}来进行使用</p><pre tabindex=0><code>&lt;template&gt;
  &lt;div class=&#34;id&#34;&gt;
   &lt;Footer&gt;
-      &lt;template #baidu=&#34;data&#34;&gt; 
+      &lt;template #baidu=&#34;data&#34;&gt;
         {{ data.title }}
         {{ data.age }}
       &lt;a href=&#34;www.baidu.com&#34;&gt;百度&lt;/a&gt;
@@ -432,7 +432,7 @@ console.log(urlAdd);
 </code></pre><p>2.还可以通过解构的方式，#插槽名={子组件定义的属性}，在使用时，可以直接{{子组件定义的属性}}</p><pre tabindex=0><code>&lt;template&gt;
  &lt;div class=&#34;id&#34;&gt;
   &lt;Footer&gt;
-      &lt;template #baidu={title,age}&gt; 
+      &lt;template #baidu={title,age}&gt;
         {{ title }}
         {{ age }}
       &lt;a href=&#34;www.baidu.com&#34;&gt;百度&lt;/a&gt;
@@ -440,7 +440,7 @@ console.log(urlAdd);
   &lt;/Footer&gt;
 &lt;/div&gt;
 &lt;/template&gt;
-</code></pre><h3 id=46torefs和toref>4.6toRefs和toRef</h3><p>作用：原本是响应式数据（对象），可以单独一个属性或者全部属性，拿出来单独变成响应式数据（一个属性就是一个响应式数据）</p><p>1.将全部属性变为响应式数据</p><p>首先引入toRefs，再利用解构赋值和toRefs方法，将响应式数据（对象）的全部属性转化</p><pre tabindex=0><code>&lt;script setup&gt;
+</code></pre><h3 id=46torefs-和-toref>4.6toRefs 和 toRef</h3><p>作用：原本是响应式数据（对象），可以单独一个属性或者全部属性，拿出来单独变成响应式数据（一个属性就是一个响应式数据）</p><p>1.将全部属性变为响应式数据</p><p>首先引入 toRefs，再利用解构赋值和 toRefs 方法，将响应式数据（对象）的全部属性转化</p><pre tabindex=0><code>&lt;script setup&gt;
 import {reactive,toRefs} from &#39;vue&#39;
 let web=reactive({
   name:&#34;阿衡&#34;,
@@ -449,7 +449,7 @@ let web=reactive({
 let {name,url}=toRefs(web)
 console.log(url)
 &lt;/script&gt;
-</code></pre><p>2.将个别属性变为响应式数据</p><p>首先引入toRef，再利用toRef方法，toRef(需要转换的响应式对象，“需要转换的属性”)</p><pre tabindex=0><code>&lt;script setup&gt;
+</code></pre><p>2.将个别属性变为响应式数据</p><p>首先引入 toRef，再利用 toRef 方法，toRef(需要转换的响应式对象，“需要转换的属性”)</p><pre tabindex=0><code>&lt;script setup&gt;
 import {reactive,toRef} from &#39;vue&#39;
 let web=reactive({
   name:&#34;阿衡&#34;,
@@ -458,8 +458,8 @@ let web=reactive({
 let url=toRef(web,&#34;url&#34;)
 console.log(url)
 &lt;/script&gt;
-</code></pre><h2 id=五pinia>五、pinia</h2><p>pinia是一个轻量级的状态管理库，可以全局状态管理，简化组件间的通信，状态持久化（可以将状态保存在本地存储）</p><h3 id=51安装pinia>5.1安装pinia</h3><p>进入你创建项目的文件夹中，利用管理员身份打开终端，输入命令行</p><pre tabindex=0><code>npm install pinia
-</code></pre><p>安装完成后你可以在package.json文件中看到pinia的版本号</p><p>然后再mian.js文件中：先引入pinia，再创建pinia实例，最后使用app.use(pinia)将pinia实例注册到vue应用中</p><p>ps：需要更改一下app创建实例的方式</p><pre tabindex=0><code>import { createApp } from &#39;vue&#39;
+</code></pre><h2 id=五pinia>五、pinia</h2><p>pinia 是一个轻量级的状态管理库，可以全局状态管理，简化组件间的通信，状态持久化（可以将状态保存在本地存储）</p><h3 id=51-安装-pinia>5.1 安装 pinia</h3><p>进入你创建项目的文件夹中，利用管理员身份打开终端，输入命令行</p><pre tabindex=0><code>npm install pinia
+</code></pre><p>安装完成后你可以在 package.json 文件中看到 pinia 的版本号</p><p>然后再 mian.js 文件中：先引入 pinia，再创建 pinia 实例，最后使用 app.use(pinia)将 pinia 实例注册到 vue 应用中</p><p>ps：需要更改一下 app 创建实例的方式</p><pre tabindex=0><code>import { createApp } from &#39;vue&#39;
 import { createPinia } from &#39;pinia&#39;
 import App from &#39;./App.vue&#39;
 const pinia = createPinia()
@@ -467,7 +467,7 @@ const pinia = createPinia()
 const app = createApp(App)
 app.use(pinia)
 app.mount(&#39;#app&#39;)
-</code></pre><h3 id=52使用store>5.2使用store</h3><p>store是用来集中存储和管理组件之间共享状态的仓库</p><h4 id=521创建仓库>5.2.1创建仓库</h4><p>首先在src文件下，创建一个stores文件，里面存放仓库文件</p><p>在仓库文件中，引入ref，reactive，再引入defineStore从pinia中</p><p>用defineStore()方法创建仓库，第一个参数是仓库的id（唯一标识），第二个参数是setup函数（也可以使用option函数)</p><p>最后将仓库导出，用export ，其中仓库名是有规范的，use+唯一标识符+Store</p><pre tabindex=0><code>import { ref, reactive } from &#34;vue&#34;
+</code></pre><h3 id=52-使用-store>5.2 使用 store</h3><p>store 是用来集中存储和管理组件之间共享状态的仓库</p><h4 id=521-创建仓库>5.2.1 创建仓库</h4><p>首先在 src 文件下，创建一个 stores 文件，里面存放仓库文件</p><p>在仓库文件中，引入 ref，reactive，再引入 defineStore 从 pinia 中</p><p>用 defineStore()方法创建仓库，第一个参数是仓库的 id（唯一标识），第二个参数是 setup 函数（也可以使用 option 函数)</p><p>最后将仓库导出，用 export ，其中仓库名是有规范的，use+唯一标识符+Store</p><pre tabindex=0><code>import { ref, reactive } from &#34;vue&#34;
 import { defineStore } from &#34;pinia&#34;
 
 export const useWebStore = defineStore(&#34;web&#34;, () =&gt; {
@@ -485,7 +485,7 @@ export const useWebStore = defineStore(&#34;web&#34;, () =&gt; {
         userAdd
     })
 })
-</code></pre><h4 id=521使用仓库>5.2.1使用仓库</h4><p>首先引入仓库，用仓库名引出</p><p>再创建仓库实例即可</p><pre tabindex=0><code>&lt;template&gt;
+</code></pre><h4 id=521-使用仓库>5.2.1 使用仓库</h4><p>首先引入仓库，用仓库名引出</p><p>再创建仓库实例即可</p><pre tabindex=0><code>&lt;template&gt;
 &lt;div id=&#34;app&#34;&gt;
 
 &lt;/div&gt;
@@ -502,8 +502,8 @@ console.log(webStore.userAdd)
 &lt;style scoped&gt;
 
 &lt;/style&gt;
-</code></pre><h3 id=53pinia持久化存储>5.3pinia持久化存储</h3><p>在全局安装pinia-plugin-persistedstate插件</p><pre tabindex=0><code>npm i pinia-plugin-persistedstate
-</code></pre><p>在main.js文件中，引入插件，并将插件注册到pinia中</p><pre tabindex=0><code>import { createApp } from &#39;vue&#39;
+</code></pre><h3 id=53pinia-持久化存储>5.3pinia 持久化存储</h3><p>在全局安装 pinia-plugin-persistedstate 插件</p><pre tabindex=0><code>npm i pinia-plugin-persistedstate
+</code></pre><p>在 main.js 文件中，引入插件，并将插件注册到 pinia 中</p><pre tabindex=0><code>import { createApp } from &#39;vue&#39;
 import { createPinia } from &#39;pinia&#39;
 import App from &#39;./App.vue&#39;
 import piniaPluginPersistedstate from &#39;pinia-plugin-persistedstate&#39;//引入
@@ -515,7 +515,7 @@ pinia.use(piniaPluginPersistedstate)//注册
 const app = createApp(App)
 app.use(pinia)
 app.mount(&#39;#app&#39;)
-</code></pre><p>将仓库变为持久化仓库，打开仓库文件setup函数后面添加一个配置项 persist: true</p><pre tabindex=0><code>import { ref, reactive } from &#34;vue&#34;
+</code></pre><p>将仓库变为持久化仓库，打开仓库文件 setup 函数后面添加一个配置项 persist: true</p><pre tabindex=0><code>import { ref, reactive } from &#34;vue&#34;
 import { defineStore } from &#34;pinia&#34;
 
 export const useWebStore = defineStore(&#34;web&#34;, () =&gt; {

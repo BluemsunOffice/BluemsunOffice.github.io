@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>前端 on Hello! Bluemsun</title><link>https://bluemsunoffice.github.io/categories/%E5%89%8D%E7%AB%AF/</link><description>Recent content in 前端 on Hello! Bluemsun</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 30 Dec 2024 12:33:45 +1000</lastBuildDate><atom:link href="https://bluemsunoffice.github.io/categories/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>动画</title><link>https://bluemsunoffice.github.io/blog/13wxy2/</link><pubDate>Mon, 30 Dec 2024 12:33:45 +1000</pubDate><guid>https://bluemsunoffice.github.io/blog/13wxy2/</guid><description>&lt;h3 id="01-平面转换">01-平面转换&lt;/h3>
 &lt;p>作用：为元素添加动态效果，一般与过渡配合使用
-概念：改变盒子在平面内的形态，平面转换又叫2D转换&lt;/p>
+概念：改变盒子在平面内的形态，平面转换又叫 2D 转换&lt;/p>
 &lt;h4 id="平移">平移&lt;/h4>
-&lt;p>**属性：**transform: translate(X轴移动距离, Y轴移动距离);&lt;/p>
+&lt;p>属性：transform: translate(X 轴移动距离, Y 轴移动距离);&lt;/p>
 &lt;h5 id="取值">&lt;strong>取值&lt;/strong>&lt;/h5>
 &lt;p>（1）像素单位数值&lt;/p>
 &lt;p>（2）百分比&lt;/p>
 &lt;p>（3）正负均可&lt;/p>
 &lt;p>&lt;strong>技巧&lt;/strong>&lt;/p>
-&lt;p>translate() ，表示沿着 x轴移动&lt;/p>
+&lt;p>translate() ，表示沿着 x 轴移动&lt;/p>
 &lt;p>单独设置 X 或 Y 轴移动距离：&lt;code>translateX() 或 translateY()&lt;/code>&lt;/p>
 &lt;h4 id="绝对定位实现元素居中效果">绝对定位实现元素居中效果&lt;/h4>
 &lt;p>法一：&lt;/p>
@@ -40,16 +40,12 @@ transform: translate(-50%,-50%);
 &lt;p>属性：transform-origin&lt;/p>
 &lt;p>取值：&lt;/p>
 &lt;p>（1）方位名词&lt;/p>
-&lt;p>（2）像素单位数值&lt;/p>
-&lt;p>（3）百分比&lt;/p>
-&lt;h4 id="多重转换">多重转换&lt;/h4>
-&lt;p>技巧：先平移再旋转&lt;/p>
-&lt;p>属性：transform: translate() rotate();&lt;/p></description></item><item><title>vue3</title><link>https://bluemsunoffice.github.io/blog/1wxy/</link><pubDate>Fri, 30 Aug 2024 12:33:45 +1000</pubDate><guid>https://bluemsunoffice.github.io/blog/1wxy/</guid><description>&lt;h1 id="vue3">VUE3&lt;/h1>
-&lt;h2 id="一创建一个vue实例">一、创建一个vue实例&lt;/h2>
-&lt;h3 id="11传统开发方式">1.1传统开发方式&lt;/h3>
-&lt;p>打开官网，点击快速上手，在html文件中引入vue.global.js文件&lt;/p>
+&lt;p>（2）像素单位数值&lt;/p></description></item><item><title>vue3</title><link>https://bluemsunoffice.github.io/blog/1wxy/</link><pubDate>Fri, 30 Aug 2024 12:33:45 +1000</pubDate><guid>https://bluemsunoffice.github.io/blog/1wxy/</guid><description>&lt;h1 id="vue3">VUE3&lt;/h1>
+&lt;h2 id="一创建一个-vue-实例">一、创建一个 vue 实例&lt;/h2>
+&lt;h3 id="11-传统开发方式">1.1 传统开发方式&lt;/h3>
+&lt;p>打开官网，点击快速上手，在 html 文件中引入 vue.global.js 文件&lt;/p>
 &lt;pre tabindex="0">&lt;code>&amp;lt;script src=&amp;#34;./vue.global.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt;
-&lt;/code>&lt;/pre>&lt;p>在body标签里:首先是容器，在script标签里用 Vue.createApp方法，用setup配置项存放数据和方法，setup里需要返回值。在Vue.createApp后面将内容挂载在容器内用mount(&amp;quot;#id&amp;quot;)&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>在 body 标签里:首先是容器，在 script 标签里用 Vue.createApp 方法，用 setup 配置项存放数据和方法，setup 里需要返回值。在 Vue.createApp 后面将内容挂载在容器内用 mount(&amp;quot;#id&amp;quot;)&lt;/p>
 &lt;pre tabindex="0">&lt;code>&amp;lt;div id=&amp;#34;id&amp;#34;&amp;gt;
  &amp;lt;h2&amp;gt;{{msg}}&amp;lt;/h2&amp;gt;
 &amp;lt;/div&amp;gt;
@@ -62,7 +58,7 @@ transform: translate(-50%,-50%);
  }
  }).mount(&amp;#34;#id&amp;#34;)
 &amp;lt;/script&amp;gt;
-&lt;/code>&lt;/pre>&lt;p>如果想创建一个复杂的数据类型，可以使用reactive,并且将其返回return&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>如果想创建一个复杂的数据类型，可以使用 reactive,并且将其返回 return&lt;/p>
 &lt;pre tabindex="0">&lt;code>setup() {
  const web = Vue.reactive({
  title: &amp;#34;你好&amp;#34;
@@ -72,20 +68,10 @@ transform: translate(-50%,-50%);
  web
  }
 }
-&lt;/code>&lt;/pre>&lt;p>简写：不写Vue，可以使用解构赋值&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>简写：不写 Vue，可以使用解构赋值&lt;/p>
 &lt;pre tabindex="0">&lt;code>const { createApp, reactive } = Vue
-&lt;/code>&lt;/pre>&lt;h3 id="12模块化开发">1.2模块化开发&lt;/h3>
-&lt;p>同样，在官网找到vue.esm-browser.js文件并引入&lt;/p>
-&lt;pre tabindex="0">&lt;code>import { createApp, reactive } from &amp;#39;./vue.esm-browser.js&amp;#39;
-&lt;/code>&lt;/pre>&lt;h2 id="二基础内容">二、基础内容&lt;/h2>
-&lt;h3 id="21ref和reactive">2.1ref和reactive&lt;/h3>
-&lt;p>1.ref用于存储基本数据类型，在修改值时，需要.value，并且记得要返回&lt;/p>
-&lt;p>引入&lt;/p>
-&lt;pre tabindex="0">&lt;code>import { createApp, reactive, ref } from &amp;#39;./vue.esm-browser.js&amp;#39;
-&lt;/code>&lt;/pre>&lt;p>定义和修改（setup里）&lt;/p>
-&lt;pre tabindex="0">&lt;code>const num = ref(11)
-num.value = 122
-&lt;/code>&lt;/pre>&lt;p>返回&lt;/p></description></item><item><title>Vue3的基础学习</title><link>https://bluemsunoffice.github.io/blog/7ljb/</link><pubDate>Fri, 23 Aug 2024 12:33:45 +1000</pubDate><guid>https://bluemsunoffice.github.io/blog/7ljb/</guid><description>&lt;h1 id="一vue的安装">一、Vue的安装&lt;/h1>
+&lt;/code>&lt;/pre>&lt;h3 id="12-模块化开发">1.2 模块化开发&lt;/h3>
+&lt;p>同样，在官网找到 vue.esm-browser.js 文件并引入&lt;/p></description></item><item><title>Vue3的基础学习</title><link>https://bluemsunoffice.github.io/blog/7ljb/</link><pubDate>Fri, 23 Aug 2024 12:33:45 +1000</pubDate><guid>https://bluemsunoffice.github.io/blog/7ljb/</guid><description>&lt;h1 id="一vue的安装">一、Vue的安装&lt;/h1>
 &lt;p>在这里我们推荐用vite来安装vue&lt;/p>
 &lt;p>//在此之前请确认已经安装好npm，node.js&lt;/p>
 &lt;p>下面是检查是否安装好npm的方法&lt;/p>
@@ -190,8 +176,7 @@ num.value = 122
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// 函数体
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>函数体是一个块（使用大括号 &lt;code>{}&lt;/code>），则必须使用 &lt;code>return&lt;/code> 关键字来明确返回值&lt;/p>
-&lt;p>如果函数体只有一条语句，并且要返回一个值，可以进一步简化为：&lt;/p></description></item><item><title>Web APIs+DOM+BOM</title><link>https://bluemsunoffice.github.io/blog/3dyh/</link><pubDate>Fri, 26 Jul 2024 13:02:51 +0800</pubDate><guid>https://bluemsunoffice.github.io/blog/3dyh/</guid><description>&lt;p>@[toc]&lt;/p>
-&lt;h1 id="web-apis">Web APIs&lt;/h1>
+&lt;p>如果函数体只有一条语句，并且要返回一个值，可以进一步简化为：&lt;/p></description></item><item><title>Web APIs+DOM+BOM</title><link>https://bluemsunoffice.github.io/blog/3dyh/</link><pubDate>Fri, 26 Jul 2024 13:02:51 +0800</pubDate><guid>https://bluemsunoffice.github.io/blog/3dyh/</guid><description>&lt;h1 id="web-apis">Web APIs&lt;/h1>
 &lt;h2 id="js的组成">JS的组成&lt;/h2>
 &lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271059549.png" alt="image-20240418172539479">&lt;/p>
 &lt;h2 id="api">API&lt;/h2>
