@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<title>Hello! Bluemsun | 组件复用render props和高阶组件</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.jpg'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.jpg'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.jpg'>
+<link rel="manifest" href='/site.webmanifest'>
+
+<link href='/css/fa6.min.css' rel="stylesheet" type="text/css">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<link href='/css/style.min.css' rel="stylesheet" type="text/css">
+<link rel="stylesheet" href='/css/custom.css'>
+
+<meta property="og:title" content="Hello! Bluemsun | 组件复用render props和高阶组件" />
+
+
+
+
+<meta name="description" content="React组件复用概述·render props模式·高阶组件">
+<meta property="og:title" content=" | " />
+<meta property="og:site_name" content="Hello! Bluemsun">
+<meta property="og:description" content="React组件复用概述·render props模式·高阶组件">
+<meta property="og:url" content="http://localhost:1313/blog/zlz/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@tech_chiba">
+
+<link rel="canonical" href="http://localhost:1313/blog/zlz/">
+
+<meta name="twitter:description" content="React组件复用概述·render props模式·高阶组件">
+<meta property="article:published_time" content="2024-10-06T13:02:51&#43;08:00">
+<meta property="article:updated_time" content="2024-10-06T13:02:51&#43;08:00">
+
+
+
+
+
+    
+<meta property="og:image" content="http://localhost:1313/img/blog_pic/%E5%89%8D%E7%AB%AF.jpg">
+    
+
+
+<meta name="twitter:title" content="组件复用render props和高阶组件">
+<link rel="preload" href='/css/sweetalert2.min.css' as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <main class="flex-grow"><header>
+    <div id="overlay">
+        <ul class="text-center list-none text-white text-3xl">
+            
+            <li class="p-2">
+                <a href="/products/">
+                    <span>项目介绍</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/blog/">
+                    <span>往期博客</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/about/">
+                    <span>关于蓝旭</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/contact/">
+                    <span>加入我们</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <nav class="flex items-center justify-between flex-wrap bg-opacity-80 p-8">
+        <div class="flex items-center flex-shrink-0 text-xl text-grey-900 mr-6 flex-row">
+            <a href="http://localhost:1313/" class="flex items-center flex-shrink-0 text-black mr-6">
+                <img alt="Bluemsun Studio"
+                    class="h-14" src="/img/logo/logo.jpg">
+                <div>
+                    <h1 class="px-2 text-4xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-5xl lg:text-6xl xl:text-8xl">蓝旭工作室</h1> 
+                    <h2 class="px-2 text-xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-3xl lg:text-4xl xl:text-6xl">Bluemsun Studio</h2>
+                </div>
+            </a>
+        </div>
+        <div class="block lg:hidden">
+            <div id="hamburgerbtn" class="flex cursor-pointer items-center w-14 h-10 py-2 rounded mopen">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
+        </div>
+        <div class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+            <div class="text-lg lg:flex-grow">
+            </div>
+            <div class="text-xl">
+                
+                <a href="/products/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8  px-2 py-1 rounded">
+                    项目介绍
+                </a>
+                
+                <a href="/blog/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8  px-2 py-1 rounded">
+                    往期博客
+                </a>
+                
+                <a href="/about/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8  px-2 py-1 rounded">
+                    关于蓝旭
+                </a>
+                
+                <a href="/contact/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8  px-2 py-1 rounded">
+                    加入我们
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+</header><div class="scroll-top rounded-full">
+      <span class="icon-keyboard_arrow_up text-2xl"></span>
+    </div>
+<div class="mx-auto my-10 max-w-6xl">
+    <div class="mx-3 col-span-3 lg:col-span-2 px-2 bg-white my-10">
+        <h1 class="title text-5xl font-bold mt-10 h-fit">
+            <i class="fa-solid fa-heading"></i>
+            组件复用render props和高阶组件
+        </h1>
+        <section class="mb-4 text-lg flex flex-row items-center">
+            <h4 id="date" class="flex flex-row items-center p-3">
+                
+                <i class="fa-regular fa-clock mr-2" style="color: #74C0FC;"></i>
+                2024/10/06 
+            </h4>
+            
+            <h4 class="flex flex-row items-center p-3">
+                
+                <i class="fa-solid fa-pen-nib mr-2" style="color: #FFD43B;"></i>
+                张俪之
+            </h4>
+            
+            
+            <div id="categories" class="flex flex-row items-center p-3">
+                
+                <i class="fa-regular fa-folder-open mr-2" style="color: #63E6BE;"></i>
+                
+                <span
+                    class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a
+                        href='http://localhost:1313/categories/%E5%89%8D%E7%AB%AF'>前端</a></span>
+                
+            </div>
+            
+        </section>
+        
+        <div class="m-2 featured-image">
+            <img class="my-4"  sizes="auto" height="auto" width="auto" src="http://localhost:1313/img/blog_pic/%E5%89%8D%E7%AB%AF.jpg">
+        </div>
+        
+        <div class="content prose md:prose-lg lg:prose-xl max-w-none bg-white p-8 border-black" style="border:dashed 1px #FF4365">
+            <h2 id="组件复用render-props和高阶组件">组件复用render props和高阶组件</h2>
+<h4 id="一react组件复用概述">一、React组件复用概述</h4>
+<h6 id="11-思考如果两个组件中的部分功能相似或相同该如何处理">1.1 思考：如果两个组件中的部分功能相似或相同，该如何处理？</h6>
+<h6 id="12-处理方式">1.2 处理方式：</h6>
+<p><strong>复用</strong>相似的功能（=&gt;联想函数封装）</p>
+<h6 id="13-复用什么">1.3 复用什么？</h6>
+<blockquote>
+<ol>
+<li>state（状态）</li>
+<li>操作state的方法（逻辑）</li>
+</ol>
+<p><strong><!-- raw HTML omitted -->组件状态逻辑<!-- raw HTML omitted --></strong></p></blockquote>
+<h6 id="14-两种方式">1.4 两种方式：</h6>
+<ul>
+<li>render props模式</li>
+<li>高阶组件（HOC）Higher-order components</li>
+</ul>
+<h6 id="15-注意">1.5 注意：</h6>
+<p>这两种方式不是新的API，也就是说它并不是React中直接提供好的一种方法，直接调用这个方法就可以实现复用，而是利用React自身特点的编码技巧，逐渐演化成的的固定模式（写法）</p>
+<h4 id="二render-props模式">二、render props模式</h4>
+<p>render props 核心思想还是利用<strong>子向父传值时候的回调函数</strong></p>
+<h6 id="21-思路分析">2.1 思路分析：</h6>
+<blockquote>
+<ul>
+<li>
+<p>思路：将要复用的state和操作state的方法封装到一个组件中</p>
+</li>
+<li>
+<p>问题1：如何拿到该组件中复用的state？</p>
+<p>(状态是存在于组件内部的，那么要在使用这个组件的时候，也就是在组件的外部拿到这个状态怎么去获取)</p>
+<p>在使用组件时，添加一个值为函数的prop，通过函数参数来获取（需要组件内部实现）</p>
+</li>
+<li>
+<p>问题2：如何渲染任意UI？</p>
+<p>使用该函数的返回值作为要渲染的UI内容（需要组件内部实现）</p>
+</li>
+</ul></blockquote>
+<p>比如：现在已经有了一个封装好的组件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span>&lt;<span style="color:#f92672">Mouse</span> <span style="color:#a6e22e">render</span><span style="color:#f92672">=</span>{(<span style="color:#a6e22e">mouse</span>)=&gt;{}}/&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//添加了一个值为函数的prop，名字为render，它的值为函数，因为它是在组件内部调用的，那么在组件内部调用时，就可以把组件内部的状态通过参数来被暴露出来，那么就可以通过这个参数来拿到这个状态了
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span>&lt;<span style="color:#f92672">Mouse</span> <span style="color:#a6e22e">render</span><span style="color:#f92672">=</span>{(<span style="color:#a6e22e">mouse</span>)=&gt;(
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">鼠标当前位置</span>{<span style="color:#a6e22e">mouse</span>.<span style="color:#a6e22e">x</span>},{<span style="color:#a6e22e">mouse</span>.<span style="color:#a6e22e">y</span>}&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>)}/&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//通过函数形参mouse拿到鼠标状态，通过返回值指定要渲染的内容
+</span></span></span></code></pre></div><blockquote>
+<p>补充！！！</p>
+<p>箭头函数</p>
+<p>箭头函数的一般语法如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>(<span style="color:#a6e22e">param1</span>, <span style="color:#a6e22e">param2</span>, ..., <span style="color:#a6e22e">paramN</span>) =&gt; {
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 函数体
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>函数体是一个块（使用大括号 <code>{}</code>），则必须使用 <code>return</code> 关键字来明确返回值</p>
+<p>如果函数体只有一条语句，并且要返回一个值，可以进一步简化为：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>(<span style="color:#a6e22e">param1</span>, <span style="color:#a6e22e">param2</span>, ..., <span style="color:#a6e22e">paramN</span>) =&gt; <span style="color:#a6e22e">expression</span>
+</span></span></code></pre></div><p>在这种情况下，你不需要使用 <code>return</code> 关键字，表达式的结果将自动成为函数的返回值</p></blockquote>
+<h6 id="22-使用步骤">2.2 使用步骤：</h6>
+<ul>
+<li>创建Mouse组件，在组件中提供复用的状态逻辑代码（①状态 ②操作状态的方法）</li>
+<li>将要复用的状态作为props.render(state)方法的参数，暴露到组件外部</li>
+<li>使用props.render()的返回值作为要渲染的内容</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span><span style="color:#75715e">//9.26自学自讲
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ReactDOM</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react-dom&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// render props模式
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//1.创建mouse组件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Mouse</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//鼠标位置state
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#a6e22e">state</span><span style="color:#f92672">=</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">//鼠标移动事件处理程序 要拿要鼠标位置就要通过事件对象e来获取
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#a6e22e">handleMouseMove</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">e</span> =&gt;{
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">clientX</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">clientY</span>
+</span></span><span style="display:flex;"><span>      })
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">//监听鼠标的移动,componentDidMount这个钩子函数是创建时的勾子函数，它会在组件完成渲染之后来进行执行
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#a6e22e">componentDidMount</span>(){
+</span></span><span style="display:flex;"><span>      window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;mousemove&#39;</span>,<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleMouseMove</span>)
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//render方法接受一个render属性，这是一个函数，接收当前的state作为参数，并返回一个JSX元素。render方法返回this.props.render(this.state)，即调用父组件传递的render函数，并传递当前的鼠标位置状态
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#a6e22e">render</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">render</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>)
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">App</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">render</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">render</span> <span style="color:#a6e22e">props模式</span>&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>         {<span style="color:#75715e">/* mouse指的就是this.state  方法一定要有返回值*/</span>}
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">Mouse</span> <span style="color:#a6e22e">render</span><span style="color:#f92672">=</span>{(<span style="color:#a6e22e">mouse</span>)=&gt;
+</span></span><span style="display:flex;"><span>          {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>              &lt;<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">当前鼠标位置</span>{<span style="color:#a6e22e">mouse</span>.<span style="color:#a6e22e">x</span>},{<span style="color:#a6e22e">mouse</span>.<span style="color:#a6e22e">y</span>}
+</span></span><span style="display:flex;"><span>              &lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        /&gt;
+</span></span><span style="display:flex;"><span>         {<span style="color:#75715e">/* &lt;Mouse render={(mouse)=&gt;(&lt;p&gt;鼠标当前位置{mouse.x},{mouse.y}&lt;/p&gt;)}/&gt; */</span>}
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">render</span>(&lt;<span style="color:#f92672">App</span> /&gt;, document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;root&#39;</span>));
+</span></span></code></pre></div><p>在使用组件时，只要传入一个render的函数，通过它的参数就可以拿到组件内部暴露的状态，然后就可以用这些状态来做一些事情了</p>
+<p>render方法的返回值来决定要渲染什么内容</p>
+<h6 id="演示mouse组件的复用">演示Mouse组件的复用</h6>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ReactDOM</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react-dom&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//导入图片资源
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">img</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./images/cat.jpg&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// render props模式
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//1.创建mouse组件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Mouse</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//鼠标位置state
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#a6e22e">state</span><span style="color:#f92672">=</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">//鼠标移动事件处理程序 要拿要鼠标位置就要通过事件对象e来获取
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#a6e22e">handleMouseMove</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">e</span> =&gt;{
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">clientX</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">clientY</span>
+</span></span><span style="display:flex;"><span>      })
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">//监听鼠标的移动,componentDidMount这个钩子函数是创建时的钩子函数，它会在组件完成渲染之后来进行执行
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#a6e22e">componentDidMount</span>(){
+</span></span><span style="display:flex;"><span>      window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;mousemove&#39;</span>,<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleMouseMove</span>)
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">render</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">render</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>)
+</span></span><span style="display:flex;"><span>       <span style="color:#75715e">//render是一个函数，调用函数的时候传入一个参数，将来render方法里面就可以拿到这个状态了
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">App</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">render</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">render</span> <span style="color:#a6e22e">props模式</span>&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>         {<span style="color:#75715e">/* mouse指的就是this.state  方法一定要有返回值*/</span>}
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">Mouse</span> <span style="color:#a6e22e">render</span><span style="color:#f92672">=</span>{(<span style="color:#a6e22e">mouse</span>)=&gt;
+</span></span><span style="display:flex;"><span>          {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>              &lt;<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">当前鼠标位置</span>{<span style="color:#a6e22e">mouse</span>.<span style="color:#a6e22e">x</span>},{<span style="color:#a6e22e">mouse</span>.<span style="color:#a6e22e">y</span>}
+</span></span><span style="display:flex;"><span>              &lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        /&gt;
+</span></span><span style="display:flex;"><span>        {<span style="color:#75715e">/* &lt;Mouse render={(mouse)=&gt;(&lt;p&gt;鼠标当前位置{mouse.x},{mouse.y}&lt;/p&gt;)}/&gt; */</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        {<span style="color:#75715e">/* Mouse组件复用 */</span>}
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">Mouse</span> <span style="color:#a6e22e">render</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">mouse</span>=&gt;{
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">img</span>} <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{{<span style="color:#a6e22e">position</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;absolute&#39;</span>,<span style="color:#a6e22e">left</span><span style="color:#f92672">:</span><span style="color:#a6e22e">mouse</span>.<span style="color:#a6e22e">x</span>,<span style="color:#a6e22e">top</span><span style="color:#f92672">:</span><span style="color:#a6e22e">mouse</span>.<span style="color:#a6e22e">y</span>,<span style="color:#a6e22e">width</span><span style="color:#f92672">:</span><span style="color:#ae81ff">70</span>,<span style="color:#a6e22e">height</span><span style="color:#f92672">:</span><span style="color:#ae81ff">80</span>}}/&gt;
+</span></span><span style="display:flex;"><span>        }}/&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">render</span>(&lt;<span style="color:#f92672">App</span> /&gt;, document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;root&#39;</span>));
+</span></span></code></pre></div><h6 id="总结">总结：</h6>
+<ul>
+<li>Mouse组件负责：封装复用的状态逻辑代码（状态，操作状态的方法）</li>
+<li>状态：鼠标坐标（x,y）</li>
+<li>操作状态的方法：鼠标移动事件</li>
+<li>传入的render prop负责：使用复用的状态来渲染UI结构</li>
+</ul>
+<h6 id="23-children代替render属性">2.3 children代替render属性</h6>
+<p>注意：并不是该模式叫render props就必须使用名为render的prop，实际上可以使用任意名称的prop</p>
+<p>把prop是一个函数并且告诉组件要渲染什么内容的技术叫做：render props模式</p>
+<p>推荐：使用children代替render属性</p>
+<h6 id="实现方案"><strong>实现方案：</strong></h6>
+<ol>
+<li>mouse组件中，将返回值的 this.props.render 改为 this.props.children</li>
+<li>调用Mouse组件时，将函数执行放在Mouse组件中</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span><span style="color:#75715e">//{子节点}
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">Mouse</span>&gt;
+</span></span><span style="display:flex;"><span>	{({<span style="color:#a6e22e">x</span>,<span style="color:#a6e22e">y</span>})=&gt;&lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">鼠标的位置是</span>{<span style="color:#a6e22e">x</span>},{<span style="color:#a6e22e">y</span>}&lt;/<span style="color:#f92672">p</span>&gt;}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">Mouse</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//组件内部
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">children</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>)
+</span></span></code></pre></div><p>children作为一个元素的一个子节点，组件包裹了一个子节点，拿组件内部的数据，比属性中的参数拿组件中的内容要更加直观</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ReactDOM</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react-dom&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// render props模式
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//1.创建mouse组件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Mouse</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//鼠标位置state
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#a6e22e">state</span><span style="color:#f92672">=</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">//鼠标移动事件处理程序 要拿要鼠标位置就要通过事件对象e来获取
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#a6e22e">handleMouseMove</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">e</span> =&gt;{
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">clientX</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">clientY</span>
+</span></span><span style="display:flex;"><span>      })
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">//监听鼠标的移动,componentDidMount这个钩子函数是创建时的钩子函数，它会在组件完成渲染之后来进行执行
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#a6e22e">componentDidMount</span>(){
+</span></span><span style="display:flex;"><span>      window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;mousemove&#39;</span>,<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleMouseMove</span>)
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">render</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">children</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>)
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">App</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">render</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">render</span> <span style="color:#a6e22e">props模式</span>&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">Mouse</span>&gt;
+</span></span><span style="display:flex;"><span>            {<span style="color:#a6e22e">mouse</span>=&gt;{
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>                	&lt;<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>                    	<span style="color:#a6e22e">鼠标位置</span><span style="color:#960050;background-color:#1e0010">：</span>{<span style="color:#a6e22e">mouse</span>.<span style="color:#a6e22e">y</span>},{<span style="color:#a6e22e">mouse</span>.<span style="color:#a6e22e">x</span>}
+</span></span><span style="display:flex;"><span>                    &lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>                )
+</span></span><span style="display:flex;"><span>            }}
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">Mouse</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">render</span>(&lt;<span style="color:#f92672">App</span> /&gt;, document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;root&#39;</span>));
+</span></span></code></pre></div><h6 id="联想context中的用法">联想Context中的用法</h6>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span><span style="color:#75715e">//Context中的用法
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">Consumer</span>&gt;
+</span></span><span style="display:flex;"><span>    {<span style="color:#75715e">/*render props模式，并且使用的是children的方式*/</span>}
+</span></span><span style="display:flex;"><span>	{<span style="color:#a6e22e">data</span>=&gt;&lt;<span style="color:#f92672">span</span>&gt;<span style="color:#a6e22e">data参数表示接收到的数据</span><span style="color:#f92672">--</span>{<span style="color:#a6e22e">data</span>}&lt;/<span style="color:#f92672">span</span>&gt;}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">Consumer</span>&gt;
+</span></span></code></pre></div><h6 id="代码优化">代码优化</h6>
+<ol>
+<li>
+<p>推荐:给render props模式添加props校验</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span><span style="color:#75715e">//导入propTypes
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">PropTypes</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;prop-types&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Mouse</span>.<span style="color:#a6e22e">propTypes</span><span style="color:#f92672">=</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">children</span><span style="color:#f92672">:</span><span style="color:#a6e22e">PropTypes</span>.<span style="color:#a6e22e">func</span>.<span style="color:#a6e22e">isRequired</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//children实行校验：是函数，且是必填项
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div></li>
+<li>
+<p>应该在组件卸载时解除mousemove事件绑定(不是react自身的方式)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span><span style="color:#a6e22e">componentWillUnmount</span>(){
+</span></span><span style="display:flex;"><span>    window.<span style="color:#a6e22e">removeEventListener</span>(<span style="color:#e6db74">&#39;mousemove&#39;</span>,<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleMousemove</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ol>
+<h4 id="三高阶组件">三、高阶组件</h4>
+<h5 id="31-概述">3.1 概述</h5>
+<ul>
+<li>
+<p>目的：实现状态逻辑复用</p>
+</li>
+<li>
+<p>采用包装（装饰）模式==&gt;手机壳</p>
+<p>比如  手机：获取保护功能  手机壳：提供保护功能</p>
+</li>
+<li>
+<p>高阶组件就相当于手机壳，通过包装组件，增强组件功能</p>
+</li>
+</ul>
+<h5 id="32-核心思想">3.2 <strong>核心思想：</strong></h5>
+<p>父组件向子组件传值，父组件提供state，并在调用子组件时将state传递给子组件；子组件使用props接收state的值，进行页面渲染</p>
+<h5 id="33-思路分析">3.3 思路分析</h5>
+<ol>
+<li>
+<p>高阶组件（HOC,Higher-Order Component）是一个函数，接收要包装的组件，返回增强后的组件</p>
+</li>
+<li>
+<p>高阶组件内部创建一个类组件，在这个类组件中提供复用的状态逻辑代码，（自身不提供UI结构，UI结构还是由传入的WrappedComponent进行提供），通过prop将复用的状态传递给被包装的组件WrappedComponent</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">EnhancedComponent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">withHOC</span>(<span style="color:#a6e22e">WrappedComponent</span>)
+</span></span></code></pre></div><p><img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202409241959750.png" alt="image-20240924195942541"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span><span style="color:#75715e">//高阶组件内部创建的类组件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Mouse</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">render</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">WrappedComponent</span> {<span style="color:#a6e22e">...this.state</span>} /&gt;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="34-使用步骤">3.4 使用步骤</h5>
+<ol>
+<li>
+<p>创建一个函数，名称约定以with开头</p>
+</li>
+<li>
+<p>指定函数参数，参数应该以大写字母开头（实际上是组件名称）（作为要渲染的组件 组件必须以大写字母开头）</p>
+</li>
+<li>
+<p>在函数内部创建一个类组件，<!-- raw HTML omitted -->提供复用的状态逻辑代码<!-- raw HTML omitted -->，并返回</p>
+<p><img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202409252135766.png" alt="image-20240925213540672"></p>
+</li>
+<li>
+<p>在该组件中，渲染参数组件，同时将状态通过prop传递给参数组件（定义子组件，子组件使用 props 接收父组件的state，并进行渲染）</p>
+<p><img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202409252136908.png" alt="image-20240925213628849"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">withMouse</span>(<span style="color:#a6e22e">WrappedComponent</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Mouse</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Mouse</span>  <span style="color:#75715e">//作为当前高阶组件的返回值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span><span style="color:#75715e">//Mouse组件的render方法中：
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">WrappedComponent</span> {<span style="color:#a6e22e">...this</span><span style="color:#960050;background-color:#1e0010">,</span><span style="color:#a6e22e">state</span>} /&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//将参数名称作为组件，把Mouse组件的状态作为属性传递给当前组件，因此这个组件中就能获得Mouse组件中的共享出来的状态了（要复用的状态）
+</span></span></span></code></pre></div></li>
+<li>
+<p>调用该高阶组件，传入要增强的组件，通过返回值拿到增强后的组件，并将其渲染到页面中</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span><span style="color:#75715e">//创建组件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">MousePosition</span> <span style="color:#f92672">=</span><span style="color:#a6e22e">withMouse</span>(<span style="color:#a6e22e">Position</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//渲染组件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">MousePosition</span>  /&gt;
+</span></span></code></pre></div></li>
+</ol>
+<h5 id="代码实现">代码实现：</h5>
+<p>第一步：创建增强组件函数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span><span style="color:#75715e">// 创建一个以 with 开头的函数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">withMouse</span> (<span style="color:#a6e22e">WarppedComponent</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Mouse</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">handleMouseMove</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">e</span> =&gt; {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">clientX</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">clientY</span>
+</span></span><span style="display:flex;"><span>          })
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">componentDidMount</span> () {
+</span></span><span style="display:flex;"><span>          window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;mousemove&#39;</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleMouseMove</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#75715e">// render 方法中渲染子组件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    	<span style="color:#a6e22e">render</span> () {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">WarppedComponent</span> {<span style="color:#a6e22e">...this.state</span>}&gt;&lt;/<span style="color:#f92672">WarppedComponent</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Mouse</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>第二步：定义子组件，子组件使用 props 接收父组件的state，并进行渲染</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Position</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">render</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// 使用 props 接收父组件传过来的 state，再进行调用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      &lt;<span style="color:#f92672">div</span>&gt;<span style="color:#a6e22e">鼠标位置</span><span style="color:#f92672">:</span> {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">x</span>} <span style="color:#f92672">-</span> {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">y</span>}&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PositionMouse</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">withMouse</span>(<span style="color:#a6e22e">Position</span>)
+</span></span></code></pre></div><p>第三步：在 App 组件中调用增强组件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">App</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">PureComponent</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">render</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">PositionMouse</span> /&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>完整代码实现：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ReactDOM</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react-dom&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 创建高阶组件  参数：要被渲染的组件  该组件提供复用的状态逻辑
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">withMouse</span>(<span style="color:#a6e22e">WrappedComponent</span>){
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Mouse</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 提供复用的状态逻辑
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">//鼠标状态
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span>{
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//事件处理程序的函数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">handleMouseMove</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">e</span> =&gt;{
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">clientX</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">clientY</span>
+</span></span><span style="display:flex;"><span>      })
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//控制鼠标状态的逻辑
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">componentDidMount</span>(){
+</span></span><span style="display:flex;"><span>      window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;mousemove&#39;</span>,<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleMouseMove</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//解绑事件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">componentWillUnmount</span>(){
+</span></span><span style="display:flex;"><span>      window.<span style="color:#a6e22e">removeEventListener</span>(<span style="color:#e6db74">&#39;mousemove&#39;</span>,<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleMouseMove</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//要渲染的UI结构是通过参数来制定的，在render方法中渲染组件,这个组件通过展开将状态作为prop传递给当前组件，将来这个组件就可以通过props来接收到当前组件中共享出来（复用）的状态
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">render</span>(){
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">WrappedComponent</span> {<span style="color:#a6e22e">...this.state</span>}&gt;&lt;/<span style="color:#f92672">WrappedComponent</span>&gt;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Mouse</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//用来测试高阶组件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Position</span><span style="color:#f92672">=</span><span style="color:#a6e22e">props</span>=&gt;(
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">当前鼠标的位置</span><span style="color:#f92672">:</span>(<span style="color:#a6e22e">x</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">x</span>},<span style="color:#a6e22e">y</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">y</span>})
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//获取增强后的组件 将高阶组件Position作为参数传进来，这里的Position是实参，将会替换掉WrappedComponent这个形参
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">MousePosition</span> <span style="color:#f92672">=</span><span style="color:#a6e22e">withMouse</span>(<span style="color:#a6e22e">Position</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">App</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">render</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">高阶组件</span>&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>        {<span style="color:#75715e">/* 渲染增强后的组件 */</span>}
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">MousePosition</span>&gt;&lt;/<span style="color:#f92672">MousePosition</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">render</span>(&lt;<span style="color:#f92672">App</span> /&gt;, document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;root&#39;</span>));
+</span></span></code></pre></div><h5 id="35-设置displayname">3.5 设置displayName</h5>
+<ul>
+<li>
+<p>使用高阶组件存在的问题：同一个高阶组件使用两次时，在页面中会展示出两个相同的组件名，这样会造成调试不便的情况</p>
+</li>
+<li>
+<p>原因：默认情况下，react使用组件名称作为displayName</p>
+</li>
+<li>
+<p>解决方式:为高阶组件设置displayName便于调试时区分不同的组件</p>
+</li>
+<li>
+<p>displayName的作用：用于设置调试信息（React Developer Tools信息）</p>
+</li>
+<li>
+<p>设置方式：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span><span style="color:#75715e">//Mouse即为高阶组件中返回的组件的名字
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">Mouse</span> <span style="color:#a6e22e">displayName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`WithMouse</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">getDisplayName</span>(<span style="color:#a6e22e">WrappedComponent</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span><span style="color:#75715e">//字符串名称
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">funtion</span> <span style="color:#a6e22e">getDisplayName</span>(<span style="color:#a6e22e">WrappedComponent</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">WrappedComponent</span>.<span style="color:#a6e22e">displayName</span><span style="color:#f92672">||</span><span style="color:#a6e22e">WrappedComponent</span>.<span style="color:#a6e22e">name</span><span style="color:#f92672">||</span><span style="color:#e6db74">&#39;Component&#39;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>WrappedComponent.name：表示当前组件的名称</p>
+</li>
+</ul>
+<h5 id="36-传递props">3.6 传递props</h5>
+<p>Ⅰ、问题：造成props丢失</p>
+<p>Ⅱ、原因：高阶组件没有往下传递props</p>
+<blockquote>
+<p>（具体）</p>
+<p>a=&lsquo;1&rsquo;的属性添加给了MousePosition=&gt;而MousePosition其实是withMouse高阶组件的返回值=&gt;高阶组件的返回值其实是高阶组件中的Mouse=&gt;Mouse组件并没有把属性传递给下一步被包装的组件</p>
+<p><img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202409251906339.png" alt="image-20240925190606182"></p></blockquote>
+<p>Ⅲ、解决方式：渲染WrappedComponent时，将state和this.props一起传递给组件</p>
+<p>Ⅳ、传递方式：既去展开state，也去展开props，传递给WrappedComponent</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span>&lt;<span style="color:#f92672">WrappedComponent</span> {<span style="color:#a6e22e">...state</span>} {<span style="color:#a6e22e">...props</span>} /&gt;
+</span></span></code></pre></div><p><img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202409251909359.png" alt="image-20240925190951287"></p>
+
+        </div>
+        
+        <div class="share m-2 grid grid-cols-2 lg:grid-cols-3 gap-2">
+            <a href="https://twitter.com/intent/tweet?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fzlz%2f&text=%e7%bb%84%e4%bb%b6%e5%a4%8d%e7%94%a8render%20props%e5%92%8c%e9%ab%98%e9%98%b6%e7%bb%84%e4%bb%b6" target="_blank"
+                title="Post" class="share-button x">
+                <div class="text-white text-center">
+                    <span class="icon-x text-lg mr-2"></span>X
+                </div>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fblog%2fzlz%2f&t=%e7%bb%84%e4%bb%b6%e5%a4%8d%e7%94%a8render%20props%e5%92%8c%e9%ab%98%e9%98%b6%e7%bb%84%e4%bb%b6" target="_blank"
+                title="Facebook" class="share-button facebook">
+                <div class="text-white text-center">
+                    <span class="icon-facebook text-lg mr-2"></span>Facebook
+                </div>
+            </a>
+            <a href="https://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2flocalhost%3a1313%2fblog%2fzlz%2f&title=%e7%bb%84%e4%bb%b6%e5%a4%8d%e7%94%a8render%20props%e5%92%8c%e9%ab%98%e9%98%b6%e7%bb%84%e4%bb%b6" target="_blank"
+                title="hatena" class="share-button hatena">
+                <div class="text-white text-center">
+                    <span class="icon-hatenabookmark text-lg mr-2"></span>Hatena
+                </div>
+            </a>
+            <a href="https://getpocket.com/edit?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fzlz%2f&title=%e7%bb%84%e4%bb%b6%e5%a4%8d%e7%94%a8render%20props%e5%92%8c%e9%ab%98%e9%98%b6%e7%bb%84%e4%bb%b6" target="_blank" title="pocket"
+                class="share-button pocket">
+                <div class="text-white text-center">
+                    <span class="icon-get-pocket text-lg mr-2"></span>Pocket
+                </div>
+            </a>
+            <a href="https://timeline.line.me/social-plugin/share?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fzlz%2f" class="share-button line">
+                <div class="text-white text-center">
+                    <span class="icon-line text-lg mr-2"></span>LINE
+                </div>
+            </a>
+            <a href="javascript:OnClickURL();" class="share-button url" title="Copy to Clipboard"
+                data-clipboard-text="组件复用render props和高阶组件 http://localhost:1313/blog/zlz/" id="url">
+                <div class="text-white text-center">
+                    <span class="icon-link text-lg mr-2"></span>Copy
+                </div>
+            </a>
+        </div>
+        <hr class="py-4">
+        <aside id="meta">
+            <div class="grid grid-cols-2">
+                <div class="col-span-1">
+                    
+                    <a class="previous lg:text-2xl" href="http://localhost:1313/blog/zlz3/">
+                        <div
+                            class="transition-colors duration-300 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                            <span class="icon-keyboard_arrow_left"></span> 组件复用render…
+                        </div>
+                    </a>
+                    
+                </div>
+                
+                <a class="next lg:text-2xl" href="http://localhost:1313/blog/zgs/">
+                    <div
+                        class="transition-colors duration-300 col-span-1 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                        Java基础知识 <span class="icon-keyboard_arrow_right"></span>
+                    </div>
+                </a>
+                
+            </div>
+        </aside>
+    </div>
+</div>
+
+  </main><footer class="bg-tlgray-100">
+  
+  <script src='/js/clipboard.min.js'></script>
+  <script src='/js/highlight.min.js'></script>
+  <script src='/js/highlightjs-line-numbers.min.js'></script>
+  <script src='/js/sweetalert2.min.js'></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+    new ClipboardJS('.url');
+
+    function OnClickURL() {
+      Swal.fire({
+        icon: 'success',
+        title: 'Copied!',
+        text: 'Copied the URL and title.'
+      })
+    }
+  </script>
+  
+  <script>
+    function toggleNav() {
+      var hamburger = document.getElementById("hamburgerbtn");
+      var overlay = document.getElementById("overlay");
+      var body = document.body;
+
+      hamburger.addEventListener("click", function () {
+        overlay.classList.toggle("open");
+        hamburger.classList.toggle("is-open");
+        body.classList.toggle("scroll-lock");
+      });
+    }
+    toggleNav();
+
+    document.querySelector('.scroll-top').addEventListener('click', () => {
+      document.documentElement.scrollTop = 0;
+    });
+  </script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet" />
+  
+  <div class="flex items-center justify-between flex-wrap bg-gray-800 p-8 text-white">
+    <div class="items-center text-xl text-grey-900 mr-6 flex flex-row">
+      <img alt="Bluemsun Studio" class="h-14 mr-8" src="/img/logo/logo.jpg">
+      <div>
+          <h1 class="px-2 text-3xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-5xl lg:text-6xl xl:text-8xl">蓝旭工作室</h1> 
+          <h2 class="px-2 text-xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-3xl lg:text-4xl xl:text-6xl">Bluemsun Studio</h2>
+      </div>
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+      <div class="text-lg lg:flex-grow">
+      </div>
+      <div class="flex flex-row items-center text-lg">
+        
+        <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          返回主页
+          
+        </a>
+        
+        <a href="https://github.com/BluemsunOffice" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          <i class='icon-github text-2xl'></i>
+          
+        </a>
+        
+      </div>
+    </div>
+  </div>
+  <div class="copy pl-8 py-5 bg-tlgray-700 text-white text-md w-full text-center">
+    &copy; Hello! Bluemsun 2025 All Rights Reserved.
+  </div>
+</footer>
+</body>
+
+</html>

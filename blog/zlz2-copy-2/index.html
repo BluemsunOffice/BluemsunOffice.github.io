@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=54190&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<title>Hello! Bluemsun | JavaScript基础222</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.jpg'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.jpg'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.jpg'>
+<link rel="manifest" href='/site.webmanifest'>
+
+<link href='/css/fa6.min.css' rel="stylesheet" type="text/css">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<link href='/css/style.min.css' rel="stylesheet" type="text/css">
+<link rel="stylesheet" href='/css/custom.css'>
+
+<meta property="og:title" content="Hello! Bluemsun | JavaScript基础222" />
+
+
+
+
+<meta name="description" content="JavaScript是一种为网站添加互动以及自定义行为的客户端脚本语言">
+<meta property="og:title" content=" | " />
+<meta property="og:site_name" content="Hello! Bluemsun">
+<meta property="og:description" content="JavaScript是一种为网站添加互动以及自定义行为的客户端脚本语言">
+<meta property="og:url" content="http://localhost:54190/blog/zlz2-copy-2/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@tech_chiba">
+
+<link rel="canonical" href="http://localhost:54190/blog/zlz2-copy-2/">
+
+<meta name="twitter:description" content="JavaScript是一种为网站添加互动以及自定义行为的客户端脚本语言">
+<meta property="article:published_time" content="2024-05-26T13:02:51&#43;08:00">
+<meta property="article:updated_time" content="2024-05-26T13:02:51&#43;08:00">
+
+
+
+
+
+    
+<meta property="og:image" content="https://img.dodolalorc.cn/i/2025/02/16/67b17bacd70e1.jpg">
+    
+
+
+<meta name="twitter:title" content="JavaScript基础222">
+<link rel="preload" href='/css/sweetalert2.min.css' as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <main class="flex-grow"><header>
+    <div id="overlay">
+        <ul class="text-center list-none text-white text-3xl">
+            
+            <li class="p-2">
+                <a href="/products/">
+                    <span>项目介绍</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/blog/">
+                    <span>往期博客</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/about/">
+                    <span>关于蓝旭</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/contact/">
+                    <span>加入我们</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <nav class="flex items-center justify-between flex-wrap bg-opacity-80 p-8">
+        <div class="flex items-center flex-shrink-0 text-xl text-grey-900 mr-6 flex-row">
+            <a href="http://localhost:54190/" class="flex items-center flex-shrink-0 text-black mr-6">
+                <img alt="Bluemsun Studio"
+                    class="h-14" src="/img/logo/logo.jpg">
+                <div>
+                    <h1 class="px-2 text-4xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-5xl lg:text-6xl xl:text-8xl">蓝旭工作室</h1> 
+                    <h2 class="px-2 text-xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-3xl lg:text-4xl xl:text-6xl">Bluemsun Studio</h2>
+                </div>
+            </a>
+        </div>
+        <div class="block lg:hidden">
+            <div id="hamburgerbtn" class="flex cursor-pointer items-center w-14 h-10 py-2 rounded mopen">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
+        </div>
+        <div class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+            <div class="text-lg lg:flex-grow">
+            </div>
+            <div class="text-xl">
+                
+                <a href="/products/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8  px-2 py-1 rounded">
+                    项目介绍
+                </a>
+                
+                <a href="/blog/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8  px-2 py-1 rounded">
+                    往期博客
+                </a>
+                
+                <a href="/about/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8  px-2 py-1 rounded">
+                    关于蓝旭
+                </a>
+                
+                <a href="/contact/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8  px-2 py-1 rounded">
+                    加入我们
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+</header><div class="scroll-top rounded-full">
+      <span class="icon-keyboard_arrow_up text-2xl"></span>
+    </div>
+<div class="mx-auto my-10 max-w-6xl">
+    <div class="mx-3 col-span-3 lg:col-span-2 px-2 bg-white my-10">
+        <h1 class="title text-5xl font-bold mt-10 h-fit">
+            <i class="fa-solid fa-heading"></i>
+            JavaScript基础222
+        </h1>
+        <section class="mb-4 text-lg flex flex-row items-center">
+            <h4 id="date" class="flex flex-row items-center p-3">
+                
+                <i class="fa-regular fa-clock mr-2" style="color: #74C0FC;"></i>
+                2024/05/26 
+            </h4>
+            
+            <h4 class="flex flex-row items-center p-3">
+                
+                <i class="fa-solid fa-pen-nib mr-2" style="color: #FFD43B;"></i>
+                张俪之
+            </h4>
+            
+            
+            <div id="categories" class="flex flex-row items-center p-3">
+                
+                <i class="fa-regular fa-folder-open mr-2" style="color: #63E6BE;"></i>
+                
+                <span
+                    class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a
+                        href='http://localhost:54190/categories/%E5%89%8D%E7%AB%AF'>前端</a></span>
+                
+            </div>
+            
+        </section>
+        
+        <div class="m-2 featured-image">
+            <img class="my-4"  sizes="auto" height="auto" width="auto" src="https://img.dodolalorc.cn/i/2025/02/16/67b17bacd70e1.jpg">
+        </div>
+        
+        <div class="content prose md:prose-lg lg:prose-xl max-w-none bg-white p-8 border-black" style="border:dashed 1px #FF4365">
+            <h1 id="javascript基础">JavaScript基础</h1>
+<h1 id="一javascript">一、JavaScript</h1>
+<h3 id="什么是javascript">什么是JavaScript？</h3>
+<p><!-- raw HTML omitted -->是一种运行在客户端（浏览器）的编程语言，实现人机交互效果。<!-- raw HTML omitted --></p>
+<p>JavaScript是一种为网站添加互动以及自定义行为的客户端脚本语言， 有浏览器一边解释一边执行，可以跨平台、跨浏览器驱动网页，与用户交互。通常只能通过Web浏览器去完成操作， 而无法像普通意义上的程序那样独立运行。
+JavaScript是一种轻量级、解释型的 Web 开发语言，该语言系统不是很庞杂，简单易学。由于所有现代浏览器都己嵌入了JavaScript引擎、JavaScript 源代码可以在浏览器中直接被解释执行，用户不用担心支持问题。</p>
+<h3 id="作用做什么">作用（做什么）</h3>
+<ul>
+<li>网页特效（监听用户的一些行为让网页做出对应的反馈）</li>
+<li>表单验证（针对表单数据的合法性进行判断）</li>
+<li>数据交互（获取后台的数据，渲染到前端）</li>
+<li>服务端编程（node.js）</li>
+</ul>
+<h3 id="javascript由三部分组成有什么">JavaScript由三部分组成(有什么)：</h3>
+<ul>
+<li>ECMAScript:描述了JavaScript的基本语法规则，包括数据类型、变量、运算符、分支语句等</li>
+<li>Web APIs:
+<ul>
+<li>BOM：浏览器对象模型，通过BOM可以操作浏览器窗口,比如页面弹窗、检测窗口宽度、存储数据到浏览器等</li>
+<li>DOM：文档对象模型，通过BOM可以操作HTML文档类型、样式或者内容，比如对页面元素进行移动，大小，添加。删除等操作</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202404241701656.png" alt="image-20240424170145581"></p>
+<p>第一个JavaScript程序：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#f92672">&lt;!</span><span style="color:#a6e22e">DOCTYPE</span> <span style="color:#a6e22e">html</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">head</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">title</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">index</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/title&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/head&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">body</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;show()&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">显示</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">show</span>(){
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;hello world&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/body&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/html&gt;</span>
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p><img src="https://img-blog.csdnimg.cn/direct/e6ecc59b33f04536a81da019d4dd1d79.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>JS注意几点：</p>
+<ol>
+<li>区分大小写</li>
+<li>语句 在JavaScript中，语句结束的分号不做强制要求，但按照程序规范，建议每一条语句都已分号结束</li>
+<li>字面量 在JavaScript中，一个固定值被称为字面量，例如：“Hello World”</li>
+<li>注释 单行注释以//开始，多行注释的形式为/<em>……</em>/</li>
+</ol>
+<h3 id="javascript添加方式">JavaScript添加方式</h3>
+<p>①行内方式</p>
+<p>以行内方式添加时，JavaScript会被添加到元素的事件相关属性中</p>
+<blockquote>
+<!-- raw HTML omitted --></blockquote>
+<p>②内嵌方式</p>
+<p>可以通过script标签添加到HTML的<!-- raw HTML omitted -->和<!-- raw HTML omitted -->部分</p>
+<!-- raw HTML omitted -->
+<p><img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202404241707764.png" alt="image-20240424170751696"></p>
+<blockquote>
+<!-- raw HTML omitted -->
+<p>……</p>
+<p>​    <!-- raw HTML omitted --></p>
+<p>​        alert(&lsquo;Hello World!&rsquo;);</p>
+<p>​    <!-- raw HTML omitted --></p>
+<!-- raw HTML omitted --></blockquote>
+<p>③外部方式</p>
+<p>可以通过script标签引入.js文件，这种方式分离了HTML和JavaScript，使代码更容易维护和阅读，而且已缓存的JavaScript文件可以加速页面加载</p>
+<ol>
+<li>script标签中间无需写代码，否则会被忽略</li>
+<li>外部JavaScript会使代码更加有序，更易于复用，且没有了脚本的混合，HTML也会更加易读</li>
+</ol>
+<blockquote>
+<p>单独创建sayhello.js</p>
+<p>​    alert（&lsquo;Hello World!&rsquo;）;</p>
+<p>在HTML中引入该文件</p>
+<p>​    <!-- raw HTML omitted --><!-- raw HTML omitted --></p></blockquote>
+<h4 id="注释">注释</h4>
+<!-- raw HTML omitted -->
+<h4 id="结束符">结束符</h4>
+<p><img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202404241713053.png" alt="image-20240424171335994"></p>
+<h1 id="二基本语法">二、基本语法</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span><span style="color:#a6e22e">JavaScript严格区分大小写</span><span style="color:#f92672">--&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//1.定义变量  变量类型  变量名=变量值；
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">num</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;qinjiang&#34;</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">//alert(num);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#75715e">//2.条件控制
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span>(<span style="color:#ae81ff">2</span><span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;true&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span><span style="color:#a6e22e">JavaScript严格区分大小写</span><span style="color:#f92672">--&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//1.定义变量  变量类型  变量名=变量值；
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">num</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">//alert(num);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#75715e">//2.条件控制
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">score</span><span style="color:#f92672">&gt;</span><span style="color:#ae81ff">60</span><span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">score</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">70</span>){
+</span></span><span style="display:flex;"><span>       <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;60-70&#34;</span>)
+</span></span><span style="display:flex;"><span>       }<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">score</span><span style="color:#f92672">&gt;</span><span style="color:#ae81ff">70</span><span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">score</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">80</span>){
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;70-80&#34;</span>)
+</span></span><span style="display:flex;"><span>         }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span>             <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;other&#34;</span>)
+</span></span><span style="display:flex;"><span>         }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//console.log(score)在浏览器的控制台打印变量；System.out.println()；
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h3 id="输入输出语法"><strong>Ⅰ、输入输出语法：</strong></h3>
+<p>可以理解为人和计算机的交互，用户通过键盘、鼠标等向计算机输入信息，计算机处理后再展示结果给用户</p>
+<h4 id="1-数据输出">（1） 数据输出</h4>
+<p>1、警告框输出</p>
+<p>可以使用windows.alert()将输出内容写入警告框提示文本部分</p>
+<blockquote>
+<p>alert(&lsquo;要输出的内容&rsquo;)</p>
+<p>作用：页面弹出警告对话框</p></blockquote>
+<p>2、HTML文档输出</p>
+<p>可以使用document.write()将结果写入HTML文档</p>
+<blockquote>
+<p>document.write(&lsquo;要输出的内容&rsquo;)</p>
+<p>作用：向body内输出内容</p>
+<p>注意：如果输出的内容是标签，也会被解析成网页元素</p></blockquote>
+<p>注：在HTML文档完全加载后使用此方法，会覆盖已有的文档内容</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;index&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">h1</span>&gt;say hello to world&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;show()&#34;</span>&gt;显示&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">show</span>(){
+</span></span><span style="display:flex;"><span>           document.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#34;hello world&#34;</span>);
+</span></span><span style="display:flex;"><span>        }&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p><!-- raw HTML omitted --><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p><!-- raw HTML omitted --><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>3、HTML元素内容输出</p>
+<p>可以使用innerHTML属性将结果写入HTML元素</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;index&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">h1</span>&gt;say hello to world&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;show&#34;</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>        document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;show&#34;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hello world&#34;</span>;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p><!-- raw HTML omitted --><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>4、控制台输出</p>
+<p>可以使用console.log()结果写入浏览器控制台，这种后台输出的方式不会影响页面显示，可用于调试代码</p>
+<blockquote>
+<p>console.log(&lsquo;控制台打印&rsquo;)</p>
+<p>作用：控制台输出语法，程序员调试使用</p></blockquote>
+<h5 id="2数据输入">（2）数据输入</h5>
+<blockquote>
+<p>prompt(&lsquo;请输入你的姓名：&rsquo;)</p>
+<p>作用：显示一个对话框，对话框中包含一条文字信息，用来提示用户输入文字</p></blockquote>
+<p><!-- raw HTML omitted -->JavaScript代码执行顺序：<!-- raw HTML omitted --></p>
+<ul>
+<li>按HTML文档流顺序执行JavaScript代码</li>
+<li>alert()和prompt()他们会跳过页面渲染先被执行</li>
+</ul>
+<h3 id="-数据类型">Ⅱ 数据类型</h3>
+<p>基本数据类型分为两大类</p>
+<h3 id="image-20240424182025051"><img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202404241820242.png" alt="image-20240424182025051"></h3>
+<p>①数字型Number</p>
+<p>可以是整数、小数、正数、负数</p>
+<p><img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202404241824096.png" alt="image-20240424182403954"></p>
+<p>优先级</p>
+<!-- raw HTML omitted -->
+<p>NaN代表一个计算错误，他是一个不正确的或者一个未定义的数学学操作所得到的结果</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>console.log(&#39;lao&#39;shi&#39;-2)  //控制台会返回NaN
+</span></span></code></pre></div><p>NaN是粘性的，任何对NaN的操作都会返回NaN</p>
+<pre tabindex="0"><code>console.log(NaN+2)
+</code></pre><p>②字符串型String</p>
+<p>通过单引号、双引号或反引号包裹的数据都叫字符串【单引号和双引号没有本质上没有区别】</p>
+<p>注意：</p>
+<ol>
+<li>无论单引号或是双引号必须成对使用</li>
+<li>单引号/双引号可以相互嵌套，但是不以自己嵌套</li>
+<li>必要时可以使用转义字符\，输出单引号或双引号</li>
+</ol>
+<p>字符串拼接：+运算符</p>
+<p>*<strong>模板字符串</strong></p>
+<p>语法：</p>
+<ul>
+<li>必须用反引号``</li>
+<li>内容拼接变量时，用${}包住变量</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">age</span><span style="color:#f92672">=</span><span style="color:#ae81ff">18</span>
+</span></span><span style="display:flex;"><span>  document.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">`我今年</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">age</span><span style="color:#e6db74">}</span><span style="color:#e6db74">岁了`</span>)
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>③布尔型Boolean：true和false</p>
+<p>④未定义型undefined：变量声明后未赋值，则默认为undefined</p>
+<p><strong>什么情况下会出现这种类型？</strong></p>
+<p>只声明变量，不赋值的情况下，变量的默认值为undefined，一般很少直接为某个变量赋值为undefined</p>
+<p>⑤空值null：可以用于将变量置空等操作</p>
+<p>*<em><!-- raw HTML omitted --><em>null和undefined区别<!-- raw HTML omitted --></em></em></p>
+<ul>
+<li>undefined表示没有赋值</li>
+<li>null表示赋值了，但是内容为空</li>
+</ul>
+<p>⑥数组Array:本质是对象，用于定义一组数据集合，每个数据都被成为数组元素</p>
+<p>⑦对象object：任何事物都可以看作对象，对象是属性与方法的集合，即数据与数据的操作集合</p>
+<p><strong>通过typeof关键字检测数据类型</strong></p>
+<p>支持两中语法形式</p>
+<ul>
+<li>作为运算符：typeof x(常用的写法)</li>
+<li>函数形式：typeof(x)</li>
+</ul>
+<p><strong>类型转换</strong></p>
+<p>*①隐式转换</p>
+<!-- raw HTML omitted -->
+<p>*②显示转换</p>
+<p><img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202404242222841.png" alt="image-20240424222215616"></p>
+<pre tabindex="0"><code>console.log(Number(&#39;pink&#39;))  //转换为数字型
+</code></pre><h3 id="-常量和变量">Ⅲ 常量和变量</h3>
+<h5 id="一常量">（一）常量</h5>
+<p>1、常量：
+<!-- raw HTML omitted --></p>
+<h5 id="二变量">（二）变量</h5>
+<p>1.变量就是一个装东西的盒子。变量是计算机用来存储数据的“容器”。它可以让计算机变得有记忆</p>
+<p>注意：变量不是数据本身，作用是用来存放数据的</p>
+<p>**内存：**计算机中存储数据的地方，相当于一个空间</p>
+<p><strong>变量的本质</strong>：是程序在内存中申请的一块用来存放数据的小空间</p>
+<p><img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202404241803887.png" alt="image-20240424180320740"></p>
+<p>2、声明变量：</p>
+<!-- raw HTML omitted -->
+<p>3.变量的赋值</p>
+<p>在变量名后面加=，然后是数值</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//声明一个年龄变量
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">age</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//赋值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">age</span><span style="color:#f92672">=</span><span style="color:#ae81ff">18</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//输出
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">age</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//声明的同时直接赋值，变量的初始化 let age=18
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>4.更新变量</p>
+<p>变量赋值以后，可以通过简单地给它一个不同的值来更新它</p>
+<p>let不允许多次声明一个变量</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">age</span><span style="color:#f92672">=</span><span style="color:#ae81ff">18</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">age</span><span style="color:#f92672">=</span><span style="color:#ae81ff">19</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">age</span>)
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>5.声明多个变量</p>
+<p>多个变量中间用逗号隔开</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>let age=18,uname = &#39;pink&#39;//为了更好的可读性，一行只声明一个变量
+</span></span></code></pre></div><p><img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202404241807344.png" alt="image-20240424180715247"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!doctype html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">title</span>&gt;&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">uname</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">prompt</span>(<span style="color:#e6db74">&#39;请输入姓名&#39;</span>)
+</span></span><span style="display:flex;"><span>        document.<span style="color:#a6e22e">write</span>(<span style="color:#a6e22e">uname</span>)
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h3 id="-运算符">Ⅳ 运算符</h3>
+<p>1.算术运算符</p>
+<table>
+  <thead>
+      <tr>
+          <th>运算符</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>+</td>
+          <td>加</td>
+      </tr>
+      <tr>
+          <td>-</td>
+          <td>减</td>
+      </tr>
+      <tr>
+          <td>*</td>
+          <td>乘</td>
+      </tr>
+      <tr>
+          <td>/</td>
+          <td>除</td>
+      </tr>
+      <tr>
+          <td>**</td>
+          <td>幂</td>
+      </tr>
+      <tr>
+          <td>%</td>
+          <td>求余</td>
+      </tr>
+      <tr>
+          <td>++</td>
+          <td>递增</td>
+      </tr>
+      <tr>
+          <td>&ndash;</td>
+          <td>递减</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong><!-- raw HTML omitted -->一元运算符：<!-- raw HTML omitted --></strong></p>
+<ul>
+<li>
+<p>自增：</p>
+<ul>
+<li>
+<p>符号++</p>
+</li>
+<li>
+<p>作用：让变量值加1</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>前置自增：</p>
+<pre tabindex="0"><code>let num=1
+++num  
+</code></pre><p>后置自增：</p>
+<pre tabindex="0"><code>let num=1
+++num  
+</code></pre><p>每次执行一次，当前变量数值加1</p>
+<p>注意：前置自增和后置自增单独使用时没有区别</p>
+<p><em><strong>前置自增和后置自增如果参与运算就有区别：</strong></em></p>
+<p>前置自增：先自加</p>
+<pre tabindex="0"><code>let i=1
+console.log(++i + 2) //结果是4，i是2，i先自加1，之后再与后面的2相加
+</code></pre><p>后置自增：先运算，后自加</p>
+<pre tabindex="0"><code>let i=1
+console.log(i++ +1)//结果是2，此时i的结果是1
+</code></pre><ul>
+<li>自减：&ndash;</li>
+</ul>
+<p>2.赋值运算符和表达式（结果是true或false）</p>
+<p>用于对变量进行赋值，赋值运算符可以结合算术运算符形成复合的赋值运算</p>
+<p>3.关系运算符和表达式（结果是true或false）</p>
+<table>
+  <thead>
+      <tr>
+          <th>运算符</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&gt;</td>
+          <td>大于</td>
+      </tr>
+      <tr>
+          <td>&lt;</td>
+          <td>小于</td>
+      </tr>
+      <tr>
+          <td>&gt;=</td>
+          <td>大于或等于</td>
+      </tr>
+      <tr>
+          <td>&lt;=</td>
+          <td>小于或大于</td>
+      </tr>
+      <tr>
+          <td>==</td>
+          <td>等于</td>
+      </tr>
+      <tr>
+          <td>===</td>
+          <td>严格相等，值相等并且类型相同</td>
+      </tr>
+      <tr>
+          <td>!=</td>
+          <td>不等于</td>
+      </tr>
+      <tr>
+          <td>!==</td>
+          <td>严格不等，值不相等或者类型不相同</td>
+      </tr>
+  </tbody>
+</table>
+<p>注：</p>
+<pre tabindex="0"><code>console.log(NaN === NaN)  //返回false，NaN不等于任何，包括他自己
+</code></pre><!-- raw HTML omitted -->
+<p>4.逻辑运算符</p>
+<table>
+  <thead>
+      <tr>
+          <th>运算符</th>
+          <th>名称</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&amp;&amp;</td>
+          <td>与</td>
+          <td>A&amp;&amp;B,仅当A,B同时为true，结果为true，其余情况结果为false</td>
+      </tr>
+      <tr>
+          <td>||</td>
+          <td>或</td>
+          <td>A||B,仅当A,B同时为false，结果为false，其余情况为true</td>
+      </tr>
+      <tr>
+          <td>!</td>
+          <td>非</td>
+          <td>!A，当A为true，!A为false；当A为false，!A为true</td>
+      </tr>
+  </tbody>
+</table>
+<p>5.条件运算符和表达式</p>
+<p>条件？结果表达式1：结果表达式2</p>
+<p>当条件为true，表达式取值为结果1，否则为结果2</p>
+<h1 id="三选择语句">三、选择语句</h1>
+<p>三大流程控制语句：</p>
+<!-- raw HTML omitted -->
+<h3 id="一分支语句">（一）分支语句</h3>
+<ul>
+<li><input disabled="" type="checkbox"> if分支语句</li>
+<li><input checked="" disabled="" type="checkbox"> 三元运算符（见Ⅳ运算符5）</li>
+<li><input disabled="" type="checkbox"> switch语句</li>
+</ul>
+<h4 id="1if语句">1、if语句</h4>
+<p>①if格式（单分支）</p>
+<blockquote>
+<p>if（条件）{</p>
+<p>​    //条件成立执行这里</p>
+<p>}</p></blockquote>
+<p>②if…else格式</p>
+<blockquote>
+<p>if（条件表达式）{</p>
+<p>//条件成立执行这里</p>
+<p>}</p>
+<p>else{</p>
+<p>//条件不成立执行这里</p>
+<p>}</p></blockquote>
+<p>③if…else if格式</p>
+<blockquote>
+<p>例如：</p>
+<p>if (b &gt; 0)
+b = 0;
+else if(c &gt; 0){
+c = a;
+a = 6;
+}
+else if(d &gt; 0){
+d = a;
+b = a;
+}
+else
+b = c;</p></blockquote>
+<h4 id="2switch语句">2.switch语句</h4>
+<!-- raw HTML omitted -->
+<blockquote>
+<p>var age = prompt(&ldquo;请输入年龄：&rdquo;,&rsquo;&rsquo;)</p>
+<p>switch (age) {
+case 1:
+alert(&ldquo;一岁&rdquo;);
+break;
+case 2:
+alert(&ldquo;两岁&rdquo;);
+break;
+case 3:
+alert(&ldquo;三岁&rdquo;);
+break;
+default:
+alert(&ldquo;不知道&rdquo;);
+}</p></blockquote>
+<h4 id="3三元运算符">3.三元运算符</h4>
+<p><!-- raw HTML omitted -->一般用来取值<!-- raw HTML omitted --></p>
+<p>条件？结果表达式1：结果表达式2</p>
+<p>当条件为true，表达式取值为结果1，否则为结果2</p>
+<h4 id="断点调试">*断点调试</h4>
+<ul>
+<li>作用：学习是可以帮助更好的理解代码运行，更快的找到bug</li>
+<li>浏览器打开调试界面
+<ul>
+<li>按F12打开开发者工具</li>
+<li>点到sources一栏</li>
+<li>选择代码文件</li>
+</ul>
+</li>
+</ul>
+<h3 id="二循环语句">（二）循环语句</h3>
+<p>判断某个条件是否成立，决定是否反复执行程序中某个部分</p>
+<p>①while语句</p>
+<blockquote>
+<p>while（循环条件）</p>
+<p>{</p>
+<p>//循环体</p>
+<p>}</p></blockquote>
+<p>循环三要素：</p>
+<ol>
+<li>变量起始值</li>
+<li>终止条件（没有终止条件，循环会一直执行，造成死循环）</li>
+<li>变量变化量（用自增或者自减）</li>
+</ol>
+<p>②do…while语句</p>
+<blockquote>
+<p>do{</p>
+<p>//循环体</p>
+<p>}</p>
+<p>while(循环条件)；</p></blockquote>
+<p>③for语句</p>
+<blockquote>
+<p>for（循环变量初始化；循环条件；循环变量自增或自减）{</p>
+<p>//循环体</p>
+<p>}</p></blockquote>
+<p><img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202404251705848.png" alt="image-20240425170524653"></p>
+<h3 id="三跳转语句">（三）跳转语句</h3>
+<p>break：跳出本层循环，继续执行循环后面的语句，如有多层循环，只能跳出一层</p>
+<p>continue：跳出本次循环剩余代码，继续执行下一次循环</p>
+<h1 id="四数组">四、数组</h1>
+<p>一种将一组数据存储在单个变量名下的优雅方式</p>
+<h3 id="-javascript中创建数组的方式">Ⅰ JavaScript中创建数组的方式</h3>
+<p>声明数组，有序</p>
+<p>使用数组：数组名[索引号]  从0开始</p>
+<p>数组可以存储任何类型的数据</p>
+<h5 id="使用let"><strong>使用let:</strong></h5>
+<p><img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202404241809878.png" alt="image-20240424180911804"></p>
+<h5 id="使用var"><strong>使用var</strong></h5>
+<p>1.使用Array构造函数</p>
+<p>var color=new Array();</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>//var 数组名 = new Array();
+</span></span><span style="display:flex;"><span>var arr1 = new Array();			//创建一个新的空数组
+</span></span><span style="display:flex;"><span>var arr2 = new Array(5);			//创建一个长度为5的数组
+</span></span><span style="display:flex;"><span>var arr3 = new Array([5]);		//创建一个数组，长度为1，并且第一位是5
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>注意：括号里面参数可以有参数，若为一个数字，表示该数组的长度，如果为多个数字或者一个（多个）非数字表示的是传递数组中应该包含的值。</p>
+<p>2.使用数组字面量</p>
+<p>var color=[];</p>
+<p>3.数组的长度</p>
+<p>一为数组长度是指数组包含元素的个数，二维数组长度是指行的个数，数组长度可以用length属性获得</p>
+<p>数组长度=索引号+1</p>
+<blockquote>
+<p>let arr=[1,2,3]</p>
+<p>console.log(arr.length); //数组长度为3</p></blockquote>
+<p><img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202404241814952.png" alt="image-20240424181418845"></p>
+<h3 id="-数组的方法">Ⅱ 数组的方法</h3>
+<p>有数组原型方法，也有从object对象继承来的方法</p>
+<p><strong>1.join()</strong></p>
+<p>join(separator): 将数组的元素组起一个字符串，以separator为分隔符，省略的话则用默认用逗号为分隔符，该方法只接收一个参数：即分隔符。</p>
+<p><strong>2.push()和pop()</strong></p>
+<p>push(): 可以接收任意数量的参数，把它们逐个添加到数组末尾，并返回修改后数组的长度。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span>[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newArray</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">push</span>[<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">10</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>)
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>pop()：数组末尾移除最后一项，减少数组的 length 值，然后返回移除的项。</p>
+<p>注意：pop（）里面没有参数，及时有参数，也是删除最后一项。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">pop</span>())   <span style="color:#75715e">//返回5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>) <span style="color:#75715e">//输出[1,2,3,4]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><strong>3、shift() 和 unshift()</strong></p>
+<p>shift()：删除原数组第一项，并返回删除元素的值；如果数组为空则返回undefined 。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">shift</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>)
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>unshift:将参数添加到原数组开头，并返回数组的长度 。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">unshift</span>(<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>) 
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>这组方法和上面的push()和pop()方法正好对应，一个是操作数组的开头，一个是操作数组的结尾。</p>
+<p><strong>4.isArray()</strong></p>
+<p>这个方法用来判断一个对象是不是数组，是的话返回true，否则返回false</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#a6e22e">array</span>))  <span style="color:#75715e">//返回true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><strong>5.map()</strong></p>
+<p>map()返回一个新数组，数组中的元素为原始数组元素调用函数处理后的值</p>
+<p>map()方法按照原始数组元素顺序依次处理元素</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>)  <span style="color:#75715e">//返回[1，2，3，4，5]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newArray</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">x</span>=&gt;<span style="color:#a6e22e">x</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">newArray</span>)  <span style="color:#75715e">//返回[2,3,4,5,6]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><strong>6.filter()</strong></p>
+<p>filter()方法创建一个新的数组，新数组中的元素是通过指定数组中符号条件的所有元素</p>
+<p>filter()不会对空数组进行检测，不会改变原始数组</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newArray</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">item</span>=&gt;<span style="color:#a6e22e">item</span><span style="color:#f92672">&gt;</span><span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">newArray</span>)<span style="color:#75715e">//输出3，4，5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><strong>5.sort()</strong></p>
+<p>sort()：按升序排列数组项——即最小的值位于最前面，最大的值排在最后面。</p>
+<p>在排序时，sort()方法会调用每个数组项的 toString()转型方法，然后比较得到的字符串，以确定如何排序。即使数组中的每一项都是数值， sort()方法比较的也是字符串</p>
+<p>为了解决上述问题，sort()方法可以接收一个比较函数作为参数，以便我们指定哪个值位于哪个值的前面。比较函数接收两个参数，如果第一个参数应该位于第二个之前则返回一个负数，如果两个参数相等则返回 0，如果第一个参数应该位于第二个之后则返回一个正数。</p>
+<p><strong>5.reverse()</strong></p>
+<p>reverse()：反转数组项的顺序。</p>
+<p><strong>6、concat()</strong></p>
+<p>concat() ：将参数添加到原数组中。这个方法会先创建当前数组一个副本，然后将接收到的参数添加到这个副本的末尾，最后返回新构建的数组。在没有给 concat()方法传递参数的情况下，它只是复制当前数组并返回副本。</p>
+<p><strong>7、slice()</strong></p>
+<p>slice()：返回从原数组中指定开始下标到结束下标之间的项组成的新数组。</p>
+<p>slice()方法可以提取字符串的某个部分，并以新的字符串返回被提取的部分</p>
+<p>slice()方法可以接受一或两个参数，即要返回项的起始和结束位置。在只有一个参数的情况下， slice()方法返回从该参数指定位置开始到当前数组末尾的所有项。如果有两个参数，该方法返回起始和结束位置之间的项——但不包括结束位置的项。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newArray</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">newArray</span>)<span style="color:#75715e">//[3,4]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><strong>8、splice()</strong></p>
+<p>splice()：很强大的数组方法，它有很多种用法，可以实现删除、插入和替换。</p>
+<p>删除：可以删除任意数量的项，只需指定 2 个参数：要删除的第一项的位置和要删除的项数。例如， splice(0,2)会删除数组中的前两项。</p>
+<p>插入：可以向指定位置插入任意数量的项，只需提供 3 个参数：<!-- raw HTML omitted --><strong>起始位置、 0（要删除的项数）和要插入的项</strong><!-- raw HTML omitted -->。例如，splice(2,0,4,6)会从当前数组的位置 2 开始插入4和6。
+替换：可以向指定位置插入任意数量的项，且同时删除任意数量的项，只需指定 3 个参数：起始位置、要删除的项数和要插入的任意数量的项。插入的项数不必与删除的项数相等。例如，splice (2,1,4,6)会删除当前数组位置 2 的项，然后再从位置 2 开始插入4和6。</p>
+<p>splice()方法始终都会返回一个数组，该数组中包含从原始数组中删除的项，如果没有删除任何项，则返回一个空数组。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><strong>9、indexOf()和 lastIndexOf()</strong></p>
+<p>indexOf()：接收两个参数：要查找的项和（可选的）表示查找起点位置的索引。其中， 从数组的开头（位置 0）开始向后查找。
+lastIndexOf：接收两个参数：要查找的项和（可选的）表示查找起点位置的索引。其中， 从数组的末尾开始向前查找。</p>
+<p>这两个方法都返回要查找的项在数组中的位置，或者在没找到的情况下返回-1。在比较第一个参数与数组中的每一项时，会使用全等操作符。</p>
+<p>操作数组</p>
+<h5 id="增">增</h5>
+<p>数组添加新的数据arr.push(新增的内容)，arr.unshift(新增的内容)</p>
+<p>在末尾增加</p>
+<!-- raw HTML omitted -->
+<p>在开头增加</p>
+<!-- raw HTML omitted -->
+<h5 id="删">删</h5>
+<p>删除数组中的数据</p>
+<p>1.数组.pop()</p>
+<!-- raw HTML omitted -->
+<p>2.数组.shift()</p>
+<!-- raw HTML omitted -->
+<p>3.数组.splice()</p>
+<!-- raw HTML omitted -->
+<h5 id="改">改</h5>
+<p>重新赋值   数组[下标] = 新值</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;pink&#39;</span>,<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;black&#39;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">array</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;white&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>) <span style="color:#75715e">//[&#39;white&#39;,&#39;red&#39;,&#39;black&#39;]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><h5 id="查">查</h5>
+<p>查询数组数据   数组[下标]</p>
+<h4 id="冒泡排序">冒泡排序</h4>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;<span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">length</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;<span style="color:#a6e22e">j</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">arr</span>,<span style="color:#a6e22e">length</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;<span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">j</span>]<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">j</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]){
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">temp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">j</span>]
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">j</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">j</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">temp</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><h1 id="五函数">五、函数</h1>
+<h3 id="为什么要使用函数">①为什么要使用函数</h3>
+<p>可以实现代码复用，提高开发效率</p>
+<h3 id="函数是什么">②函数是什么</h3>
+<p>function执行特定任务的代码块</p>
+<h3 id="函数使用">③函数使用</h3>
+<p>函数的声明语法</p>
+<blockquote>
+<p>function 函数名（） {</p>
+<p>​       函数体</p>
+<p>}</p></blockquote>
+<!-- raw HTML omitted -->
+<p>函数的调用方法</p>
+<!-- raw HTML omitted -->
+<p>函数不调用自己不执行，随时调用，随时执行，可以重复调用</p>
+<h3 id="函数传参">④函数传参</h3>
+<p>好处：极大的提高了函数的灵活性</p>
+<p>若函数完成功能需要调用者传入数据，那么就需要用有参数的函数</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getSum</span>(<span style="color:#a6e22e">end</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;=</span><span style="color:#a6e22e">end</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">sum</span><span style="color:#f92672">+=</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">sum</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">getSum</span>(<span style="color:#ae81ff">50</span>)   <span style="color:#75715e">//求累加和
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>调用函数时，需要传入几个参数，中间用逗号隔开</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>注意：这个默认值只会在缺少实参传递时才会被执行，所以有参数会优先执行传递过来的实参，否则默认为undefined</p>
+<h3 id="函数返回值">⑤函数返回值</h3>
+<p>当调用某个函数是，这个函数会返回一个结果出来，这就是有返回值的函数</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="作用域">⑥作用域</h3>
+<!-- raw HTML omitted -->
+<p>如果函数内部，变量没有声明，直接赋值，也当全局变量看（不推荐使用）</p>
+<!-- raw HTML omitted -->
+<p>预解析：</p>
+<p>1.会把全局的变量的“声明”提前，</p>
+<p>2.提前声明函数，但是函数内部的代码是不执行的。</p>
+<p>局部变量：必须在函数内部使用var\let声明。如果不使用，则称为隐式全局变量</p>
+<p>隐式全局变量：只有在执行后才能使用.</p>
+<p>全局变量和局部变量可以重名，使用就近原则。</p>
+<h3 id="匿名函数">⑦匿名函数</h3>
+<p>没有名字的函数，无法直接使用</p>
+<p><img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202404252225803.png" alt="image-20240425222557577"></p>
+<p>第一种写法：将匿名函数赋值给一个变量，并且通过变量名称进行调用 称之为<strong>函数表达式</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//函数表达式
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">fn</span><span style="color:#f92672">=</span><span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">//函数体
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>     <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;我是函数表达式&#39;</span>)
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">fn</span>()
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>函数表达式和具名函数的不同：</p>
+<p>1.具名函数的调用可以写到任何位置</p>
+<p>2.函数表达式必须先声明，后调用</p>
+<p>第二种写法：立即执行函数</p>
+<p>避免全局变量之间的污染</p>
+<!-- raw HTML omitted -->
+<p>最后必须有分号；结束语句</p>
+<h3 id="逻辑中断">⑧逻辑中断</h3>
+<p>1.逻辑运算符里的短路</p>
+<p><img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202404261834910.png" alt="image-20240426183456826"></p>
+<p>逻辑与：都是真，返回最后一个真值</p>
+<p>逻辑或：输出第一个真值</p>
+<h3 id="转换布尔型">⑨转换布尔型</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h1 id="六对象">六、对象</h1>
+<h5 id="什么是对象">Ⅰ什么是对象？</h5>
+<ul>
+<li>对象（object）：JavaScript里的一种数据类型</li>
+<li>可以理解为一种无序的数据集合，注意数组是有序的数据类型</li>
+<li>特点：<!-- raw HTML omitted -->无序的<!-- raw HTML omitted -->数据集合，可以详细的描述某个事物</li>
+</ul>
+<h5 id="对象的使用">Ⅱ对象的使用</h5>
+<p>1.对象声明语法</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>let 对象名 = {}  //{}对象字面量
+</span></span></code></pre></div><pre tabindex="0"><code>let 对象名 = new Object()
+</code></pre><p>2.对象有属性和方法组成</p>
+<p>属性：信息或特征（名词）</p>
+<p>方法：功能或行为（动词）</p>
+<pre tabindex="0"><code>let 对象名 = {
+	属性名 : 属性值,
+	方法名 : 函数
+}
+</code></pre><p><img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202404261851644.png" alt="image-20240426185154554"></p>
+<h5 id="对象的操作">Ⅲ对象的操作</h5>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>查</p>
+<ul>
+<li>
+<p>声明对象，并添加了若干属性后，可以使用.获得对象中属性对应的值，成为属性访问</p>
+</li>
+<li>
+<p>语法：①对象名.属性  ②对象名[&lsquo;属性名&rsquo;]</p>
+</li>
+</ul>
+</li>
+<li>
+<p>改</p>
+</li>
+</ul>
+<p>语法：对象名.属性 = 新值</p>
+<ul>
+<li>增</li>
+</ul>
+<p>语法：对象名.属性 = 新值</p>
+<ul>
+<li>删</li>
+</ul>
+<p>delete 对象名.属性名</p>
+<h5 id="对象中的方法">Ⅳ对象中的方法</h5>
+<!-- raw HTML omitted -->
+<p>方法调用：对象名.方法名</p>
+<!-- raw HTML omitted -->
+<h5 id="遍历对象">Ⅴ遍历对象</h5>
+<ul>
+<li>对象是无序的键值对，没有规律，不像数组里面有规律的下标</li>
+<li>对象没有像数组一样的length属性，无法确定长度</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">uname</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;Karry&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span><span style="color:#ae81ff">24</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">gender</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;男&#39;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//遍历对象
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">obj</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">k</span>)<span style="color:#75715e">//k属性名存的是字符串‘uname&#39;&#39;age&#39;&#39;gender&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">k</span>]) <span style="color:#75715e">//输出属性值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><h5 id="内置对象">Ⅵ内置对象</h5>
+<p>1.内置对象是什么？</p>
+<p>JavaScript内部提供的对象，包含各种属性方法和属性</p>
+<p>2.内置对象-Math</p>
+<ul>
+<li>是JavaScript提供的一个数学对象</li>
+<li>作用：提供一系列做数学运算的方法</li>
+</ul>
+<!-- raw HTML omitted -->
+<p>Math.round():四舍五入</p>
+<p>生成任意范围的随机数</p>
+<!-- raw HTML omitted -->
+
+        </div>
+        
+        <div class="share m-2 grid grid-cols-2 lg:grid-cols-3 gap-2">
+            <a href="https://twitter.com/intent/tweet?url=http%3a%2f%2flocalhost%3a54190%2fblog%2fzlz2-copy-2%2f&text=JavaScript%e5%9f%ba%e7%a1%80222" target="_blank"
+                title="Post" class="share-button x">
+                <div class="text-white text-center">
+                    <span class="icon-x text-lg mr-2"></span>X
+                </div>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a54190%2fblog%2fzlz2-copy-2%2f&t=JavaScript%e5%9f%ba%e7%a1%80222" target="_blank"
+                title="Facebook" class="share-button facebook">
+                <div class="text-white text-center">
+                    <span class="icon-facebook text-lg mr-2"></span>Facebook
+                </div>
+            </a>
+            <a href="https://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2flocalhost%3a54190%2fblog%2fzlz2-copy-2%2f&title=JavaScript%e5%9f%ba%e7%a1%80222" target="_blank"
+                title="hatena" class="share-button hatena">
+                <div class="text-white text-center">
+                    <span class="icon-hatenabookmark text-lg mr-2"></span>Hatena
+                </div>
+            </a>
+            <a href="https://getpocket.com/edit?url=http%3a%2f%2flocalhost%3a54190%2fblog%2fzlz2-copy-2%2f&title=JavaScript%e5%9f%ba%e7%a1%80222" target="_blank" title="pocket"
+                class="share-button pocket">
+                <div class="text-white text-center">
+                    <span class="icon-get-pocket text-lg mr-2"></span>Pocket
+                </div>
+            </a>
+            <a href="https://timeline.line.me/social-plugin/share?url=http%3a%2f%2flocalhost%3a54190%2fblog%2fzlz2-copy-2%2f" class="share-button line">
+                <div class="text-white text-center">
+                    <span class="icon-line text-lg mr-2"></span>LINE
+                </div>
+            </a>
+            <a href="javascript:OnClickURL();" class="share-button url" title="Copy to Clipboard"
+                data-clipboard-text="JavaScript基础222 http://localhost:54190/blog/zlz2-copy-2/" id="url">
+                <div class="text-white text-center">
+                    <span class="icon-link text-lg mr-2"></span>Copy
+                </div>
+            </a>
+        </div>
+        <hr class="py-4">
+        <aside id="meta">
+            <div class="grid grid-cols-2">
+                <div class="col-span-1">
+                    
+                    <a class="previous lg:text-2xl" href="http://localhost:54190/blog/zlz2-copy-3/">
+                        <div
+                            class="transition-colors duration-300 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                            <span class="icon-keyboard_arrow_left"></span> JavaScript…
+                        </div>
+                    </a>
+                    
+                </div>
+                
+                <a class="next lg:text-2xl" href="http://localhost:54190/blog/dyh/">
+                    <div
+                        class="transition-colors duration-300 col-span-1 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                        Web… <span class="icon-keyboard_arrow_right"></span>
+                    </div>
+                </a>
+                
+            </div>
+        </aside>
+    </div>
+</div>
+
+  </main><footer class="bg-tlgray-100">
+  
+  <script src='/js/clipboard.min.js'></script>
+  <script src='/js/highlight.min.js'></script>
+  <script src='/js/highlightjs-line-numbers.min.js'></script>
+  <script src='/js/sweetalert2.min.js'></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+    new ClipboardJS('.url');
+
+    function OnClickURL() {
+      Swal.fire({
+        icon: 'success',
+        title: 'Copied!',
+        text: 'Copied the URL and title.'
+      })
+    }
+  </script>
+  
+  <script>
+    function toggleNav() {
+      var hamburger = document.getElementById("hamburgerbtn");
+      var overlay = document.getElementById("overlay");
+      var body = document.body;
+
+      hamburger.addEventListener("click", function () {
+        overlay.classList.toggle("open");
+        hamburger.classList.toggle("is-open");
+        body.classList.toggle("scroll-lock");
+      });
+    }
+    toggleNav();
+
+    document.querySelector('.scroll-top').addEventListener('click', () => {
+      document.documentElement.scrollTop = 0;
+    });
+  </script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet" />
+  
+  <div class="flex items-center justify-between flex-wrap bg-gray-800 p-8 text-white">
+    <div class="items-center text-xl text-grey-900 mr-6 flex flex-row">
+      <img alt="Bluemsun Studio" class="h-14 mr-8" src="/img/logo/logo.jpg">
+      <div>
+          <h1 class="px-2 text-3xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-5xl lg:text-6xl xl:text-8xl">蓝旭工作室</h1> 
+          <h2 class="px-2 text-xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-3xl lg:text-4xl xl:text-6xl">Bluemsun Studio</h2>
+      </div>
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+      <div class="text-lg lg:flex-grow">
+      </div>
+      <div class="flex flex-row items-center text-lg">
+        
+        <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          返回主页
+          
+        </a>
+        
+        <a href="https://github.com/BluemsunOffice" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          <i class='icon-github text-2xl'></i>
+          
+        </a>
+        
+      </div>
+    </div>
+  </div>
+  <div class="copy pl-8 py-5 bg-tlgray-700 text-white text-md w-full text-center">
+    &copy; Hello! Bluemsun 2025 All Rights Reserved.
+  </div>
+</footer>
+</body>
+
+</html>

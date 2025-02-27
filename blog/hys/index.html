@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<title>Hello! Bluemsun | 异常</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.jpg'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.jpg'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.jpg'>
+<link rel="manifest" href='/site.webmanifest'>
+
+<link href='/css/fa6.min.css' rel="stylesheet" type="text/css">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<link href='/css/style.min.css' rel="stylesheet" type="text/css">
+<link rel="stylesheet" href='/css/custom.css'>
+
+<meta property="og:title" content="Hello! Bluemsun | 异常" />
+
+
+
+
+<meta name="description" content="ArrayIndexOutOfBoundException 数组索引越界">
+<meta property="og:title" content=" | " />
+<meta property="og:site_name" content="Hello! Bluemsun">
+<meta property="og:description" content="ArrayIndexOutOfBoundException 数组索引越界">
+<meta property="og:url" content="http://localhost:1313/blog/hys/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@tech_chiba">
+
+<link rel="canonical" href="http://localhost:1313/blog/hys/">
+
+<meta name="twitter:description" content="ArrayIndexOutOfBoundException 数组索引越界">
+<meta property="article:published_time" content="2024-06-21T13:02:51&#43;08:00">
+<meta property="article:updated_time" content="2024-06-21T13:02:51&#43;08:00">
+
+
+
+
+
+    
+<meta property="og:image" content="http://localhost:1313/img/blog_pic/java.jpg">
+    
+
+
+<meta name="twitter:title" content="异常">
+<link rel="preload" href='/css/sweetalert2.min.css' as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <main class="flex-grow"><header>
+    <div id="overlay">
+        <ul class="text-center list-none text-white text-3xl">
+            
+            <li class="p-2">
+                <a href="/products/">
+                    <span>项目介绍</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/blog/">
+                    <span>往期博客</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/about/">
+                    <span>关于蓝旭</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/contact/">
+                    <span>加入我们</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <nav class="flex items-center justify-between flex-wrap bg-opacity-80 p-8">
+        <div class="flex items-center flex-shrink-0 text-xl text-grey-900 mr-6 flex-row">
+            <a href="http://localhost:1313/" class="flex items-center flex-shrink-0 text-black mr-6">
+                <img alt="Bluemsun Studio"
+                    class="h-14" src="/img/logo/logo.jpg">
+                <div>
+                    <h1 class="px-2 text-4xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-5xl lg:text-6xl xl:text-8xl">蓝旭工作室</h1> 
+                    <h2 class="px-2 text-xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-3xl lg:text-4xl xl:text-6xl">Bluemsun Studio</h2>
+                </div>
+            </a>
+        </div>
+        <div class="block lg:hidden">
+            <div id="hamburgerbtn" class="flex cursor-pointer items-center w-14 h-10 py-2 rounded mopen">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
+        </div>
+        <div class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+            <div class="text-lg lg:flex-grow">
+            </div>
+            <div class="text-xl">
+                
+                <a href="/products/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8  px-2 py-1 rounded">
+                    项目介绍
+                </a>
+                
+                <a href="/blog/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8  px-2 py-1 rounded">
+                    往期博客
+                </a>
+                
+                <a href="/about/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8  px-2 py-1 rounded">
+                    关于蓝旭
+                </a>
+                
+                <a href="/contact/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8  px-2 py-1 rounded">
+                    加入我们
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+</header><div class="scroll-top rounded-full">
+      <span class="icon-keyboard_arrow_up text-2xl"></span>
+    </div>
+<div class="mx-auto my-10 max-w-6xl">
+    <div class="mx-3 col-span-3 lg:col-span-2 px-2 bg-white my-10">
+        <h1 class="title text-5xl font-bold mt-10 h-fit">
+            <i class="fa-solid fa-heading"></i>
+            异常
+        </h1>
+        <section class="mb-4 text-lg flex flex-row items-center">
+            <h4 id="date" class="flex flex-row items-center p-3">
+                
+                <i class="fa-regular fa-clock mr-2" style="color: #74C0FC;"></i>
+                2024/06/21 
+            </h4>
+            
+            <h4 class="flex flex-row items-center p-3">
+                
+                <i class="fa-solid fa-pen-nib mr-2" style="color: #FFD43B;"></i>
+                韩云硕
+            </h4>
+            
+            
+            <div id="categories" class="flex flex-row items-center p-3">
+                
+                <i class="fa-regular fa-folder-open mr-2" style="color: #63E6BE;"></i>
+                
+                <span
+                    class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a
+                        href='http://localhost:1313/categories/%E5%90%8E%E7%AB%AF'>后端</a></span>
+                
+            </div>
+            
+        </section>
+        
+        <div class="m-2 featured-image">
+            <img class="my-4"  sizes="auto" height="auto" width="auto" src="http://localhost:1313/img/blog_pic/java.jpg">
+        </div>
+        
+        <div class="content prose md:prose-lg lg:prose-xl max-w-none bg-white p-8 border-black" style="border:dashed 1px #FF4365">
+            <h1 id="异常">异常</h1>
+<h3 id="arrayindexoutofboundexception-数组索引越界">ArrayIndexOutOfBoundException 数组索引越界</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> <span style="color:#66d9ef">int</span> arr <span style="color:#f92672">=</span> {11,22,33};
+</span></span><span style="display:flex;"><span> System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(arr<span style="color:#f92672">[</span>10<span style="color:#f92672">]</span>);
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h3 id="classcastexception-类转换异常">ClassCastException 类转换异常</h3>
+<h3 id="nullpointerexception-空指针异常">NullPointerException 空指针异常</h3>
+<h2 id="异常体系">异常体系</h2>
+<h3 id="最顶层父类throwable">最顶层父类Throwable</h3>
+<h3 id="子类error">子类Error</h3>
+<h3 id="stackoverflowerror-栈内存溢出">StackOverflowError 栈内存溢出</h3>
+<h3 id="outofmemoryerror-堆内存溢出">OutofMemoryError 堆内存溢出</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> arr <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span> <span style="color:#f92672">[</span>Interger.<span style="color:#a6e22e">MAX_VALUE</span><span style="color:#f92672">]</span>;
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h3 id="子类exception">子类Exception</h3>
+<h4 id="runtimeexception及其子类运行时异常">RuntimeException及其子类：运行时异常</h4>
+<h4 id="除runtimeexception及其子类之外所有类编译时异常">除RuntimeException及其子类之外所有类：编译时异常</h4>
+<h2 id="向上抛出">向上抛出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BluemSun</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;开始&#34;</span>);
+</span></span><span style="display:flex;"><span>            method();                   <span style="color:#75715e">//new ArithmeticException(); JVM</span>
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;结束&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method</span>(){
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(10<span style="color:#f92672">/</span>0);<span style="color:#75715e">//new ArithmeticException()</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h2 id="捕获异常">捕获异常</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method</span>(){
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>                System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(10 <span style="color:#f92672">/</span> 0);<span style="color:#75715e">//new ArithmeticException();</span>
+</span></span><span style="display:flex;"><span>            }<span style="color:#66d9ef">catch</span>(ArithmeticException a){<span style="color:#75715e">//ArithmeticException a = new ArithmeticException();</span>
+</span></span><span style="display:flex;"><span>                System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;捕获成功&#34;</span>);<span style="color:#75715e">//执行异常方案</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//new ArithmeticException()</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method</span>(){
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> arr <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>                System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(arr<span style="color:#f92672">[</span>10<span style="color:#f92672">]</span>);<span style="color:#75715e">//new NullPointerException();</span>
+</span></span><span style="display:flex;"><span>                System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(10 <span style="color:#f92672">/</span> 0);<span style="color:#75715e">//new ArithmeticException();</span>
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>            }<span style="color:#66d9ef">catch</span>(ArithmeticException a){<span style="color:#75715e">//ArithmeticException a = new ArithmeticException();</span>
+</span></span><span style="display:flex;"><span>                System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;捕获成功&#34;</span>);<span style="color:#75715e">//执行异常方案</span>
+</span></span><span style="display:flex;"><span>            }<span style="color:#66d9ef">catch</span>(NullPointerException b){
+</span></span><span style="display:flex;"><span>                System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;捕获成功&#34;</span>);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//new ArithmeticException()</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method</span>(){
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> arr <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>                System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(arr<span style="color:#f92672">[</span>10<span style="color:#f92672">]</span>);<span style="color:#75715e">//new NullPointerException();</span>
+</span></span><span style="display:flex;"><span>                System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(10 <span style="color:#f92672">/</span> 0);<span style="color:#75715e">//new ArithmeticException();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            }<span style="color:#66d9ef">catch</span>(Exception e){
+</span></span><span style="display:flex;"><span>                System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;捕获成功&#34;</span>);<span style="color:#75715e">//Exception e = new NullPointerException();对象多态</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>          
+</span></span><span style="display:flex;"><span>        }
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h2 id="抛出异常">抛出异常</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BluemSun</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) <span style="color:#66d9ef">throws</span> ParseException {
+</span></span><span style="display:flex;"><span>            SimpleDateFormat sdf <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleDateFormat(<span style="color:#e6db74">&#34;yyyy年mm月dd日&#34;</span>);
+</span></span><span style="display:flex;"><span>            Date date <span style="color:#f92672">=</span> sdf.<span style="color:#a6e22e">parse</span>(<span style="color:#e6db74">&#34;2024年8月8日&#34;</span>);
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h2 id="二者结合">二者结合</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Student</span>{
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> age;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getAge</span>() {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> age;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setAge</span>() <span style="color:#66d9ef">throws</span> Exception{                     <span style="color:#75715e">//抛出异常</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span>(age <span style="color:#f92672">&gt;=</span> 0 <span style="color:#f92672">&amp;&amp;</span> age <span style="color:#f92672">&lt;=</span> 120){
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> age;
+</span></span><span style="display:flex;"><span>                }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Exception(<span style="color:#e6db74">&#34;请输入年龄范围在10-20之间的数据&#34;</span>);<span style="color:#75715e">//抛出异常时执行的语句</span>
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">test</span>{
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args){
+</span></span><span style="display:flex;"><span>                Student stu <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Student();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">try</span>{                                                <span style="color:#75715e">//捕获抛出的异常</span>
+</span></span><span style="display:flex;"><span>                    stu.<span style="color:#a6e22e">setAge</span>();
+</span></span><span style="display:flex;"><span>                } <span style="color:#66d9ef">catch</span> (Exception e) {
+</span></span><span style="display:flex;"><span>                    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;请输入正确的年龄范围&#34;</span>);
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        }
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h2 id="自定义异常">自定义异常</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StudentAgeException</span> <span style="color:#66d9ef">extends</span> RuntimeException{   <span style="color:#75715e">//自定义一个RuntimeException的子类</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h1 id="stringbuffer">StringBuffer</h1>
+<p>参考：http://t.csdnimg.cn/BAyyy</p>
+<p>StringBuffer：可变长字符串，jdk1.0提供，运行效率慢、线程安全。</p>
+<h2 id="1构造方法">1.构造方法</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">//无参构造方法默认容量为16</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">StringBuffer</span>(){
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//自定义容量    </span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">StringBuffer</span>(<span style="color:#66d9ef">int</span> capacity) {
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//在创建对象的时候就给其赋值，容量为你的输入+16</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">StringBuffer</span>(String str) {
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//类似于第三种构造方法</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">StringBuffer</span>(CharSequence seq) {
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h2 id="2添加append">2.添加：append（）</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>buffer.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#34;A&#34;</span>);
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(buffer);<span style="color:#75715e">//A</span>
+</span></span><span style="display:flex;"><span>buffer.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#34;2&#34;</span>);
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(buffer);<span style="color:#75715e">//A2</span>
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h2 id="3删除deletedeletecharat">3.删除：delete（）、deleteCharAt（）</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>        buffer.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#34;springboot&#34;</span>);<span style="color:#75715e">//springboot</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        buffer.<span style="color:#a6e22e">delete</span>(6,10);
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(buffer);<span style="color:#75715e">//spring</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        buffer.<span style="color:#a6e22e">deleteCharAt</span>(1);
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(buffer);<span style="color:#75715e">//sring</span>
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h2 id="4insert">4.insert（）</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>        buffer.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#34;springboot&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//insert（offset，str）从下标offset开始，插入str</span>
+</span></span><span style="display:flex;"><span>        buffer.<span style="color:#a6e22e">insert</span>(6,<span style="color:#e6db74">&#34;my&#34;</span>);<span style="color:#75715e">//springmyboot</span>
+</span></span><span style="display:flex;"><span>        
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h2 id="5lengthcapacity">5.length(),capacity()</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>        <span style="color:#75715e">//length()实际长度</span>
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(buffer.<span style="color:#a6e22e">length</span>());<span style="color:#75715e">//10</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//capacity()容量</span>
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(buffer.<span style="color:#a6e22e">capacity</span>());<span style="color:#75715e">//26</span>
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h1 id="stringbuilder">Stringbuilder</h1>
+<p>StringBuilder:可变字符串，jdk5.0提供，运行效率快、线程不安全</p>
+<p>方法和属性与Stringbuffer一致</p>
+<h1 id="bigdeicmal">BigDeicmal</h1>
+<p>参考：http://t.csdnimg.cn/CqX5d</p>
+<p>需要导入java.math包，可以精确计算浮点数，但浮点数传给它的时候要用字符串</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>BigDecimal <span style="color:#a6e22e">add</span>(BigDecimal bd)   <span style="color:#75715e">//加</span>
+</span></span><span style="display:flex;"><span>BigDeimal <span style="color:#a6e22e">subtract</span>(BigDecimal bd)  <span style="color:#75715e">//减</span>
+</span></span><span style="display:flex;"><span> BigDecimal  <span style="color:#a6e22e">multiply</span>(BigDecimal  bd) <span style="color:#75715e">//乘</span>
+</span></span><span style="display:flex;"><span> BigDecimal  <span style="color:#a6e22e">divide</span>(BigDecimal bd)  <span style="color:#75715e">//除</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">//注意，这个运算只能和自己（本类型）进行相加减，另外除法可能会遇到无限循环小数，除法还有另一个方法</span>
+</span></span><span style="display:flex;"><span> divide(BigDecimal bd,<span style="color:#66d9ef">int</span> scal,RoundingMode mode)
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">//参数scale：指定精确到小数点后几位。</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">//参数mode：指定小数部分的取舍模式，通常采用四舍五入的模式。取值为BigDecimal.ROUND_HALE_UP。</span>
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h2 id="包装类">包装类</h2>
+<p>将基本数据类型，包装成类（变成引用数据类型）</p>
+<table>
+  <thead>
+      <tr>
+          <th>基本数据类型</th>
+          <th>引用数据类型</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>byte</td>
+          <td>Byte</td>
+      </tr>
+      <tr>
+          <td>short</td>
+          <td>Short</td>
+      </tr>
+      <tr>
+          <td>int</td>
+          <td>Interger</td>
+      </tr>
+      <tr>
+          <td>long</td>
+          <td>Long</td>
+      </tr>
+      <tr>
+          <td>char</td>
+          <td>Character</td>
+      </tr>
+      <tr>
+          <td>float</td>
+          <td>Float</td>
+      </tr>
+      <tr>
+          <td>double</td>
+          <td>Double</td>
+      </tr>
+      <tr>
+          <td>boolean</td>
+          <td>Boolean</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="手动包装">手动包装</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Interger1</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Interger</span>(<span style="color:#66d9ef">int</span> num) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> num <span style="color:#f92672">=</span> 10;
+</span></span><span style="display:flex;"><span>            Interger i1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Interger(num);<span style="color:#75715e">//已过时</span>
+</span></span><span style="display:flex;"><span>            Interger i1 <span style="color:#f92672">=</span> Interger.<span style="color:#a6e22e">valueOf</span>(num);<span style="color:#75715e">//推荐</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h3 id="手动拆封">手动拆封</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Interger1</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Interger</span>(<span style="color:#66d9ef">int</span> num) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> num <span style="color:#f92672">=</span> 10;
+</span></span><span style="display:flex;"><span>            Interger i1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Interger(num);<span style="color:#75715e">//已过时</span>
+</span></span><span style="display:flex;"><span>            Interger i1 <span style="color:#f92672">=</span> Interger.<span style="color:#a6e22e">valueOf</span>(num);<span style="color:#75715e">//推荐</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> i1.<span style="color:#a6e22e">intValue</span>();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h3 id="自动装箱">自动装箱</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Interger1</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Interger</span>(<span style="color:#66d9ef">int</span> num) {
+</span></span><span style="display:flex;"><span>            Interger i1 <span style="color:#f92672">=</span> num;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h3 id="自动拆箱">自动拆箱</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Interger1</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Interger</span>(<span style="color:#66d9ef">int</span> num) {
+</span></span><span style="display:flex;"><span>            Integer i1 <span style="color:#f92672">=</span> num ; 
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> i1 ; 
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h3 id="进制转换">进制转换</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Interger1</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Interger</span>(<span style="color:#66d9ef">int</span> num) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span>  num <span style="color:#f92672">=</span> 100 ;         
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Interger.toBinaryString(num)&#34;</span>);<span style="color:#75715e">//二进制</span>
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Interger.toOctalString(num)&#34;</span>); <span style="color:#75715e">//八进制</span>
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Interger.toHexString(num)&#34;</span>);   <span style="color:#75715e">//十六进制</span>
+</span></span><span style="display:flex;"><span>            String s <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">&#39;</span>123<span style="color:#960050;background-color:#1e0010">&#39;</span>;
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(Integer.<span style="color:#a6e22e">parseInt</span>(s) <span style="color:#f92672">+</span> 100);     <span style="color:#75715e">//223,数字字符串做加减</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h2 id="list接口">List接口</h2>
+<p>存取有序，有索引，可以存储重复的。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">//和索引有关的API</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">int</span> index,E element):<span style="color:#75715e">//在索引位置添加元素</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> E <span style="color:#a6e22e">remove</span> (<span style="color:#66d9ef">int</span> index)<span style="color:#75715e">//根据索引删除集合中的元素</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> E <span style="color:#a6e22e">set</span>(<span style="color:#66d9ef">int</span> index,E element);<span style="color:#75715e">//根据索引修改集合中的元素</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> E <span style="color:#a6e22e">get</span>(<span style="color:#66d9ef">int</span> index);<span style="color:#75715e">//返回指定索引处的元素</span>
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>遍历list</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0 ; i <span style="color:#f92672">&lt;</span> list.<span style="color:#a6e22e">size</span>() ; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>            String s <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">get</span>(i);
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(s);
+</span></span><span style="display:flex;"><span>        }
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>正向遍历，采用ListIterator（接口）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>ListIterator<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> it <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">listInterrater</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span>(it.<span style="color:#a6e22e">hasNext</span>()){
+</span></span><span style="display:flex;"><span>            String s <span style="color:#f92672">=</span> it.<span style="color:#a6e22e">next</span>();
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(s);
+</span></span><span style="display:flex;"><span>        }
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>逆向遍历，先正向以后指针指向最后一个元素再逆向</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>ListIterator<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> it <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">listInterrater</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span>(it.<span style="color:#a6e22e">hasNext</span>()){
+</span></span><span style="display:flex;"><span>            String s <span style="color:#f92672">=</span> it.<span style="color:#a6e22e">next</span>();
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(s);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ListIterator<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> it <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">listInterrater</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span>(it.<span style="color:#a6e22e">hasPrevious</span>()){
+</span></span><span style="display:flex;"><span>            String s <span style="color:#f92672">=</span> it.<span style="color:#a6e22e">previous</span>();
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(s);
+</span></span><span style="display:flex;"><span>        }
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        list.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;nihao&#34;</span>);
+</span></span><span style="display:flex;"><span>        list.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;wuyu&#34;</span>);
+</span></span><span style="display:flex;"><span>        list.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;likeyou&#34;</span>);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        ListIterator<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> it <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">listInterrater</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span>(it.<span style="color:#a6e22e">hasNext</span>()){
+</span></span><span style="display:flex;"><span>            String s <span style="color:#f92672">=</span> it.<span style="color:#a6e22e">next</span>();
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span>(<span style="color:#e6db74">&#34;likeyou&#34;</span>.<span style="color:#a6e22e">equals</span>(s)){
+</span></span><span style="display:flex;"><span>                list.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#34;likeyou&#34;</span>);<span style="color:#75715e">//并发修改异常,场景:使用[迭代器]遍历集合的过程中,调用了集合对象的添加或删除方法,就会出现此异常.</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        list.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;nihao&#34;</span>);
+</span></span><span style="display:flex;"><span>        list.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;wuyu&#34;</span>);
+</span></span><span style="display:flex;"><span>        list.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;likeyou&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        Iterator<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> it <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">iterator</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span>(it.<span style="color:#a6e22e">hasNext</span>()){
+</span></span><span style="display:flex;"><span>            String s <span style="color:#f92672">=</span> it.<span style="color:#a6e22e">next</span>();
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span>(<span style="color:#e6db74">&#34;likeyou&#34;</span>.<span style="color:#a6e22e">equals</span>(s)){
+</span></span><span style="display:flex;"><span>                it.<span style="color:#a6e22e">remove</span>();<span style="color:#75715e">//解决方案:迭代器遍历的过程中,不允许使用集合对象的添加或删除,那就使用迭代器自己的添加或删除方法</span>
+</span></span><span style="display:flex;"><span>                            <span style="color:#75715e">//添加的时候要用list自己的迭代器ListIterator</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h2 id="泛型">泛型</h2>
+<p>JDK5引入，可以在编译阶段约束操作的数据类型，并检查。</p>
+<p>好处：1.统一数据类型2.将运行期的错误提升到了编译期</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>ArrayList<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>        list.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;张三&#34;</span>);
+</span></span><span style="display:flex;"><span>        list.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;李四&#34;</span>);
+</span></span><span style="display:flex;"><span>        list.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;王五&#34;</span>);
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Iterator it <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">iterator</span>();<span style="color:#75715e">//迭代器不加泛型</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> (it.<span style="color:#a6e22e">hasNext</span>()) {
+</span></span><span style="display:flex;"><span>            Object it <span style="color:#f92672">=</span> it.<span style="color:#a6e22e">next</span>();<span style="color:#75715e">//Object类型</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Iterator<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> it <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">iterator</span>();<span style="color:#75715e">//泛型String</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> (it.<span style="color:#a6e22e">hasNext</span>()) {
+</span></span><span style="display:flex;"><span>            String s <span style="color:#f92672">=</span> it.<span style="color:#a6e22e">next</span>();
+</span></span><span style="display:flex;"><span>        }
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>ArrayList<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>        list.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;张三&#34;</span>);
+</span></span><span style="display:flex;"><span>        list.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;李四&#34;</span>);
+</span></span><span style="display:flex;"><span>        list.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;王五&#34;</span>);
+</span></span><span style="display:flex;"><span>        list.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> Random());<span style="color:#75715e">//定义泛型为字符串，不能接受其他类型的数据，在编译时就会报错</span>
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h2 id="泛型类">泛型类</h2>
+<p>泛型标识符：EVKT</p>
+<p>E：Element</p>
+<p>T：Type</p>
+<p>K：Key</p>
+<p>V：Value</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">demo1</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args){
+</span></span><span style="display:flex;"><span>            Student<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> stu <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Student<span style="color:#f92672">&lt;&gt;</span>();<span style="color:#75715e">//在创建对象的时候确定泛型类的类型</span>
+</span></span><span style="display:flex;"><span>            stu.<span style="color:#a6e22e">getE</span>();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Student</span><span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> E e;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> E <span style="color:#a6e22e">getE</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> e;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setE</span>(E e) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">e</span> <span style="color:#f92672">=</span> e;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h2 id="泛型方法">泛型方法</h2>
+<p>1.非静态的方法：内部的泛型会根据类的泛型去匹配。</p>
+<p>2.静态的方法：静态方法中如果加入了泛型，必须声明出自己独立的泛型</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">demo2</span> <span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args){
+</span></span><span style="display:flex;"><span>        String<span style="color:#f92672">[]</span> arr1 <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;张三&#34;</span>,<span style="color:#e6db74">&#34;李四&#34;</span>,<span style="color:#e6db74">&#34;王五&#34;</span>};
+</span></span><span style="display:flex;"><span>        Integer<span style="color:#f92672">[]</span> arr2 <span style="color:#f92672">=</span> {11,22,33};
+</span></span><span style="display:flex;"><span>        Double<span style="color:#f92672">[]</span> arr3 <span style="color:#f92672">=</span> {11.<span style="color:#a6e22e">1</span>,22.<span style="color:#a6e22e">2</span>,33.<span style="color:#a6e22e">3</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        printArray(arr1);
+</span></span><span style="display:flex;"><span>        printArray(arr2);
+</span></span><span style="display:flex;"><span>        printArray(arr3);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printArray</span>(T<span style="color:#f92672">[]</span> arr){    <span style="color:#75715e">//静态的方法在内存加载的时候就存在了,在那时就需要定义泛型</span>
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;[&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> arr.<span style="color:#a6e22e">length</span><span style="color:#f92672">-</span>1; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>(arr<span style="color:#f92672">[</span>i<span style="color:#f92672">]+</span><span style="color:#e6db74">&#34;,&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>(arr<span style="color:#f92672">[</span>arr.<span style="color:#a6e22e">length</span><span style="color:#f92672">-</span>1<span style="color:#f92672">]+</span><span style="color:#e6db74">&#34;]&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h2 id="泛型接口">泛型接口</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">demo3</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args){
+</span></span><span style="display:flex;"><span>        InterBImpl<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> i <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> InterBImpl<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Inter</span><span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">show</span>(E e);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InterAImpl</span> <span style="color:#66d9ef">implements</span> Inter<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span>{    <span style="color:#75715e">//实现类,实现接口的时候确定到具体的类型</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">show</span>(String s){
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InterBImpl</span><span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">implements</span> Inter<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span>{    <span style="color:#75715e">//实现类实现接口,没有指定具体类型,就让接口的泛型,跟着类的泛型去匹配</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">show</span>(E e){
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h2 id="泛型通配符">泛型通配符</h2>
+<p>？：任意类型</p>
+<p>？ extends E ：可以传入的是E，或者是E的子类</p>
+<p>？ super E：可以传入的是E，或E的父类</p>
+<h1 id="set接口">set接口</h1>
+<p>HashSet集合特点:
+1.不允许存储重复元素
+2.不包含带索引的方法
+3.是一个无序的集合,存储的元素和取出的元素顺序[有可能]不一致
+4.底层是一个哈希表结构
+JDK1.8之前:数组+单向链表
+JDK1.8之后:数组+单向链表|数组+红黑树</p>
+<h1 id="map集合">map集合</h1>
+<p>特点:
+1.Map集合是一个双列集合,每个元素包含两个值,一个key,一个value
+2.Map集合中key是不允许重复的,value可以重复
+3.Map集合中一个key只能对应一个value
+4.Map集合中key和value的数据类型可以是相同的,也可以是不同的</p>
+
+        </div>
+        
+        <div class="share m-2 grid grid-cols-2 lg:grid-cols-3 gap-2">
+            <a href="https://twitter.com/intent/tweet?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fhys%2f&text=%e5%bc%82%e5%b8%b8" target="_blank"
+                title="Post" class="share-button x">
+                <div class="text-white text-center">
+                    <span class="icon-x text-lg mr-2"></span>X
+                </div>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fblog%2fhys%2f&t=%e5%bc%82%e5%b8%b8" target="_blank"
+                title="Facebook" class="share-button facebook">
+                <div class="text-white text-center">
+                    <span class="icon-facebook text-lg mr-2"></span>Facebook
+                </div>
+            </a>
+            <a href="https://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2flocalhost%3a1313%2fblog%2fhys%2f&title=%e5%bc%82%e5%b8%b8" target="_blank"
+                title="hatena" class="share-button hatena">
+                <div class="text-white text-center">
+                    <span class="icon-hatenabookmark text-lg mr-2"></span>Hatena
+                </div>
+            </a>
+            <a href="https://getpocket.com/edit?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fhys%2f&title=%e5%bc%82%e5%b8%b8" target="_blank" title="pocket"
+                class="share-button pocket">
+                <div class="text-white text-center">
+                    <span class="icon-get-pocket text-lg mr-2"></span>Pocket
+                </div>
+            </a>
+            <a href="https://timeline.line.me/social-plugin/share?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fhys%2f" class="share-button line">
+                <div class="text-white text-center">
+                    <span class="icon-line text-lg mr-2"></span>LINE
+                </div>
+            </a>
+            <a href="javascript:OnClickURL();" class="share-button url" title="Copy to Clipboard"
+                data-clipboard-text="异常 http://localhost:1313/blog/hys/" id="url">
+                <div class="text-white text-center">
+                    <span class="icon-link text-lg mr-2"></span>Copy
+                </div>
+            </a>
+        </div>
+        <hr class="py-4">
+        <aside id="meta">
+            <div class="grid grid-cols-2">
+                <div class="col-span-1">
+                    
+                    <a class="previous lg:text-2xl" href="http://localhost:1313/blog/lcp/">
+                        <div
+                            class="transition-colors duration-300 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                            <span class="icon-keyboard_arrow_left"></span> Servlet
+                        </div>
+                    </a>
+                    
+                </div>
+                
+                <a class="next lg:text-2xl" href="http://localhost:1313/blog/3dyh/">
+                    <div
+                        class="transition-colors duration-300 col-span-1 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                        Web… <span class="icon-keyboard_arrow_right"></span>
+                    </div>
+                </a>
+                
+            </div>
+        </aside>
+    </div>
+</div>
+
+  </main><footer class="bg-tlgray-100">
+  
+  <script src='/js/clipboard.min.js'></script>
+  <script src='/js/highlight.min.js'></script>
+  <script src='/js/highlightjs-line-numbers.min.js'></script>
+  <script src='/js/sweetalert2.min.js'></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+    new ClipboardJS('.url');
+
+    function OnClickURL() {
+      Swal.fire({
+        icon: 'success',
+        title: 'Copied!',
+        text: 'Copied the URL and title.'
+      })
+    }
+  </script>
+  
+  <script>
+    function toggleNav() {
+      var hamburger = document.getElementById("hamburgerbtn");
+      var overlay = document.getElementById("overlay");
+      var body = document.body;
+
+      hamburger.addEventListener("click", function () {
+        overlay.classList.toggle("open");
+        hamburger.classList.toggle("is-open");
+        body.classList.toggle("scroll-lock");
+      });
+    }
+    toggleNav();
+
+    document.querySelector('.scroll-top').addEventListener('click', () => {
+      document.documentElement.scrollTop = 0;
+    });
+  </script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet" />
+  
+  <div class="flex items-center justify-between flex-wrap bg-gray-800 p-8 text-white">
+    <div class="items-center text-xl text-grey-900 mr-6 flex flex-row">
+      <img alt="Bluemsun Studio" class="h-14 mr-8" src="/img/logo/logo.jpg">
+      <div>
+          <h1 class="px-2 text-3xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-5xl lg:text-6xl xl:text-8xl">蓝旭工作室</h1> 
+          <h2 class="px-2 text-xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-3xl lg:text-4xl xl:text-6xl">Bluemsun Studio</h2>
+      </div>
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+      <div class="text-lg lg:flex-grow">
+      </div>
+      <div class="flex flex-row items-center text-lg">
+        
+        <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          返回主页
+          
+        </a>
+        
+        <a href="https://github.com/BluemsunOffice" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          <i class='icon-github text-2xl'></i>
+          
+        </a>
+        
+      </div>
+    </div>
+  </div>
+  <div class="copy pl-8 py-5 bg-tlgray-700 text-white text-md w-full text-center">
+    &copy; Hello! Bluemsun 2025 All Rights Reserved.
+  </div>
+</footer>
+</body>
+
+</html>

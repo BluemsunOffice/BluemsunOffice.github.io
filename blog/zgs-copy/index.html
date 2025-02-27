@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<title>Hello! Bluemsun | Java基础知识</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.jpg'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.jpg'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.jpg'>
+<link rel="manifest" href='/site.webmanifest'>
+
+<link href='/css/fa6.min.css' rel="stylesheet" type="text/css">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<link href='/css/style.min.css' rel="stylesheet" type="text/css">
+<link rel="stylesheet" href='/css/custom.css'>
+
+<meta property="og:title" content="Hello! Bluemsun | Java基础知识" />
+
+
+
+
+<meta name="description" content="Java的异常处理·包装类·String类·DigDecimal类·泛型·列表·set·map">
+<meta property="og:title" content=" | " />
+<meta property="og:site_name" content="Hello! Bluemsun">
+<meta property="og:description" content="Java的异常处理·包装类·String类·DigDecimal类·泛型·列表·set·map">
+<meta property="og:url" content="http://localhost:1313/blog/zgs-copy/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@tech_chiba">
+
+<link rel="canonical" href="http://localhost:1313/blog/zgs-copy/">
+
+<meta name="twitter:description" content="Java的异常处理·包装类·String类·DigDecimal类·泛型·列表·set·map">
+<meta property="article:published_time" content="2024-10-06T13:02:51&#43;08:00">
+<meta property="article:updated_time" content="2024-10-06T13:02:51&#43;08:00">
+
+
+
+
+
+    
+<meta property="og:image" content="http://localhost:1313/img/blog_pic/java.jpg">
+    
+
+
+<meta name="twitter:title" content="Java基础知识">
+<link rel="preload" href='/css/sweetalert2.min.css' as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <main class="flex-grow"><header>
+    <div id="overlay">
+        <ul class="text-center list-none text-white text-3xl">
+            
+            <li class="p-2">
+                <a href="/products/">
+                    <span>项目介绍</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/blog/">
+                    <span>往期博客</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/about/">
+                    <span>关于蓝旭</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/contact/">
+                    <span>加入我们</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <nav class="flex items-center justify-between flex-wrap bg-opacity-80 p-8">
+        <div class="flex items-center flex-shrink-0 text-xl text-grey-900 mr-6 flex-row">
+            <a href="http://localhost:1313/" class="flex items-center flex-shrink-0 text-black mr-6">
+                <img alt="Bluemsun Studio"
+                    class="h-14" src="/img/logo/logo.jpg">
+                <div>
+                    <h1 class="px-2 text-4xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-5xl lg:text-6xl xl:text-8xl">蓝旭工作室</h1> 
+                    <h2 class="px-2 text-xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-3xl lg:text-4xl xl:text-6xl">Bluemsun Studio</h2>
+                </div>
+            </a>
+        </div>
+        <div class="block lg:hidden">
+            <div id="hamburgerbtn" class="flex cursor-pointer items-center w-14 h-10 py-2 rounded mopen">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
+        </div>
+        <div class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+            <div class="text-lg lg:flex-grow">
+            </div>
+            <div class="text-xl">
+                
+                <a href="/products/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8  px-2 py-1 rounded">
+                    项目介绍
+                </a>
+                
+                <a href="/blog/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8  px-2 py-1 rounded">
+                    往期博客
+                </a>
+                
+                <a href="/about/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8  px-2 py-1 rounded">
+                    关于蓝旭
+                </a>
+                
+                <a href="/contact/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8  px-2 py-1 rounded">
+                    加入我们
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+</header><div class="scroll-top rounded-full">
+      <span class="icon-keyboard_arrow_up text-2xl"></span>
+    </div>
+<div class="mx-auto my-10 max-w-6xl">
+    <div class="mx-3 col-span-3 lg:col-span-2 px-2 bg-white my-10">
+        <h1 class="title text-5xl font-bold mt-10 h-fit">
+            <i class="fa-solid fa-heading"></i>
+            Java基础知识
+        </h1>
+        <section class="mb-4 text-lg flex flex-row items-center">
+            <h4 id="date" class="flex flex-row items-center p-3">
+                
+                <i class="fa-regular fa-clock mr-2" style="color: #74C0FC;"></i>
+                2024/10/06 
+            </h4>
+            
+            <h4 class="flex flex-row items-center p-3">
+                
+                <i class="fa-solid fa-pen-nib mr-2" style="color: #FFD43B;"></i>
+                张高升
+            </h4>
+            
+            
+            <div id="categories" class="flex flex-row items-center p-3">
+                
+                <i class="fa-regular fa-folder-open mr-2" style="color: #63E6BE;"></i>
+                
+                <span
+                    class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a
+                        href='http://localhost:1313/categories/%E5%90%8E%E7%AB%AF'>后端</a></span>
+                
+            </div>
+            
+        </section>
+        
+        <div class="m-2 featured-image">
+            <img class="my-4"  sizes="auto" height="auto" width="auto" src="http://localhost:1313/img/blog_pic/java.jpg">
+        </div>
+        
+        <div class="content prose md:prose-lg lg:prose-xl max-w-none bg-white p-8 border-black" style="border:dashed 1px #FF4365">
+            <p><strong>目录</strong></p>
+<p><a href="#%E5%89%8D%E8%A8%80">前言</a></p>
+<p><a href="#%E4%B8%80%E3%80%81Java%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86">一、Java的异常处理</a></p>
+<p>​	<a href="#1.1%E5%BC%82%E5%B8%B8%E7%9A%84%E5%87%BA%E7%8E%B0">1.1异常的出现</a></p>
+<p>​	<a href="#1.2%E6%8D%95%E8%8E%B7%E3%80%81%E6%8A%9B%E5%87%BA%E4%B8%8E%E5%BC%82%E5%B8%B8%E7%B1%BB">1.2捕获、抛出与异常类</a></p>
+<p>​	<a href="#1.3throws%E5%92%8Cthrow%E8%BE%A8%E6%9E%90">1.3throws和throw辨析</a></p>
+<p>​	<a href="#1.4%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8%E7%B1%BB">1.4自定义异常类</a></p>
+<p><a href="#%E4%BA%8C%E3%80%81%E5%8C%85%E8%A3%85%E7%B1%BB">二、包装类</a></p>
+<p>​	<a href="#2.1%E5%8C%85%E8%A3%85%E7%B1%BB">2.1包装类</a></p>
+<p>​	<a href="#2.2%E5%8C%85%E8%A3%85%E7%B1%BB%E7%9A%84%E4%BD%BF%E7%94%A8">2.2包装类的使用</a></p>
+<p><a href="#%E4%B8%89%E3%80%81String%E7%B1%BB">三、String类</a></p>
+<p>​	<a href="#3.1%E4%BA%86%E8%A7%A3String%E7%B1%BB">3.1了解String类</a></p>
+<p>​	<a href="#3.2String%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E5%8F%8A%E5%AE%9E%E4%BE%8B">3.2String常用方法及实例</a></p>
+<p>​	<a href="#3.3StringBuffer%E5%92%8CStringBuilder">3.3StringBuffer和StringBuilder</a></p>
+<p><a href="#%E5%9B%9B%E3%80%81DigDecimal%E7%B1%BB">四、DigDecimal类</a></p>
+<p>​	<a href="#4.1BigDecimal%E7%B1%BB%E7%AE%80%E4%BB%8B%E3%80%81%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95">4.1BigDecimal类简介、常用方法</a></p>
+<p>​	<a href="#4.2%E5%B0%8F%E6%95%B0%E7%82%B9%E7%9A%84%E5%A4%84%E7%90%86">4.2小数点的处理</a></p>
+<p><a href="#%E4%BA%94%E3%80%81%E6%B3%9B%E5%9E%8B">五、泛型</a></p>
+<p>​	<a href="#5.1%E4%BB%80%E4%B9%88%E6%98%AF%E6%B3%9B%E5%9E%8B">5.1什么是泛型</a></p>
+<p>​	<a href="#5.2%E6%B3%9B%E5%9E%8B%E7%B1%BB%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E4%B8%8E%E4%BD%BF%E7%94%A8">5.2泛型类的基本语法与使用</a></p>
+<p>​	<a href="#5.3%E6%B3%9B%E5%9E%8B%E6%8E%A5%E5%8F%A3">5.3泛型接口</a></p>
+<p>​	<a href="#5.4%E6%B3%9B%E5%9E%8B%E6%96%B9%E6%B3%95">5.4泛型方法</a></p>
+<p><a href="#%E5%85%AD%E3%80%81%E5%88%97%E8%A1%A8">六、列表</a></p>
+<p>​	<a href="#6.1List%E7%AE%80%E4%BB%8B">6.1List简介</a></p>
+<p>​	<a href="#6.2ArrayList">6.2ArrayList</a></p>
+<p>​	<a href="#6.3LinkedList">6.3LinkedList</a></p>
+<p>​	<a href="#6.4Vector">6.4Vector</a></p>
+<p><a href="#%E4%B8%83%E3%80%81set">七、set</a></p>
+<p>​	<a href="#7.1set%E7%AE%80%E4%BB%8B">7.1set简介</a></p>
+<p>​	<a href="#7.2%E9%81%8D%E5%8E%86%E4%B8%8E%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95">7.2遍历与常用方法</a></p>
+<p><a href="#%E5%85%AB%E3%80%81map">八、map</a></p>
+<p>​	<a href="#8.1map%E7%AE%80%E4%BB%8B">8.1map简介</a></p>
+<p>​	<a href="#8.2Map%E7%9A%84%E4%BD%BF%E7%94%A8">8.2Map的使用</a></p>
+<p>​	<a href="#8.3Map%E7%9A%84%E9%81%8D%E5%8E%86">8.3Map的遍历</a></p>
+<hr>
+<h1 id="前言">前言</h1>
+<p>这篇文章主要学习了Java的捕获、抛出、自定义异常类、包装类、String（buffer、builder）、BigDecimal、泛型简介、列表、set、map等知识。经过上次的培训后，我认识到理论与实践应该相结合，因此在文章中会增添我的实际代码运行图片，而且不光是定义的叙述，还加入自己的理解。并且注意驼峰命名规则。</p>
+<hr>
+<h1 id="一java的异常处理">一、Java的异常处理</h1>
+<h2 id="11异常的出现">1.1异常的出现</h2>
+<p><strong>异常</strong>就是我们程序运行过程中产生的<strong>错误</strong>，异常的出现会中断正在运行的程序。简单说就是我们的程序出了BUG跑不起来。</p>
+<p>而<strong>Java中的异常</strong>是Java提供的用于<strong>处理程序中错误</strong>的一种机制。好比除以0的溢出、数组下标越界等。在我们设计良好的程序时应该在出现异常时提供处理这些错误的方法，从而使得程序不会因此产生阻断或莫名其妙的错误。</p>
+<p>于是乎，Java中应对于这些可能会出现的异常事件，我们可以写一个<strong>异常类（Exception）对象</strong>，这个对象里就封装了异常事件的信息并将被提交给Java运行时系统，在发生时使用<strong>throw关键词抛出</strong>一个Exception子类的实例表示<strong>异常发生</strong>并<strong>终止当前方法的继续执行</strong>。Java运行时接收到异常对象时，会<strong>寻找能处理这一异常的代码</strong>并<strong>把当前异常对象交给其处理</strong>，这一过程即是<strong>catch捕获</strong>过程。</p>
+<h2 id="12捕获抛出与异常类">1.2捕获、抛出与异常类</h2>
+<p>在Java中进行异常的处理，会用到：try、catch、finally这几个关键字，其一般的结构如下：</p>
+<ul>
+<li><strong>try指尝试执行可能出现异常的代码，如果没出现异常，那么不执行catch语句，否则通过catch捕捉异常，并且处理异常。</strong></li>
+<li><strong>一个try可以对应多个catch，并且它们都需要同时出现。</strong></li>
+<li><strong>finally语句放在最后面，无论是否出现异常都执行</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//可能出现异常的语句</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">catch</span>(<span style="color:#75715e">/* 异常类型 异常对象 */</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//异常处理</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">catch</span>(<span style="color:#75715e">/* 异常类型 异常对象 */</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//异常处理</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//......</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">finally</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//不论是否异常都要执行</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>​    例子：</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/fb816e6be922a7630c543f7d571e9153.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>结果：</p>
+<blockquote>
+<p>n=0,m=8888,t=1000
+发生异常:For input string: &ldquo;ab123&rdquo;
+无论怎么我都会执行!
+我故意抛出throw一个异常！
+发生异常：null
+无论怎么我都会执行!</p>
+<p>进程已结束，退出代码为 0</p></blockquote>
+<h2 id="13throws和throw辨析">1.3throws和throw辨析</h2>
+<p>​    <strong>throw</strong></p>
+<blockquote>
+<ul>
+<li>throw是用于抛出异常，适用于我们无法处理的一些情况，或给调用者一点提示</li>
+<li>有时候对于出现异常的情况我们无法处理，或者给调用者一些提示，会选择抛出异常，把这个异常交给调用者处理，但是在抛出的同时我们必须在方法声明这个异常，告诉可能出现的异常。</li>
+<li>throw会<strong>抛出一个异常对象</strong>，将这个异常对象传递到调用者处，并结束当前方法的执行。</li>
+</ul></blockquote>
+<p>其语法为：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> 异常类型<span style="color:#960050;background-color:#1e0010">（</span>提示信息<span style="color:#960050;background-color:#1e0010">）</span>;
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>​    <strong>throws</strong></p>
+<blockquote>
+<ul>
+<li>throws用于<strong>声明异常</strong></li>
+<li>在<strong>方法</strong>声明的时候跟在方法后边声明其可能产生的若干个异常</li>
+</ul></blockquote>
+<p>其语法为：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">throws</span> 异常类型1<span style="color:#960050;background-color:#1e0010">，</span>异常类型2<span style="color:#960050;background-color:#1e0010">，</span>......;
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>例如：</p>
+<p>1.自定义的异常类</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/a6c9a4938fb516e9b5cc116331b54c51.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>2.Score类，在getScore方法中<strong>使用throws声明异常类型</strong></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/9201098f18ef55e60876188350f2e8f1.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>3.Main类，测试两个例子。</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/b2d36d005a2631c44724799c4c3d203b.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>结果：</p>
+<blockquote>
+<p>成功录入，你的成绩为100
+成绩不在0到100之间</p>
+<p>进程已结束，退出代码为 0</p></blockquote>
+<h2 id="14自定义异常类">1.4自定义异常类</h2>
+<p>以上我们对异常有了一定了解，在实际的开发过程中，除了Java中的异常类之外，我们还可以定义自己的异常类用于不同的情景之下，好比说，我们在输入人数的时候不能输入一个小数，在我们的自定义异常类中可以对这种情况进行处理，以提示使用者。</p>
+<p>其中：</p>
+<blockquote>
+<ul>
+<li>所有异常都必须是 Throwable 的子类。</li>
+<li>检查性异常类，则需要继承 Exception 类。</li>
+<li>运行时异常类，那么需要继承 RuntimeException 类。</li>
+<li>异常类也更其他类差不多，可以拥有自己的属性和方法</li>
+</ul></blockquote>
+<p>例子同上1.3中的程序中的ScoreException类即为自定义的异常类。</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/a6c9a4938fb516e9b5cc116331b54c51.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<h1 id="二包装类">二、包装类</h1>
+<h2 id="21包装类">2.1包装类</h2>
+<p>Java是一个面向对象的编程语言，但是Java中的<strong>八种基本数据类型却是不面向对象的</strong>，为了使用方便和解决这个不足，在设计类时为<strong>每个基本数据类型设计了一个对应的类</strong>进行代表，这样<strong>八种基本数据类型对应的类统称为包装类(Wrapper Class)</strong>，包装类均位于<strong>java.lang包</strong>。</p>
+<p>包装类囊括了：</p>
+<table>
+  <thead>
+      <tr>
+          <th>Byte</th>
+          <th>Short</th>
+          <th>Character</th>
+          <th>Integer</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Long</td>
+          <td>Float</td>
+          <td>Double</td>
+          <td>Boolean</td>
+      </tr>
+  </tbody>
+</table>
+<p>每个类的主要作用为：作为和基本数据类型对应的类类型存在，方便涉及到对象的操作；包含每种基本数据类型的相关属性如最大值、最小值等，以及相关的操作方法。</p>
+<p>特点：</p>
+<blockquote>
+<p>（1）所有包装类都是final类型，因此不能创建他们的子类。
+（2）包装类是不可变类，一个包装类的对象自创建后，他所包含的基本类型数据就不能被改</p>
+<p>​     变。</p></blockquote>
+<h2 id="22包装类的使用">2.2包装类的使用</h2>
+<p><strong>装箱与拆箱：</strong></p>
+<p>以Integer为例子，其常用方法有：praseInt()、toString()、valueOf()、intValue()等。</p>
+<table>
+  <thead>
+      <tr>
+          <th>praseInt()</th>
+          <th>数字字符串类型转成int类型</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>toString()</td>
+          <td>int类型转成数字字符串类型</td>
+      </tr>
+      <tr>
+          <td>intValue()</td>
+          <td>将Integer类转化为int类型（用于拆箱）</td>
+      </tr>
+      <tr>
+          <td>valueOf()</td>
+          <td>给Integer类对象赋值（用于装箱，相当于Integer i = new Integer.valueOf（6）；）</td>
+      </tr>
+  </tbody>
+</table>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/d84fafc5446e94ff31e2b40befa39c18.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>这里编译器爆红是因为在新版的Java中Integer类已经被弃用，intValue显示不必要的拆箱。因为在Java中已经实现了自动拆箱与装箱。</p>
+<p>在看其他两个方法：</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/aaa7fe8bdd33d23f46ae0b5dd692f95e.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>运行结果：</p>
+<blockquote>
+<p>字符类型转成整型：123
+int类型转成数字字符串类型:123</p></blockquote>
+<h1 id="三string类">三、String类</h1>
+<h2 id="31了解string类">3.1了解String类</h2>
+<p>String类即字符串类型，在Java中可以通过String类直接声明一个字符串类型的变量。<strong>导包</strong>：String类位于java.lang.String下。即：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String s <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String();<span style="color:#75715e">//初始化新创建的String对象，使其表示空字符序列</span>
+</span></span><span style="display:flex;"><span>String str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello&#34;</span>;<span style="color:#75715e">//直接赋值</span>
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h2 id="32string常用方法及实例">3.2String常用方法及实例</h2>
+<p>总和：</p>
+<table>
+  <thead>
+      <tr>
+          <th>.length()</th>
+          <th>获取字符串长度</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>.charAt(int index)</td>
+          <td>获取index位置上的单个字符（越界报错）</td>
+      </tr>
+      <tr>
+          <td>.indexOf(char ch)</td>
+          <td>返回ch字符第一次出现的位置(int型)，没有返回-1</td>
+      </tr>
+      <tr>
+          <td>.indexOf(cahr ch,int fromIndex)</td>
+          <td>从fromIndex开始查找，返回ch字符第一次出现的位置(int型)，没有返回-1</td>
+      </tr>
+      <tr>
+          <td>.indexOf(String s)</td>
+          <td>返回字符串s第一次出现位置的首字母下标，没有返回-1</td>
+      </tr>
+      <tr>
+          <td>.indexOf(String s,int fromIndex)</td>
+          <td>从fromIndex开始查找，返回字符串s第一次出现位置的首字母下标，没有返回-1</td>
+      </tr>
+      <tr>
+          <td>.lastIndexOf(char ch)</td>
+          <td>从后往前找，返回从后往前找第一次出现ch字符的位置下标</td>
+      </tr>
+      <tr>
+          <td>.substring(int start,int end)</td>
+          <td>截取[左，右)长度的字符串，可以省略end</td>
+      </tr>
+      <tr>
+          <td>.replace(char oldchar,char newchar)</td>
+          <td>原来字符串不变，创建新的字符串，将oldchar替换为newchar</td>
+      </tr>
+      <tr>
+          <td>.split(String s)</td>
+          <td>将一个完整的字符串按照指定的分隔符分成若干个字符串</td>
+      </tr>
+  </tbody>
+</table>
+<p>当然还有很多，在这里贴个<a href="https://blog.csdn.net/m0_58761900/article/details/125014074?ops_request_misc=%7B%22request%5Fid%22%3A%22171127759516800184193030%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;request_id=171127759516800184193030&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-125014074-null-null.142%5Ev99%5Epc_search_result_base5&amp;utm_term=String%E7%B1%BB&amp;spm=1018.2226.3001.4187">文章</a>方便查询</p>
+<p>3.2.1字符串构造</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/6cb9e1efbc3ad5c3dca505abbb374558.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>运行结果：</p>
+<blockquote>
+<p>Hello
+JavaWorld
+abc</p></blockquote>
+<p>3.2.2常用方法</p>
+<p>个别方法举例：</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/efce71dd55985e0a748133124d5f495d.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>运行结果：</p>
+<blockquote>
+<p>5
+3
+e
+3
+sda</p></blockquote>
+<h2 id="33stringbuffer和stringbuilder">3.3StringBuffer和StringBuilder</h2>
+<p>在一个String对象创建之后，它就是一个不可改变的字符，直到这个对象被摧毁。而StringBuffer与StringBuilder都继承自AbstractStringBuilder类，AbstractStringBuilder中也是使用字符数组保存字符串，是可变类。并且都提供了一系列插入、追加、改变字符串里的字符序列的方法。就是说我们可以用此对字符串进行一定的改变。</p>
+<p>常用方法：</p>
+<table>
+  <thead>
+      <tr>
+          <th>StringBuilder.append</th>
+          <th>添加任意类型数据的字符串形式，并返回当前对象自身</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>StringBuilder.reverse</td>
+          <td>逆置字符串</td>
+      </tr>
+      <tr>
+          <td>StringBuffer.apppend</td>
+          <td>同上</td>
+      </tr>
+      <tr>
+          <td>StringBuffer.reverse</td>
+          <td>逆置字符串</td>
+      </tr>
+  </tbody>
+</table>
+<p>实例：</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/8babca7a4d6cab3b663bbebbd382a66c.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>运行结果：</p>
+<blockquote>
+<p>hello world
+dlrowolleh</p></blockquote>
+<p>二者就方法来说是大差无几的。其区别在于：</p>
+<blockquote>
+<ul>
+<li>
+<p>（1）String内容不可以修改，而StringBuffer与StringBuilder，提供了一系列插入、追加、 改变字符串里的字符序列的方法，并且修改不产生新的对象，而是在原对象的基础上修改</p>
+</li>
+<li>
+<p>（2）就三者效率进行比较：<strong>StringBuilder &gt; StringBuffer &gt; String</strong></p>
+</li>
+<li>
+<p>（3）从安全性和操作数据量来比较：如果要<strong>操作的数量比较小，应优先使用String类</strong>；如果是在<strong>单线程下操作大量数据，应优先使用StringBuilder类</strong>；如果是在<strong>多线程下操作大量数据，应优先使用StringBuffer类</strong>。</p>
+</li>
+<li></li>
+</ul>
+<p>（4）<strong>StringBuffer使用了缓存区</strong>，<strong>StringBuilder没有使用缓存区</strong>，所以没有修改数据的情况下，多次调用StringBuffer的toString方法获取的字符串是共享底层的字符数组的。而StringBuilder不是共享底层数组的，每次都生成了新的字符数组。</p></blockquote>
+<h1 id="四digdecimal类">四、DigDecimal类</h1>
+<h2 id="41bigdecimal类简介常用方法">4.1BigDecimal类简介、常用方法</h2>
+<blockquote>
+<ul>
+<li><strong>导包</strong>：BigDecimal类位于<strong>java.math.BigDecimal</strong>包下。</li>
+<li><strong>特点</strong>：此类可以完成<strong>大的小数操作</strong>，而且也可以使用此类进行<strong>精确的四舍五入。</strong></li>
+</ul></blockquote>
+<p>常用方法：</p>
+<p>1.构造方法：</p>
+<table>
+  <thead>
+      <tr>
+          <th>BigDecimal(String value)</th>
+          <th>构造方法，将String类型转换成BigDecimal类型数据。</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>BigDecimal(double value)</td>
+          <td>构造方法，将double类型转换成BigDecimal类型数据。</td>
+      </tr>
+      <tr>
+          <td>BigDecimal(int val)</td>
+          <td>构造方法，将int类型转换成BigDecimal类型数据。</td>
+      </tr>
+  </tbody>
+</table>
+<p>2.常用操作：</p>
+<table>
+  <thead>
+      <tr>
+          <th>BigDecimal add(BigDecimal value)</th>
+          <th>加法，求两个BigDecimal类型数据的和。</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>BigDecimal subtract(BigDecimal value)</td>
+          <td>减法，求两个BigDecimal类型数据的差。</td>
+      </tr>
+      <tr>
+          <td>BigDecimal multiply(BigDecimal value)</td>
+          <td>乘法，求两个BigDecimal类型数据的积。</td>
+      </tr>
+      <tr>
+          <td>BigDecimal divideBigDecimal divisor)</td>
+          <td>除法，求两个BigDecimal类型数据的商。</td>
+      </tr>
+      <tr>
+          <td>BigDecimal remainder(BigDecimal divisor)</td>
+          <td>求余数，求BigDecimal类型数据除以divisor的余数。</td>
+      </tr>
+      <tr>
+          <td>BigDecimal max(BigDecimal value)</td>
+          <td>最大数，求两个BigDecimal类型数据的最大值。</td>
+      </tr>
+      <tr>
+          <td>BigDecimal min(BigDecimal value)</td>
+          <td>最小数，求两个BigDecimal类型数据的最小值。</td>
+      </tr>
+      <tr>
+          <td>BigDecimal abs()</td>
+          <td>绝对值，求BigDecimal类型数据的绝对值。</td>
+      </tr>
+      <tr>
+          <td>BigDecimal negate()</td>
+          <td>相反数，求BigDecimal类型数据的相反数。</td>
+      </tr>
+  </tbody>
+</table>
+<p>其中对于除法有些特殊：</p>
+<p>BigDecimal除法可能出现不能整除的情况，例如9.9/4.6，如果直接按照表格中的格式写会报错。</p>
+<p>我们可以用BigDecimal divide(BigDecimal divisor, int scale, int roundingMode)。</p>
+<blockquote>
+<p>第一参数表示<strong>除数</strong>。</p>
+<p>第二个参数表示<strong>小数点后保留位数</strong>。</p>
+<p>第三个参数表示<strong>舍入模式</strong>。只有在作除法运算或四舍五入时才用到舍入模式。（对于舍入模式需要的时候进行查询）贴个文章：<a href="https://blog.csdn.net/m0_54144956/article/details/130041945?ops_request_misc=%7B%22request%5Fid%22%3A%22171127783716800211518295%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;request_id=171127783716800211518295&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-2-130041945-null-null.142%5Ev99%5Epc_search_result_base5&amp;utm_term=BigDecimal%E7%B1%BB&amp;spm=1018.2226.3001.4187">BigDecimal 类详解</a>。可用于查找用法。</p></blockquote>
+<p>3.实际应用：</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/f3c4c308ccfe4513e16d1328a4dad594.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>运行结果分别显示了BigDecimal的不同操作：</p>
+<blockquote>
+<p>5.8761526
+0.4070326
+8.590873460256
+1.1488475659703938
+0.4070326
+3.1415926
+2.73456
+219
+-3.1415926</p></blockquote>
+<h2 id="42小数点的处理">4.2小数点的处理</h2>
+<p>BIgDecimal中可以有三种处理小数的方法：导入<strong>DecimalFormat包</strong></p>
+<blockquote>
+<ul>
+<li>0.000&hellip;&hellip;</li>
+<li>#.000&hellip;&hellip;</li>
+<li>BigDecimal类操作</li>
+</ul></blockquote>
+<p>例如：</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/167149a9f4e0aea80c5ac0aa8cba0d4e.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>运行结果：</p>
+<blockquote>
+<p>3.1416
+2.73
+1.141</p></blockquote>
+<h1 id="五泛型">五、泛型</h1>
+<p>先在这里贴一个<a href="https://blog.csdn.net/weixin_45395059/article/details/126006369?ops_request_misc=%7B%22request%5Fid%22%3A%22171127084016800222870237%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;request_id=171127084016800222870237&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-126006369-null-null.142%5Ev99%5Epc_search_result_base5&amp;utm_term=%E6%B3%9B%E5%9E%8B&amp;spm=1018.2226.3001.4187">两万字详解的文章</a>。学习于此。当然暂时先学习基本知识。º·(இωஇ)‧º·˚.</p>
+<h2 id="51什么是泛型">5.1什么是泛型</h2>
+<p>泛型即是将参数的数据类型也参数化，即“<strong>参数化类型</strong>”。好比在方法定义时，将方法签名中的形参的数据类型也设置为参数（也可称之为类型参数），在调用该方法时再从外部<strong>传入一个具体的数据类型和变量</strong>。这种参数化类型可以用在类、接口和方法中，被称为<strong>泛型类、泛型接口、泛型方法</strong>。</p>
+<h2 id="52泛型类的基本语法与使用">5.2泛型类的基本语法与使用</h2>
+<p>5.2.1泛型类</p>
+<p>将类型参数用于类的定义中，则该类被称为泛型类。</p>
+<p>其基本语法：</p>
+<blockquote>
+<p>class 类名称 &lt;泛型标识&gt;{</p>
+<p>​    private 泛型标识/* 成员变量类型 */ 变量名;</p>
+<p>​    &hellip;&hellip;</p>
+<p>}</p></blockquote>
+<p>&lt;&gt;内的泛型标识被称作类型参数，用于指代任何数据类型。</p>
+<p>一般Java常见的标识如下：</p>
+<blockquote>
+<p>T ：代表一般的任何类。</p>
+<p>E ：代表 Element 元素的意思，或者 Exception 异常的意思。</p>
+<p>K ：代表 Key 的意思。</p>
+<p>V ：代表 Value 的意思，通常与 K 一起配合使用。</p>
+<p>S ：代表 Subtype 的意思，文章后面部分会讲解示意。</p></blockquote>
+<p>例如：</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/51c5551b6352f675e38713c42e623b8f.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>这样，我们就实现了一个泛型类。在泛型类中，类型参数定义的位置有三处，分别是：</p>
+<blockquote>
+<p>1.<strong>非静态</strong>的<strong>成员属性类型</strong>
+2.<strong>非静态方法</strong>的<strong>形参类型</strong>（包括非静态成员方法和构造器）
+3.<strong>非静态的成员方法的返回值</strong>类型</p></blockquote>
+<p>也就是说明：泛型类中的<strong>静态方法和静态变量不可以使用泛型类所声明的类型参数。</strong></p>
+<p>那么我们对一个泛型类确实定义了一个类型不确定的类型参数，又什么时候将这个类型参数定下来呢？泛型类中的类型参数的确定是在<strong>创建泛型类对象</strong>的时候。就像上边的代码里写的，在Example中我们以T代表了一个类型参数，在创建对象的时候我们将T换为我们需要的类型。</p>
+<p>特别注意的是：</p>
+<blockquote>
+<ul>
+<li><strong>静态泛型方法</strong>中可以使用<strong>自身的方法签名中新定义的类型参数</strong>（即泛型方法，后面会说到），而<strong>不能使用泛型类中定义的类型参数</strong>。</li>
+<li>泛型类<strong>不只接受一个类型参数，它还可以接受多个类型参数</strong>。</li>
+</ul></blockquote>
+<p>5.2.2泛型类的使用</p>
+<p>在创建泛型类的对象时，<strong>必须指定类型参数 T 的具体数据类型</strong>，即尖括号 &lt;&gt; 中传入的什么数据类型，T 便会被替换成对应的类型。如果 &lt;&gt; 中什么都不传入，则<strong>默认是 &lt; Object &gt;</strong>。</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/da3443349eb4363f285b0e380de75e6a.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>运行结果:</p>
+<blockquote>
+<p>5
+org.example.Example@2f4d3709
+hello
+abc</p></blockquote>
+<h2 id="53泛型接口">5.3泛型接口</h2>
+<p>基本定义：</p>
+<blockquote>
+<p>public interface 接口名&lt;类型参数&gt;{</p>
+<p>​    &hellip;&hellip;</p>
+<p>}</p></blockquote>
+<p>其中泛型接口中的类型参数，是<strong>在该接口被继承或着被实现的时候确定的</strong>。注意：在泛型接口中，<strong>静态成员也不能使用泛型接口定义的类型参数</strong>。</p>
+<p>其在定义时：</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/8e45acd086d9d374857f0231d1b88794.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>例：一个简单的泛型接口的实现</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/c9fbb567267001771cb7805259850f6c.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>运行结果：</p>
+<blockquote>
+<p>10.5</p></blockquote>
+<h2 id="54泛型方法">5.4泛型方法</h2>
+<p>基本定义：</p>
+<p>当在一个方法签名中的返回值前边声明了一个<!-- raw HTML omitted -->时，则该方法就被声明为一个泛型方法。其中<!-- raw HTML omitted -->表示该方法声明了一个类型参数T，并且这个类型参数T只在该方法中使用。</p>
+<blockquote>
+<p>public &lt;类型参数&gt; 返回类型 方法名(类型参数 变量名){
+&hellip;..</p>
+<p>}</p></blockquote>
+<p>注意：只有<strong>在方法签名中声明了&lt; T &gt;的方法</strong>才是<strong>泛型方法</strong>，仅使用了泛型类定义的类型参数的方法并不是泛型方法。</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/0f7d38777e4a82fdceaed896c0c586f1.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<blockquote>
+<ul>
+<li>泛型方法中<strong>可以同时声明多个类型参数</strong>。</li>
+<li>泛型方法中<strong>也可以使用泛型类中定义的泛型参数</strong>。</li>
+<li>特别注意的是：<strong>泛型类中定义的类型参数</strong>和<strong>泛型方法中定义的类型参数</strong>是<strong>相互独立</strong>的，它们一点关系都没有。</li>
+<li>我们可以将<strong>静态成员方法定义为一个泛型方法</strong>。</li>
+</ul></blockquote>
+<p>例子：</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/f227a1e662a142a9008c50941bdb8b5b.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>运行结果：</p>
+<blockquote>
+<p>the t is5
+t was inputted!
+5.36</p></blockquote>
+<h1 id="六列表">六、列表</h1>
+<h2 id="61list简介">6.1List简介</h2>
+<p>在Java的集合框架中，List接口是一个有序、可重复的集合，它扩展了Collection接口，并提供了一系列操作和方法来处理元素列表。其实现类包括：ArrayList、LinkedList、Vector。</p>
+<table>
+  <thead>
+      <tr>
+          <th>ArrayList</th>
+          <th>基于动态数组实现，支持随机访问和快速遍历，适用于读取和修改操作较多的场景。</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>LinkedList</td>
+          <td>基于双向链表实现，支持高效的插入和删除操作，适用于频繁的插入和删除操作。</td>
+      </tr>
+      <tr>
+          <td>Vector</td>
+          <td>与<code>ArrayList</code>类似，但是线程安全，适用于多线程环境。</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="62arraylist">6.2ArrayList</h2>
+<p><code>ArrayList</code>是<code>List</code>接口的一个常见实现类，它基于动态数组实现，可以根据需要自动扩展和收缩数组的大小。</p>
+<p>常用方法：</p>
+<table>
+  <thead>
+      <tr>
+          <th>.add(E element)</th>
+          <th>在列表的末尾添加元素。</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>.get(int index)</td>
+          <td>获取指定索引位置的元素。</td>
+      </tr>
+      <tr>
+          <td>.set(int index , E element)</td>
+          <td>替换指定索引位置的元素。</td>
+      </tr>
+      <tr>
+          <td>.remove(int index )</td>
+          <td>移除指定索引位置的元素。</td>
+      </tr>
+      <tr>
+          <td>.size()</td>
+          <td>返回列表的大小。</td>
+      </tr>
+  </tbody>
+</table>
+<p>代码实现：</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/fd8d73913c29253a969ad6c6f67adf73.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>运行结果：</p>
+<blockquote>
+<p>[Hello]
+World!
+[Hello, World!]
+[Hello, JAVAAGENT]
+2</p></blockquote>
+<h2 id="63linkedlist">6.3LinkedList</h2>
+<p><code>LinkedList</code>是<code>List</code>接口的另一个实现类，它基于双向链表实现。与<code>ArrayList</code>相比，<code>LinkedList</code>对于频繁的插入和删除操作更高效。</p>
+<p>常用方法同上，代码操作：</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/f1cf12481e957974c2e80ee1e45c4be0.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>运行结果：</p>
+<blockquote>
+<p>Names: [Alice, Bob, Charlie]
+Names after removal: [Alice, Charlie]
+First name: Alice</p></blockquote>
+<h2 id="64vector">6.4Vector</h2>
+<p><code>Vector</code>是<code>List</code>接口的另一个实现类，与<code>ArrayList</code>类似，但是它是线程安全的。<code>Vector</code>的操作方法与<code>ArrayList</code>相同，但是由于线程同步的额外开销，它的性能可能较低。</p>
+<p>常用方法同上，代码操作：</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/ef5dc4622c7b596b0e9fa1a46669de42.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>运行结果：</p>
+<blockquote>
+<p>Colors: [Red, Green, Blue]
+Colors after removal: [Red, Blue]
+First color: Red
+2</p></blockquote>
+<h1 id="七set">七、set</h1>
+<h2 id="71set简介">7.1set简介</h2>
+<p>set和List都是Collection集合的子类，set有无序性（存储顺序不一致）、不重复（可以去除重复）、无索引（没有带索引的方法，所以不能使用普通的for循环遍历）。其具体实现类有：HashSet、LinkedHashSet、TreeSet。其中：</p>
+<ul>
+<li>HashSet：无序，不重复，无索引</li>
+<li>LinkedHashSet：有序，不重复，无索引</li>
+<li>TreeSet：排序，不重复，无索引</li>
+</ul>
+<h2 id="72遍历与常用方法">7.2遍历与常用方法</h2>
+<p>7.2.1遍历</p>
+<blockquote>
+<ul>
+<li>直接使用System.out.println(set)</li>
+<li>增强型for循环</li>
+<li>迭代器遍历</li>
+</ul></blockquote>
+<p>例如：结果和上边一样，HashSet的存储是无序的</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/95c0dc3de50a6f8b76f18ad152c83b24.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>运行结果：</p>
+<blockquote>
+<p>[我是第三个字符串, 我是第一个字符串, 我是第二个字符串]
+我是第三个字符串
+我是第一个字符串
+我是第二个字符串
+我是第三个字符串
+我是第一个字符串
+我是第二个字符串</p></blockquote>
+<p>8.2.2常用方法</p>
+<p>同其他的差不多：</p>
+<table>
+  <thead>
+      <tr>
+          <th>int size()</th>
+          <th>返回集合的长度</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>boolean isEmpty()</td>
+          <td>判断集合是否为空</td>
+      </tr>
+      <tr>
+          <td>boolean add(E e)</td>
+          <td>添加元素</td>
+      </tr>
+      <tr>
+          <td>boolean remove(Object o)</td>
+          <td>删除元素</td>
+      </tr>
+  </tbody>
+</table>
+<p>这里就不在展示代码了，和其他的相差无几。</p>
+<p>在这里贴几篇文章，以便后续更深的学习：<a href="https://blog.csdn.net/qq_51751452/article/details/121467783?ops_request_misc=%7B%22request%5Fid%22%3A%22171151958616800180684589%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;request_id=171151958616800180684589&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~baidu_landing_v2~default-6-121467783-null-null.142%5Ev100%5Epc_search_result_base5&amp;utm_term=setjava&amp;spm=1018.2226.3001.4187">Java Set集合详解</a>、<a href="https://blog.csdn.net/MrDaKai/article/details/127727272?ops_request_misc=%7B%22request%5Fid%22%3A%22171151958616800180684589%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;request_id=171151958616800180684589&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-127727272-null-null.142%5Ev100%5Epc_search_result_base5&amp;utm_term=setjava&amp;spm=1018.2226.3001.4187">Java(七)——集合框架&mdash;Set集合</a></p>
+<h1 id="八map">八、map</h1>
+<h2 id="81map简介">8.1map简介</h2>
+<p>map是一种集合，其基本形式为：<strong>public interface Map&lt;K,V&gt;</strong>，Map是一个<strong>接口</strong>，其不可以直接创建对象，可以通过多态的形式创建对象。Map中包含两个参数，一个是<strong>K表示键</strong>，一个是**V表示值，**且一个键有且仅有对应一个值，Map中不能包含重复的键，若是有重复的，按最后一次的键为准，而其他的键会被覆盖。</p>
+<p><strong>Map的导包：java.util.Map</strong>,其具体实现一般有两种：HashMap（无序）和TreeMap（默认升序）。实现接口回调。</p>
+<p>例如：</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/fed07f0dbe1d04125d6f0df138e3c720.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>运行结果：（键不可以重复，值可以重复）</p>
+<blockquote>
+<p>{1=张三, 2=张三, 3=王五}</p></blockquote>
+<h2 id="82map的使用">8.2Map的使用</h2>
+<table>
+  <thead>
+      <tr>
+          <th>.put(K key, V value)</th>
+          <th>添加元素</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>.remove(K key)</td>
+          <td>根据键删除键值对元素</td>
+      </tr>
+      <tr>
+          <td>.clear()</td>
+          <td>移除所有键值对元素</td>
+      </tr>
+      <tr>
+          <td>.containsKey(K key)</td>
+          <td>判断集合是否包含指定键</td>
+      </tr>
+      <tr>
+          <td>.containsValue(V value)</td>
+          <td>判断集合是否包含指定值</td>
+      </tr>
+      <tr>
+          <td>.isEmpty()</td>
+          <td>判断集合是否为空</td>
+      </tr>
+      <tr>
+          <td>.size()</td>
+          <td>返会键值对的个数</td>
+      </tr>
+  </tbody>
+</table>
+<p>例如：</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/5b9b6d55dfdfd54bba6e2c7ce0c01ad3.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>运行结果：</p>
+<blockquote>
+<p>{1=张三, 2=李四, 3=王五}
+{2=李四, 3=王五}
+false
+false
+false
+false
+false
+2
+true</p></blockquote>
+<h2 id="83map的遍历">8.3Map的遍历</h2>
+<p>实现Map的遍历有三种方式：</p>
+<blockquote>
+<ol>
+<li>由键找值，创建键的集合，再遍历每一个键，实现键值对的遍历</li>
+<li>获取所有键值对的集合，遍历键值对集合</li>
+<li>Iterator迭代器</li>
+</ol></blockquote>
+<p>实现：</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/06a1ba8eb66ea7624845f9111ccc7bb5.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>第二种也可以更简洁一点。</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/0a70f6c811a5fe4c512d496a403050d8.png" alt="img"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>运行结果：</p>
+<blockquote>
+<p>{1=张三, 2=李四, 3=王五}
+1and张三 2and李四 3and王五
+1and张三 2and李四 3and王五
+1and张三 2and李四 3and王五</p></blockquote>
+<hr>
+<p>学习笔记 如有错误 日后修改(∗ᵒ̶̶̷̀ω˂̶́∗)੭₎₎̊₊♡</p>
+
+        </div>
+        
+        <div class="share m-2 grid grid-cols-2 lg:grid-cols-3 gap-2">
+            <a href="https://twitter.com/intent/tweet?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fzgs-copy%2f&text=Java%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86" target="_blank"
+                title="Post" class="share-button x">
+                <div class="text-white text-center">
+                    <span class="icon-x text-lg mr-2"></span>X
+                </div>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fblog%2fzgs-copy%2f&t=Java%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86" target="_blank"
+                title="Facebook" class="share-button facebook">
+                <div class="text-white text-center">
+                    <span class="icon-facebook text-lg mr-2"></span>Facebook
+                </div>
+            </a>
+            <a href="https://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2flocalhost%3a1313%2fblog%2fzgs-copy%2f&title=Java%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86" target="_blank"
+                title="hatena" class="share-button hatena">
+                <div class="text-white text-center">
+                    <span class="icon-hatenabookmark text-lg mr-2"></span>Hatena
+                </div>
+            </a>
+            <a href="https://getpocket.com/edit?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fzgs-copy%2f&title=Java%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86" target="_blank" title="pocket"
+                class="share-button pocket">
+                <div class="text-white text-center">
+                    <span class="icon-get-pocket text-lg mr-2"></span>Pocket
+                </div>
+            </a>
+            <a href="https://timeline.line.me/social-plugin/share?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fzgs-copy%2f" class="share-button line">
+                <div class="text-white text-center">
+                    <span class="icon-line text-lg mr-2"></span>LINE
+                </div>
+            </a>
+            <a href="javascript:OnClickURL();" class="share-button url" title="Copy to Clipboard"
+                data-clipboard-text="Java基础知识 http://localhost:1313/blog/zgs-copy/" id="url">
+                <div class="text-white text-center">
+                    <span class="icon-link text-lg mr-2"></span>Copy
+                </div>
+            </a>
+        </div>
+        <hr class="py-4">
+        <aside id="meta">
+            <div class="grid grid-cols-2">
+                <div class="col-span-1">
+                    
+                    <a class="previous lg:text-2xl" href="http://localhost:1313/blog/zgs/">
+                        <div
+                            class="transition-colors duration-300 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                            <span class="icon-keyboard_arrow_left"></span> Java基础知识
+                        </div>
+                    </a>
+                    
+                </div>
+                
+                <a class="next lg:text-2xl" href="http://localhost:1313/blog/gjt/">
+                    <div
+                        class="transition-colors duration-300 col-span-1 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                        java异常类 <span class="icon-keyboard_arrow_right"></span>
+                    </div>
+                </a>
+                
+            </div>
+        </aside>
+    </div>
+</div>
+
+  </main><footer class="bg-tlgray-100">
+  
+  <script src='/js/clipboard.min.js'></script>
+  <script src='/js/highlight.min.js'></script>
+  <script src='/js/highlightjs-line-numbers.min.js'></script>
+  <script src='/js/sweetalert2.min.js'></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+    new ClipboardJS('.url');
+
+    function OnClickURL() {
+      Swal.fire({
+        icon: 'success',
+        title: 'Copied!',
+        text: 'Copied the URL and title.'
+      })
+    }
+  </script>
+  
+  <script>
+    function toggleNav() {
+      var hamburger = document.getElementById("hamburgerbtn");
+      var overlay = document.getElementById("overlay");
+      var body = document.body;
+
+      hamburger.addEventListener("click", function () {
+        overlay.classList.toggle("open");
+        hamburger.classList.toggle("is-open");
+        body.classList.toggle("scroll-lock");
+      });
+    }
+    toggleNav();
+
+    document.querySelector('.scroll-top').addEventListener('click', () => {
+      document.documentElement.scrollTop = 0;
+    });
+  </script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet" />
+  
+  <div class="flex items-center justify-between flex-wrap bg-gray-800 p-8 text-white">
+    <div class="items-center text-xl text-grey-900 mr-6 flex flex-row">
+      <img alt="Bluemsun Studio" class="h-14 mr-8" src="/img/logo/logo.jpg">
+      <div>
+          <h1 class="px-2 text-3xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-5xl lg:text-6xl xl:text-8xl">蓝旭工作室</h1> 
+          <h2 class="px-2 text-xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-3xl lg:text-4xl xl:text-6xl">Bluemsun Studio</h2>
+      </div>
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+      <div class="text-lg lg:flex-grow">
+      </div>
+      <div class="flex flex-row items-center text-lg">
+        
+        <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          返回主页
+          
+        </a>
+        
+        <a href="https://github.com/BluemsunOffice" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          <i class='icon-github text-2xl'></i>
+          
+        </a>
+        
+      </div>
+    </div>
+  </div>
+  <div class="copy pl-8 py-5 bg-tlgray-700 text-white text-md w-full text-center">
+    &copy; Hello! Bluemsun 2025 All Rights Reserved.
+  </div>
+</footer>
+</body>
+
+</html>

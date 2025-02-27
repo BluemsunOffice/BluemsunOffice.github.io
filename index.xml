@@ -1,38 +1,728 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hello! Bluemsun</title><link>http://bluemsun.top:9080/</link><description>Recent content on Hello! Bluemsun</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 26 Feb 2025 13:02:51 +0800</lastBuildDate><atom:link href="http://bluemsun.top:9080/index.xml" rel="self" type="application/rss+xml"/><item><title>样例博客</title><link>http://bluemsun.top:9080/blog/example/</link><pubDate>Thu, 23 Jun 2022 12:33:45 +1000</pubDate><guid>http://bluemsun.top:9080/blog/example/</guid><description>&lt;h1 id="样例博客">样例博客&lt;/h1>
-&lt;h2 id="一博客的简单描述">一、博客的简单描述&lt;/h2>
-&lt;h3 id="11-博客的简单描述">1.1 博客的简单描述&lt;/h3>
-&lt;h4 id="111-博客的简单描述">1.1.1 博客的简单描述&lt;/h4>
-&lt;h5 id="1111-博客的简单描述">1.1.1.1 博客的简单描述&lt;/h5>
-&lt;p>博客的具体内容&amp;hellip;&lt;/p></description></item><item><title>样例项目1</title><link>http://bluemsun.top:9080/products/example01/</link><pubDate>Tue, 23 Jun 2020 12:33:45 +1000</pubDate><guid>http://bluemsun.top:9080/products/example01/</guid><description>&lt;p>项目的具体内容&lt;/p></description></item><item><title>样例项目2</title><link>http://bluemsun.top:9080/products/example02/</link><pubDate>Tue, 23 Jun 2020 12:33:45 +1000</pubDate><guid>http://bluemsun.top:9080/products/example02/</guid><description>&lt;p>项目的具体内容&lt;/p></description></item><item><title>样例博客01</title><link>http://bluemsun.top:9080/blog/example01/</link><pubDate>Wed, 26 Feb 2025 13:02:51 +0800</pubDate><guid>http://bluemsun.top:9080/blog/example01/</guid><description>&lt;h1 id="一级标题样例博客">一级标题样例博客&lt;/h1>
-&lt;h2 id="一博客的简单描述">一、博客的简单描述&lt;/h2>
-&lt;h3 id="11-博客的简单描述">1.1 博客的简单描述&lt;/h3>
-&lt;h4 id="111-博客的简单描述">1.1.1 博客的简单描述&lt;/h4>
-&lt;h5 id="1111-博客的简单描述">1.1.1.1 博客的简单描述&lt;/h5>
-&lt;p>博客的具体内容&amp;hellip;&lt;/p>
-&lt;p>代码块测试：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cpp" data-lang="cpp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;iostream&amp;gt;&lt;/span>&lt;span style="color:#75715e">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">using&lt;/span> &lt;span style="color:#66d9ef">namespace&lt;/span> std;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>() {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cout &lt;span style="color:#f92672">&amp;lt;&amp;lt;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Hello, World!&amp;#34;&lt;/span> &lt;span style="color:#f92672">&amp;lt;&amp;lt;&lt;/span> endl;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hello! Bluemsun</title><link>http://bluemsun.top:9080/</link><description>Recent content on Hello! Bluemsun</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 25 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://bluemsun.top:9080/index.xml" rel="self" type="application/rss+xml"/><item><title>动画</title><link>http://bluemsun.top:9080/blog/13wxy2/</link><pubDate>Mon, 30 Dec 2024 12:33:45 +1000</pubDate><guid>http://bluemsun.top:9080/blog/13wxy2/</guid><description>&lt;h3 id="01-平面转换">01-平面转换&lt;/h3>
+&lt;p>作用：为元素添加动态效果，一般与过渡配合使用
+概念：改变盒子在平面内的形态，平面转换又叫2D转换&lt;/p>
+&lt;h4 id="平移">平移&lt;/h4>
+&lt;p>**属性：**transform: translate(X轴移动距离, Y轴移动距离);&lt;/p>
+&lt;h5 id="取值">&lt;strong>取值&lt;/strong>&lt;/h5>
+&lt;p>（1）像素单位数值&lt;/p>
+&lt;p>（2）百分比&lt;/p>
+&lt;p>（3）正负均可&lt;/p>
+&lt;p>&lt;strong>技巧&lt;/strong>&lt;/p>
+&lt;p>translate() ，表示沿着 x轴移动&lt;/p>
+&lt;p>单独设置 X 或 Y 轴移动距离：&lt;code>translateX() 或 translateY()&lt;/code>&lt;/p>
+&lt;h4 id="绝对定位实现元素居中效果">绝对定位实现元素居中效果&lt;/h4>
+&lt;p>法一：&lt;/p>
+&lt;pre tabindex="0">&lt;code>div {
+ position: absolute;
+ background-color: aqua;
+ height: 100px;
+ width: 200px;
+ left: 50%;
+ bottom: 50%;
+ margin-left: -100px;
+ margin-bottom: -50px;
+ }
+&lt;/code>&lt;/pre>&lt;p>法二：&lt;/p>
+&lt;pre tabindex="0">&lt;code>position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%,-50%);
+&lt;/code>&lt;/pre>&lt;h4 id="旋转">旋转&lt;/h4>
+&lt;p>属性：transform&lt;/p>
+&lt;p>取值：角度单位是 &lt;strong>deg&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>注意：&lt;/strong>&lt;/p>
+&lt;p>取值正负均可&lt;/p>
+&lt;p>取值为正，顺时针旋转&lt;/p>
+&lt;p>取值为负，逆时针旋转&lt;/p>
+&lt;h4 id="改变转换原点">改变转换原点&lt;/h4>
+&lt;blockquote>
+&lt;p>默认情况下，转换原点是盒子中心点&lt;/p>&lt;/blockquote>
+&lt;p>属性：transform-origin&lt;/p>
+&lt;p>取值：&lt;/p>
+&lt;p>（1）方位名词&lt;/p>
+&lt;p>（2）像素单位数值&lt;/p>
+&lt;p>（3）百分比&lt;/p>
+&lt;h4 id="多重转换">多重转换&lt;/h4>
+&lt;p>技巧：先平移再旋转&lt;/p>
+&lt;p>属性：transform: translate() rotate();&lt;/p></description></item><item><title>vue3</title><link>http://bluemsun.top:9080/blog/1wxy/</link><pubDate>Fri, 30 Aug 2024 12:33:45 +1000</pubDate><guid>http://bluemsun.top:9080/blog/1wxy/</guid><description>&lt;h1 id="vue3">VUE3&lt;/h1>
+&lt;h2 id="一创建一个vue实例">一、创建一个vue实例&lt;/h2>
+&lt;h3 id="11传统开发方式">1.1传统开发方式&lt;/h3>
+&lt;p>打开官网，点击快速上手，在html文件中引入vue.global.js文件&lt;/p>
+&lt;pre tabindex="0">&lt;code>&amp;lt;script src=&amp;#34;./vue.global.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>在body标签里:首先是容器，在script标签里用 Vue.createApp方法，用setup配置项存放数据和方法，setup里需要返回值。在Vue.createApp后面将内容挂载在容器内用mount(&amp;quot;#id&amp;quot;)&lt;/p>
+&lt;pre tabindex="0">&lt;code>&amp;lt;div id=&amp;#34;id&amp;#34;&amp;gt;
+ &amp;lt;h2&amp;gt;{{msg}}&amp;lt;/h2&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;script&amp;gt;
+ Vue.createApp({
+ setup() {
+ return {
+ msg: &amp;#39;阿衡&amp;#39;
+ }
+ }
+ }).mount(&amp;#34;#id&amp;#34;)
+&amp;lt;/script&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>如果想创建一个复杂的数据类型，可以使用reactive,并且将其返回return&lt;/p>
+&lt;pre tabindex="0">&lt;code>setup() {
+ const web = Vue.reactive({
+ title: &amp;#34;你好&amp;#34;
+ })
+ return {
+ msg: &amp;#39;阿衡&amp;#39;,
+ web
+ }
+}
+&lt;/code>&lt;/pre>&lt;p>简写：不写Vue，可以使用解构赋值&lt;/p>
+&lt;pre tabindex="0">&lt;code>const { createApp, reactive } = Vue
+&lt;/code>&lt;/pre>&lt;h3 id="12模块化开发">1.2模块化开发&lt;/h3>
+&lt;p>同样，在官网找到vue.esm-browser.js文件并引入&lt;/p>
+&lt;pre tabindex="0">&lt;code>import { createApp, reactive } from &amp;#39;./vue.esm-browser.js&amp;#39;
+&lt;/code>&lt;/pre>&lt;h2 id="二基础内容">二、基础内容&lt;/h2>
+&lt;h3 id="21ref和reactive">2.1ref和reactive&lt;/h3>
+&lt;p>1.ref用于存储基本数据类型，在修改值时，需要.value，并且记得要返回&lt;/p>
+&lt;p>引入&lt;/p>
+&lt;pre tabindex="0">&lt;code>import { createApp, reactive, ref } from &amp;#39;./vue.esm-browser.js&amp;#39;
+&lt;/code>&lt;/pre>&lt;p>定义和修改（setup里）&lt;/p>
+&lt;pre tabindex="0">&lt;code>const num = ref(11)
+num.value = 122
+&lt;/code>&lt;/pre>&lt;p>返回&lt;/p></description></item><item><title>Vue3的基础学习</title><link>http://bluemsun.top:9080/blog/7ljb/</link><pubDate>Fri, 23 Aug 2024 12:33:45 +1000</pubDate><guid>http://bluemsun.top:9080/blog/7ljb/</guid><description>&lt;h1 id="一vue的安装">一、Vue的安装&lt;/h1>
+&lt;p>在这里我们推荐用vite来安装vue&lt;/p>
+&lt;p>//在此之前请确认已经安装好npm，node.js&lt;/p>
+&lt;p>下面是检查是否安装好npm的方法&lt;/p>
+&lt;p>在命令控制行输入以下命令&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>npm -v
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p>
+&lt;p>如果安装成功，则会显示版本号，如下图所示&lt;/p>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271103974.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p>
+&lt;h2 id="1npm的换源">1.npm的换源&lt;/h2>
+&lt;p>在每一次的实际开发过程中，我们都会下载相关的依赖包，最官方的是 &lt;a href="https://www.npmjs.com/">npm&lt;/a> ，但是该服务器对于国内开发者来说，下载起来是比较慢的，所以我们需要换源。&lt;/p>
+&lt;h5 id="cnpm--国内对npm的镜像版本">&lt;code>cnpm&lt;/code> : 国内对npm的镜像版本&lt;/h5>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>/*
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>* cnpm 官网地址: https://npm.taobao.org/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>* cnpm 的大多命令跟 npm 的是一致的,比如安装,卸载这些
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm install -g cnpm --registry=https://registry.npm.taobao.org
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>// https://registry.npm.taobao.org 可能已经停止解析，可以使用以下地址
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm install -g cnpm --registry=https://registry.npmmirror.com
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p>
+&lt;p>注意安装cnpm后，vscode可能会提示你不支持这个脚本。&lt;/p>
+&lt;p>此时我们只需要以管理员的模式进入命令控制行输入以下命令即可&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>set-ExecutionPolicy RemoteSigned
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271103867.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑如上图所示即可&lt;/p>
+&lt;h1 id="二脚手架的安装">二、脚手架的安装&lt;/h1>
+&lt;ul>
+&lt;li>具体操作如下（点击查看&lt;a href="https://gitee.com/link?target=https%3A%2F%2Fcn.vuejs.org%2Fguide%2Fquick-start.html%23creating-a-vue-application">官方文档&lt;/a>）&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>## 1.创建命令
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm create vue@latest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>## 2.具体配置
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>## 配置项目名称
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>√ Project name: vue3_test
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>## 是否添加TypeScript支持
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>√ Add TypeScript? Yes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>## 是否添加JSX支持
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>√ Add JSX Support? No
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>## 是否添加路由环境
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>√ Add Vue Router for Single Page Application development? No
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>## 是否添加pinia环境
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>√ Add Pinia for state management? No
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>## 是否添加单元测试
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>√ Add Vitest for Unit Testing? No
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>## 是否添加端到端测试方案
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>√ Add an End-to-End Testing Solution? » No
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>## 是否添加ESLint语法检查
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>√ Add ESLint for code quality? Yes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>## 是否添加Prettiert代码格式化
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>√ Add Prettier for code formatting? No
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p></description></item><item><title>样例项目1</title><link>http://bluemsun.top:9080/products/example01/</link><pubDate>Tue, 23 Jun 2020 12:33:45 +1000</pubDate><guid>http://bluemsun.top:9080/products/example01/</guid><description>&lt;p>项目的具体内容&lt;/p></description></item><item><title>样例项目2</title><link>http://bluemsun.top:9080/products/example02/</link><pubDate>Tue, 23 Jun 2020 12:33:45 +1000</pubDate><guid>http://bluemsun.top:9080/products/example02/</guid><description>&lt;p>项目的具体内容&lt;/p></description></item><item><title>File和Path、流</title><link>http://bluemsun.top:9080/blog/9llr/</link><pubDate>Fri, 11 Oct 2024 12:02:51 +0800</pubDate><guid>http://bluemsun.top:9080/blog/9llr/</guid><description>&lt;h1 id="file"> File&lt;/h1>
+&lt;p>我们无论使用什么编程语言的时候，只要涉及到实际的应用开发，就不可能逃不开文件传输的问题，像是我们若是想对于一个文件提取我们所相应的信息，或是讲我们已经计算完成的东西自动的储存在一个文件中，我们都需要与实际的文件打交道。&lt;/p>
+&lt;p>因此我们之后就要具体讲讲java中是如何与File进行一个交互的。&lt;/p>
+&lt;h2 id="路径">路径&lt;/h2>
+&lt;p>如果我们想要找到一个文件的话我们就必然要知道这个文件在哪里，如果搜索的是人的话，我们会相应的打开对应的文件夹，然后查看对应的文件，最后我们就能找到我们想要打开的文件就比如说，我们可以通过点击图标来打开《原神》。&lt;/p>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271110881.png" alt="">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="" title="点击并拖拽以移动">​编辑&lt;/p>
+&lt;p>开个玩笑，但是我们知道计算机是无法看到我们看到的图标的，那如果计算机想要打开我们想要打开的文件那应该怎么办呢。&lt;/p>
+&lt;p>这时候我们就会运用到了路径，路径就像是一个地址，位置，我们也可以通过地址来找到我们想去的地方，所以计算机也同样可以用地址来获得位置。&lt;/p>
+&lt;p>但是路径我们通常在传值给编程语言的时候会提及两种地址，他们分别是绝对路径和相对路径。&lt;/p>
+&lt;h3 id="绝对路径">绝对路径&lt;/h3>
+&lt;p>绝对路径顾名思义他是绝对会跟着外部环境所处的位置而改变的，就比如在电脑中绝对路径往往是从哪个盘开始写起，就像这样：&lt;/p>
+&lt;pre tabindex="0">&lt;code>c://
+&lt;/code>&lt;/pre>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="" title="点击并拖拽以移动">&lt;/p>
+&lt;p>他是绝对的，只要文件中的路径或是什么没有改动的话，就不会进行变更。&lt;/p>
+&lt;h3 id="相对路径">相对路径&lt;/h3>
+&lt;p>他是相对的，我们往往在开发的过程中我们的应用程序所处的环境是不断变更的，像是当别人下载了一款app的话，开发者是不可能提前知道用户会将文件放到哪个地方的，所以开发时往往是用绝对路径来引用其他文件的。&lt;/p>
+&lt;p>其中，绝对路径中我们往往用&amp;quot;../&amp;ldquo;来描述返回上一级的文件。&lt;/p>
+&lt;pre tabindex="0">&lt;code>..\..\index.html
+&lt;/code>&lt;/pre>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="" title="点击并拖拽以移动">&lt;/p>
+&lt;p>这样就访问到了上上级目录中的index.html这个文件。&lt;/p>
+&lt;h2 id="创建file对象">创建File对象&lt;/h2>
+&lt;p>接下来，我们正式开始将如何在java中进行访问别的文件。&lt;/p>
+&lt;h3 id="朴素创建法">朴素创建法&lt;/h3>
+&lt;p>首先我们可以直接用最朴素的创建方法。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>File file &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> File(&lt;span style="color:#e6db74">&amp;#34;e://&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="" title="点击并拖拽以移动">&lt;/p>
+&lt;p>我们直接用File这个类创建了一个File的对象，其中在定义的时候只需在后面的括号中写下路径即可，这个路径可以是相对的，也可以是绝对的。&lt;/p>
+&lt;h3 id="通过父路径进行创建">通过父路径进行创建&lt;/h3>
+&lt;p>顾名思义就是通过将付路径进行一个使用，然后拼接在外面想要的文件前面，就像下面这样：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#a6e22e">File&lt;/span>(String parent, String child)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="" title="点击并拖拽以移动">&lt;/p>
+&lt;h3 id="通过父文件类型创建">通过父文件类型创建&lt;/h3>
+&lt;p>少说废话直接上实例：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#a6e22e">File&lt;/span>(String parent, String child)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="" title="点击并拖拽以移动">&lt;/p>
+&lt;h2 id="文件对象的用法"> 文件对象的用法&lt;/h2>
+&lt;p>我们可以通过文件进行一系列的操作，就像询问给文件是否存在，或是直接创建一个我们想要的文件，最后再进行删除。&lt;/p>
+&lt;p>从下面的代码我们可以看出文件从无到有最后变为无的状态：&lt;/p>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271110001.png" alt="">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="" title="点击并拖拽以移动">​编辑&lt;/p>
+&lt;h1 id="path">Path&lt;/h1>
+&lt;p>接下来我们来讲一下path，想要定位到一个文件，我们最好是通过相应的路径来进行搜索，于是我们就要用到了path类型。&lt;/p>
+&lt;p>path这种类里面的可以是一个完整的路径，也可以是一段承载着信息的字符串。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>Path absolute &lt;span style="color:#f92672">=&lt;/span> Paths.&lt;span style="color:#a6e22e">get&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;/Users&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;acton_zhang&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Path relative &lt;span style="color:#f92672">=&lt;/span> Paths.&lt;span style="color:#a6e22e">get&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;pers&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;zhang&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;ThreadDemo.java&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(absolute);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(relative);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(absolute.&lt;span style="color:#a6e22e">resolve&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;/bin&amp;#34;&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(absolute.&lt;span style="color:#a6e22e">resolve&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;bin&amp;#34;&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">//输出：&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">/&lt;/span>Users&lt;span style="color:#f92672">/&lt;/span>acton_zhang
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pers&lt;span style="color:#f92672">/&lt;/span>zhang&lt;span style="color:#f92672">/&lt;/span>ThreadDemo.&lt;span style="color:#a6e22e">java&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">/&lt;/span>bin
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">/&lt;/span>Users&lt;span style="color:#f92672">/&lt;/span>acton_zhang&lt;span style="color:#f92672">/&lt;/span>bin
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="" title="点击并拖拽以移动">&lt;/p>
+&lt;p>就像上式一样，.get()方法可以获得我们想要的对应位置的路径。&lt;/p>
+&lt;p>而resolve（）主要是进行对已有的path进行添加处理的。&lt;/p></description></item><item><title>java异常类</title><link>http://bluemsun.top:9080/blog/6gjt/</link><pubDate>Fri, 11 Oct 2024 12:02:51 +0800</pubDate><guid>http://bluemsun.top:9080/blog/6gjt/</guid><description>&lt;h2 id="1捕获与抛出">1.捕获与抛出；&lt;/h2>
+&lt;p>在Java的程序运行时很多问题是难以避免的，在程序运行时发生了不被期望的事件导致程序没有按照程序员的预期执行的都是异常，异常发生时，是任程序自生自灭，立刻退出终止，还是输出错误给用户？这些就要用到捕获与抛出；&lt;/p>
+&lt;p>在说捕获与抛出之前先说说Java中的常见异常&lt;/p>
+&lt;p>Ⅰ.Error：一般是Java虚拟机的问题用代码一般不能处理大致有以下两种情况&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>VirtualMachineError&lt;/th>
+ &lt;th>其中又包含StackOverFlowError和OutOfMemoryError&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>AWTError&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>Ⅱ.Exception：在程序运行中产生的异常,是可以被我们处理的异常大致分为两类，一类是IOEException(输入输出异常),另一个是RunTimeException(运行时异常）；&lt;/p>
+&lt;p>IOEException主要有以下几类&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>EOFException&lt;/th>
+ &lt;th>文件结束异常&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>FileNotFoundException&lt;/td>
+ &lt;td>没找到文件&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>RunTimeException有以下几类&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>ArithmeticException&lt;/th>
+ &lt;th>当出现异常的运算条件时，抛出此异常&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>ArrayIndexOutOfBoundsException&lt;/td>
+ &lt;td>用非法索引访问数组时抛出的异常&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>NullPointerException&lt;/td>
+ &lt;td>当应用程序试图在需要对象的地方使用 &lt;code>null&lt;/code> 时，抛出该异常&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ArrayStoreException&lt;/td>
+ &lt;td>试图将错误类型的对象存储到一个对象数组时抛出的异常&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>IllegalArgumentException&lt;/td>
+ &lt;td>抛出的异常表明向方法传递了一个不合法或不正确的参数&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>IndexOutOfBoundsException&lt;/td>
+ &lt;td>指示某排序索引超出范围时抛出&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>NegativeArraySizeException&lt;/td>
+ &lt;td>如果应用程序试图创建大小为负的数组，则抛出该异常&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>OK，那么现在知道Java可能会有这么多的异常，我们怎么才能确保用户在使用我们编写的程序的时候,不会因为乱输入数据而导致程序爆炸呢，那就要提到捕获与抛出；&lt;/p>
+&lt;p>a.捕获(catch):顾名思义捕获就是要把错误抓住，那么想要抓住异常就得先对某些语句进行监视，这就要引出另一个关键词try，如果try中的语句出现问题那么就要执行catch中的语句否则执行try中的语句；这套流程的大概格式就是&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">try&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>要捕获的语句
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}&lt;span style="color:#66d9ef">catch&lt;/span>(语句会发生的异常 实例名){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>捕获后执行的语句
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}&lt;span style="color:#66d9ef">final&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>执行语句
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>代码块测试：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#34;Hello, World!&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>代码块测试：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>echo &lt;span style="color:#e6db74">&amp;#34;Hello, World!&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>代码块测试：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdio.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>() {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Hello, World!&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p>
+&lt;p>比如以下图中这个代码中出现除数为零这个异常&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271112177.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p>
+&lt;p>同时一个try语句可以与多个catch语句进行搭配，换一种空指针赋值会得到另一种报错&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271112113.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p>
+&lt;p>同样的try中也可以存在多个判断语句，但是会在第一个出错的语句截止，截止后的语句不做判断&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271112734.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑把上面的代码局部改成这样会得到空指针报错，把tmp与temp换位置后会得到分母为零的报错。&lt;/p>
+&lt;p>但是如果try中的语句异常类型没有与catch中的异常类型匹配，那么就不会被捕获，最终会交给虚拟机处理,发生报错；&lt;/p>
+&lt;p>b.抛出(throw和throws两者都是在方法里面使用的) Ⅰ.throws写在方法的定义处用来说明该方法可能会出现那些异常,格式如下&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">方法名&lt;/span>() &lt;span style="color:#66d9ef">throws&lt;/span> 异常类名1,异常类名2,....{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>....
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>代码块测试：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Main&lt;/span> {
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p>
+&lt;p>编译时的异常一定要写，运行时的异常可以省略不写。&lt;/p>
+&lt;p>Ⅱ.throw写在方法内，用于结束方法 并抛出异常对象交给调用者，之后的代码也就不会运行了&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">方法名&lt;/span>(){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">throw&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> 异常类名;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p>
+&lt;p>抛出是为了在方法出现异常时结束，并告诉调用者该方法出现了问题&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271112865.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑程序会在异常处停止&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271112188.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p>
+&lt;p>c.自定义异常:为了让控制台的报错信息更加见名知意 自定义异常大概分为四步: 一.定义异常类. （在定义的时候一定要见名只意) 二.写继承关系. 三.空参构造. 四.代参构造. &lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271112200.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑先自定义一个异常,异常如果是运行时异常要继承RunTimeException如果是编译时异常则直接继承Exception,(同理别忘了如果方法类可能出现编译时错误要在方法后用throws声明,之前提到过)&lt;/p>
+&lt;p>因为自定义的异常的构造函数中有一个是有参的,所有可以在之后的抛出时输出想要打印的语句,&lt;/p></description></item><item><title>2024春季蓝旭工作室培训第五周预习</title><link>http://bluemsun.top:9080/blog/10zgs2/</link><pubDate>Sun, 06 Oct 2024 13:02:51 +0800</pubDate><guid>http://bluemsun.top:9080/blog/10zgs2/</guid><description>&lt;p>&lt;strong>目录&lt;/strong>&lt;/p>
+&lt;p>&lt;a href="#%E4%B8%80%E3%80%81MySql%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95">一、MySql的基本语法&lt;/a>&lt;/p>
+&lt;p>&lt;a href="#1.1%E5%85%88%E8%B4%B4%E4%B8%89%E4%B8%AA%E8%A7%A3%E5%86%B3%E6%88%91%E4%B8%8B%E8%BD%BD%E9%97%AE%E9%A2%98%E7%9A%84%E5%A5%BD%E6%96%87%E7%AB%A0">1.1先贴三个解决我下载问题的好文章&lt;/a>&lt;/p>
+&lt;p>&lt;a href="#1.2%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E5%BA%93">1.2什么是数据库&lt;/a>&lt;/p>
+&lt;p>&lt;a href="#1.3MySql%E7%9A%84%E7%BB%93%E6%9E%84">1.3MySql的结构&lt;/a>&lt;/p>
+&lt;p>&lt;a href="#1.4MySql%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95">1.4MySql的基本语法&lt;/a>&lt;/p>
+&lt;p>&lt;a href="#1.4.1%E6%89%93%E5%BC%80%E5%91%BD%E4%BB%A4%E5%88%97">1.4.1打开命令列&lt;/a>&lt;/p>
+&lt;p>[ 1.4.2语句规则与分类](# 1.4.2语句规则与分类)&lt;/p>
+&lt;p>&lt;a href="#1.4.3%E5%85%B7%E4%BD%93%E4%BD%BF%E7%94%A8">1.4.3具体使用&lt;/a>&lt;/p>
+&lt;p>&lt;a href="#1.4.3.1%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93">1.4.3.1操作数据库&lt;/a>&lt;/p>
+&lt;p>&lt;a href="#1.4.3.2%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8">1.4.3.2操作数据库表&lt;/a>&lt;/p>
+&lt;p>&lt;a href="#%E4%BA%8C%E3%80%81JDBC">二、JDBC&lt;/a>&lt;/p>
+&lt;p>&lt;a href="#2.1%E4%BB%80%E4%B9%88%E6%98%AFJDBC">2.1什么是JDBC&lt;/a>&lt;/p>
+&lt;p>&lt;a href="#2.2JDBC%E7%9A%84%E4%B8%80%E8%88%AC%E6%B5%81%E7%A8%8B">2.2JDBC的一般流程&lt;/a>&lt;/p>
+&lt;p>[ 2.3JDBC中的一些接口和类](# 2.3JDBC中的一些接口和类)&lt;/p>
+&lt;p>&lt;a href="#2.4%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5">2.4代码实践&lt;/a>&lt;/p>
+&lt;hr>
+&lt;p>前言：&lt;/p>
+&lt;p>这篇文章主要学习数据库、MySql的基本语法、JDBC。&lt;/p>
+&lt;hr>
+&lt;h1 id="一mysql的基本语法">一、MySql的基本语法&lt;/h1>
+&lt;h2 id="11先贴三个解决我下载问题的好文章">1.1先贴三个解决我下载问题的好文章&lt;/h2>
+&lt;p>&lt;a href="https://blog.csdn.net/weixin_50670076/article/details/136350060?ops_request_misc=%7B%22request%5Fid%22%3A%22171316055016800227496270%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;amp;request_id=171316055016800227496270&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-4-136350060-null-null.142%5Ev100%5Epc_search_result_base5&amp;amp;utm_term=Navicat&amp;amp;spm=1018.2226.3001.4187">Navicat16安装和激活详细讲解（全网最简单且靠谱）&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://blog.csdn.net/m0_52559040/article/details/121843945?ops_request_misc=%7B%22request%5Fid%22%3A%22171314009616800182159156%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;amp;request_id=171314009616800182159156&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-4-121843945-null-null.142%5Ev100%5Epc_search_result_base5&amp;amp;utm_term=mysql&amp;amp;spm=1018.2226.3001.4187">2024 年 MySQL 8.0 安装 配置 教程 最简易（保姆级）&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://blog.csdn.net/weixin_43891901/article/details/109522839?ops_request_misc=%7B%22request%5Fid%22%3A%22171316236116800182144002%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;amp;request_id=171316236116800182144002&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-2-109522839-null-null.142%5Ev100%5Epc_search_result_base5&amp;amp;utm_term=navicat%E8%BF%9E%E6%8E%A5mysql&amp;amp;spm=1018.2226.3001.4187">Navicat连接Mysql教程&lt;/a>&lt;/p>
+&lt;h2 id="12什么是数据库">1.2什么是数据库&lt;/h2>
+&lt;p>定义：数据库是指&lt;strong>一个存储数据的仓库&lt;/strong>,可以&lt;strong>存储和管理大量的数据&lt;/strong>.数据库通常&lt;strong>由一个或多个数据表组成&lt;/strong>,每个表都包含了一系列有关联的数据记录.数据库可以用于存储,管理和查询数据,常用于各种应用程序,网站和服务中。&lt;/p>
+&lt;p>而我们的MySql就是一种&lt;strong>关系型数据库管理系统&lt;/strong>，它使用&lt;strong>结构化查询语言（SQL）&lt;strong>进行管理，而在Java中呢，我们可以&lt;/strong>用JDBC API来访问MySql&lt;/strong>。&lt;/p>
+&lt;h2 id="13mysql的结构">1.3MySql的结构&lt;/h2>
+&lt;p>MySql作为一种数据库管理系统,它&lt;strong>可以管理多个数据库&lt;/strong>;而每个数据库中又是在&lt;strong>用多个表为单位来存储数据&lt;/strong>;一个表类似于一个&lt;strong>二维数组&lt;/strong>,&lt;strong>每一行都是一个记录,每一列都是一个字段&lt;/strong>;&lt;strong>一个字段相当于一个属性。&lt;/strong>&lt;/p>
+&lt;h2 id="14mysql的基本语法">&lt;strong>1.4MySql的基本语法&lt;/strong>&lt;/h2>
+&lt;h3 id="141打开命令列">1.4.1打开命令列&lt;/h3>
+&lt;p>如图点击，打开命令列。&lt;/p>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271129438.png" alt="img">&lt;/p>
+&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p>
+&lt;h3 id="142语句规则与分类">1.4.2语句规则与分类&lt;/h3>
+&lt;ul>
+&lt;li>SQL命令每输入完一个&lt;strong>一定要末尾加分号。&lt;/strong>&lt;/li>
+&lt;li>SQL命令中的关键字是&lt;strong>不区分大小写的。&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>数据定义语言&lt;/th>
+ &lt;th>简称DDL,用来&lt;strong>定义数据库对象&lt;/strong>:数据库,表,列等.例如:&lt;strong>&lt;code>create&lt;/code>(创建数据库对象)&lt;/strong>,**&lt;code>alter&lt;/code>(修改数据库表的字段),&lt;code>drop&lt;/code>(删除数据库对象),&lt;code>use&lt;/code>(选择当前会话要使用的数据库)**等.&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>数据操作语言&lt;/td>
+ &lt;td>简称DML,用来&lt;strong>对数据库中表的记录进行更新&lt;/strong>.例如:&lt;strong>&lt;code>insert&lt;/code>(向数据库表中插入记录)&lt;/strong>,&lt;strong>&lt;code>delete&lt;/code>(删除记录)&lt;/strong>,&lt;strong>&lt;code>update&lt;/code>(修改表中现有的记&lt;/strong>录)等.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>数据控制语言&lt;/td>
+ &lt;td>简称DCL,用来&lt;strong>控制数据库用户访问权限和数据完整性&lt;/strong>.例如:&lt;strong>&lt;code>grant&lt;/code>(给用户或用户组授予数据库或表的特定权限),&lt;code>revoke&lt;/code>(撤销用户或用户组的权限)&lt;/strong>,&lt;strong>&lt;code>commit&lt;/code>(提交数据库事务,并把已完成的更改保存到数据库中)&lt;/strong>,**&lt;code>rollback&lt;/code>(撤销事务所做的所有更改,将数据库恢复到事务开始之前的状态)**等.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>数据查询语言&lt;/td>
+ &lt;td>简称DQL,用来&lt;strong>查询数据库中表的记录&lt;/strong>.例如:&lt;strong>&lt;code>select&lt;/code>(从数据库中查询数据)&lt;/strong>,&lt;strong>&lt;code>from&lt;/code>(指定一个或多个表)&lt;/strong>,**&lt;code>where&lt;/code>(从表中选择符合某些条件的行)**等.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="143具体使用">1.4.3具体使用&lt;/h3>
+&lt;h4 id="1431操作数据库">1.4.3.1操作数据库&lt;/h4>
+&lt;p>1.查看数据库 show databases; 输出数据库列表&lt;/p>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271129066.png" alt="img">&lt;/p>
+&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p>
+&lt;p>2.创建数据库 create database database_name;&lt;/p>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271129535.png" alt="img">&lt;/p>
+&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p></description></item><item><title>Java基础知识</title><link>http://bluemsun.top:9080/blog/4zgs/</link><pubDate>Sun, 06 Oct 2024 13:02:51 +0800</pubDate><guid>http://bluemsun.top:9080/blog/4zgs/</guid><description>&lt;p>&lt;strong>目录&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>目录&lt;/strong>&lt;/p>
+&lt;p>&lt;a href="#%E5%89%8D%E8%A8%80">前言&lt;/a>&lt;/p>
+&lt;p>&lt;a href="#%E4%B8%80%E3%80%81Java%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86">一、Java的异常处理&lt;/a>&lt;/p>
+&lt;p>​	&lt;a href="#1.1%E5%BC%82%E5%B8%B8%E7%9A%84%E5%87%BA%E7%8E%B0">1.1异常的出现&lt;/a>&lt;/p>
+&lt;p>​	&lt;a href="#1.2%E6%8D%95%E8%8E%B7%E3%80%81%E6%8A%9B%E5%87%BA%E4%B8%8E%E5%BC%82%E5%B8%B8%E7%B1%BB">1.2捕获、抛出与异常类&lt;/a>&lt;/p>
+&lt;p>​	&lt;a href="#1.3throws%E5%92%8Cthrow%E8%BE%A8%E6%9E%90">1.3throws和throw辨析&lt;/a>&lt;/p>
+&lt;p>​	&lt;a href="#1.4%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8%E7%B1%BB">1.4自定义异常类&lt;/a>&lt;/p>
+&lt;p>&lt;a href="#%E4%BA%8C%E3%80%81%E5%8C%85%E8%A3%85%E7%B1%BB">二、包装类&lt;/a>&lt;/p>
+&lt;p>​	&lt;a href="#2.1%E5%8C%85%E8%A3%85%E7%B1%BB">2.1包装类&lt;/a>&lt;/p>
+&lt;p>​	&lt;a href="#2.2%E5%8C%85%E8%A3%85%E7%B1%BB%E7%9A%84%E4%BD%BF%E7%94%A8">2.2包装类的使用&lt;/a>&lt;/p>
+&lt;p>&lt;a href="#%E4%B8%89%E3%80%81String%E7%B1%BB">三、String类&lt;/a>&lt;/p>
+&lt;p>​	&lt;a href="#3.1%E4%BA%86%E8%A7%A3String%E7%B1%BB">3.1了解String类&lt;/a>&lt;/p>
+&lt;p>​	&lt;a href="#3.2String%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E5%8F%8A%E5%AE%9E%E4%BE%8B">3.2String常用方法及实例&lt;/a>&lt;/p>
+&lt;p>​	&lt;a href="#3.3StringBuffer%E5%92%8CStringBuilder">3.3StringBuffer和StringBuilder&lt;/a>&lt;/p>
+&lt;p>&lt;a href="#%E5%9B%9B%E3%80%81DigDecimal%E7%B1%BB">四、DigDecimal类&lt;/a>&lt;/p>
+&lt;p>​	&lt;a href="#4.1BigDecimal%E7%B1%BB%E7%AE%80%E4%BB%8B%E3%80%81%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95">4.1BigDecimal类简介、常用方法&lt;/a>&lt;/p>
+&lt;p>​	&lt;a href="#4.2%E5%B0%8F%E6%95%B0%E7%82%B9%E7%9A%84%E5%A4%84%E7%90%86">4.2小数点的处理&lt;/a>&lt;/p>
+&lt;p>&lt;a href="#%E4%BA%94%E3%80%81%E6%B3%9B%E5%9E%8B">五、泛型&lt;/a>&lt;/p>
+&lt;p>​	&lt;a href="#5.1%E4%BB%80%E4%B9%88%E6%98%AF%E6%B3%9B%E5%9E%8B">5.1什么是泛型&lt;/a>&lt;/p>
+&lt;p>​	&lt;a href="#5.2%E6%B3%9B%E5%9E%8B%E7%B1%BB%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E4%B8%8E%E4%BD%BF%E7%94%A8">5.2泛型类的基本语法与使用&lt;/a>&lt;/p>
+&lt;p>​	&lt;a href="#5.3%E6%B3%9B%E5%9E%8B%E6%8E%A5%E5%8F%A3">5.3泛型接口&lt;/a>&lt;/p>
+&lt;p>​	&lt;a href="#5.4%E6%B3%9B%E5%9E%8B%E6%96%B9%E6%B3%95">5.4泛型方法&lt;/a>&lt;/p>
+&lt;p>&lt;a href="#%E5%85%AD%E3%80%81%E5%88%97%E8%A1%A8">六、列表&lt;/a>&lt;/p>
+&lt;p>​	&lt;a href="#6.1List%E7%AE%80%E4%BB%8B">6.1List简介&lt;/a>&lt;/p>
+&lt;p>​	&lt;a href="#6.2ArrayList">6.2ArrayList&lt;/a>&lt;/p>
+&lt;p>​	&lt;a href="#6.3LinkedList">6.3LinkedList&lt;/a>&lt;/p>
+&lt;p>​	&lt;a href="#6.4Vector">6.4Vector&lt;/a>&lt;/p>
+&lt;p>&lt;a href="#%E4%B8%83%E3%80%81set">七、set&lt;/a>&lt;/p>
+&lt;p>​	&lt;a href="#7.1set%E7%AE%80%E4%BB%8B">7.1set简介&lt;/a>&lt;/p>
+&lt;p>​	&lt;a href="#7.2%E9%81%8D%E5%8E%86%E4%B8%8E%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95">7.2遍历与常用方法&lt;/a>&lt;/p>
+&lt;p>&lt;a href="#%E5%85%AB%E3%80%81map">八、map&lt;/a>&lt;/p>
+&lt;p>​	&lt;a href="#8.1map%E7%AE%80%E4%BB%8B">8.1map简介&lt;/a>&lt;/p>
+&lt;p>​	&lt;a href="#8.2Map%E7%9A%84%E4%BD%BF%E7%94%A8">8.2Map的使用&lt;/a>&lt;/p>
+&lt;p>​	&lt;a href="#8.3Map%E7%9A%84%E9%81%8D%E5%8E%86">8.3Map的遍历&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h1 id="前言">前言&lt;/h1>
+&lt;p>这篇文章主要学习了Java的捕获、抛出、自定义异常类、包装类、String（buffer、builder）、BigDecimal、泛型简介、列表、set、map等知识。经过上次的培训后，我认识到理论与实践应该相结合，因此在文章中会增添我的实际代码运行图片，而且不光是定义的叙述，还加入自己的理解。并且注意驼峰命名规则。&lt;/p>
+&lt;hr>
+&lt;h1 id="一java的异常处理">一、Java的异常处理&lt;/h1>
+&lt;h2 id="11异常的出现">1.1异常的出现&lt;/h2>
+&lt;p>&lt;strong>异常&lt;/strong>就是我们程序运行过程中产生的&lt;strong>错误&lt;/strong>，异常的出现会中断正在运行的程序。简单说就是我们的程序出了BUG跑不起来。&lt;/p>
+&lt;p>而&lt;strong>Java中的异常&lt;/strong>是Java提供的用于&lt;strong>处理程序中错误&lt;/strong>的一种机制。好比除以0的溢出、数组下标越界等。在我们设计良好的程序时应该在出现异常时提供处理这些错误的方法，从而使得程序不会因此产生阻断或莫名其妙的错误。&lt;/p>
+&lt;p>于是乎，Java中应对于这些可能会出现的异常事件，我们可以写一个&lt;strong>异常类（Exception）对象&lt;/strong>，这个对象里就封装了异常事件的信息并将被提交给Java运行时系统，在发生时使用&lt;strong>throw关键词抛出&lt;/strong>一个Exception子类的实例表示&lt;strong>异常发生&lt;/strong>并&lt;strong>终止当前方法的继续执行&lt;/strong>。Java运行时接收到异常对象时，会&lt;strong>寻找能处理这一异常的代码&lt;/strong>并&lt;strong>把当前异常对象交给其处理&lt;/strong>，这一过程即是&lt;strong>catch捕获&lt;/strong>过程。&lt;/p>
+&lt;h2 id="12捕获抛出与异常类">1.2捕获、抛出与异常类&lt;/h2>
+&lt;p>在Java中进行异常的处理，会用到：try、catch、finally这几个关键字，其一般的结构如下：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>try指尝试执行可能出现异常的代码，如果没出现异常，那么不执行catch语句，否则通过catch捕捉异常，并且处理异常。&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>一个try可以对应多个catch，并且它们都需要同时出现。&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>finally语句放在最后面，无论是否出现异常都执行&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">try&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//可能出现异常的语句&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">catch&lt;/span>(&lt;span style="color:#75715e">/* 异常类型 异常对象 */&lt;/span>){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//异常处理&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">catch&lt;/span>(&lt;span style="color:#75715e">/* 异常类型 异常对象 */&lt;/span>){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//异常处理&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">//......&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">finally&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//不论是否异常都要执行&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p>
+&lt;p>​ 例子：&lt;/p></description></item><item><title>组件复用render props和高阶组件</title><link>http://bluemsun.top:9080/blog/2zlz/</link><pubDate>Sun, 06 Oct 2024 13:02:51 +0800</pubDate><guid>http://bluemsun.top:9080/blog/2zlz/</guid><description>&lt;h2 id="组件复用render-props和高阶组件">组件复用render props和高阶组件&lt;/h2>
+&lt;h4 id="一react组件复用概述">一、React组件复用概述&lt;/h4>
+&lt;h6 id="11-思考如果两个组件中的部分功能相似或相同该如何处理">1.1 思考：如果两个组件中的部分功能相似或相同，该如何处理？&lt;/h6>
+&lt;h6 id="12-处理方式">1.2 处理方式：&lt;/h6>
+&lt;p>&lt;strong>复用&lt;/strong>相似的功能（=&amp;gt;联想函数封装）&lt;/p>
+&lt;h6 id="13-复用什么">1.3 复用什么？&lt;/h6>
+&lt;blockquote>
+&lt;ol>
+&lt;li>state（状态）&lt;/li>
+&lt;li>操作state的方法（逻辑）&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>&lt;!-- raw HTML omitted -->组件状态逻辑&lt;!-- raw HTML omitted -->&lt;/strong>&lt;/p>&lt;/blockquote>
+&lt;h6 id="14-两种方式">1.4 两种方式：&lt;/h6>
+&lt;ul>
+&lt;li>render props模式&lt;/li>
+&lt;li>高阶组件（HOC）Higher-order components&lt;/li>
+&lt;/ul>
+&lt;h6 id="15-注意">1.5 注意：&lt;/h6>
+&lt;p>这两种方式不是新的API，也就是说它并不是React中直接提供好的一种方法，直接调用这个方法就可以实现复用，而是利用React自身特点的编码技巧，逐渐演化成的的固定模式（写法）&lt;/p>
+&lt;h4 id="二render-props模式">二、render props模式&lt;/h4>
+&lt;p>render props 核心思想还是利用&lt;strong>子向父传值时候的回调函数&lt;/strong>&lt;/p>
+&lt;h6 id="21-思路分析">2.1 思路分析：&lt;/h6>
+&lt;blockquote>
+&lt;ul>
+&lt;li>
+&lt;p>思路：将要复用的state和操作state的方法封装到一个组件中&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>问题1：如何拿到该组件中复用的state？&lt;/p>
+&lt;p>(状态是存在于组件内部的，那么要在使用这个组件的时候，也就是在组件的外部拿到这个状态怎么去获取)&lt;/p>
+&lt;p>在使用组件时，添加一个值为函数的prop，通过函数参数来获取（需要组件内部实现）&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>问题2：如何渲染任意UI？&lt;/p>
+&lt;p>使用该函数的返回值作为要渲染的UI内容（需要组件内部实现）&lt;/p>
+&lt;/li>
+&lt;/ul>&lt;/blockquote>
+&lt;p>比如：现在已经有了一个封装好的组件&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-react" data-lang="react">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">Mouse&lt;/span> &lt;span style="color:#a6e22e">render&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{(&lt;span style="color:#a6e22e">mouse&lt;/span>)=&amp;gt;{}}/&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">//添加了一个值为函数的prop，名字为render，它的值为函数，因为它是在组件内部调用的，那么在组件内部调用时，就可以把组件内部的状态通过参数来被暴露出来，那么就可以通过这个参数来拿到这个状态了
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-react" data-lang="react">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">Mouse&lt;/span> &lt;span style="color:#a6e22e">render&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{(&lt;span style="color:#a6e22e">mouse&lt;/span>)=&amp;gt;(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&amp;lt;&lt;span style="color:#f92672">p&lt;/span>&amp;gt;&lt;span style="color:#a6e22e">鼠标当前位置&lt;/span>{&lt;span style="color:#a6e22e">mouse&lt;/span>.&lt;span style="color:#a6e22e">x&lt;/span>},{&lt;span style="color:#a6e22e">mouse&lt;/span>.&lt;span style="color:#a6e22e">y&lt;/span>}&amp;lt;/&lt;span style="color:#f92672">p&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)}/&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">//通过函数形参mouse拿到鼠标状态，通过返回值指定要渲染的内容
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>补充！！！&lt;/p>
+&lt;p>箭头函数&lt;/p>
+&lt;p>箭头函数的一般语法如下：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#a6e22e">param1&lt;/span>, &lt;span style="color:#a6e22e">param2&lt;/span>, ..., &lt;span style="color:#a6e22e">paramN&lt;/span>) =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// 函数体
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>函数体是一个块（使用大括号 &lt;code>{}&lt;/code>），则必须使用 &lt;code>return&lt;/code> 关键字来明确返回值&lt;/p>
+&lt;p>如果函数体只有一条语句，并且要返回一个值，可以进一步简化为：&lt;/p></description></item><item><title>Web APIs+DOM+BOM</title><link>http://bluemsun.top:9080/blog/3dyh/</link><pubDate>Fri, 26 Jul 2024 13:02:51 +0800</pubDate><guid>http://bluemsun.top:9080/blog/3dyh/</guid><description>&lt;p>@[toc]&lt;/p>
+&lt;h1 id="web-apis">Web APIs&lt;/h1>
+&lt;h2 id="js的组成">JS的组成&lt;/h2>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271059549.png" alt="image-20240418172539479">&lt;/p>
+&lt;h2 id="api">API&lt;/h2>
+&lt;h3 id="定义">定义&lt;/h3>
+&lt;p>API（Application Programming Interface,应用程序编程接口）是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，而又无需访问源码，或理解内部工作机制的细节。&lt;/p>
+&lt;h3 id="web-api">Web API&lt;/h3>
+&lt;p>&lt;strong>Web API&lt;/strong> 是浏览器提供的一套操作浏览器功能和页面元素的 API ( BOM 和 DOM )。&lt;/p>
+&lt;h1 id="dom">DOM&lt;/h1>
+&lt;h2 id="简介">简介&lt;/h2>
+&lt;h3 id="定义-1">定义&lt;/h3>
+&lt;p>文档对象模型（Document Object Model，简称 DOM），是 W3C 组织推荐的处理可扩展标记语言（HTML或者XML）的标准编程接口。W3C 已经定义了一系列的 DOM 接口，通过这些 DOM 接口可以改变网页的内容、结构和样式。&lt;/p>
+&lt;h3 id="dom树">DOM树&lt;/h3>
+&lt;p>&lt;img src="https://i-blog.csdnimg.cn/blog_migrate/907ccd095ea2450dbb766de4df3d2ba2.png" alt="image-20240418174801669">&lt;/p>
+&lt;h2 id="获取元素">获取元素&lt;/h2>
+&lt;h3 id="根据-id-获取">根据 ID 获取&lt;/h3>
+&lt;p>使用 getElementById() 方法可以获取带有 ID 的元素对象。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span> document.&lt;span style="color:#a6e22e">getElementById&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;id&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>使用 console.dir() 可以打印我们获取的元素对象，更好的查看对象里面的属性和方法。&lt;/p>
+&lt;h3 id="根据标签名获取">根据标签名获取&lt;/h3>
+&lt;p>使用 getElementsByTagName() 方法可以返回带有指定标签名的对象的集合。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span> document.&lt;span style="color:#a6e22e">getElementsByTagName&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;标签名&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>还可以获取某个元素(父元素)内部所有指定标签名的子元素&lt;/p>
+&lt;p>注意：父元素必须是单个对象(必须指明是哪一个元素对象). 获取的时候不包括父元素自己。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">element&lt;/span>.&lt;span style="color:#a6e22e">getElementsByTagName&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;标签名&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="通过-html5-新增的方法获取">通过 HTML5 新增的方法获取&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>document.&lt;span style="color:#a6e22e">getElementsByClassName&lt;/span>(&lt;span style="color:#960050;background-color:#1e0010">’&lt;/span>&lt;span style="color:#a6e22e">类名&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">‘&lt;/span>)&lt;span style="color:#960050;background-color:#1e0010">；&lt;/span>&lt;span style="color:#75715e">// 根据类名返回元素对象集合
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>document.&lt;span style="color:#a6e22e">querySelector&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;选择器&amp;#39;&lt;/span>); &lt;span style="color:#75715e">// 根据指定选择器返回第一个元素对象
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>document.&lt;span style="color:#a6e22e">querySelectorAll&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;选择器&amp;#39;&lt;/span>); &lt;span style="color:#75715e">// 根据指定选择器返回
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="特殊元素获取">特殊元素获取&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">doucumnet&lt;/span>.&lt;span style="color:#a6e22e">body&lt;/span> &lt;span style="color:#75715e">// 返回body元素对象
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>document.&lt;span style="color:#a6e22e">documentElement&lt;/span> &lt;span style="color:#75715e">// 返回html元素对象
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="事件基础">事件基础&lt;/h2>
+&lt;h3 id="事件概述">事件概述&lt;/h3>
+&lt;p>事件是可以被 JavaScript 侦测到的行为。&lt;/p></description></item><item><title>异常</title><link>http://bluemsun.top:9080/blog/5hys/</link><pubDate>Fri, 21 Jun 2024 13:02:51 +0800</pubDate><guid>http://bluemsun.top:9080/blog/5hys/</guid><description>&lt;h1 id="异常">异常&lt;/h1>
+&lt;h3 id="arrayindexoutofboundexception-数组索引越界">ArrayIndexOutOfBoundException 数组索引越界&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> arr &lt;span style="color:#f92672">=&lt;/span> {11,22,33};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(arr&lt;span style="color:#f92672">[&lt;/span>10&lt;span style="color:#f92672">]&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p>
+&lt;h3 id="classcastexception-类转换异常">ClassCastException 类转换异常&lt;/h3>
+&lt;h3 id="nullpointerexception-空指针异常">NullPointerException 空指针异常&lt;/h3>
+&lt;h2 id="异常体系">异常体系&lt;/h2>
+&lt;h3 id="最顶层父类throwable">最顶层父类Throwable&lt;/h3>
+&lt;h3 id="子类error">子类Error&lt;/h3>
+&lt;h3 id="stackoverflowerror-栈内存溢出">StackOverflowError 栈内存溢出&lt;/h3>
+&lt;h3 id="outofmemoryerror-堆内存溢出">OutofMemoryError 堆内存溢出&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span>&lt;span style="color:#f92672">[]&lt;/span> arr &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#f92672">[&lt;/span>Interger.&lt;span style="color:#a6e22e">MAX_VALUE&lt;/span>&lt;span style="color:#f92672">]&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p>
+&lt;h3 id="子类exception">子类Exception&lt;/h3>
+&lt;h4 id="runtimeexception及其子类运行时异常">RuntimeException及其子类：运行时异常&lt;/h4>
+&lt;h4 id="除runtimeexception及其子类之外所有类编译时异常">除RuntimeException及其子类之外所有类：编译时异常&lt;/h4>
+&lt;h2 id="向上抛出">向上抛出&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">BluemSun&lt;/span> {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(String&lt;span style="color:#f92672">[]&lt;/span> args) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Hello, World!&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;开始&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> method(); &lt;span style="color:#75715e">//new ArithmeticException(); JVM&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;结束&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">method&lt;/span>(){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(10&lt;span style="color:#f92672">/&lt;/span>0);&lt;span style="color:#75715e">//new ArithmeticException()&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>关于蓝旭👋</title><link>http://bluemsun.top:9080/about/</link><pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate><guid>http://bluemsun.top:9080/about/</guid><description>&lt;p>TODO: 关于蓝旭的简介。&lt;/p></description></item><item><title>加入我们</title><link>http://bluemsun.top:9080/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://bluemsun.top:9080/contact/</guid><description>&lt;p>零基础入门，学长学姐带你飞！蓝旭工作室招新进行中！&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p>
+&lt;h2 id="捕获异常">捕获异常&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">method&lt;/span>(){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">try&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(10 &lt;span style="color:#f92672">/&lt;/span> 0);&lt;span style="color:#75715e">//new ArithmeticException();&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }&lt;span style="color:#66d9ef">catch&lt;/span>(ArithmeticException a){&lt;span style="color:#75715e">//ArithmeticException a = new ArithmeticException();&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;捕获成功&amp;#34;&lt;/span>);&lt;span style="color:#75715e">//执行异常方案&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//new ArithmeticException()&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p></description></item><item><title>Servlet</title><link>http://bluemsun.top:9080/blog/8lcp/</link><pubDate>Sun, 26 May 2024 13:02:51 +0800</pubDate><guid>http://bluemsun.top:9080/blog/8lcp/</guid><description>&lt;h1 id="servlet">Servlet&lt;/h1>
+&lt;p>servlet(server applet)，顾名思义，applet是小型的程序，server是服务，servlet是小型的服务程序，通常用来处理某个或多个请求。在web程序启动时，服务器会创建一个Servlet的对象，然后进行相关的操作。&lt;/p>
+&lt;h2 id="tomcat">Tomcat&lt;/h2>
+&lt;p>tomcat是一个服务器，重要的是它免费。前端的请求就是由服务器来处理的，而Servlet就是服务器内部的一个组件，它用来进行具体的请求处理。&lt;/p>
+&lt;h2 id="创建web项目">创建Web项目&lt;/h2>
+&lt;p>在IDEA中使用Maven管理，创建一个Java EE项目：&lt;/p>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271133417.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p>
+&lt;p>下一步后，依赖项只需Servlet即可：&lt;/p>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271133614.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p>
+&lt;p>点击创建后：&lt;/p>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271133360.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p>
+&lt;p>可以看到JavaWeb项目的目录结构是：&lt;/p>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271133278.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p>
+&lt;p>有HelloServlet类(这是自动生成的)，还有web.xml配置文件&lt;/p>
+&lt;h2 id="helloservlet类">HelloServlet类&lt;/h2>
+&lt;p>HelloServlet类的内容如下：&lt;/p>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271133823.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p>
+&lt;p>这里我们先把第八行的&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@WebServlet&lt;/span>(name &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;helloServlet&amp;#34;&lt;/span>, value &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;/hello-servlet&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p>
+&lt;p>这行注解先注释掉，这个留到后面再说（如果不注释掉，后面的web.xml配置中可能会报错）。&lt;/p>
+&lt;p>它是HttpServlet的子类，而：&lt;/p>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271133722.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p>
+&lt;p>HttpServlet是GenericServlet的子类&lt;/p>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271133988.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p>
+&lt;p>GenericServlet实现了Servlet接口。&lt;/p>
+&lt;p>HelloServlet中有doGet方法:&lt;/p>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271133117.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p>
+&lt;p>顾名思义，它是用来处理get请求的，它的两个参数：request和response分别代表着请求和响应。从doGet方法的代码我们可以看到，response的setContentType方法规定了响应文件的类型，也就是传回前端的文件类型：text或html文件，接下来的PrintWriter，就是一种功能强大的字符输出流，它返还的内容就是后面println里面的东西，可以发现println输出的就是html代码，再通过浏览器解析，在前端显示出来。&lt;/p>
+&lt;h2 id="webxml">web.xml&lt;/h2>
+&lt;p>这个是一个配置文件。当服务器启动web项目时，首先会加载web.xml。这里面通常配置一些初始化信息(欢迎页面，默认是和WEB-INF同级的index.jsp)；设置URL的映射规则(某个具体请求由哪个Servlet来处理)，初始化参数，错误处理页面等。&lt;/p>
+&lt;h3 id="设置欢迎页">设置欢迎页&lt;/h3>
+&lt;p>启动服务器，然后就可以看到一个页面：&lt;/p>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271133555.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p>
+&lt;p>注意地址栏的信息：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>http://localhost:8080/myServlet_war_exploded/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p>
+&lt;p>这个留到后面再说。&lt;/p>
+&lt;p>这个页面是哪来的呢？就是和WEB-INF同级的index.jsp&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271134785.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p>
+&lt;p>观察它的代码可以发现，index.jsp和html基本差不多。它打开时默认的欢迎页面就是index.jsp，我们也可以在web.xml中写入：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-XML" data-lang="XML">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;welcome-file-list&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;welcome-file&amp;gt;&lt;/span>index.jsp&lt;span style="color:#f92672">&amp;lt;/welcome-file&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/welcome-file-list&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p>
+&lt;p>这时指定了欢迎界面是index.jsp，当然我们也可以指定我们自己写的欢迎界面，可以自己创建一个index.html：&lt;/p>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271134618.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p>
+&lt;p>然后在web.xml中写入：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-XML" data-lang="XML">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;welcome-file-list&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;welcome-file&amp;gt;&lt;/span>index.html&lt;span style="color:#f92672">&amp;lt;/welcome-file&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;welcome-file&amp;gt;&lt;/span>index.jsp&lt;span style="color:#f92672">&amp;lt;/welcome-file&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/welcome-file-list&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p>
+&lt;p>就像这样：&lt;/p>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271134045.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p>
+&lt;p>此时欢迎界面会首先选择第一个，如果第一个找不到再找第二个。重启服务器后：&lt;/p>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202502271134603.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p>
+&lt;h3 id="为servlet分配请求">为Servlet分配请求&lt;/h3>
+&lt;p>此外，web.xml中还可以指定哪种请求由哪个Servlet类来处理：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-XML" data-lang="XML">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;servlet&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;servlet-name&amp;gt;&lt;/span>hello&lt;span style="color:#f92672">&amp;lt;/servlet-name&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;servlet-class&amp;gt;&lt;/span>org.example.myservlet.HelloServlet&lt;span style="color:#f92672">&amp;lt;/servlet-class&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/servlet&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;servlet-mapping&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;servlet-name&amp;gt;&lt;/span>hello&lt;span style="color:#f92672">&amp;lt;/servlet-name&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;url-pattern&amp;gt;&lt;/span>/hello-servlet&lt;span style="color:#f92672">&amp;lt;/url-pattern&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/servlet-mapping&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p></description></item><item><title>JavaScript</title><link>http://bluemsun.top:9080/blog/12dyh/</link><pubDate>Mon, 15 Apr 2024 14:55:51 +0800</pubDate><guid>http://bluemsun.top:9080/blog/12dyh/</guid><description>&lt;p>&lt;strong>JavaScript简介&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>JavaScript能够改变HTML内容&lt;/li>
+&lt;li>JavaScript能够改变HTML属性&lt;/li>
+&lt;li>JavaScript能够改变HTML样式&lt;/li>
+&lt;li>JavaScript能够隐藏HTML元素（display）&lt;/li>
+&lt;li>JavaScript能够显示HTML元素（display）&lt;/li>
+&lt;/ul>
+&lt;h2 id="javascript使用">JavaScript使用&lt;/h2>
+&lt;h3 id="标签">&lt;!-- raw HTML omitted -->标签&lt;/h3>
+&lt;p>在HTML中，JavaScript 代码必须位于 &lt;!-- raw HTML omitted --> 与 &lt;!-- raw HTML omitted --> 标签之间。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">h2&lt;/span>&amp;gt;Body 中的 JavaScript&amp;lt;/&lt;span style="color:#f92672">h2&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">p&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;demo&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">p&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>document.&lt;span style="color:#a6e22e">getElementById&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;demo&amp;#34;&lt;/span>).&lt;span style="color:#a6e22e">innerHTML&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;我的第一段 JavaScript&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p>
+&lt;p>运行结果：&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/%E5%A4%9A%E9%9B%85%E6%99%972023013326202502262338081.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p>
+&lt;p>注释：&lt;/p>
+&lt;ul>
+&lt;li>旧的JavaScript例子也许会使用type属性：&lt;!-- raw HTML omitted -->。&lt;/li>
+&lt;li>type属性不是必需的。JavaScript是HTML中的默认脚本语言。&lt;/li>
+&lt;/ul>
+&lt;h3 id="head或body中的javascript">head或body中的JavaScript&lt;/h3>
+&lt;h4 id="head中的javascript">head中的JavaScript&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">myFunction&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> document.&lt;span style="color:#a6e22e">getElementById&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;demo&amp;#34;&lt;/span>).&lt;span style="color:#a6e22e">innerHTML&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;更改后的段落&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">h2&lt;/span>&amp;gt;Head中的JavaScript&amp;lt;/&lt;span style="color:#f92672">h2&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">p&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;demo&amp;#34;&lt;/span>&amp;gt;原段落。&amp;lt;/&lt;span style="color:#f92672">p&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">button&lt;/span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;button&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">onclick&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;myFunction()&amp;#34;&lt;/span>&amp;gt;按钮&amp;lt;/&lt;span style="color:#f92672">button&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p></description></item><item><title>JavaScript基础</title><link>http://bluemsun.top:9080/blog/11zlz2/</link><pubDate>Sat, 06 Apr 2024 13:02:51 +0800</pubDate><guid>http://bluemsun.top:9080/blog/11zlz2/</guid><description>&lt;h1 id="一javascript">一、JavaScript&lt;/h1>
+&lt;h3 id="什么是javascript">什么是JavaScript？&lt;/h3>
+&lt;p>&lt;!-- raw HTML omitted -->是一种运行在客户端（浏览器）的编程语言，实现人机交互效果。&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p>JavaScript是一种为网站添加互动以及自定义行为的客户端脚本语言， 有浏览器一边解释一边执行，可以跨平台、跨浏览器驱动网页，与用户交互。通常只能通过Web浏览器去完成操作， 而无法像普通意义上的程序那样独立运行。
+JavaScript是一种轻量级、解释型的 Web 开发语言，该语言系统不是很庞杂，简单易学。由于所有现代浏览器都己嵌入了JavaScript引擎、JavaScript 源代码可以在浏览器中直接被解释执行，用户不用担心支持问题。&lt;/p>
+&lt;h3 id="作用做什么">作用（做什么）&lt;/h3>
+&lt;ul>
+&lt;li>网页特效（监听用户的一些行为让网页做出对应的反馈）&lt;/li>
+&lt;li>表单验证（针对表单数据的合法性进行判断）&lt;/li>
+&lt;li>数据交互（获取后台的数据，渲染到前端）&lt;/li>
+&lt;li>服务端编程（node.js）&lt;/li>
+&lt;/ul>
+&lt;h3 id="javascript由三部分组成有什么">JavaScript由三部分组成(有什么)：&lt;/h3>
+&lt;ul>
+&lt;li>ECMAScript:描述了JavaScript的基本语法规则，包括数据类型、变量、运算符、分支语句等&lt;/li>
+&lt;li>Web APIs:
+&lt;ul>
+&lt;li>BOM：浏览器对象模型，通过BOM可以操作浏览器窗口,比如页面弹窗、检测窗口宽度、存储数据到浏览器等&lt;/li>
+&lt;li>DOM：文档对象模型，通过BOM可以操作HTML文档类型、样式或者内容，比如对页面元素进行移动，大小，添加。删除等操作&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://vichywhite.oss-cn-beijing.aliyuncs.com/zlz2023012957/202404241701656.png" alt="image-20240424170145581">&lt;/p>
+&lt;p>第一个JavaScript程序：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;!&lt;/span>&lt;span style="color:#a6e22e">DOCTYPE&lt;/span> &lt;span style="color:#a6e22e">html&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">html&lt;/span> &lt;span style="color:#a6e22e">lang&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;en&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">head&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">meta&lt;/span> &lt;span style="color:#a6e22e">charset&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;UTF-8&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">meta&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;viewport&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">content&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">title&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>&lt;span style="color:#a6e22e">index&lt;/span>&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">/title&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">/head&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">body&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">button&lt;/span> &lt;span style="color:#a6e22e">onclick&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;show()&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>&lt;span style="color:#a6e22e">显示&lt;/span>&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">/button&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">script&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">show&lt;/span>(){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">alert&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;hello world&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">/script&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">/body&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">/html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">&lt;/p>
+&lt;p>&lt;img src="https://img-blog.csdnimg.cn/direct/e6ecc59b33f04536a81da019d4dd1d79.png" alt="img">&lt;img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑&lt;/p>
+&lt;p>JS注意几点：&lt;/p>
+&lt;ol>
+&lt;li>区分大小写&lt;/li>
+&lt;li>语句 在JavaScript中，语句结束的分号不做强制要求，但按照程序规范，建议每一条语句都已分号结束&lt;/li>
+&lt;li>字面量 在JavaScript中，一个固定值被称为字面量，例如：“Hello World”&lt;/li>
+&lt;li>注释 单行注释以//开始，多行注释的形式为/&lt;em>……&lt;/em>/&lt;/li>
+&lt;/ol>
+&lt;h3 id="javascript添加方式">JavaScript添加方式&lt;/h3>
+&lt;p>①行内方式&lt;/p>
+&lt;p>以行内方式添加时，JavaScript会被添加到元素的事件相关属性中&lt;/p>
+&lt;blockquote>
+&lt;!-- raw HTML omitted -->&lt;/blockquote>
+&lt;p>②内嵌方式&lt;/p></description></item><item><title>关于蓝旭👋</title><link>http://bluemsun.top:9080/about/</link><pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate><guid>http://bluemsun.top:9080/about/</guid><description>&lt;p>TODO: 关于蓝旭的简介。&lt;/p></description></item><item><title>加入我们</title><link>http://bluemsun.top:9080/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://bluemsun.top:9080/contact/</guid><description>&lt;p>零基础入门，学长学姐带你飞！蓝旭工作室招新进行中！&lt;/p>
 &lt;form name="contact" action="https://getform.io/f/bllyyoxb" method="POST" enctype="multipart/form-data">
  &lt;div class="flex input">
  &lt;div class="p-4 w-full">

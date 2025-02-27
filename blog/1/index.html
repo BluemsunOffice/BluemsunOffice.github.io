@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<title>Hello! Bluemsun | vue3</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.jpg'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.jpg'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.jpg'>
+<link rel="manifest" href='/site.webmanifest'>
+
+<link href='/css/fa6.min.css' rel="stylesheet" type="text/css">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<link href='/css/style.min.css' rel="stylesheet" type="text/css">
+<link rel="stylesheet" href='/css/custom.css'>
+
+<meta property="og:title" content="Hello! Bluemsun | vue3" />
+
+
+
+
+<meta name="description" content="Vue 3：新一代前端框架，性能提升，组合式API，更小体积。">
+<meta property="og:title" content=" | " />
+<meta property="og:site_name" content="Hello! Bluemsun">
+<meta property="og:description" content="Vue 3：新一代前端框架，性能提升，组合式API，更小体积。">
+<meta property="og:url" content="http://localhost:1313/blog/1/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@tech_chiba">
+
+<link rel="canonical" href="http://localhost:1313/blog/1/">
+
+<meta name="twitter:description" content="Vue 3：新一代前端框架，性能提升，组合式API，更小体积。">
+<meta property="article:published_time" content="2024-08-30T12:33:45&#43;10:00">
+<meta property="article:updated_time" content="2024-08-30T12:33:45&#43;10:00">
+
+
+
+
+
+    
+<meta property="og:image" content="http://localhost:1313/img/blog_pic/vue.jpg">
+    
+
+
+<meta name="twitter:title" content="vue3">
+<link rel="preload" href='/css/sweetalert2.min.css' as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <main class="flex-grow"><header>
+    <div id="overlay">
+        <ul class="text-center list-none text-white text-3xl">
+            
+            <li class="p-2">
+                <a href="/products/">
+                    <span>项目介绍</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/blog/">
+                    <span>往期博客</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/about/">
+                    <span>关于蓝旭</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/contact/">
+                    <span>加入我们</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <nav class="flex items-center justify-between flex-wrap bg-opacity-80 p-8">
+        <div class="flex items-center flex-shrink-0 text-xl text-grey-900 mr-6 flex-row">
+            <a href="http://localhost:1313/" class="flex items-center flex-shrink-0 text-black mr-6">
+                <img alt="Bluemsun Studio"
+                    class="h-14" src="/img/logo/logo.jpg">
+                <div>
+                    <h1 class="px-2 text-4xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-5xl lg:text-6xl xl:text-8xl">蓝旭工作室</h1> 
+                    <h2 class="px-2 text-xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-3xl lg:text-4xl xl:text-6xl">Bluemsun Studio</h2>
+                </div>
+            </a>
+        </div>
+        <div class="block lg:hidden">
+            <div id="hamburgerbtn" class="flex cursor-pointer items-center w-14 h-10 py-2 rounded mopen">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
+        </div>
+        <div class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+            <div class="text-lg lg:flex-grow">
+            </div>
+            <div class="text-xl">
+                
+                <a href="/products/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8  px-2 py-1 rounded">
+                    项目介绍
+                </a>
+                
+                <a href="/blog/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8  px-2 py-1 rounded">
+                    往期博客
+                </a>
+                
+                <a href="/about/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8  px-2 py-1 rounded">
+                    关于蓝旭
+                </a>
+                
+                <a href="/contact/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8  px-2 py-1 rounded">
+                    加入我们
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+</header><div class="scroll-top rounded-full">
+      <span class="icon-keyboard_arrow_up text-2xl"></span>
+    </div>
+<div class="mx-auto my-10 max-w-6xl">
+    <div class="mx-3 col-span-3 lg:col-span-2 px-2 bg-white my-10">
+        <h1 class="title text-5xl font-bold mt-10 h-fit">
+            <i class="fa-solid fa-heading"></i>
+            vue3
+        </h1>
+        <section class="mb-4 text-lg flex flex-row items-center">
+            <h4 id="date" class="flex flex-row items-center p-3">
+                
+                <i class="fa-regular fa-clock mr-2" style="color: #74C0FC;"></i>
+                2024/08/30 
+            </h4>
+            
+            <h4 class="flex flex-row items-center p-3">
+                
+                <i class="fa-solid fa-pen-nib mr-2" style="color: #FFD43B;"></i>
+                万晓煜
+            </h4>
+            
+            
+            <div id="categories" class="flex flex-row items-center p-3">
+                
+                <i class="fa-regular fa-folder-open mr-2" style="color: #63E6BE;"></i>
+                
+                <span
+                    class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a
+                        href='http://localhost:1313/categories/%E5%89%8D%E7%AB%AF'>前端</a></span>
+                
+            </div>
+            
+        </section>
+        
+        <div class="m-2 featured-image">
+            <img class="my-4"  sizes="auto" height="auto" width="auto" src="http://localhost:1313/img/blog_pic/vue.jpg">
+        </div>
+        
+        <div class="content prose md:prose-lg lg:prose-xl max-w-none bg-white p-8 border-black" style="border:dashed 1px #FF4365">
+            <h1 id="vue3">VUE3</h1>
+<h2 id="一创建一个vue实例">一、创建一个vue实例</h2>
+<h3 id="11传统开发方式">1.1传统开发方式</h3>
+<p>打开官网，点击快速上手，在html文件中引入vue.global.js文件</p>
+<pre tabindex="0"><code>&lt;script src=&#34;./vue.global.js&#34;&gt;&lt;/script&gt;
+</code></pre><p>在body标签里:首先是容器，在script标签里用 Vue.createApp方法，用setup配置项存放数据和方法，setup里需要返回值。在Vue.createApp后面将内容挂载在容器内用mount(&quot;#id&quot;)</p>
+<pre tabindex="0"><code>&lt;div id=&#34;id&#34;&gt;
+    &lt;h2&gt;{{msg}}&lt;/h2&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    Vue.createApp({
+        setup() {
+            return {
+                msg: &#39;阿衡&#39;
+            }
+        }
+    }).mount(&#34;#id&#34;)
+&lt;/script&gt;
+</code></pre><p>如果想创建一个复杂的数据类型，可以使用reactive,并且将其返回return</p>
+<pre tabindex="0"><code>setup() {
+    const web = Vue.reactive({
+        title: &#34;你好&#34;
+    })
+    return {
+        msg: &#39;阿衡&#39;,
+        web
+    }
+}
+</code></pre><p>简写：不写Vue，可以使用解构赋值</p>
+<pre tabindex="0"><code>const { createApp, reactive } = Vue
+</code></pre><h3 id="12模块化开发">1.2模块化开发</h3>
+<p>同样，在官网找到vue.esm-browser.js文件并引入</p>
+<pre tabindex="0"><code>import { createApp, reactive } from &#39;./vue.esm-browser.js&#39;
+</code></pre><h2 id="二基础内容">二、基础内容</h2>
+<h3 id="21ref和reactive">2.1ref和reactive</h3>
+<p>1.ref用于存储基本数据类型，在修改值时，需要.value，并且记得要返回</p>
+<p>引入</p>
+<pre tabindex="0"><code>import { createApp, reactive, ref } from &#39;./vue.esm-browser.js&#39;
+</code></pre><p>定义和修改（setup里）</p>
+<pre tabindex="0"><code>const num = ref(11)
+num.value = 122
+</code></pre><p>返回</p>
+<pre tabindex="0"><code>return {
+     num
+}
+</code></pre><p>2.reactive用于复杂的数据类型，在修改值时可以直接修改</p>
+<h3 id="22事件绑定">2.2事件绑定</h3>
+<p>在标签中用v-on或者@绑定事件</p>
+<pre tabindex="0"><code> &lt;button @click=&#34;edit&#34;&gt;按钮&lt;/button&gt;
+</code></pre><p>在setup里写函数</p>
+<pre tabindex="0"><code>const edit = () =&gt; {
+                    web.url = &#34;22222&#34;
+                }
+</code></pre><p>返回值</p>
+<h3 id="23v-show">2.3v-show</h3>
+<p>在标签里用v-show</p>
+<pre tabindex="0"><code>&lt;h2 v-show=&#34;web.show&#34;&gt;{{web.url}}&lt;/h2&gt;
+</code></pre><h3 id="24v-if">2.4v-if</h3>
+<p>在标签里使用v-if或v-else或v-else-if</p>
+<h3 id="25动态属性绑定v-bind">2.5动态属性绑定v-bind</h3>
+<p>可以对value，src，class进行绑定，简写形式是：value</p>
+<pre tabindex="0"><code>&lt;div class=&#34;id&#34;&gt;
+    &lt;!-- value --&gt;
+    &lt;input type=&#34;text&#34; :value=&#34;web.url1&#34;&gt;
+    &lt;!-- src  --&gt;
+    &lt;img :src=&#34;web.url2&#34; alt=&#34;&#34;&gt;
+    &lt;!-- class  --&gt;
+    &lt;p :class=&#34;{url3:true}&#34;&gt;你好&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script type=&#34;module&#34;&gt;
+    import { createApp, reactive } from &#39;./vue.esm-browser.js&#39;
+    createApp({
+        setup() {
+            const web = reactive({
+                url1: &#34;1111&#34;,
+                url2: &#34;22222&#34;,
+            })
+            return ({
+                web
+            })
+        }
+    }).mount(&#34;.id&#34;)
+&lt;/script&gt;
+</code></pre><h3 id="26v-for">2.6v-for</h3>
+<p>对于数组，可以v-for=&ldquo;value in data.number&rdquo;；对于对象，可以v-for=&quot;(value,key,index) in data.user&quot;；</p>
+<p>在使用过程中，尽量加上:key=&ldquo;value.id&rdquo;</p>
+<pre tabindex="0"><code>&lt;div class=&#34;id&#34;&gt;
+    &lt;ul&gt;
+        &lt;li v-for=&#34;value in data.number&#34;&gt;
+            {{value}}
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul&gt;
+        &lt;li v-for=&#34;(value,index) in data.number&#34;&gt;
+            {{index}}-&gt;{{value}}
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul&gt;
+        &lt;li v-for=&#34;(value,key,index) in data.user&#34;&gt;
+            {{key}}-&gt;{{value}}-&gt;{{index}}
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul&gt;
+        &lt;li v-for=&#34;(value,index) in data.teacher&#34; :key=&#34;value.id&#34;&gt;
+            {{index}}-&gt;{{value.name}}
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;script type=&#34;module&#34;&gt;
+    import { createApp, reactive } from &#39;./vue.esm-browser.js&#39;
+    createApp({
+        setup() {
+            const data = ({
+                number: [&#39;11&#39;, &#39;22&#39;, &#39;33&#39;],
+                user: {
+                    name: &#34;阿衡&#34;,
+                    old: 20
+                },
+                teacher: [
+                    { id: 100, name: &#34;老师1&#34;, web: &#34;www.baidu.com&#34; },
+                    { id: 102, name: &#34;老师2&#34;, web: &#34;www.baidu.com&#34; },
+                ]
+            })
+            return ({
+                data
+            })
+        }
+    }).mount(&#34;.id&#34;)
+&lt;/script&gt;
+</code></pre><h3 id="27双向数据绑定v-model">2.7双向数据绑定v-model</h3>
+<p>可以对input类型的text，radio，checkbox和select进行双向数据绑定，都是通过value进行存储</p>
+<p>在setup里的数据里，写一个复杂数据类型存储</p>
+<pre tabindex="0"><code>&lt;div class=&#34;id&#34;&gt;
+    &lt;input type=&#34;text&#34; v-model=&#34;data.text&#34;&gt;
+    &lt;input type=&#34;radio&#34; v-model=&#34;data.radio&#34; value=&#34;1&#34;&gt;选项1
+    &lt;input type=&#34;radio&#34; v-model=&#34;data.radio&#34; value=&#34;2&#34;&gt;选项2
+    &lt;input type=&#34;checkbox&#34; v-model=&#34;data.checkbox&#34; value=&#34;a&#34;&gt;多选1
+    &lt;input type=&#34;checkbox&#34; v-model=&#34;data.checkbox&#34; value=&#34;b&#34;&gt;多选2
+    &lt;input type=&#34;checkbox&#34; v-model=&#34;data.checkbox&#34; value=&#34;c&#34;&gt;多选3
+    &lt;select v-model=&#34;data.select&#34;&gt;
+        &lt;option value=&#34;11&#34;&gt;11&lt;/option&gt;
+        &lt;option value=&#34;22&#34;&gt;22&lt;/option&gt;
+        &lt;option value=&#34;33&#34;&gt;33&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+
+&lt;script type=&#34;module&#34;&gt;
+    import { createApp, reactive, ref } from &#39;./vue.esm-browser.js&#39;
+    createApp({
+        setup() {
+            const data = reactive({
+                text: &#34;&#34;,
+                radio: &#34;&#34;,
+                checkbox: [],
+                select: &#34;&#34;
+            })
+            return ({
+                data
+            })
+        }
+    }).mount(&#34;.id&#34;)
+&lt;/script&gt;
+</code></pre><p>2.8v-model的修饰符</p>
+<p>.lazy是失去焦点或按下回车后渲染</p>
+<p>.number是将输入框的值转化为数字类型</p>
+<p>.trim是去掉首尾空格</p>
+<pre tabindex="0"><code>&lt;input type=&#34;text&#34; v-model.lazy=&#34;data.text&#34;&gt;
+&lt;input type=&#34;text&#34; v-model.number=&#34;data.text&#34;&gt;
+&lt;input type=&#34;text&#34; v-model.trim=&#34;data.text&#34;&gt;
+</code></pre><h3 id="29v-text和v-html">2.9v-text和v-html</h3>
+<pre tabindex="0"><code>&lt;h2 v-text=&#34;data.title&#34;&gt;&lt;/h2&gt;
+&lt;h2 v-html=&#34;data.html&#34;&gt;&lt;/h2&gt;
+</code></pre><p>在setup里</p>
+<pre tabindex="0"><code>const data = reactive({
+    title: &#34;阿衡&#34;,
+    html: &#34;&lt;i style=&#39;color:red;&#39;&gt;www.baidu.com&lt;/i&gt;&#34;
+})
+</code></pre><h3 id="210计算属性">2.10计算属性</h3>
+<p>首先引入computed</p>
+<p>在利用属性将计算属性挂载上去，用computed(()=&gt;{}）箭头函数的形式</p>
+<pre tabindex="0"><code>&lt;div class=&#34;id&#34;&gt;
+    &lt;h2&gt;{{add}}&lt;/h2&gt;
+&lt;/div&gt;
+
+&lt;script type=&#34;module&#34;&gt;
+    import { createApp, reactive, computed } from &#39;./vue.esm-browser.js&#39;
+    createApp({
+        setup() {
+            const data = reactive({
+                x: 10,
+                y: 20
+            })
+            const add = computed(() =&gt; {
+                return data.x + data.y
+            })
+            return ({
+                data,
+                add
+            })
+        }
+    }).mount(&#34;.id&#34;)
+    &lt;/script&gt;
+</code></pre><h3 id="211监听器watch">2.11监听器watch</h3>
+<p>导入watch</p>
+<pre tabindex="0"><code>import { createApp, reactive, watch } from &#39;./vue.esm-browser.js&#39;
+</code></pre><p>监听某个数据</p>
+<pre tabindex="0"><code>const data = reactive({
+    year: &#34;2023&#34;
+})
+watch(data, (newValue, oldValue) =&gt; {
+    console.log()
+})
+</code></pre><p>监听某个对象的属性（范围更小）</p>
+<pre tabindex="0"><code>const data = reactive({
+    year: &#34;2023&#34;
+})
+watch(() =&gt; data.year, (newValue, oldValue) =&gt; {
+    console.log()
+})
+</code></pre><pre tabindex="0"><code>综合：
+import { createApp, reactive, watch } from &#39;./vue.esm-browser.js&#39;
+createApp({
+    setup() {
+        const data = reactive({
+            year: &#34;2023&#34;
+        })
+        watch(data, (newValue, oldValue) =&gt; {
+            console.log()
+        })
+        watch(() =&gt; data.year, (newValue, oldValue) =&gt; {
+            console.log()
+        })
+        return ({
+            data
+        })
+    }
+}).mount(&#34;.id&#34;)
+</code></pre><h3 id="212自动监听">2.12自动监听</h3>
+<p>同样还是先引入watchEffect，在setup里直接使用watchEffect即可</p>
+<pre tabindex="0"><code>import { createApp, reactive, watchEffect } from &#39;./vue.esm-browser.js&#39;
+createApp({
+    setup() {
+        const data = reactive({
+            year: &#34;2023&#34;
+        })
+        watchEffect(()=&gt;{
+            // 操作数据
+        })
+        return ({
+            data
+        })
+    }
+}).mount(&#34;.id&#34;)
+</code></pre><h2 id="三vite">三、vite</h2>
+<h3 id="31创建一个vite项目">3.1.创建一个vite项目</h3>
+<p>打开命令行，进入到所需要创建的文件夹里</p>
+<p>创建</p>
+<pre tabindex="0"><code>npm create vite@latest
+</code></pre><p>命名项目名</p>
+<pre tabindex="0"><code>Project name: ... demo
+</code></pre><p>进入项目文件夹</p>
+<pre tabindex="0"><code>cd demo
+</code></pre><p>安装</p>
+<pre tabindex="0"><code>npm install
+</code></pre><p>运行</p>
+<pre tabindex="0"><code> npm run dev
+</code></pre><p>最后常用的是</p>
+<h4 id="npm-run-dev">npm run dev</h4>
+<p>之后删除一些没用的文件</p>
+<p>1.style.css</p>
+<p>2.components下的组件</p>
+<p>3.打开main.js，删除style.css 的引入</p>
+<p>4.打开App.vue，删除所有，只留下模板</p>
+<h4 id="psv3是快捷键">ps：v3是快捷键</h4>
+<h3 id="32将原来的文件变成vue文件">3.2将原来的文件变成vue文件</h3>
+<p>将导入和setup里的内容直接搬过来即可，不要return</p>
+<p>将html结构直接放在template标签里即可</p>
+<pre tabindex="0"><code>&lt;template&gt;
+ &lt;div class=&#34;id&#34;&gt;
+        &lt;h2&gt;{{web.url}}&lt;/h2&gt;
+        &lt;h2&gt;{{num}}&lt;/h2&gt;
+        &lt;input type=&#34;text&#34; name=&#34;&#34; id=&#34;&#34; :focus=&#34;edit&#34;&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script setup&gt;
+ import { reactive, ref } from &#39;vue&#39;
+  const num = ref(11)
+  num.value = 122
+  const web = reactive({
+      url: &#39;11111&#39;,
+      title: &#39;你好&#39;
+  })
+  const edit = () =&gt; {
+      web.url = &#34;22222&#34;
+  }
+  const add = (a, b) =&gt; {
+      web.user = a + b
+  }
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+
+&lt;/style&gt;
+</code></pre><h2 id="四组件间的通信">四、组件间的通信</h2>
+<h3 id="41父传子">4.1父传子</h3>
+<p>在父组件：</p>
+<p>在使用子组件标签时，如果只是普通的字符串，直接传过去就可以</p>
+<p>如果是一个对象，则利用v-bind绑定数据，在script里创建对象，推荐reactive</p>
+<pre tabindex="0"><code>&lt;template&gt;
+ &lt;div class=&#34;id&#34;&gt;
+  &lt;Header propsName=&#34;阿衡&#34;/&gt;
+  &lt;Footer v-bind=&#34;propsWeb&#34;/&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script setup&gt;
+import Header from &#39;./components/Header.vue&#39;
+import Footer from &#39;./components/Footer.vue&#39;;
+ import { reactive, ref } from &#39;vue&#39;
+const propsWeb=reactive({
+  user:&#34;nihao&#34;
+})
+
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+
+&lt;/style&gt;
+</code></pre><p>在子组件：</p>
+<p>普通的字符串，用defineProps里的数组接收</p>
+<p>如果是对象，要对对象的那个属性进行限制</p>
+<pre tabindex="0"><code>&lt;template&gt;
+&lt;div&gt;header&lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script setup&gt;
+const propsName=defineProps([&#34;propsName&#34;])
+console.log(propsName);
+
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+
+&lt;/style&gt;
+</code></pre><pre tabindex="0"><code>&lt;template&gt;
+&lt;div&gt;footer&lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script setup&gt;
+const propsWeb=defineProps({
+    user:{
+        type:String,
+        required:true,
+        default:&#34;&#34;
+    }
+})
+console.log(propsWeb)
+
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+
+&lt;/style&gt;
+</code></pre><h3 id="42子传父">4.2子传父</h3>
+<p>在子组件中：</p>
+<p>首先声明一下需要传递的数据的名称，用defineEmits</p>
+<p>然后再传递数据，用emits，第一个参数与声明时的相对应，第二个参数写需要传递的参数</p>
+<p>ps：在可以通过自定义事件来决定传递数据的时机</p>
+<pre tabindex="0"><code>&lt;template&gt;
+&lt;div&gt;header
+    &lt;button @click=&#34;add&#34;&gt;按钮&lt;/button&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script setup&gt;
+const emits=defineEmits([&#34;getWeb&#34;,&#34;getUrl&#34;])
+emits(&#34;getWeb&#34;,{name:&#34;哈哈哈哈&#34;})
+const add=()=&gt;{
+    emits(&#34;getUrl&#34;,{url:&#34;123&#34;})
+}
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+
+&lt;/style&gt;
+</code></pre><p>在父组件中：</p>
+<p>在使用子组件标签时，增加自定义事件，属性名是传递过来的数据名称，属性值是父组件内自己定义的函数，用来处理数据</p>
+<p>在自定义函数中，用箭头函数的参数接收传递过来的数据</p>
+<pre tabindex="0"><code class="language-4." data-lang="4.">&lt;template&gt;
+ &lt;div class=&#34;id&#34;&gt;
+  &lt;Header @getWeb=&#34;emitsgetWeb&#34; @getUrl=&#34;emitsgetUrl&#34;/&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script setup&gt;
+import Header from &#39;./components/Header.vue&#39;
+import Footer from &#39;./components/Footer.vue&#39;;
+ import { reactive, ref } from &#39;vue&#39;
+ const emitsgetWeb =(data)=&gt;{
+  console.log(data);
+ }
+ const emitsgetUrl =(data)=&gt;{
+  console.log(data);
+  
+ }
+const web=reactive({
+  user:&#34;nihao&#34;
+})
+const url=ref(1111)
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+
+&lt;/style&gt;
+</code></pre><h3 id="43跨组件通信-依赖注入">4.3跨组件通信-依赖注入</h3>
+<p>此方法只能用于父类(或祖先类)组件向子类(孙子类)组件传递参数</p>
+<p>在父类(或祖先类)组件中：</p>
+<p>可以传递响应式数据，ref，函数等</p>
+<p>传递数据的一方需要引入provide，并定义好需要传递的数据，再通过provide(&ldquo;传递名&rdquo;,传递的数据)</p>
+<pre tabindex="0"><code>&lt;template&gt;
+ &lt;div class=&#34;id&#34;&gt;
+  &lt;Header/&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script setup&gt;
+import Header from &#39;./components/Header.vue&#39;
+import { reactive, ref,provide } from &#39;vue&#39;
+const web=reactive({
+  user:&#34;nihao&#34;
+})
+const url=ref(1111)
+const urlAdd=()=&gt;{
+  url.value++
+}
+provide(&#34;provideweb&#34;,web)
+provide(&#34;provideurl&#34;,url)
+provide(&#34;provideFucurlAdd&#34;,urlAdd)
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+
+&lt;/style&gt;
+</code></pre><p>在子类(孙子类)组件中：</p>
+<p>先引入inject，再用inject(&ldquo;传递名&rdquo;)来获取数据</p>
+<pre tabindex="0"><code>&lt;template&gt;
+&lt;div&gt;
+    &lt;Nav/&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script setup&gt;
+import Nav from &#39;./Nav.vue&#39;
+import {inject} from &#39;vue&#39;
+const url=inject(&#34;provideurl&#34;)
+console.log(url)
+const urlAdd=inject(&#34;provideFucurlAdd&#34;)
+console.log(urlAdd);
+
+
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+
+&lt;/style&gt;
+</code></pre><h3 id="44插槽">4.4插槽</h3>
+<p>作用：我们再子组件中可以将父组件所定义的一些模板片段插入到子组件的特定位置</p>
+<p>在父组件中：</p>
+<p>不需要引入其他文件，只需要在使用子组件标签的时候，用子组件标签包裹需要传递的代码片段（html代码）</p>
+<p>1.匿名插槽</p>
+<pre tabindex="0"><code>&lt;template&gt;
+ &lt;div class=&#34;id&#34;&gt;
+  &lt;Header&gt;&lt;a href=&#34;www.baidu.com&#34;&gt;百度&lt;/a&gt;&lt;/Header&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+</code></pre><p>2.具名插槽（简写形式：#）</p>
+<p>需要用一个template标签包裹，并且用v-slot:或者#取名</p>
+<pre tabindex="0"><code>&lt;template&gt;
+ &lt;div class=&#34;id&#34;&gt;
+  &lt;Header&gt;&lt;a href=&#34;www.baidu.com&#34;&gt;百度&lt;/a&gt;&lt;/Header&gt;
+  &lt;Footer&gt;
+    &lt;!-- &lt;template v-slot:baidu&gt;  --&gt;
+      &lt;template #baidu&gt; 
+      &lt;a href=&#34;www.baidu.com&#34;&gt;百度&lt;/a&gt;
+    &lt;/template&gt;
+  &lt;/Footer&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+</code></pre><p>在子组件中：</p>
+<p>同样不需要引入其他文件，只需要在template标签里，找到需要放的位置，用slot标签引用即可</p>
+<p>1.匿名插槽</p>
+<pre tabindex="0"><code>&lt;template&gt;
+&lt;div&gt;
+    header
+    &lt;slot/&gt;
+&lt;/div&gt;
+</code></pre><p>2.具名插槽（在slot标签属性指明插槽名即可）</p>
+<pre tabindex="0"><code>&lt;template&gt;
+&lt;div&gt;footer
+    &lt;slot name=&#34;baidu&#34;/&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+</code></pre><h3 id="45作用域插槽">4.5作用域插槽</h3>
+<p>作用：子组件向父组件传递数据，并在父组件定义的模板中渲染</p>
+<p>根据上一个具名插槽的案例</p>
+<p>在子组件中：</p>
+<p>在属性里加入要传递的数据</p>
+<pre tabindex="0"><code>&lt;template&gt;
+&lt;div&gt;footer
+    &lt;slot name=&#34;baidu&#34; title=&#34;阿衡&#34; age=&#34;20&#34;/&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+</code></pre><p>在父组件中：</p>
+<p>1.在取名处用=“数据名”的形式，可以通过{{数据名.子组件定义的属性}}来进行使用</p>
+<pre tabindex="0"><code>&lt;template&gt;
+ &lt;div class=&#34;id&#34;&gt;
+  &lt;Footer&gt;
+      &lt;template #baidu=&#34;data&#34;&gt; 
+        {{ data.title }}
+        {{ data.age }}
+      &lt;a href=&#34;www.baidu.com&#34;&gt;百度&lt;/a&gt;
+    &lt;/template&gt;
+  &lt;/Footer&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+</code></pre><p>2.还可以通过解构的方式，#插槽名={子组件定义的属性}，在使用时，可以直接{{子组件定义的属性}}</p>
+<pre tabindex="0"><code>&lt;template&gt;
+ &lt;div class=&#34;id&#34;&gt;
+  &lt;Footer&gt;
+      &lt;template #baidu={title,age}&gt; 
+        {{ title }}
+        {{ age }}
+      &lt;a href=&#34;www.baidu.com&#34;&gt;百度&lt;/a&gt;
+    &lt;/template&gt;
+  &lt;/Footer&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+</code></pre><h3 id="46torefs和toref">4.6toRefs和toRef</h3>
+<p>作用：原本是响应式数据（对象），可以单独一个属性或者全部属性，拿出来单独变成响应式数据（一个属性就是一个响应式数据）</p>
+<p>1.将全部属性变为响应式数据</p>
+<p>首先引入toRefs，再利用解构赋值和toRefs方法，将响应式数据（对象）的全部属性转化</p>
+<pre tabindex="0"><code>&lt;script setup&gt;
+import {reactive,toRefs} from &#39;vue&#39;
+let web=reactive({
+  name:&#34;阿衡&#34;,
+  url:&#34;www.baidu.com&#34;
+})
+let {name,url}=toRefs(web)
+console.log(url)
+&lt;/script&gt;
+</code></pre><p>2.将个别属性变为响应式数据</p>
+<p>首先引入toRef，再利用toRef方法，toRef(需要转换的响应式对象，“需要转换的属性”)</p>
+<pre tabindex="0"><code>&lt;script setup&gt;
+import {reactive,toRef} from &#39;vue&#39;
+let web=reactive({
+  name:&#34;阿衡&#34;,
+  url:&#34;www.baidu.com&#34;
+})
+let url=toRef(web,&#34;url&#34;)
+console.log(url)
+&lt;/script&gt;
+</code></pre><h2 id="五pinia">五、pinia</h2>
+<p>pinia是一个轻量级的状态管理库，可以全局状态管理，简化组件间的通信，状态持久化（可以将状态保存在本地存储）</p>
+<h3 id="51安装pinia">5.1安装pinia</h3>
+<p>进入你创建项目的文件夹中，利用管理员身份打开终端，输入命令行</p>
+<pre tabindex="0"><code>npm install pinia
+</code></pre><p>安装完成后你可以在package.json文件中看到pinia的版本号</p>
+<p>然后再mian.js文件中：先引入pinia，再创建pinia实例，最后使用app.use(pinia)将pinia实例注册到vue应用中</p>
+<p>ps：需要更改一下app创建实例的方式</p>
+<pre tabindex="0"><code>import { createApp } from &#39;vue&#39;
+import { createPinia } from &#39;pinia&#39;
+import App from &#39;./App.vue&#39;
+const pinia = createPinia()
+// createApp(App).mount(&#39;#app&#39;)
+const app = createApp(App)
+app.use(pinia)
+app.mount(&#39;#app&#39;)
+</code></pre><h3 id="52使用store">5.2使用store</h3>
+<p>store是用来集中存储和管理组件之间共享状态的仓库</p>
+<h4 id="521创建仓库">5.2.1创建仓库</h4>
+<p>首先在src文件下，创建一个stores文件，里面存放仓库文件</p>
+<p>在仓库文件中，引入ref，reactive，再引入defineStore从pinia中</p>
+<p>用defineStore()方法创建仓库，第一个参数是仓库的id（唯一标识），第二个参数是setup函数（也可以使用option函数)</p>
+<p>最后将仓库导出，用export ，其中仓库名是有规范的，use+唯一标识符+Store</p>
+<pre tabindex="0"><code>import { ref, reactive } from &#34;vue&#34;
+import { defineStore } from &#34;pinia&#34;
+
+export const useWebStore = defineStore(&#34;web&#34;, () =&gt; {
+    const web = reactive({
+        name: &#34;阿衡&#34;,
+        url: &#34;www.baidu.com&#34;
+    })
+    const user = ref(1000)
+    const userAdd = () =&gt; {
+        user.value++
+    }
+    return ({
+        web,
+        user,
+        userAdd
+    })
+})
+</code></pre><h4 id="521使用仓库">5.2.1使用仓库</h4>
+<p>首先引入仓库，用仓库名引出</p>
+<p>再创建仓库实例即可</p>
+<pre tabindex="0"><code>&lt;template&gt;
+&lt;div id=&#34;app&#34;&gt;
+
+&lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script setup&gt;
+import { useWebStore } from &#39;./stores/web.js&#39;
+const webStore=useWebStore()
+console.log(webStore.web)
+console.log(webStore.user)
+console.log(webStore.userAdd)
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+
+&lt;/style&gt;
+</code></pre><h3 id="53pinia持久化存储">5.3pinia持久化存储</h3>
+<p>在全局安装pinia-plugin-persistedstate插件</p>
+<pre tabindex="0"><code>npm i pinia-plugin-persistedstate
+</code></pre><p>在main.js文件中，引入插件，并将插件注册到pinia中</p>
+<pre tabindex="0"><code>import { createApp } from &#39;vue&#39;
+import { createPinia } from &#39;pinia&#39;
+import App from &#39;./App.vue&#39;
+import piniaPluginPersistedstate from &#39;pinia-plugin-persistedstate&#39;//引入
+
+const pinia = createPinia()
+pinia.use(piniaPluginPersistedstate)//注册
+
+// createApp(App).mount(&#39;#app&#39;)
+const app = createApp(App)
+app.use(pinia)
+app.mount(&#39;#app&#39;)
+</code></pre><p>将仓库变为持久化仓库，打开仓库文件setup函数后面添加一个配置项 persist: true</p>
+<pre tabindex="0"><code>import { ref, reactive } from &#34;vue&#34;
+import { defineStore } from &#34;pinia&#34;
+
+export const useWebStore = defineStore(&#34;web&#34;, () =&gt; {
+    const web = reactive({
+        name: &#34;阿衡&#34;,
+        url: &#34;www.baidu.com&#34;
+    })
+    const user = ref(1000)
+    const userAdd = () =&gt; {
+        user.value++
+    }
+    return ({
+        web,
+        user,
+        userAdd
+    })
+},
+    {
+        persist: true
+    })
+</code></pre><p>使用这个插件的好处：</p>
+<p>1.自动状态同步化</p>
+<p>2.易用性</p>
+
+        </div>
+        
+        <div class="share m-2 grid grid-cols-2 lg:grid-cols-3 gap-2">
+            <a href="https://twitter.com/intent/tweet?url=http%3a%2f%2flocalhost%3a1313%2fblog%2f1%2f&text=vue3" target="_blank"
+                title="Post" class="share-button x">
+                <div class="text-white text-center">
+                    <span class="icon-x text-lg mr-2"></span>X
+                </div>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fblog%2f1%2f&t=vue3" target="_blank"
+                title="Facebook" class="share-button facebook">
+                <div class="text-white text-center">
+                    <span class="icon-facebook text-lg mr-2"></span>Facebook
+                </div>
+            </a>
+            <a href="https://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2flocalhost%3a1313%2fblog%2f1%2f&title=vue3" target="_blank"
+                title="hatena" class="share-button hatena">
+                <div class="text-white text-center">
+                    <span class="icon-hatenabookmark text-lg mr-2"></span>Hatena
+                </div>
+            </a>
+            <a href="https://getpocket.com/edit?url=http%3a%2f%2flocalhost%3a1313%2fblog%2f1%2f&title=vue3" target="_blank" title="pocket"
+                class="share-button pocket">
+                <div class="text-white text-center">
+                    <span class="icon-get-pocket text-lg mr-2"></span>Pocket
+                </div>
+            </a>
+            <a href="https://timeline.line.me/social-plugin/share?url=http%3a%2f%2flocalhost%3a1313%2fblog%2f1%2f" class="share-button line">
+                <div class="text-white text-center">
+                    <span class="icon-line text-lg mr-2"></span>LINE
+                </div>
+            </a>
+            <a href="javascript:OnClickURL();" class="share-button url" title="Copy to Clipboard"
+                data-clipboard-text="vue3 http://localhost:1313/blog/1/" id="url">
+                <div class="text-white text-center">
+                    <span class="icon-link text-lg mr-2"></span>Copy
+                </div>
+            </a>
+        </div>
+        <hr class="py-4">
+        <aside id="meta">
+            <div class="grid grid-cols-2">
+                <div class="col-span-1">
+                    
+                    <a class="previous lg:text-2xl" href="http://localhost:1313/blog/7ljb/">
+                        <div
+                            class="transition-colors duration-300 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                            <span class="icon-keyboard_arrow_left"></span> Vue3的基础学习
+                        </div>
+                    </a>
+                    
+                </div>
+                
+                <a class="next lg:text-2xl" href="http://localhost:1313/blog/13/">
+                    <div
+                        class="transition-colors duration-300 col-span-1 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                        动画 <span class="icon-keyboard_arrow_right"></span>
+                    </div>
+                </a>
+                
+            </div>
+        </aside>
+    </div>
+</div>
+
+  </main><footer class="bg-tlgray-100">
+  
+  <script src='/js/clipboard.min.js'></script>
+  <script src='/js/highlight.min.js'></script>
+  <script src='/js/highlightjs-line-numbers.min.js'></script>
+  <script src='/js/sweetalert2.min.js'></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+    new ClipboardJS('.url');
+
+    function OnClickURL() {
+      Swal.fire({
+        icon: 'success',
+        title: 'Copied!',
+        text: 'Copied the URL and title.'
+      })
+    }
+  </script>
+  
+  <script>
+    function toggleNav() {
+      var hamburger = document.getElementById("hamburgerbtn");
+      var overlay = document.getElementById("overlay");
+      var body = document.body;
+
+      hamburger.addEventListener("click", function () {
+        overlay.classList.toggle("open");
+        hamburger.classList.toggle("is-open");
+        body.classList.toggle("scroll-lock");
+      });
+    }
+    toggleNav();
+
+    document.querySelector('.scroll-top').addEventListener('click', () => {
+      document.documentElement.scrollTop = 0;
+    });
+  </script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet" />
+  
+  <div class="flex items-center justify-between flex-wrap bg-gray-800 p-8 text-white">
+    <div class="items-center text-xl text-grey-900 mr-6 flex flex-row">
+      <img alt="Bluemsun Studio" class="h-14 mr-8" src="/img/logo/logo.jpg">
+      <div>
+          <h1 class="px-2 text-3xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-5xl lg:text-6xl xl:text-8xl">蓝旭工作室</h1> 
+          <h2 class="px-2 text-xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-3xl lg:text-4xl xl:text-6xl">Bluemsun Studio</h2>
+      </div>
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+      <div class="text-lg lg:flex-grow">
+      </div>
+      <div class="flex flex-row items-center text-lg">
+        
+        <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          返回主页
+          
+        </a>
+        
+        <a href="https://github.com/BluemsunOffice" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          <i class='icon-github text-2xl'></i>
+          
+        </a>
+        
+      </div>
+    </div>
+  </div>
+  <div class="copy pl-8 py-5 bg-tlgray-700 text-white text-md w-full text-center">
+    &copy; Hello! Bluemsun 2025 All Rights Reserved.
+  </div>
+</footer>
+</body>
+
+</html>

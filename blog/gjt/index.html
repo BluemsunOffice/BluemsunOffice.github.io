@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<title>Hello! Bluemsun | java异常类</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.jpg'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.jpg'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.jpg'>
+<link rel="manifest" href='/site.webmanifest'>
+
+<link href='/css/fa6.min.css' rel="stylesheet" type="text/css">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<link href='/css/style.min.css' rel="stylesheet" type="text/css">
+<link rel="stylesheet" href='/css/custom.css'>
+
+<meta property="og:title" content="Hello! Bluemsun | java异常类" />
+
+
+
+
+<meta name="description" content="异常处理">
+<meta property="og:title" content=" | " />
+<meta property="og:site_name" content="Hello! Bluemsun">
+<meta property="og:description" content="异常处理">
+<meta property="og:url" content="http://localhost:1313/blog/gjt/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@tech_chiba">
+
+<link rel="canonical" href="http://localhost:1313/blog/gjt/">
+
+<meta name="twitter:description" content="异常处理">
+<meta property="article:published_time" content="2024-10-11T12:02:51&#43;08:00">
+<meta property="article:updated_time" content="2024-10-11T12:02:51&#43;08:00">
+
+
+
+
+
+    
+<meta property="og:image" content="http://localhost:1313/img/blog_pic/java2.png">
+    
+
+
+<meta name="twitter:title" content="java异常类">
+<link rel="preload" href='/css/sweetalert2.min.css' as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <main class="flex-grow"><header>
+    <div id="overlay">
+        <ul class="text-center list-none text-white text-3xl">
+            
+            <li class="p-2">
+                <a href="/products/">
+                    <span>项目介绍</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/blog/">
+                    <span>往期博客</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/about/">
+                    <span>关于蓝旭</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/contact/">
+                    <span>加入我们</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <nav class="flex items-center justify-between flex-wrap bg-opacity-80 p-8">
+        <div class="flex items-center flex-shrink-0 text-xl text-grey-900 mr-6 flex-row">
+            <a href="http://localhost:1313/" class="flex items-center flex-shrink-0 text-black mr-6">
+                <img alt="Bluemsun Studio"
+                    class="h-14" src="/img/logo/logo.jpg">
+                <div>
+                    <h1 class="px-2 text-4xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-5xl lg:text-6xl xl:text-8xl">蓝旭工作室</h1> 
+                    <h2 class="px-2 text-xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-3xl lg:text-4xl xl:text-6xl">Bluemsun Studio</h2>
+                </div>
+            </a>
+        </div>
+        <div class="block lg:hidden">
+            <div id="hamburgerbtn" class="flex cursor-pointer items-center w-14 h-10 py-2 rounded mopen">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
+        </div>
+        <div class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+            <div class="text-lg lg:flex-grow">
+            </div>
+            <div class="text-xl">
+                
+                <a href="/products/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8  px-2 py-1 rounded">
+                    项目介绍
+                </a>
+                
+                <a href="/blog/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8  px-2 py-1 rounded">
+                    往期博客
+                </a>
+                
+                <a href="/about/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8  px-2 py-1 rounded">
+                    关于蓝旭
+                </a>
+                
+                <a href="/contact/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8  px-2 py-1 rounded">
+                    加入我们
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+</header><div class="scroll-top rounded-full">
+      <span class="icon-keyboard_arrow_up text-2xl"></span>
+    </div>
+<div class="mx-auto my-10 max-w-6xl">
+    <div class="mx-3 col-span-3 lg:col-span-2 px-2 bg-white my-10">
+        <h1 class="title text-5xl font-bold mt-10 h-fit">
+            <i class="fa-solid fa-heading"></i>
+            java异常类
+        </h1>
+        <section class="mb-4 text-lg flex flex-row items-center">
+            <h4 id="date" class="flex flex-row items-center p-3">
+                
+                <i class="fa-regular fa-clock mr-2" style="color: #74C0FC;"></i>
+                2024/10/11 
+            </h4>
+            
+            <h4 class="flex flex-row items-center p-3">
+                
+                <i class="fa-solid fa-pen-nib mr-2" style="color: #FFD43B;"></i>
+                高俊涛
+            </h4>
+            
+            
+            <div id="categories" class="flex flex-row items-center p-3">
+                
+                <i class="fa-regular fa-folder-open mr-2" style="color: #63E6BE;"></i>
+                
+                <span
+                    class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a
+                        href='http://localhost:1313/categories/%E5%90%8E%E7%AB%AF'>后端</a></span>
+                
+            </div>
+            
+        </section>
+        
+        <div class="m-2 featured-image">
+            <img class="my-4"  sizes="auto" height="auto" width="auto" src="http://localhost:1313/img/blog_pic/java2.png">
+        </div>
+        
+        <div class="content prose md:prose-lg lg:prose-xl max-w-none bg-white p-8 border-black" style="border:dashed 1px #FF4365">
+            <h2 id="1捕获与抛出">1.捕获与抛出；</h2>
+<p>在Java的程序运行时很多问题是难以避免的，在程序运行时发生了不被期望的事件导致程序没有按照程序员的预期执行的都是异常，异常发生时，是任程序自生自灭，立刻退出终止，还是输出错误给用户？这些就要用到捕获与抛出；</p>
+<p>在说捕获与抛出之前先说说Java中的常见异常</p>
+<p>Ⅰ.Error：一般是Java虚拟机的问题用代码一般不能处理大致有以下两种情况</p>
+<table>
+  <thead>
+      <tr>
+          <th>VirtualMachineError</th>
+          <th>其中又包含StackOverFlowError和OutOfMemoryError</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>AWTError</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<p>Ⅱ.Exception：在程序运行中产生的异常,是可以被我们处理的异常大致分为两类，一类是IOEException(输入输出异常),另一个是RunTimeException(运行时异常）；</p>
+<p>IOEException主要有以下几类</p>
+<table>
+  <thead>
+      <tr>
+          <th>EOFException</th>
+          <th>文件结束异常</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>FileNotFoundException</td>
+          <td>没找到文件</td>
+      </tr>
+  </tbody>
+</table>
+<p>RunTimeException有以下几类</p>
+<table>
+  <thead>
+      <tr>
+          <th>ArithmeticException</th>
+          <th>当出现异常的运算条件时，抛出此异常</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>ArrayIndexOutOfBoundsException</td>
+          <td>用非法索引访问数组时抛出的异常</td>
+      </tr>
+      <tr>
+          <td>NullPointerException</td>
+          <td>当应用程序试图在需要对象的地方使用 <code>null</code> 时，抛出该异常</td>
+      </tr>
+      <tr>
+          <td>ArrayStoreException</td>
+          <td>试图将错误类型的对象存储到一个对象数组时抛出的异常</td>
+      </tr>
+      <tr>
+          <td>IllegalArgumentException</td>
+          <td>抛出的异常表明向方法传递了一个不合法或不正确的参数</td>
+      </tr>
+      <tr>
+          <td>IndexOutOfBoundsException</td>
+          <td>指示某排序索引超出范围时抛出</td>
+      </tr>
+      <tr>
+          <td>NegativeArraySizeException</td>
+          <td>如果应用程序试图创建大小为负的数组，则抛出该异常</td>
+      </tr>
+  </tbody>
+</table>
+<p>OK，那么现在知道Java可能会有这么多的异常，我们怎么才能确保用户在使用我们编写的程序的时候,不会因为乱输入数据而导致程序爆炸呢，那就要提到捕获与抛出；</p>
+<p>a.捕获(catch):顾名思义捕获就是要把错误抓住，那么想要抓住异常就得先对某些语句进行监视，这就要引出另一个关键词try，如果try中的语句出现问题那么就要执行catch中的语句否则执行try中的语句；这套流程的大概格式就是</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>{
+</span></span><span style="display:flex;"><span>要捕获的语句
+</span></span><span style="display:flex;"><span>}<span style="color:#66d9ef">catch</span>(语句会发生的异常 实例名){
+</span></span><span style="display:flex;"><span>捕获后执行的语句
+</span></span><span style="display:flex;"><span>}<span style="color:#66d9ef">final</span>{
+</span></span><span style="display:flex;"><span>执行语句
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>比如以下图中这个代码中出现除数为零这个异常<img src="https://i-blog.csdnimg.cn/blog_migrate/db6d571aa6be30ef04284f87196cafaa.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>同时一个try语句可以与多个catch语句进行搭配，换一种空指针赋值会得到另一种报错<img src="https://i-blog.csdnimg.cn/blog_migrate/30d6c4634fcf2478828ac01677fe705f.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>同样的try中也可以存在多个判断语句，但是会在第一个出错的语句截止，截止后的语句不做判断<img src="https://i-blog.csdnimg.cn/blog_migrate/87042237faf79bf952580936c819c398.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑把上面的代码局部改成这样会得到空指针报错，把tmp与temp换位置后会得到分母为零的报错。</p>
+<p>但是如果try中的语句异常类型没有与catch中的异常类型匹配，那么就不会被捕获，最终会交给虚拟机处理,发生报错；</p>
+<p>b.抛出(throw和throws两者都是在方法里面使用的)                                        Ⅰ.throws写在方法的定义处用来说明该方法可能会出现那些异常,格式如下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">方法名</span>() <span style="color:#66d9ef">throws</span> 异常类名1,异常类名2,....{
+</span></span><span style="display:flex;"><span>....
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>编译时的异常一定要写，运行时的异常可以省略不写。</p>
+<p>Ⅱ.throw写在方法内，用于结束方法 并抛出异常对象交给调用者，之后的代码也就不会运行了</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">方法名</span>(){
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> 异常类名;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>抛出是为了在方法出现异常时结束，并告诉调用者该方法出现了问题<img src="https://i-blog.csdnimg.cn/blog_migrate/57710786ff83d72935a60e4086f50abd.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑程序会在异常处停止<img src="https://i-blog.csdnimg.cn/blog_migrate/ed3417ef94292f29ce732fdfd340fb78.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>c.自定义异常:为了让控制台的报错信息更加见名知意                                        自定义异常大概分为四步:                                                        一.定义异常类.  （在定义的时候一定要见名只意)                                      二.写继承关系.                                                                  三.空参构造.                                                                    四.代参构造.  <img src="https://i-blog.csdnimg.cn/blog_migrate/89d56fdd2ea26ee3d25acd85bcb16b06.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑先自定义一个异常,异常如果是运行时异常要继承RunTimeException如果是编译时异常则直接继承Exception,(同理别忘了如果方法类可能出现编译时错误要在方法后用throws声明,之前提到过)</p>
+<p>因为自定义的异常的构造函数中有一个是有参的,所有可以在之后的抛出时输出想要打印的语句,</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> DivByZeroException(<span style="color:#e6db74">&#34;分母不能为0&#34;</span>)
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>用这种异常再次运行上次那个分母为0的代码，得到的结果如下图<img src="https://i-blog.csdnimg.cn/blog_migrate/346810b63ec7b102b89deb8f50232f6d.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑可以看见报错中有明显的提示,分母不能为0.</p>
+<h2 id="2包装类基本数据类型对应的引用类型">2.Ⅰ.包装类(基本数据类型对应的引用类型)</h2>
+<table>
+  <thead>
+      <tr>
+          <th>基本数据类型</th>
+          <th>包装类型</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>byte</td>
+          <td>Byte</td>
+      </tr>
+      <tr>
+          <td>short</td>
+          <td>Short</td>
+      </tr>
+      <tr>
+          <td>char</td>
+          <td>Character</td>
+      </tr>
+      <tr>
+          <td>int</td>
+          <td>Integer</td>
+      </tr>
+      <tr>
+          <td>long</td>
+          <td>Long</td>
+      </tr>
+      <tr>
+          <td>float</td>
+          <td>Float</td>
+      </tr>
+      <tr>
+          <td>double</td>
+          <td>Double</td>
+      </tr>
+      <tr>
+          <td>boolean</td>
+          <td>Boolean</td>
+      </tr>
+  </tbody>
+</table>
+<p>对包装类进行赋值时，会有类型的转换<img src="https://i-blog.csdnimg.cn/blog_migrate/4cb3e39643f87c7dc5d7639712a9fb50.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑虽然i2是new的是一个字符型，但最后的结果i2还int型的<img src="https://i-blog.csdnimg.cn/blog_migrate/946727c467b4b4b81c09dafe045f0f2b.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑也可以用以下这种方式对integer进行赋值</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Integer i1<span style="color:#f92672">=</span>Integer.<span style="color:#a6e22e">valueof</span>((字符串类型<span style="color:#960050;background-color:#1e0010">）</span><span style="color:#e6db74">&#34;数值&#34;</span>,进制)
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/29b5151c1278d8ecaf9f3b6955cf5a17.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑<img src="https://i-blog.csdnimg.cn/blog_migrate/c3f1faf6c74d50701d05f90b19f20ebd.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑结果如图,Integer.valueof()函数在-128~127内有优化，在这个范围内的数字可以比较大小，而在这之外的则不行</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/554e06b11cae1ec7a26424eadd894a08.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑<img src="https://i-blog.csdnimg.cn/blog_migrate/161c34ca79761666a2247eb37573f1fa.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑在jdk5之前包装类之间的计算还需要拆箱与装箱，但是在jdk‘5之后Java底层会自动装箱与拆箱，所以就不用多讲了。（因为支持自动装箱与拆箱所以Integer与int类型的区别其实不是特别大）</p>
+<p>在包装类中除了char都有对string进行的数据转换，即用parse&hellip;.语句，例如</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>Integer.<span style="color:#a6e22e">parseInt</span>(<span style="color:#e6db74">&#34;双引号内只能是数字&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> b<span style="color:#f92672">=</span>Boolean.<span style="color:#a6e22e">parseBoolean</span>(str)<span style="color:#75715e">//str只能是&#34;true&#34;或者&#34;false&#34;</span>
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>Ⅱ.String(buffer和builder）</p>
+<p>String的特性：被final修饰，不能被继承；具有不可变性，支持序列化和比较大小；</p>
+<p>Stringbuilder：可以看作是一个容器，里面的内容是可变的。（可以提高对字符串的操作效率)构造时可以无参构造，相当于一个空容器。也可以有参构造，相当于容器中已经有东西了；</p>
+<p>StringBuffer：String类型时不可改变的，但是StringBuffer专门时用来改变String的一类方法     有下面是常见的几种方法</p>
+<table>
+  <thead>
+      <tr>
+          <th>方法名</th>
+          <th>作用</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>public StringBuilder append(任意类型)</td>
+          <td>添加数据并返回对象本身</td>
+      </tr>
+      <tr>
+          <td>public StringBuilder reverse()</td>
+          <td>反转容器内的内容</td>
+      </tr>
+      <tr>
+          <td>public int length()</td>
+          <td>返回长度</td>
+      </tr>
+      <tr>
+          <td>delete(int start,int end)</td>
+          <td>删除指定区间内的字符(左开右闭)</td>
+      </tr>
+      <tr>
+          <td>public String toString()</td>
+          <td>把StringBuilder转换为字符型</td>
+      </tr>
+      <tr>
+          <td>insert(int offset,String str)</td>
+          <td>在指定位置插入字符串</td>
+      </tr>
+      <tr>
+          <td>replace(int start,int end,String str)</td>
+          <td>用指定字符串替换指定区间</td>
+      </tr>
+  </tbody>
+</table>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/64e4fb053dd7360ff06f16ec10e4e2ad.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑当我们要用多个append进行连接时，也可以用链式编程让过程更加快捷方便<img src="https://i-blog.csdnimg.cn/blog_migrate/200cedd05bfeefa325556d97b2722f97.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑<img src="https://i-blog.csdnimg.cn/blog_migrate/c4cd5265251cad9c1db20a60afee037f.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>Ⅲ.BigDecimal(用来表示很大的小数，或者对高精度的小数进行计算):不可变的，任意精度的有符号十进制数；</p>
+<p>最好用String类型的数据来进行BigDecimal运算,因为即使是double型的数据也有很大的可能损失导致BigDecimal不够准确<img src="https://i-blog.csdnimg.cn/blog_migrate/1f262f16c74e208077b19e6ec2695f26.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑<img src="https://i-blog.csdnimg.cn/blog_migrate/c2edaa6900806f3adc9512146c6de024.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑下面是BigDecimal之间的运算<img src="https://i-blog.csdnimg.cn/blog_migrate/080c8dc024a7f94a6829f68907ba9d67.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/7dfc961f877a0fd135e92ef1012ca872.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑其中除法更加细致，如果bd1除bd2除不尽的话就会发生报错<img src="https://i-blog.csdnimg.cn/blog_migrate/d51ccb4079eb62090fcccf436281a8ff.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑<img src="https://i-blog.csdnimg.cn/blog_migrate/5ada6ec3051648b0e7ecb2f9ba4f0850.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑这时候就应该用下面这种表达方式来说明应该保留几位，以及舍入模式；</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>BigDecimal bd3<span style="color:#f92672">=</span>bd1.<span style="color:#a6e22e">divide</span>(bd2,精确到几位,舍入模式)
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>修改以后的代码和输出结果</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/2173ed26a92d46e2ee21edb9d2010ed3.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑<img src="https://i-blog.csdnimg.cn/blog_migrate/0a8275b76239c4352dff93aee3521183.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑输出模式可以在BigDecimal.或者RoundingMode.中找.                                    up代表沿数轴的远0方向舍入，down则反之。ceiling代表沿数轴正方向舍入，floor反之。</p>
+<p>BigDecimal用字符串存储时在底层其实是用数组存储每一个字符的ASC码值；</p>
+<h2 id="3泛型简介">3.泛型简介</h2>
+<p>泛型：可以在编译阶段结束操作的数据类型，并进行检查；格式：&lt;数据类型&gt;. 泛型只能用引用数据类型不可以用基本数据类型（如果想用基本数据类型，就可以其对应的包装类）</p>
+<p>如果没有使用泛型则集合在输入数据时没有任何限制，可以是任何数据类型的，但是Java对数据的类型又极其敏感可能会导致报错，所以泛型的出现就是为了限制一关集合输入的数据类型，防止此类问题的出现。</p>
+<p>例如这个代码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>ArrayList list <span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> Arrlist();
+</span></span><span style="display:flex;"><span>list.<span style="color:#a6e22e">add</span>(123);
+</span></span><span style="display:flex;"><span>list.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;aaa&#34;</span>);
+</span></span><span style="display:flex;"><span>list.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> Student());
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>如果这个集合我想要测他的长度时,int型就不能换为String就不能用length</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>ArrayList <span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> Arrlist<span style="color:#f92672">&lt;&gt;</span>();
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>这样就限定了集合进入的数据，如果不符合泛型的数据类型就会报错。                        PS：泛型中不能写基本数据类型；指定泛型的具体类型后可以传入该类型及其子类；如果不写泛型就默认为object，即所有的数据类型都可以输入；</p>
+<p>下面是几种常见的方法</p>
+<table>
+  <thead>
+      <tr>
+          <th>boolean add()</th>
+          <th>添加元素</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>boolean remove()</td>
+          <td>删除指定元素</td>
+      </tr>
+      <tr>
+          <td>E remove()</td>
+          <td>删除指定索引元素</td>
+      </tr>
+      <tr>
+          <td>E set(int index E e)</td>
+          <td>修改指定检索的元素</td>
+      </tr>
+      <tr>
+          <td>E get(int index)</td>
+          <td>获得指定的索引元素</td>
+      </tr>
+      <tr>
+          <td>int size()</td>
+          <td>获得集合的长度</td>
+      </tr>
+  </tbody>
+</table>
+<p>(1)列表(list),</p>
+<p>List是位于java.util下的一个接口，有序集合（也称为序列）。此界面的用户可以精确控制每个元素在列表中的插入位置。用户可以通过整数索引（列表中的位置）访问元素，并在列表中搜索元素;</p>
+<p>其中有一个常用的子类就是上面的ArrayList，初始时ArrayList会创建一个初始容量为十的空列表，超出后会自动扩容；简单举个例子</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>ArrayList<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>        list.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;原神&#34;</span>);
+</span></span><span style="display:flex;"><span>        list.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;启动&#34;</span>);
+</span></span><span style="display:flex;"><span>        list.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;！！！！&#34;</span>);
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(list);
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>运行结果如图<img src="https://i-blog.csdnimg.cn/blog_migrate/8bcabdcb268a92c1bca08a913aa3b2c3.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑 每个元素之间会默认以  , 为间隔符，并把所有元素用[]括起来；</p>
+<p>除此在外还有列表还有LinkedList（使用双向链表，会一直往后接数据），和Vector（与ArrayList非常类似）；</p>
+<p>(2).Map是双列集合的顶层接口，它的功能是全部双列集合都可以继承使用</p>
+<table>
+  <thead>
+      <tr>
+          <th>方法名称</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>V put(k key,V value)</td>
+          <td>添加元素</td>
+      </tr>
+      <tr>
+          <td>V remove(object key)</td>
+          <td>删除键值对元素</td>
+      </tr>
+      <tr>
+          <td>void clear()</td>
+          <td>移除所有键值对元素</td>
+      </tr>
+      <tr>
+          <td>boolean containsKey(object key)</td>
+          <td>判断是否包含指定元素的键</td>
+      </tr>
+      <tr>
+          <td>boolean containsValue(object value)</td>
+          <td>判断是否包含指定值的键</td>
+      </tr>
+      <tr>
+          <td>boolean isEmpty()</td>
+          <td>判断集合是否为空</td>
+      </tr>
+      <tr>
+          <td>int size()</td>
+          <td>集合长度，即键值对数</td>
+      </tr>
+  </tbody>
+</table>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Map<span style="color:#f92672">&lt;</span>String,String<span style="color:#f92672">&gt;</span> GenShin_Player<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>        GenShin_Player.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;原神&#34;</span>,<span style="color:#e6db74">&#34;启动！！&#34;</span>);
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(GenShin_Player);
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/2af04e750bf961021614cfa138ea4942.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑Map的key与Value会用等号连接起来，然后用{}把所有的元素括起来；在添加时，如果键不存在就把键添加集合中并返回null，如果存在就要覆盖并把覆盖的值返回；</p>
+<pre tabindex="0"><code>GenShin_Player.clear();再加上这个语句后输出结果为
+</code></pre><p>去掉clear语句后再试试containsKey语句</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/274ba941eeeae09360d863e8a8d2018c.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑打印result后输出结果为true；</p>
+<p>(3)set集合(与list集合的性质几乎完全相反，list时有序，可重复，有索引；而set是无序，不重复，无索引),分为HashSet与TreeSet，使用的接口也是collection接口，所有与Map用的方法大致相同(Map中的containsKey和containsValue改成了contains)</p>
+<p>判断以下代码会输出什么？</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> Ikun<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">boolean</span> r1<span style="color:#f92672">=</span>Ikun.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;Ikun&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">boolean</span> r2<span style="color:#f92672">=</span>Ikun.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;Ikun&#34;</span>);
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(r1);
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(r2);
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/e45df10420d502a89c01879f50c6ac56.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑第一个是true，第二个是false,为什么？这是set不可重复的原因，所以第二个是false；  下面在看看无序性；</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> Ikun<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>        Ikun.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;Ikun&#34;</span>);
+</span></span><span style="display:flex;"><span>        Ikun.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;喜欢&#34;</span>);
+</span></span><span style="display:flex;"><span>        Ikun.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;背带裤&#34;</span>);
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(Ikun);
+</span></span></code></pre></div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/eaafdc2b951795e94791417b1c9ae5c7.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑输出的结果不是Ikun喜欢背带裤，而是一个无序的组合</p>
+
+        </div>
+        
+        <div class="share m-2 grid grid-cols-2 lg:grid-cols-3 gap-2">
+            <a href="https://twitter.com/intent/tweet?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fgjt%2f&text=java%e5%bc%82%e5%b8%b8%e7%b1%bb" target="_blank"
+                title="Post" class="share-button x">
+                <div class="text-white text-center">
+                    <span class="icon-x text-lg mr-2"></span>X
+                </div>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fblog%2fgjt%2f&t=java%e5%bc%82%e5%b8%b8%e7%b1%bb" target="_blank"
+                title="Facebook" class="share-button facebook">
+                <div class="text-white text-center">
+                    <span class="icon-facebook text-lg mr-2"></span>Facebook
+                </div>
+            </a>
+            <a href="https://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2flocalhost%3a1313%2fblog%2fgjt%2f&title=java%e5%bc%82%e5%b8%b8%e7%b1%bb" target="_blank"
+                title="hatena" class="share-button hatena">
+                <div class="text-white text-center">
+                    <span class="icon-hatenabookmark text-lg mr-2"></span>Hatena
+                </div>
+            </a>
+            <a href="https://getpocket.com/edit?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fgjt%2f&title=java%e5%bc%82%e5%b8%b8%e7%b1%bb" target="_blank" title="pocket"
+                class="share-button pocket">
+                <div class="text-white text-center">
+                    <span class="icon-get-pocket text-lg mr-2"></span>Pocket
+                </div>
+            </a>
+            <a href="https://timeline.line.me/social-plugin/share?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fgjt%2f" class="share-button line">
+                <div class="text-white text-center">
+                    <span class="icon-line text-lg mr-2"></span>LINE
+                </div>
+            </a>
+            <a href="javascript:OnClickURL();" class="share-button url" title="Copy to Clipboard"
+                data-clipboard-text="java异常类 http://localhost:1313/blog/gjt/" id="url">
+                <div class="text-white text-center">
+                    <span class="icon-link text-lg mr-2"></span>Copy
+                </div>
+            </a>
+        </div>
+        <hr class="py-4">
+        <aside id="meta">
+            <div class="grid grid-cols-2">
+                <div class="col-span-1">
+                    
+                    <a class="previous lg:text-2xl" href="http://localhost:1313/blog/zgs2/">
+                        <div
+                            class="transition-colors duration-300 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                            <span class="icon-keyboard_arrow_left"></span> 2024春季蓝旭工作…
+                        </div>
+                    </a>
+                    
+                </div>
+                
+                <a class="next lg:text-2xl" href="http://localhost:1313/blog/llr/">
+                    <div
+                        class="transition-colors duration-300 col-span-1 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                        File和Path、… <span class="icon-keyboard_arrow_right"></span>
+                    </div>
+                </a>
+                
+            </div>
+        </aside>
+    </div>
+</div>
+
+  </main><footer class="bg-tlgray-100">
+  
+  <script src='/js/clipboard.min.js'></script>
+  <script src='/js/highlight.min.js'></script>
+  <script src='/js/highlightjs-line-numbers.min.js'></script>
+  <script src='/js/sweetalert2.min.js'></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+    new ClipboardJS('.url');
+
+    function OnClickURL() {
+      Swal.fire({
+        icon: 'success',
+        title: 'Copied!',
+        text: 'Copied the URL and title.'
+      })
+    }
+  </script>
+  
+  <script>
+    function toggleNav() {
+      var hamburger = document.getElementById("hamburgerbtn");
+      var overlay = document.getElementById("overlay");
+      var body = document.body;
+
+      hamburger.addEventListener("click", function () {
+        overlay.classList.toggle("open");
+        hamburger.classList.toggle("is-open");
+        body.classList.toggle("scroll-lock");
+      });
+    }
+    toggleNav();
+
+    document.querySelector('.scroll-top').addEventListener('click', () => {
+      document.documentElement.scrollTop = 0;
+    });
+  </script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet" />
+  
+  <div class="flex items-center justify-between flex-wrap bg-gray-800 p-8 text-white">
+    <div class="items-center text-xl text-grey-900 mr-6 flex flex-row">
+      <img alt="Bluemsun Studio" class="h-14 mr-8" src="/img/logo/logo.jpg">
+      <div>
+          <h1 class="px-2 text-3xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-5xl lg:text-6xl xl:text-8xl">蓝旭工作室</h1> 
+          <h2 class="px-2 text-xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-3xl lg:text-4xl xl:text-6xl">Bluemsun Studio</h2>
+      </div>
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+      <div class="text-lg lg:flex-grow">
+      </div>
+      <div class="flex flex-row items-center text-lg">
+        
+        <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          返回主页
+          
+        </a>
+        
+        <a href="https://github.com/BluemsunOffice" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          <i class='icon-github text-2xl'></i>
+          
+        </a>
+        
+      </div>
+    </div>
+  </div>
+  <div class="copy pl-8 py-5 bg-tlgray-700 text-white text-md w-full text-center">
+    &copy; Hello! Bluemsun 2025 All Rights Reserved.
+  </div>
+</footer>
+</body>
+
+</html>
