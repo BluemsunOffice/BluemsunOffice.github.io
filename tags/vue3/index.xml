@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vue3 on Hello! Bluemsun</title><link>http://www.bluemsun.com.cn/tags/vue3/</link><description>Recent content in Vue3 on Hello! Bluemsun</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 30 Aug 2024 12:33:45 +1000</lastBuildDate><atom:link href="http://www.bluemsun.com.cn/tags/vue3/index.xml" rel="self" type="application/rss+xml"/><item><title>vue3</title><link>http://www.bluemsun.com.cn/blog/1wxy/</link><pubDate>Fri, 30 Aug 2024 12:33:45 +1000</pubDate><guid>http://www.bluemsun.com.cn/blog/1wxy/</guid><description>&lt;h1 id="vue3">VUE3&lt;/h1>
+&lt;h2 id="一创建一个-vue-实例">一、创建一个 vue 实例&lt;/h2>
+&lt;h3 id="11-传统开发方式">1.1 传统开发方式&lt;/h3>
+&lt;p>打开官网，点击快速上手，在 html 文件中引入 vue.global.js 文件&lt;/p>
+&lt;pre tabindex="0">&lt;code>&amp;lt;script src=&amp;#34;./vue.global.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>在 body 标签里:首先是容器，在 script 标签里用 Vue.createApp 方法，用 setup 配置项存放数据和方法，setup 里需要返回值。在 Vue.createApp 后面将内容挂载在容器内用 mount(&amp;quot;#id&amp;quot;)&lt;/p>
+&lt;pre tabindex="0">&lt;code>&amp;lt;div id=&amp;#34;id&amp;#34;&amp;gt;
+ &amp;lt;h2&amp;gt;{{msg}}&amp;lt;/h2&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;script&amp;gt;
+ Vue.createApp({
+ setup() {
+ return {
+ msg: &amp;#39;阿衡&amp;#39;
+ }
+ }
+ }).mount(&amp;#34;#id&amp;#34;)
+&amp;lt;/script&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>如果想创建一个复杂的数据类型，可以使用 reactive,并且将其返回 return&lt;/p>
+&lt;pre tabindex="0">&lt;code>setup() {
+ const web = Vue.reactive({
+ title: &amp;#34;你好&amp;#34;
+ })
+ return {
+ msg: &amp;#39;阿衡&amp;#39;,
+ web
+ }
+}
+&lt;/code>&lt;/pre>&lt;p>简写：不写 Vue，可以使用解构赋值&lt;/p>
+&lt;pre tabindex="0">&lt;code>const { createApp, reactive } = Vue
+&lt;/code>&lt;/pre>&lt;h3 id="12-模块化开发">1.2 模块化开发&lt;/h3>
+&lt;p>同样，在官网找到 vue.esm-browser.js 文件并引入&lt;/p></description></item></channel></rss>
