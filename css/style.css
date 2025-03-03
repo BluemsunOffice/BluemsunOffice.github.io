@@ -2770,7 +2770,8 @@ video {
 }
 
 .h-10 {
-  height: 2.5rem;
+  height: 4.05rem;
+  padding: 5px;
 }
 
 .h-14 {
@@ -2972,11 +2973,11 @@ video {
 }
 
 .gap-2 {
-  gap: 0.5rem;
+  gap: 3rem;
 }
 
 .gap-3 {
-  gap: 0.75rem;
+  gap: 1.75rem;
 }
 
 .space-x-0 > :not([hidden]) ~ :not([hidden]) {
@@ -3069,6 +3070,7 @@ video {
 
 .border {
   border-width: 1px;
+  border-bottom: 3px solid #4e6283;
 }
 
 .border-0 {
@@ -3083,7 +3085,7 @@ video {
 .border-y {
   border-top-width: 1px;
   border-bottom-width: 1px;
-}
+};
 
 .border-b {
   border-bottom-width: 1px;
