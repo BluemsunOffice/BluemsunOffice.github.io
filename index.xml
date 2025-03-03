@@ -12,22 +12,22 @@
 &lt;p>单独设置 X 或 Y 轴移动距离：&lt;code>translateX() 或 translateY()&lt;/code>&lt;/p>
 &lt;h4 id="绝对定位实现元素居中效果">绝对定位实现元素居中效果&lt;/h4>
 &lt;p>法一：&lt;/p>
-&lt;pre tabindex="0">&lt;code>div {
- position: absolute;
- background-color: aqua;
- height: 100px;
- width: 200px;
- left: 50%;
- bottom: 50%;
- margin-left: -100px;
- margin-bottom: -50px;
- }
-&lt;/code>&lt;/pre>&lt;p>法二：&lt;/p>
-&lt;pre tabindex="0">&lt;code>position: absolute;
-left: 50%;
-top: 50%;
-transform: translate(-50%,-50%);
-&lt;/code>&lt;/pre>&lt;h4 id="旋转">旋转&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-css" data-lang="css">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">div&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">position&lt;/span>: &lt;span style="color:#66d9ef">absolute&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">background-color&lt;/span>: &lt;span style="color:#66d9ef">aqua&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">height&lt;/span>: &lt;span style="color:#ae81ff">100&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">200&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">left&lt;/span>: &lt;span style="color:#ae81ff">50&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">bottom&lt;/span>: &lt;span style="color:#ae81ff">50&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">margin-left&lt;/span>: &lt;span style="color:#ae81ff">-100&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">margin-bottom&lt;/span>: &lt;span style="color:#ae81ff">-50&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>法二：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-css" data-lang="css">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">position&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#f92672">absolute&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">left&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#f92672">50&lt;/span>&lt;span style="color:#f92672">%;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">top&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#f92672">50&lt;/span>&lt;span style="color:#f92672">%;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">transform&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#f92672">translate&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#f92672">-50&lt;/span>&lt;span style="color:#f92672">%,&lt;/span>&lt;span style="color:#f92672">-50&lt;/span>&lt;span style="color:#f92672">%);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="旋转">旋转&lt;/h4>
 &lt;p>属性：transform&lt;/p>
 &lt;p>取值：角度单位是 &lt;strong>deg&lt;/strong>&lt;/p>
 &lt;p>&lt;strong>注意：&lt;/strong>&lt;/p>
@@ -40,7 +40,14 @@ transform: translate(-50%,-50%);
 &lt;p>属性：transform-origin&lt;/p>
 &lt;p>取值：&lt;/p>
 &lt;p>（1）方位名词&lt;/p>
-&lt;p>（2）像素单位数值&lt;/p></description></item><item><title>vue3</title><link>http://www.bluemsun.com.cn/blog/1wxy/</link><pubDate>Fri, 30 Aug 2024 12:33:45 +1000</pubDate><guid>http://www.bluemsun.com.cn/blog/1wxy/</guid><description>&lt;h1 id="vue3">VUE3&lt;/h1>
+&lt;p>（2）像素单位数值&lt;/p>
+&lt;p>（3）百分比&lt;/p>
+&lt;h4 id="多重转换">多重转换&lt;/h4>
+&lt;p>技巧：先平移再旋转&lt;/p>
+&lt;p>属性：transform: translate() rotate();&lt;/p>
+&lt;p>原理：以第一种转换方式坐标轴为准转换形态&lt;/p>
+&lt;h4 id="缩放">缩放&lt;/h4>
+&lt;p>属性：transform: scale();&lt;/p></description></item><item><title>vue3</title><link>http://www.bluemsun.com.cn/blog/1wxy/</link><pubDate>Fri, 30 Aug 2024 12:33:45 +1000</pubDate><guid>http://www.bluemsun.com.cn/blog/1wxy/</guid><description>&lt;h1 id="vue3">VUE3&lt;/h1>
 &lt;h2 id="一创建一个-vue-实例">一、创建一个 vue 实例&lt;/h2>
 &lt;h3 id="11-传统开发方式">1.1 传统开发方式&lt;/h3>
 &lt;p>打开官网，点击快速上手，在 html 文件中引入 vue.global.js 文件&lt;/p>
