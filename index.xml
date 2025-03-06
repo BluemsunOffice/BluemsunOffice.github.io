@@ -1050,37 +1050,96 @@ JavaScript是一种轻量级、解释型的 Web 开发语言，该语言系统�
 
 &lt;script>
  
+ function compressImage(file, quality, callback) {
+ const reader = new FileReader();
+ reader.onload = function (e) {
+ const img = new Image();
+ img.onload = function () {
+ const canvas = document.createElement('canvas');
+ const ctx = canvas.getContext('2d');
+ const MAX_WIDTH = 800;
+ const MAX_HEIGHT = 600;
+ let width = img.width;
+ let height = img.height;
+
+ 
+ if (width > height) {
+ if (width > MAX_WIDTH) {
+ height *= MAX_WIDTH / width;
+ width = MAX_WIDTH;
+ }
+ } else {
+ if (height > MAX_HEIGHT) {
+ width *= MAX_HEIGHT / height;
+ height = MAX_HEIGHT;
+ }
+ }
+
+ canvas.width = width;
+ canvas.height = height;
+ ctx.drawImage(img, 0, 0, width, height);
+
+ 
+ canvas.toBlob(function (blob) {
+ const compressedFile = new File([blob], file.name, {
+ type: 'image/jpeg', 
+ lastModified: Date.now()
+ });
+
+ callback(compressedFile); 
+ }, 'image/jpeg', quality); 
+ };
+ img.src = e.target.result;
+ };
+ reader.readAsDataURL(file);
+ }
+
+
+ 
  let img=''
  document.getElementById('file-upload').addEventListener('change', function (event) {
+
  const file = event.target.files[0];
  if (file) {
+ compressImage(file, 0.9, function (compressedFile) {
+ 
  document.getElementById('file-name').textContent = `已选择文件：${file.name}`;
  const formData = new FormData();
- formData.append('file', file);
+ formData.append('file', compressedFile);
  fetch('https://www.bluemsun.com.cn:8000/upload/img', {
  method: 'POST',
- body: formData
+ body: formData,
+ credentials: 'include',
  })
  .then(response => response.json())
  .then(data => {
- if(data.code==200){
+ console.log(data);
+
+ if (data.code == 200) {
  console.log(data.data);
- img= data.data
+ img = data.data
  console.log(img);
- }else{
+ } else if (data.code == 400) {
+ document.querySelector('.modal-body2').innerHTML = data.msg
+ document.getElementById('failureModal').style.display = 'flex';
+ document.getElementById('file-name').textContent = '请上传一张你的生活照~'
+ } else {
  document.querySelector('.modal-body2').innerHTML = '上传图片失败'
  document.getElementById('failureModal').style.display = 'flex';
+ document.getElementById('file-name').textContent = '请上传一张你的生活照~'
  }
  })
  .catch(error => {
  console.error('上传失败', error);
  });
+ });
+ 
  }
  });
  const callRegex = /^1[3-9]\d{9}$/
  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
- let flag=true
  document.getElementById('sub').addEventListener('click', function () {
+ let flag = true
  const name = document.querySelector('#name')
  const student_id = document.querySelector('#student_id')
  const major = document.querySelector('#major')
@@ -1107,7 +1166,7 @@ JavaScript是一种轻量级、解释型的 Web 开发语言，该语言系统�
  flag = false
  document.querySelector('.modal-body2').innerHTML = '请填写学号'
  document.getElementById('failureModal').style.display = 'flex';
- }else if(student_id.value.length&lt;10){
+ }else if(student_id.value.length!=10){
  flag = false
  document.querySelector('.modal-body2').innerHTML = '请填写正确的学号'
  document.getElementById('failureModal').style.display = 'flex';
@@ -1179,8 +1238,12 @@ JavaScript是一种轻量级、解释型的 Web 开发语言，该语言系统�
  document.querySelector('.modal-body1').innerHTML = '您的表单已成功提交！'
  document.getElementById('successModal').style.display = 'flex';
  }
- else{
+ else if(data.code==400){
  document.querySelector('.modal-body2').innerHTML = data.msg
+ document.getElementById('failureModal').style.display = 'flex';
+ }
+ else{
+ document.querySelector('.modal-body2').innerHTML = "请填写正确的表单信息"
  document.getElementById('failureModal').style.display = 'flex';
  }
  })
