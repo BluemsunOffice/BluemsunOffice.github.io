@@ -1056,15 +1056,16 @@ JavaScript是一种轻量级、解释型的 Web 开发语言，该语言系统�
  if (file) {
  document.getElementById('file-name').textContent = `已选择文件：${file.name}`;
  const formData = new FormData();
- formData.append('pic', file);
- fetch('http://8.130.44.252:8080/uni/pic', {
+ formData.append('file', file);
+ fetch('https://www.bluemsun.com.cn:8000/upload/img', {
  method: 'POST',
  body: formData
  })
  .then(response => response.json())
  .then(data => {
- if(data.code==0){
- img= data.data.url
+ if(data.code==200){
+ console.log(data.data);
+ img= data.data
  console.log(img);
  }else{
  document.querySelector('.modal-body2').innerHTML = '上传图片失败'
@@ -1097,10 +1098,18 @@ JavaScript是一种轻量级、解释型的 Web 开发语言，该语言系统�
  flag = false
  document.querySelector('.modal-body2').innerHTML = '请填写姓名'
  document.getElementById('failureModal').style.display = 'flex';
+ }else if(name.value.length&lt;2){
+ flag = false
+ document.querySelector('.modal-body2').innerHTML = '姓名长度不少于2'
+ document.getElementById('failureModal').style.display = 'flex';
  }
  if (student_id.value.trim() == "") {
  flag = false
  document.querySelector('.modal-body2').innerHTML = '请填写学号'
+ document.getElementById('failureModal').style.display = 'flex';
+ }else if(student_id.value.length&lt;10){
+ flag = false
+ document.querySelector('.modal-body2').innerHTML = '请填写正确的学号'
  document.getElementById('failureModal').style.display = 'flex';
  }
  if (major.value.trim() == "") {
@@ -1147,9 +1156,7 @@ JavaScript是一种轻量级、解释型的 Web 开发语言，该语言系统�
  }
  }
  if (flag == true) {
- console.log(111111111);
-
- fetch("https://www.bluemsun.com.cn:8000/applications", {
+ fetch("https://www.bluemsun.com.cn:8000/upload/application", {
  method: 'POST',
  headers: {
  'Content-Type': 'application/json'
@@ -1168,9 +1175,14 @@ JavaScript是一种轻量级、解释型的 Web 开发语言，该语言系统�
  })
  .then(response => response.json())
  .then(data => {
- console.log('成功:', data);
+ if(data.code==200){
  document.querySelector('.modal-body1').innerHTML = '您的表单已成功提交！'
  document.getElementById('successModal').style.display = 'flex';
+ }
+ else{
+ document.querySelector('.modal-body2').innerHTML = data.msg
+ document.getElementById('failureModal').style.display = 'flex';
+ }
  })
  .catch(error => {
  console.error('错误:', error);
