@@ -10,15 +10,12 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.jpg">
     <link rel="manifest" href="../../site.webmanifest">
 
-    <!-- 核心 CSS -->
     <link href="../../css/fa6.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="../../css/style.css">
     <link href="../../css/style.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="../../css/custom.css">
 
-    <!-- ✅ 补充：代码高亮主题 (Tokyo Night Dark) -->
     <link rel="stylesheet" href="../../css/tokyo-night-dark.min.css">
-    <!-- ✅ 补充：Tailwind CSS 浏览器端运行脚本 -->
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 
     <meta property="og:title" content="NGINX 常用命令 | Bluemsun" />
@@ -78,7 +75,6 @@
                 <div class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
                     <div class="text-lg lg:flex-grow"></div>
                     <div class="text-xl">
-                        <!-- ✅ 补充：带有 Emoji 的导航栏 -->
                         <a href="../../"
                             class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8 px-2 py-1 rounded">🏠返回主页</a>
                         <a href="../../products/"
@@ -102,13 +98,11 @@
 
         <div class="mx-auto my-10 max-w-6xl">
             <div class="mx-3 col-span-3 lg:col-span-2 px-2 bg-white p-8">
-                <!-- ✅ 补充：带有跳动动画的 Server 图标标题 -->
                 <h1 class="title text-5xl font-bold h-fit mb-4 px-8">
                     <i class="fa-solid fa-server fa-beat" style="color:#2f6a58"></i>
                     NGINX 常用命令
                 </h1>
 
-                <!-- ✅ 补充：完整的文章元数据栏（第一行：作者、收录系列） -->
                 <section class="px-2 text-lg flex flex-row items-center">
                     <h4 class="flex flex-row items-center p-1">
                         <i class="fa-solid fa-pen-nib mr-2" style="color:#292929"></i>
@@ -124,7 +118,6 @@
                     </div>
                 </section>
 
-                <!-- ✅ 补充：完整的文章元数据栏（第二行：发布时间、字数、阅读时间、标签） -->
                 <section class="px-2 text-lg flex flex-row items-center justify-between w-full">
                     <div class="w-fit flex flex-row items-center">
                         <h4 id="date" class="flex flex-row items-center p-1">
@@ -162,7 +155,6 @@
 
                 <div class="content prose md:prose-lg lg:prose-xl max-w-none bg-white p-8 border-black"
                     style="border:dashed 1px #FF4365">
-                    <!-- 文章正文部分 -->
                     <p>NGINX 是目前全球最受欢迎的高性能 Web 服务器和反向代理服务器之一。无论你是前端开发、后端开发还是运维工程师，掌握 NGINX 的常用命令都是日常工作中的必修课。</p>
                     <p>很多新手在使用 NGINX 时，往往只会背一个 <code>nginx -s reload</code>。但实际在生产环境中，处理多实例运行、日志切割、性能监控、Docker
                         容器部署等场景时，你需要掌握更全面的命令体系。</p>
@@ -226,7 +218,8 @@
                     </ul>
                     <h3 id="3-使用-systemd-管理">3. 使用 Systemd 管理（现代 Linux 推荐做法）</h3>
                     <p>如果你是通过 <code>yum</code> (CentOS) 或 <code>apt</code> (Ubuntu) 安装的 NGINX，强烈推荐使用系统的
-                        <code>systemctl</code> 命令：</p>
+                        <code>systemctl</code> 命令：
+                    </p>
                     <pre tabindex="0"><code class="language-bash" data-lang="bash">systemctl start nginx    # 启动
 systemctl stop nginx     # 停止
 systemctl restart nginx  # 重启
@@ -394,7 +387,6 @@ Reading: 6 Writing: 179 Waiting: 106 </code></pre>
                 </aside>
             </div>
 
-            <!-- 评论区脚本保留 -->
             <script src="https://giscus.app/client.js" data-repo="BluemsunOffice/BluemsunOffice.github.io"
                 data-repo-id="R_kgDON_oJvQ" data-category="Announcements" data-category-id="DIC_kwDON_oJvc4CndFP"
                 data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0"
